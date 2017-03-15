@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Doantotnghiep</title>
+    <title></title>
+    <%= action_cable_meta_tag %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag "/images/ico.png", id: "favicon" %>
   </head>
-
   <body>
-    <%= yield %>
+    <div id="react-helper"></div>
+    <div id="react-wrapper"></div>
+    <div class="ajax-loading">
+      <div class="ajax-bg"></div>
+      <div class="image-loading">
+        <%= render "shared/loading" %>
+      </div>
+    </div>
   </body>
 </html>

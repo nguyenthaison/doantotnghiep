@@ -1,0 +1,8 @@
+{
+  presets: [
+    "es2015",
+    "react",
+  ],
+  "plugins": ["transform-es3-property-literals"],
+  "plugins": ["transform-class-properties"],
+}
