@@ -1,0 +1,2 @@
+class HotkeyWord < ApplicationRecord
+end

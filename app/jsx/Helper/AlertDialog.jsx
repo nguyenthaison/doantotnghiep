@@ -34,7 +34,7 @@ export default class AlertDialog extends BaseComponent {
   render() {
     const actions = [
       <mui.FlatButton
-        label={t("common.ok")}
+        label="Ok"
         primary={true}
         keyboardFocused={true}
         onTouchTap={this.handleSubmit}
