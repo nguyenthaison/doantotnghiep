@@ -7,7 +7,7 @@ import Home from "./Home";
 
 const router = (
   <Router history={browserHistory}>
-    <Route path="users/sign_in" component={Login} />
+    {/*<Route path="users/sign_in" component={Login} />*/}
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="home" component={Home} />

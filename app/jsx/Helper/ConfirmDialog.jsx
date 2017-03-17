@@ -34,11 +34,11 @@ export default class ConfirmDialog extends BaseComponent {
   render() {
     const actions = [
       <mui.FlatButton
-        label={t("common.cancel")}
+        label="Cancel"
         onTouchTap={this.handleClose}
       />,
       <mui.FlatButton
-        label={t("common.ok")}
+        label="Ok"
         primary={true}
         keyboardFocused={true}
         onTouchTap={this.handleSubmit}
