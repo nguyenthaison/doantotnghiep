@@ -70,7 +70,7 @@ export default class BaseAPI {
           return false;
       }
 
-      Helper.showMessage(t("common.message.connection_error"), "error");
+      Helper.showMessage("connection_error", "error");
 
       if (callback) {
         callback(false);
