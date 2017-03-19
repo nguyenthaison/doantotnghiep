@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316115242) do
+ActiveRecord::Schema.define(version: 20170317074532) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "view"
@@ -22,25 +22,10 @@ ActiveRecord::Schema.define(version: 20170316115242) do
   end
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.integer  "view"
-    t.integer  "song_type"
-    t.integer  "rank"
-    t.integer  "download"
-    t.integer  "user_id"
-    t.integer  "singer_author_id"
-    t.integer  "music_type_id"
-    t.string   "attachmentable_type"
     t.integer  "attachmentable_id"
-    t.integer  "album_id"
-    t.text     "notes",               limit: 65535
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.index ["album_id"], name: "index_attachments_on_album_id", using: :btree
-    t.index ["attachmentable_type", "attachmentable_id"], name: "index_attachments_on_attachmentable_type_and_attachmentable_id", using: :btree
-    t.index ["music_type_id"], name: "index_attachments_on_music_type_id", using: :btree
-    t.index ["singer_author_id"], name: "index_attachments_on_singer_author_id", using: :btree
-    t.index ["user_id"], name: "index_attachments_on_user_id", using: :btree
+    t.text     "notes",             limit: 65535
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "avatars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -124,6 +109,24 @@ ActiveRecord::Schema.define(version: 20170316115242) do
     t.index ["countries_id"], name: "index_singer_authors_on_countries_id", using: :btree
   end
 
+  create_table "songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "view"
+    t.integer  "song_type"
+    t.integer  "rank"
+    t.integer  "download"
+    t.integer  "album_id"
+    t.integer  "music_type_id"
+    t.integer  "user_id"
+    t.integer  "singer_author_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
+    t.index ["music_type_id"], name: "index_songs_on_music_type_id", using: :btree
+    t.index ["singer_author_id"], name: "index_songs_on_singer_author_id", using: :btree
+    t.index ["user_id"], name: "index_songs_on_user_id", using: :btree
+  end
+
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "content",    limit: 65535
@@ -142,6 +145,24 @@ ActiveRecord::Schema.define(version: 20170316115242) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["country_id"], name: "index_users_on_country_id", using: :btree
+  end
+
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "view"
+    t.integer  "video_type"
+    t.integer  "rank"
+    t.integer  "download"
+    t.integer  "album_id"
+    t.integer  "music_type_id"
+    t.integer  "user_id"
+    t.integer  "singer_author_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["album_id"], name: "index_videos_on_album_id", using: :btree
+    t.index ["music_type_id"], name: "index_videos_on_music_type_id", using: :btree
+    t.index ["singer_author_id"], name: "index_videos_on_singer_author_id", using: :btree
+    t.index ["user_id"], name: "index_videos_on_user_id", using: :btree
   end
 
 end
