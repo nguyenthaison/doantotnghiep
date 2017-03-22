@@ -1,13 +1,13 @@
-// import {Analyser, Song, Sequencer, Sampler, Synth} from "react-music"
-// import Visualization from "./Visualization";
-// import Polysynth from './Polysynth';
 import Sound from "react-sound";
-import {BottomNavigation, BottomNavigationItem} from "material-ui/BottomNavigation";
-import Paper from "material-ui/Paper";
 import PlayArrow from "material-ui/svg-icons/av/play-arrow";
 import Pause from "material-ui/svg-icons/av/pause";
-import LinearProgress from 'material-ui/LinearProgress';
-import ProgressBar from "./ProgressBar";
+// import VolumeDown from "material-ui/svg-icons/av/volume-down";
+// import VolumeOff from "material-ui/svg-icons/av/volume-off";
+// import VolumeUp from "material-ui/svg-icons/av/volume-up";
+import SkipNext from "material-ui/svg-icons/av/skip-next";
+import Slider from 'material-ui/Slider';
+// import PlayerControls from './PlayerControls';
+import Volume from './Volume';
 
 export default class Songs extends PageComponent {
   constructor(props) {
@@ -17,15 +17,11 @@ export default class Songs extends PageComponent {
       list: [],
       playing: true,
       position: 0,
+      completed: 0,
+      volume: 80,
+      preVolume: 0,
+      statusVolume: true,
     }
-  }
-
-  handleAudioProcess  = (analyser) => {
-    this.visualization.audioProcess(analyser);
-  }
-
-  toggleLightMode(){
-    this.setState({lightMode: !this.state.lightMode});
   }
 
   // componentDidMount() {
@@ -46,15 +42,15 @@ export default class Songs extends PageComponent {
   }
 
   handleSongPlaying = (event) => {
-    // console.log(`${event.position / event.duration * 100}%`);
-    console.log(event.position / event.duration * 100);
-    this.completed = event.position / event.duration * 100;
-    // console.log(event.duration);
+    let completed = event.position / event.duration * 100;
+    this.setState({
+      completed: completed,
+      position: event.position,
+    });
   }
 
-  handleSongLoading = (bytesLoaded, bytesTotal) => {
-    // console.log(`${bytesLoaded / bytesTotal * 100}% loaded`);
-  }
+  // handleSongLoading = (bytesLoaded, bytesTotal) => {
+  // }
 
   handleSongFinishedPlaying = () => {
     this.setState({
@@ -62,9 +58,33 @@ export default class Songs extends PageComponent {
     });
   }
 
-  render() {
-    let position = this.state.position;
+  handleChangeSlider = (event, value) => {
+    this.setState({
+      position: value,
+    });
+  }
 
+  handleNextMusic = () => {
+
+  }
+
+  handleBtnChangeVolume = (boolean) => {
+    this.setState({
+      preVolume: this.state.volume,
+      statusVolume: boolean,
+      volume: boolean ? this.state.preVolume : 0,
+    });
+  }
+
+  handleSliderChange = (volume) => {
+    this.setState({
+      volume: volume,
+      preVolume: volume === 0 ? 10 : volume,
+      statusVolume: volume === 0 ? false : true,
+    });
+  }
+
+  render() {
     return (
       <div className="base-master-index">
         <div className="display">
@@ -72,27 +92,40 @@ export default class Songs extends PageComponent {
             <div className="col-md-2">
             </div>
             <div className="col-md-7">
-              <ProgressBar ref="progressBar" completed={this.completed} />
+              <Slider
+                value={this.state.completed}
+                min={0}
+                max={100}
+                onChange={this.handleChangeSlider} />
             </div>
             <div className="col-md-5">
             </div>
           </div>
         </div>
-        <div>
+        <div className="button-control">
           <Sound
             url="samples/test.mp3"
             playStatus={this.state.playing ? Sound.status.PLAYING : Sound.status.PAUSED}
-            playFromPosition={300 /* in milliseconds */}
-            volume={80}
-            onLoading={({bytesLoaded, bytesTotal}) => this.handleSongLoading()}
+            position={this.state.position}
+            volume={this.state.volume}
+            // onLoading={({bytesLoaded, bytesTotal}) => this.handleSongLoading()}
             onPlaying={(event) => this.handleSongPlaying(event)}
             onFinishedPlaying={this.handleSongFinishedPlaying} />
           <cm.RaisedButton
             icon={this.state.playing ? <Pause /> : <PlayArrow />}
-            className="music-button"
-            label="Play"
+            className="button-play"
             primary={true}
             onClick={this.handlePlayMusic}/>
+          <cm.RaisedButton
+            icon={<SkipNext />}
+            className="skip-next"
+            primary={true}
+            onClick={this.handleNextMusic}/>
+          <Volume btnChange={this.handleBtnChangeVolume}
+            sliderChange={this.handleSliderChange}
+            volume={this.state.volume}
+            statusVolume={this.state.statusVolume}
+            />
         </div>
       </div>
     );

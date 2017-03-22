@@ -73,7 +73,6 @@ export default class App extends BaseComponent {
 
   renderMainContent() {
     let mainClass = this.state.drawerCollapsed ? "main-area-w56" : "main-area-w195";
-    console.log("vao day");
     return (
       <div className="main-layout">
         <Drawer
