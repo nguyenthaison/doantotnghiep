@@ -24,6 +24,7 @@ capybara-*.html
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
+/public/samples
 /coverage/
 /spec/tmp
 **.orig
@@ -60,3 +61,4 @@ app/assets/javascripts/react-app.js
 
 # Ignore Byebug command history file.
 .byebug_history
+.gitignore

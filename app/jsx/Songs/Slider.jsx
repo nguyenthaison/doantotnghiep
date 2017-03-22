@@ -10,8 +10,8 @@ export default class Index extends PageComponent {
       <Slider
         defaultValue={0}
         value={this.props.completed}
-        min={0}
-        max={100} />
+        min={-1}
+        max={101} />
     )
   }
 }

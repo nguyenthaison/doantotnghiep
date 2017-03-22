@@ -14,16 +14,17 @@ export default class Drawer extends BaseComponent {
   renderMenuItem(item, transitionTo, icon, isCustomIcon, rightIcon) {
     let isActive;
     if (this.props.currentPath === "/") {
-      isActive = item === Object.keys(App.auth.authorized_pages)[0]
+      isActive = item === true
     } else {
       isActive = this.props.currentPath.split("/")[1] === item
     }
 
-    let menuItemIcon = isCustomIcon ?
-      <i className={icon + (isActive ? "-active" : "")}>
-        <img src={isActive ? theme.urlIconMenuFaq : theme.defaultIconMenuFaq} />
-      </i> :
-      <i className="material-icons">{icon}</i>;
+    let menuItemIcon = <i className="material-icons">{icon}</i>;
+    // isCustomIcon ?
+    //   <i className={icon + (isActive ? "-active" : "")}>
+    //     <img src={isActive ? theme.urlIconMenuFaq : theme.defaultIconMenuFaq} />
+    //   </i> :
+    //   <i className="material-icons">{icon}</i>;
 
     // if (!App.auth.authorized_pages[item]) return null;
 
@@ -34,10 +35,10 @@ export default class Drawer extends BaseComponent {
 
     return (
       <mui.MenuItem
-        title="Top"
+        title={item}
         className={"drawer-item " + (isActive ? "active-item" : "normal-item")}
         innerDivStyle={innerDivStyle}
-        primaryText="Top"
+        primaryText={item}
         leftIcon={menuItemIcon}
         rightIcon={rightIcon}
         value={transitionTo} />
@@ -66,7 +67,7 @@ export default class Drawer extends BaseComponent {
             </div>
           </div>
           <mui.Menu onItemTouchTap={this.handleTouchMenu} className="default-cursor">
-            {this.renderMenuItem("top", "/", "home")}
+            {this.renderMenuItem("Home", "/", "home")}
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>
         </div>

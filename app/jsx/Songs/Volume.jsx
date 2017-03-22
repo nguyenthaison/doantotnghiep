@@ -23,7 +23,7 @@ export default class Index extends PageComponent {
 
   render() {
     let volume = this.props.volume;
-    let icon = (volume = 0) ? <VolumeOff /> : (volume > 50 ? <VolumeUp /> : <VolumeDown />)
+    let icon = volume = 0 ? <VolumeOff /> : (volume > 50 ? <VolumeUp /> : <VolumeDown />)
     icon = this.props.statusVolume ? icon : <VolumeOff />
 
     return (
