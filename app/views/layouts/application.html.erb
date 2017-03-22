@@ -6,16 +6,16 @@
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= csrf_meta_tags %>
-    <%= favicon_link_tag "/images/ico.png", id: "favicon" %>
+    <%#= favicon_link_tag "/images/ico.png", id: "favicon" %>
   </head>
   <body>
     <div id="react-helper"></div>
     <div id="react-wrapper"></div>
-    <!-- <div class="ajax-loading">
+    <div class="ajax-loading">
       <div class="ajax-bg"></div>
       <div class="image-loading">
-        <#%= render "shared/loading" %>
+        <%= render "shared/loading" %>
       </div>
-    </div> -->
+    </div>
   </body>
 </html>

@@ -1,14 +1,14 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import theme from "../theme";
-// import HeaderMenu from "./Header"
-// import Drawer from "./Drawer";
+import HeaderMenu from "./Header"
+import Drawer from "./Drawer";
 
 export default class App extends BaseComponent {
   constructor(props) {
     super(props);
     global.App = this;
-    this.auth = null;
+    this.auth = true;
 
     this.state = {
     }

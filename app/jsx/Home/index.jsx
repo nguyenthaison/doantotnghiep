@@ -7,7 +7,6 @@ export default class Home extends PageComponent {
   }
 
   componentDidMount() {
-    console.log("vao home");
     this.setToolBar("Home");
   }
 
@@ -20,7 +19,6 @@ export default class Home extends PageComponent {
   // }
 
   render() {
-    console.log("home");
     return (
       <div className="top-page col-md-12">
         <div className="col-md-9 faq-com-list">

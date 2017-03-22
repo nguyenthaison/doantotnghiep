@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-// global.API = require("./API");
+global.API = require("./API");
 
 // import Locales from "./Locales";
 // t.registerTranslations("en", Locales.English);
