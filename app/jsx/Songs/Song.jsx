@@ -1,6 +1,7 @@
 import Sound from "react-sound";
 import PlayArrow from "material-ui/svg-icons/av/play-arrow";
 import Pause from "material-ui/svg-icons/av/pause";
+import SkipPrevious from "material-ui/svg-icons/av/skip-previous";
 import SkipNext from "material-ui/svg-icons/av/skip-next";
 import Slider from 'material-ui/Slider';
 import Volume from './Volume';
@@ -21,6 +22,7 @@ export default class Song extends PageComponent {
       shuffle: false,
       song: {},
       list: [],
+      listRandom: [],
     }
   }
 
@@ -30,6 +32,7 @@ export default class Song extends PageComponent {
       song: song,
       repeat: "one",
       list: [],
+      position: 0,
     });
   }
 
@@ -40,6 +43,13 @@ export default class Song extends PageComponent {
       repeat: "repeat",
       song: listSong[0],
     })
+  }
+
+  handleFindSongInList = (list, song) => {
+    let index = list.findIndex(_song => {
+      return _song.id === song.id;
+    });
+    return index;
   }
 
   handlePlayMusic = () => {
@@ -59,16 +69,20 @@ export default class Song extends PageComponent {
   handleSongFinishedPlaying = () => {
     let repeat = this.state.repeat;
     let shuffle = this.state.shuffle;
-    let list = this.state.list;
-    let lenght = list.length
+    let song = this.state.song;
 
-    if (this.state.shuffle) {
-      let random = Math.floor((Math.random() * lenght) + 1);
+    if (shuffle) {
+      let listRandom = this.state.listRandom;
+      let index = this.handleFindSongInList(listRandom, song);
+
       this.setState({
-        song: list[random],
+        song: index === listRandom.length -1 ? listRandom[0] : listRandom[index + 1],
         shuffle: true,
+        position: 0,
       })
     } else {
+      let list = this.state.list;
+
       if(repeat == "one"){
         this.setState({
           position: 0,
@@ -76,17 +90,17 @@ export default class Song extends PageComponent {
         })
       } else if (repeat == "repeat") {
         let song = this.state.song;
-        let index = list.findIndex(_song => {
-          return _song.id === song.id;
-        });
+        let index = this.handleFindSongInList(list, song);
 
         this.setState({
+          song: index === list.length - 1 ? list[0] : list[index + 1],
           repeat: "repeat",
-          song: index === lenght ? list[0] : list[index + 1],
+          position: 0,
         })
       } else {
         this.setState({
           song: {},
+          position: 0,
         })
       }
     }
@@ -98,17 +112,24 @@ export default class Song extends PageComponent {
     });
   }
 
-  handleNextMusic = () => {
+  handleChangeMusic = (next = true) => { //next or previous
     let song = this.state.song;
-    let list = this.state.list;
-
-    let index = list.findIndex(_song => {
-      return _song.id === song.id;
-    });
+    let list = [];
+    let index = null;
+    if (this.state.shuffle) {
+      list = this.state.listRandom;
+      index = this.handleFindSongInList(list, song);
+    } else {
+      list = this.state.list;
+      index = this.handleFindSongInList(list, song);
+    }
+    let newSong = index === list.length - 1 ? list[0] :
+      (next ? list[index + 1] : list[index - 1]) // cuoi ds, next, previous
 
     this.setState({
-      song: list[index + 1],
+      song: newSong,
       position: 0,
+      playing: true,
     })
   }
 
@@ -128,11 +149,31 @@ export default class Song extends PageComponent {
     });
   }
 
+  handleRandomList = () => {
+    let list = this.state.list;
+    let newList = update(list, {})
+    let currentIndex = newList.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = newList[currentIndex];
+      newList[currentIndex] = newList[randomIndex];
+      newList[randomIndex] = temporaryValue;
+    }
+    return newList;
+  }
+
   handleChangeRepeat = (repeat) => {
-    let check = typeof(repeat) == "boolean";
-    if(check) {
+    let check = typeof(repeat) == "boolean"; // check shuffle or repeat
+    if(check) { //check shuffle
+      let listRandom = this.handleRandomList();
       this.setState({
         shuffle: repeat,
+        listRandom: listRandom,
       });
     } else {
       this.setState({
@@ -141,8 +182,25 @@ export default class Song extends PageComponent {
     }
   }
 
+  renderButtonPlay(icon, className, handle) {
+    return (
+      <div>
+        <cm.RaisedButton
+          icon={icon}
+          className={className}
+          primary={true}
+          onClick={handle}/>
+      </div>
+    )
+  }
+
   render() {
     let song = this.state.song;
+    let repeat = this.state.repeat;
+    let shuffle = this.state.shuffle;
+    let playing = this.state.playing;
+    let iconPlay = playing ? <Pause /> : <PlayArrow />;
+    let showButtonNextPre = repeat === "one" && !shuffle;
 
     return (
       <div className="base-master-index">
@@ -165,30 +223,25 @@ export default class Song extends PageComponent {
           <Sound
             // url="samples/test.mp3"
             url={song.url || ""}
-            playStatus={this.state.playing ? Sound.status.PLAYING : Sound.status.PAUSED}
+            playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
             position={this.state.position}
             volume={this.state.volume}
             // onLoading={({bytesLoaded, bytesTotal}) => this.handleSongLoading()}
             onPlaying={(event) => this.handleSongPlaying(event)}
             onFinishedPlaying={this.handleSongFinishedPlaying} />
-          <cm.RaisedButton
-            icon={this.state.playing ? <Pause /> : <PlayArrow />}
-            className="button-play"
-            primary={true}
-            onClick={this.handlePlayMusic}/>
-          <cm.RaisedButton
-            icon={<SkipNext />}
-            className="skip-next"
-            primary={true}
-            onClick={this.handleNextMusic}/>
+
+          {showButtonNextPre ? "" : this.renderButtonPlay(<SkipPrevious />, "skip-previous", () => this.handleChangeMusic(false))}
+          {this.renderButtonPlay(iconPlay, "button-play", this.handlePlayMusic)}
+          {showButtonNextPre ? "" : this.renderButtonPlay(<SkipNext />, "skip-next", this.handleChangeMusic)}
+
           <Volume btnChange={this.handleBtnChangeVolume}
             sliderChange={this.handleSliderChange}
             volume={this.state.volume}
             statusVolume={this.state.statusVolume}
             />
           <Repeat onChange={this.handleChangeRepeat}
-            repeat={this.state.repeat}
-            shuffle={this.state.shuffle} />
+            repeat={repeat}
+            shuffle={shuffle} />
         </div>
       </div>
     );
