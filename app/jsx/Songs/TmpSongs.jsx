@@ -35,30 +35,30 @@ export default [
     duration: 0,
     id: 6
   },
-  {
-    url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/bass.mp3',
-    title: 'bass',
-    duration: 0,
-    id: 7
-  },
-  {
-    url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-0.mp3',
-    title: 'button 0',
-    duration: 0,
-    id: 8
-  },
-  {
-    url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-1.mp3',
-    title: 'button 1',
-    duration: 0,
-    id: 9
-  },
-  {
-    url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/click-high.mp3',
-    title: 'click high',
-    duration: 0,
-    id: 10
-  },
+  // {
+  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/bass.mp3',
+  //   title: 'bass',
+  //   duration: 0,
+  //   id: 7
+  // },
+  // {
+  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-0.mp3',
+  //   title: 'button 0',
+  //   duration: 0,
+  //   id: 8
+  // },
+  // {
+  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-1.mp3',
+  //   title: 'button 1',
+  //   duration: 0,
+  //   id: 9
+  // },
+  // {
+  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/click-high.mp3',
+  //   title: 'click high',
+  //   duration: 0,
+  //   id: 10
+  // },
   // {
   //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/click-low.mp3',
   //   title: 'click low',
