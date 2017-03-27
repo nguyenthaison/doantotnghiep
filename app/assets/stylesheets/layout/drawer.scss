@@ -1,0 +1,122 @@
+@import 'params';
+
+.app-drawer {
+  div {
+    overflow: hidden !important;
+    z-index: 1200 !important;
+  }
+
+  .drawer-toggle {
+    width: 30px;
+    height: 30px;
+    z-index: 1200;
+    position: absolute;
+    bottom: 40px;
+  }
+
+  .drawer-toggle:hover {
+    cursor: pointer;
+  }
+
+  .active-item {
+    color: white !important;
+  }
+
+  .normal-item {
+    color: #3E4146 !important;
+  }
+
+  .drawer-item {
+    font-size: 12px !important;
+    font-weight: bold !important;
+  }
+
+  .notification {
+    right: 70px !important;
+  }
+
+  .drawer-open {
+    .logo {
+      text-align: center;
+
+      img {
+        width: 128px;
+        height: 40px;
+        margin-bottom: 9px;
+        margin-top: 10px;
+      }
+    }
+
+    .logo-wrapper {
+      width: 100%;
+      border-bottom: solid 1px #e6e6e6;
+    }
+
+    .drawer-toggle {
+      margin-left: 145px;
+      background: url("/images/arrow.png") no-repeat;
+    }
+  }
+
+  .drawer-close {
+    .logo {
+      margin-top: 10px;
+      height: 40px;
+      margin-bottom: 2px;
+      width: 56px;
+    }
+
+    .drawer-toggle {
+      margin-left: 12px;
+      background: url("/images/arrow.png") no-repeat;
+      transform: scaleX(-1);
+    }
+  }
+
+  .material-icons {
+    font-size: 18px !important;
+    padding-top: 3px;
+  }
+
+  .faq-icon {
+    background-size: 16px 16px;
+    margin: 15px !important;
+
+    img {
+      padding-bottom: 25px;
+    }
+  }
+
+  .faq-icon-active {
+    background-size: 18px 18px;
+    margin: 15px !important;
+
+    img {
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.user-drawer {
+  div {
+    overflow: hidden !important;
+  }
+
+  .info:hover {
+    background-color: white !important;
+  }
+
+  .title {
+    margin: 15px 10px 0 18px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .close-user-drawer {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    margin-left: 10%;
+    color: white !important;
+  }
+}
