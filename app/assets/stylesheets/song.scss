@@ -1,7 +1,13 @@
 .base-master-index {
-  .button-control {
-    .slider-volume {
-      width: 100px;
+  .song-play {
+    border: 1px solid #f5eded;
+    background-color: #e6e6e6;
+
+    .button-control {
+      .slider-volume {
+        width: 100px;
+        margin-left: 70px;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import HeaderItem from './item.jsx';
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
-// import UserDrawer from "./../UserDrawer";
+import UserDrawer from "./../UserDrawer";
 // import ChangeFieldDrawer from "./../ChangeFieldDrawer";
 // import FavoriteDrawer from "./../FavoriteDrawer";
 // import SearchDrawer from "./../SearchDrawer";
@@ -15,9 +15,9 @@ export default class HeaderMenu extends BaseComponent {
     }
 
     this.showUserInfo = false;
-    this.showChangeField = false;
-    this.showFavorite = false;
-    this.showSearch = false;
+    // this.showChangeField = false;
+    // this.showFavorite = false;
+    // this.showSearch = false;
     // switch (App.auth.role) {
     //   case "admin":
     //     this.showChangeField = true;
@@ -37,7 +37,7 @@ export default class HeaderMenu extends BaseComponent {
   }
 
   handleOpenDrawer = (ref) => {
-    // this.refs[ref].open();
+    this.refs[ref].open();
   }
 
   setToolBar = (title, linkTo) => {
@@ -66,16 +66,16 @@ export default class HeaderMenu extends BaseComponent {
         <ul>
           {this.showUserInfo ? <li><HeaderItem icon="perm_identity" className="pointer"
             onClick={() => this.handleOpenDrawer("userDrawer")} /></li> : null}
-          {this.showChangeField ? <li><HeaderItem icon="swap_vert" className="pointer"
-            onClick={() => this.handleOpenDrawer("changeFieldDrawer")} /></li> : null}
-          {this.showFavorite ? <li><HeaderItem icon="favorite_border" className="pointer"
-            onClick={() => this.handleOpenDrawer("favoriteDrawer")} /></li> : null}
-          {this.showSearch ? <li><HeaderItem icon="search" className="pointer"
-            onClick={() => this.handleOpenDrawer("searchDrawer")} /></li> : null}
+          {/*this.showChangeField ? <li><HeaderItem icon="swap_vert" className="pointer"
+            onClick={() => this.handleOpenDrawer("changeFieldDrawer")} /></li> : null*/}
+          {/*this.showFavorite ? <li><HeaderItem icon="favorite_border" className="pointer"
+            onClick={() => this.handleOpenDrawer("favoriteDrawer")} /></li> : null*/}
+          {/*this.showSearch ? <li><HeaderItem icon="search" className="pointer"
+            onClick={() => this.handleOpenDrawer("searchDrawer")} /></li> : null*/}
           {this.state.linkTo ? <li className="btn-header-menu">{this.renderButton()}</li> : null}
         </ul>
-        {/*<UserDrawer ref="userDrawer" />
-        <ChangeFieldDrawer ref="changeFieldDrawer" />
+        {<UserDrawer ref="userDrawer" />
+        /*<ChangeFieldDrawer ref="changeFieldDrawer" />
         <FavoriteDrawer ref="favoriteDrawer" />
         <SearchDrawer ref="searchDrawer" />*/}
       </div>

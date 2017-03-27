@@ -1,0 +1,13 @@
+$primary-color: #3b3e43;
+$secondary-color: #fc968a;
+$label-color: #9e9e9e;
+
+.primary-color {
+  color: $primary-color !important;
+  fill: $primary-color !important;
+}
+
+.secondary-color {
+  color: $secondary-color !important;
+  fill: $secondary-color !important;
+}

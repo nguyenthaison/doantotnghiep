@@ -6,7 +6,7 @@ export default [
     id: 1
   },
   {
-    url: 'samples/test.mp3',
+    url: 'samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3',
     title: '440hz',
     duration: 0,
     id: 2

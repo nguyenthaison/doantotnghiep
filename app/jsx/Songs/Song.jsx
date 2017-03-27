@@ -184,7 +184,7 @@ export default class Song extends PageComponent {
 
   renderButtonPlay(icon, className, handle) {
     return (
-      <div>
+      <div className="col-md-1">
         <cm.RaisedButton
           icon={icon}
           className={className}
@@ -200,23 +200,17 @@ export default class Song extends PageComponent {
     let shuffle = this.state.shuffle;
     let playing = this.state.playing;
     let iconPlay = playing ? <Pause /> : <PlayArrow />;
-    let showButtonNextPre = repeat === "one" && !shuffle;
+    // let showButtonNextPre = repeat === "one" && !shuffle;
 
     return (
-      <div className="base-master-index">
+      <div className="song-play">
         <div className="display">
-          <div className="row">
-            <div className="col-md-2">
-            </div>
-            <div className="col-md-7">
-              <Slider
-                value={this.state.completed}
-                min={-1}
-                max={101}
-                onChange={this.handleChangeSlider} />
-            </div>
-            <div className="col-md-5">
-            </div>
+          <div className="slider-music">
+            <Slider
+              value={this.state.completed}
+              min={-1}
+              max={101}
+              onChange={this.handleChangeSlider} />
           </div>
         </div>
         <div className="button-control">
@@ -229,19 +223,21 @@ export default class Song extends PageComponent {
             // onLoading={({bytesLoaded, bytesTotal}) => this.handleSongLoading()}
             onPlaying={(event) => this.handleSongPlaying(event)}
             onFinishedPlaying={this.handleSongFinishedPlaying} />
-
-          {showButtonNextPre ? "" : this.renderButtonPlay(<SkipPrevious />, "skip-previous", () => this.handleChangeMusic(false))}
-          {this.renderButtonPlay(iconPlay, "button-play", this.handlePlayMusic)}
-          {showButtonNextPre ? "" : this.renderButtonPlay(<SkipNext />, "skip-next", this.handleChangeMusic)}
-
-          <Volume btnChange={this.handleBtnChangeVolume}
-            sliderChange={this.handleSliderChange}
-            volume={this.state.volume}
-            statusVolume={this.state.statusVolume}
-            />
-          <Repeat onChange={this.handleChangeRepeat}
-            repeat={repeat}
-            shuffle={shuffle} />
+          <div className="row">
+            {this.renderButtonPlay(<SkipPrevious />, "skip-previous", () => this.handleChangeMusic(false))}
+            {this.renderButtonPlay(iconPlay, "button-play", this.handlePlayMusic)}
+            {this.renderButtonPlay(<SkipNext />, "skip-next", this.handleChangeMusic)}
+            <div className="col-md-1"></div>
+            <Volume btnChange={this.handleBtnChangeVolume}
+              sliderChange={this.handleSliderChange}
+              volume={this.state.volume}
+              statusVolume={this.state.statusVolume}
+              />
+            <div className="col-md-2"></div>
+            <Repeat onChange={this.handleChangeRepeat}
+              repeat={repeat}
+              shuffle={shuffle} />
+          </div>
         </div>
       </div>
     );

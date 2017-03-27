@@ -33,43 +33,46 @@ export default class Index extends PageComponent {
   render() {
     let list = this.state.list;
     return (
-      <div className="base-master-index">
-        <div className="list-song">
-          <div className="row">
-              <div className="col-xs-4 td">
-                <p>Bang xep hang</p>
-              </div>
-              <div className="col-xs-4 td">
-              </div>
-              <div className="col-xs-4 td">
-                <cm.RaisedButton
-                  icon={<PlayCircleOutline />}
-                  className="button-volume"
-                  primary={true}
-                  label="Play all"
-                  onClick={() => this.handleClickPlayAll(list)}/>
-              </div>
-            </div>
-          {list.map((item, index) => {
-            return(
-              <div key={index}>
-                <div className="row table-row table-row-striped-2 pointer"
-                  onClick={() => this.handleClickPlayOne(item)}>
-                  <div className="col-xs-4 td">
-                    {index}
-                  </div>
-                  <div className="col-xs-4 td">
-                    {item.title}
-                  </div>
-                  <div className="col-xs-4 td">
-                    {item.duration}
-                  </div>
+      <div className="base-master-index row">
+        <div className="col-xs-9">
+          <div className="list-song">
+            <div className="row">
+                <div className="col-xs-4 td">
+                  <p>Bang xep hang</p>
+                </div>
+                <div className="col-xs-4 td">
+                </div>
+                <div className="col-xs-4 td">
+                  <cm.RaisedButton
+                    icon={<PlayCircleOutline />}
+                    className="button-volume"
+                    primary={true}
+                    label="Play all"
+                    onClick={() => this.handleClickPlayAll(list)}/>
                 </div>
               </div>
-            )
-          })}
+            {list.map((item, index) => {
+              return(
+                <div key={index}>
+                  <div className="row table-row table-row-striped-2 pointer"
+                    onClick={() => this.handleClickPlayOne(item)}>
+                    <div className="col-xs-4 td">
+                      {index}
+                    </div>
+                    <div className="col-xs-4 td">
+                      {item.title}
+                    </div>
+                    <div className="col-xs-4 td">
+                      {item.duration}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <Song ref="song" />
         </div>
-        <Song ref="song" />
+        <div className="col-md-3"></div>
       </div>
     )
   }

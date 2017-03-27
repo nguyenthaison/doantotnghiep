@@ -6,8 +6,6 @@ import Shuffle from "material-ui/svg-icons/av/shuffle";
 export default class Index extends PageComponent {
   constructor(props) {
     super(props);
-
-    this
   }
 
   handleChangeRepeat = (repeat) => {
@@ -21,17 +19,21 @@ export default class Index extends PageComponent {
     let icon = repeat == "one" ? <RepeatOne /> : <Repeat />
 
     return (
-      <div>
-        <cm.RaisedButton
-          icon={icon}
-          className="button-repeat"
-          primary={true}
-          onClick={() => this.handleChangeRepeat(repeat)}/>
-        <cm.RaisedButton
-          icon={<Shuffle />}
-          className="button-shuffle"
-          primary={true}
-          onClick={() => this.handleChangeRepeat(shuffle)}/>
+      <div className="col-md-2 row">
+        <div className="col-md-6">
+          <cm.RaisedButton
+            icon={icon}
+            className="button-repeat"
+            primary={true}
+            onClick={() => this.handleChangeRepeat(repeat)}/>
+        </div>
+        <div className="col-md-6">
+          <cm.RaisedButton
+            icon={<Shuffle />}
+            className="button-shuffle"
+            primary={true}
+            onClick={() => this.handleChangeRepeat(shuffle)}/>
+        </div>
       </div>
     )
   }

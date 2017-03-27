@@ -48,15 +48,9 @@ export default class Drawer extends BaseComponent {
   render() {
     let drawerClass = this.props.collapsed ? "drawer-close" : "drawer-open";
     let width = this.props.collapsed ? 56 : 195;
-    // let auth = App.auth;
-    // let defaultBigLogoPath = "/images/headphone.jpg";
-    // let defaultSmallLogoPath = "/images/headphone.jpg";
-    // let bigLogo = auth && auth.field_logo ? auth.field_logo.thumb_url :
-    //   defaultBigLogoPath;
-    // let smallLogo = auth && auth.small_field_logo ? auth.small_field_logo.thumb_url :
-    //   defaultSmallLogoPath;
-    // let logo = this.props.collapsed ? smallLogo : bigLogo;
-    let logo = "/images/headphone.jpg";
+    let bigLogo = "/images/headphone.jpg";
+    let smallLogo = "/images/logo.png"
+    let logo = this.props.collapsed ? smallLogo : bigLogo;
 
     return (
       <mui.Drawer open={true} width={width} className="app-drawer">
@@ -68,6 +62,10 @@ export default class Drawer extends BaseComponent {
           </div>
           <mui.Menu onItemTouchTap={this.handleTouchMenu} className="default-cursor">
             {this.renderMenuItem("Home", "/", "home")}
+            {this.renderMenuItem("Subject", "/", "subject")}
+            {this.renderMenuItem("Ranking", "/", "filter_list")}
+            {this.renderMenuItem("Album", "/", "album")}
+            {this.renderMenuItem("Song", "/songs", "library_music")}
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>
         </div>

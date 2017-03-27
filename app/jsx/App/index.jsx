@@ -11,6 +11,7 @@ export default class App extends BaseComponent {
     this.auth = true;
 
     this.state = {
+      drawerCollapsed: false,
     }
   }
 
