@@ -12,6 +12,7 @@ export default class Index extends PageComponent {
   }
 
   componentDidMount() {
+    this.setToolBar("Song");
     API.Song.getList(this.handleGetListCallback);
   }
 

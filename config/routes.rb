@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :songs
+      resources :subjects
+      resources :ranks
+      resources :albums
+      resources :songs
     end
   end
 
