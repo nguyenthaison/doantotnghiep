@@ -1,5 +1,3 @@
-// import ReactInterval from "react-interval";
-
 export default class Index extends PageComponent {
   constructor(props) {
     super(props);
@@ -8,13 +6,12 @@ export default class Index extends PageComponent {
   renderCountDuration() {
     let currentPosition = this.props.position;
     let min = Math.floor(currentPosition / 60000);
-    let second = Math.floor(currentPosition / 1000);
+    let second = Math.floor(currentPosition / 1000) - min * 60;
     let minPlaceholder = null;
     let secondPlaceholder = null;
     if (min < 10) {
       minPlaceholder = 0;
     }
-
     if (second < 10) {
       secondPlaceholder = 0;
     }
@@ -31,7 +28,6 @@ export default class Index extends PageComponent {
     if (minuteEstimate < 10) {
       minPlaceholder = 0;
     }
-
     if (secondEstimate < 10) {
       secondPlaceholder = 0;
     }
