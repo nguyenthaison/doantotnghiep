@@ -62,9 +62,9 @@ export default class Drawer extends BaseComponent {
           </div>
           <mui.Menu onItemTouchTap={this.handleTouchMenu} className="default-cursor">
             {this.renderMenuItem("Home", "/", "home")}
-            {this.renderMenuItem("Subject", "/", "subject")}
-            {this.renderMenuItem("Ranking", "/", "filter_list")}
-            {this.renderMenuItem("Album", "/", "album")}
+            {this.renderMenuItem("Subject", "/subjects", "subject")}
+            {this.renderMenuItem("Ranking", "/ranks", "filter_list")}
+            {this.renderMenuItem("Album", "/albums", "album")}
             {this.renderMenuItem("Song", "/songs", "library_music")}
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>

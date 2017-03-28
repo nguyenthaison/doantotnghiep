@@ -1,4 +1,4 @@
-export default class Home extends PageComponent {
+export default class index extends PageComponent {
   constructor(props) {
     super(props);
 
@@ -7,7 +7,7 @@ export default class Home extends PageComponent {
   }
 
   componentDidMount() {
-    this.setToolBar("Home");
+    this.setToolBar("Subject");
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -22,10 +22,10 @@ export default class Home extends PageComponent {
     return (
       <div className="top-page col-md-12">
         <div className="col-md-9">
-          <p>well come to homepage</p>
+          <h1>Hot</h1>
         </div>
         <div className="col-md-3">
-          <p>reference</p>
+          <h1>other</h1>
         </div>
       </div>
     )
