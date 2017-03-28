@@ -6,6 +6,7 @@ import SkipNext from "material-ui/svg-icons/av/skip-next";
 import Slider from 'material-ui/Slider';
 import Volume from './Volume';
 import Repeat from './Repeat';
+import Duration from './Duration';
 
 export default class Song extends PageComponent {
   constructor(props) {
@@ -23,6 +24,7 @@ export default class Song extends PageComponent {
       song: {},
       list: [],
       listRandom: [],
+      duration: null,
     }
   }
 
@@ -63,6 +65,7 @@ export default class Song extends PageComponent {
     this.setState({
       completed: completed,
       position: event.position,
+      duration: event.duration,
     });
   }
 
@@ -154,12 +157,8 @@ export default class Song extends PageComponent {
     let newList = update(list, {})
     let currentIndex = newList.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
-
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-
-      // And swap it with the current element.
       temporaryValue = newList[currentIndex];
       newList[currentIndex] = newList[randomIndex];
       newList[randomIndex] = temporaryValue;
@@ -200,7 +199,6 @@ export default class Song extends PageComponent {
     let shuffle = this.state.shuffle;
     let playing = this.state.playing;
     let iconPlay = playing ? <Pause /> : <PlayArrow />;
-    // let showButtonNextPre = repeat === "one" && !shuffle;
 
     return (
       <div className="song-play">
@@ -233,7 +231,9 @@ export default class Song extends PageComponent {
               volume={this.state.volume}
               statusVolume={this.state.statusVolume}
               />
-            <div className="col-md-2"></div>
+            <div className="col-md-2">
+              <Duration duration={this.state.duration} position={this.state.position} />
+            </div>
             <Repeat onChange={this.handleChangeRepeat}
               repeat={repeat}
               shuffle={shuffle} />
