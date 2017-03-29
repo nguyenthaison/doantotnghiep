@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317074532) do
+ActiveRecord::Schema.define(version: 20170329124326) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "view"
@@ -28,15 +28,35 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "author_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "song_id"
+    t.integer  "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_author_songs_on_author_id", using: :btree
+    t.index ["song_id"], name: "index_author_songs_on_song_id", using: :btree
+  end
+
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.date     "dob"
+    t.text     "content",      limit: 65535
+    t.integer  "countries_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["countries_id"], name: "index_authors_on_countries_id", using: :btree
+  end
+
   create_table "avatars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "avatar"
     t.integer  "user_id"
-    t.integer  "singer_author_id"
+    t.integer  "singer_id"
     t.integer  "album_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_avatars_on_album_id", using: :btree
-    t.index ["singer_author_id"], name: "index_avatars_on_singer_author_id", using: :btree
+    t.index ["singer_id"], name: "index_avatars_on_singer_id", using: :btree
     t.index ["user_id"], name: "index_avatars_on_user_id", using: :btree
   end
 
@@ -82,23 +102,51 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.index ["user_id"], name: "index_lyrics_on_user_id", using: :btree
   end
 
+  create_table "music_type_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "music_type_id"
+    t.integer  "song_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["music_type_id"], name: "index_music_type_songs_on_music_type_id", using: :btree
+    t.index ["song_id"], name: "index_music_type_songs_on_song_id", using: :btree
+  end
+
   create_table "music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "rank_type"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "view_start"
+    t.string   "view_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.integer  "singer_author_id"
-    t.text     "notes",            limit: 65535
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["singer_author_id"], name: "index_relationships_on_singer_author_id", using: :btree
+    t.integer  "singer_id"
+    t.text     "notes",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["singer_id"], name: "index_relationships_on_singer_id", using: :btree
     t.index ["user_id"], name: "index_relationships_on_user_id", using: :btree
   end
 
-  create_table "singer_authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "singer_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "song_id"
+    t.integer  "singer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["singer_id"], name: "index_singer_songs_on_singer_id", using: :btree
+    t.index ["song_id"], name: "index_singer_songs_on_song_id", using: :btree
+  end
+
+  create_table "singers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "age"
     t.date     "dob"
@@ -106,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.integer  "countries_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["countries_id"], name: "index_singer_authors_on_countries_id", using: :btree
+    t.index ["countries_id"], name: "index_singers_on_countries_id", using: :btree
   end
 
   create_table "songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,15 +163,15 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.integer  "song_type"
     t.integer  "rank"
     t.integer  "download"
+    t.string   "link"
+    t.integer  "author_id"
     t.integer  "album_id"
-    t.integer  "music_type_id"
     t.integer  "user_id"
-    t.integer  "singer_author_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "singer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
-    t.index ["music_type_id"], name: "index_songs_on_music_type_id", using: :btree
-    t.index ["singer_author_id"], name: "index_songs_on_singer_author_id", using: :btree
+    t.index ["singer_id"], name: "index_songs_on_singer_id", using: :btree
     t.index ["user_id"], name: "index_songs_on_user_id", using: :btree
   end
 
@@ -132,6 +180,16 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "user_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "song_id"
+    t.integer  "rank_id"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rank_id"], name: "index_user_ranks_on_rank_id", using: :btree
+    t.index ["song_id"], name: "index_user_ranks_on_song_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -156,12 +214,12 @@ ActiveRecord::Schema.define(version: 20170317074532) do
     t.integer  "album_id"
     t.integer  "music_type_id"
     t.integer  "user_id"
-    t.integer  "singer_author_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "singer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["album_id"], name: "index_videos_on_album_id", using: :btree
     t.index ["music_type_id"], name: "index_videos_on_music_type_id", using: :btree
-    t.index ["singer_author_id"], name: "index_videos_on_singer_author_id", using: :btree
+    t.index ["singer_id"], name: "index_videos_on_singer_id", using: :btree
     t.index ["user_id"], name: "index_videos_on_user_id", using: :btree
   end
 
