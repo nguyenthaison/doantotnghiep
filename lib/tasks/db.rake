@@ -3,30 +3,51 @@ namespace :db do
   task remake_data: :environment do
     Rake::Task["db:migrate:reset"].invoke
 
-    puts "Creating Admin"
-    user = Fabricate :user, role: 2, email: "admin@framgia.com",
-      name: "Admin", login_id: "Admin"
+    puts "Country"
+    Fabricate :country, short_name: "vn", full_name: "Viet Nam"
+    Fabricate :country, short_name: "us", full_name: "American"
 
-    puts "Creating member"
+    puts "Singer"
+    Fabricate :singer, name: "LK", age: 20, content: "khong co gi",countries_id: 1
+    Fabricate :singer, name: "phuong anh", age: 30, content: "khong co gi",countries_id: 1
+    Fabricate :singer, name: "vu cat tuong", age: 40, content: "khong co gi",countries_id: 1
+    Fabricate :singer, name: "Native Tongue", age: 50, content: "khong co gi",countries_id: 2
+    Fabricate :singer, name: "trung quan", age: 35, content: "khong co gi",countries_id: 1
+    Fabricate :singer, name: "quang le", age: 25, content: "khong co gi",countries_id: 1
+
+    puts "author"
     5.times do |i|
-      Fabricate :user, role: 0, email: "member#{i}@framgia.com",
-        login_id: "Member#{i}"
+      Fabricate :singer, name: "author #{i}", age: i * 12, content: "khong co gi",countries_id: 1
     end
 
-    puts "Creating Client"
-    30.times do |i|
-      Fabricate :client, name: "client-#{i + 1}", short_name: "F#{i}",
-        address: "ha noi", phone_number: "012345678#{i}", creator_id: User.first.id,
-        updater_id: User.first.id, code: "F000000#{i}"
+    puts "Music type"
+    Fabricate :music_type, name: "Au My"
+    Fabricate :music_type, name: "Viet Nam"
+    Fabricate :music_type, name: "Pop"
+    Fabricate :music_type, name: "Rap"
+    Fabricate :music_type, name: "Country"
+
+    puts "Album"
+    5.times do |i|
+      Fabricate :album, view: i * 20, rank: i, share: i * 20, name: "Album #{i}"
     end
 
-    puts "Creating Line"
-    30.times do |i|
-      Fabricate :line, name: "line-#{i + 1}", client_id: i + 1, code: "F000000#{i}"
-    end
+    puts "Song"
+    Fabricate :song, name: "Ngoi Sao Le Loi Lonely Star", view: 10, song_type: 1,
+      download: 100, album_id: 1, user_id: 1,
+      link: "samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3"
+    Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 100, album_id: 1,
+      user_id: 1, singer_id: 3, link: "samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3"
+    Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 100, album_id: 1,
+      user_id: 1, singer_id: 4,
+      link: "samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3"
+    Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 100, album_id: 1,
+      user_id: 1, singer_id: 3, link: "samples/Mo - Vu Cat Tuong.mp3"
+    Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 100, album_id: 1,
+      user_id: 1, singer_id: 5, link: "samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3"
+    Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 100, album_id: 1,
+      user_id: 1, singer_id: 6, link: "samples/XuanNayConKhongVe-QuangLe-1428282.mp3"
 
     puts "Success remake data"
   end
-
-
 end
