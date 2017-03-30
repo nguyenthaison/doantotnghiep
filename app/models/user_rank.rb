@@ -1,2 +1,0 @@
-class UserRank < ApplicationRecord
-end

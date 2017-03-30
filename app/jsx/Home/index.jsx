@@ -1,7 +1,6 @@
 import {Tabs, Tab} from "material-ui/Tabs";
 import NewSong from "./NewSong";
-import NewAlbum from "./NewAlbum";
-import HotMusic from "./HotMusic";
+import Singer from "./Singer";
 import Ranking from "./Ranking";
 
 export default class Home extends PageComponent {
@@ -34,10 +33,15 @@ export default class Home extends PageComponent {
             <div className="new-song">
               <NewSong />
             </div>
+            <div className="new-song">
+              <Singer />
+            </div>
           </div>
         </div>
         <div className="col-md-3">
-          <p>reference</p>
+          <div className="home-left">
+            <p>reference</p>
+          </div>
         </div>
       </div>
     )
