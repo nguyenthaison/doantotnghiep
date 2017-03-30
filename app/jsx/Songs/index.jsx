@@ -23,12 +23,14 @@ export default class Index extends PageComponent {
     });
   }
 
-  handleClickPlayAll = (list) => {
-    this.refs.song.playingListMusic(list);
+  handleClickPlayAll = () => {
+    let list = this.state.list;
+    let name = list[0].title;
+    Helper.transitionTo("/song", list);
   }
 
   handleClickPlayOne = (item) => {
-    this.refs.song.playingMusic(item);
+    Helper.transitionTo("/song", item);
   }
 
   render() {
@@ -49,7 +51,7 @@ export default class Index extends PageComponent {
                     className="button-volume"
                     primary={true}
                     label="Play all"
-                    onClick={() => this.handleClickPlayAll(list)}/>
+                    onClick={this.handleClickPlayAll}/>
                 </div>
               </div>
             {list.map((item, index) => {
@@ -71,7 +73,6 @@ export default class Index extends PageComponent {
               )
             })}
           </div>
-          <Song ref="song" />
         </div>
         <div className="col-md-3"></div>
       </div>

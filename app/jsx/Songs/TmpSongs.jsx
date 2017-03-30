@@ -2,43 +2,43 @@ export default [
   {
     url: 'samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3',
     title: '1hz-10khz sweep',
-    duration: 0,
+    // duration: 0,
     id: 1
   },
   {
     url: 'samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3',
     title: '440hz',
-    duration: 0,
+    // duration: 0,
     id: 2
   },
   {
     url: 'samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3',
     title: '880hz',
-    duration: 0,
+    // duration: 0,
     id: 3
   },
   {
     url: 'samples/Mo - Vu Cat Tuong.mp3',
     title: 'background 0',
-    duration: 0,
+    // duration: 0,
     id: 4
   },
   {
     url: 'samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3',
     title: 'background 1',
-    duration: 0,
+    // duration: 0,
     id: 5
   },
   {
     url: 'samples/XuanNayConKhongVe-QuangLe-1428282.mp3',
     title: 'background 2',
-    duration: 0,
+    // duration: 0,
     id: 6
   },
   // {
-  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/bass.mp3',
-  //   title: 'bass',
-  //   duration: 0,
+  //   url: 'https://s3.amazonaws.com/sonbuffetbucket/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3',
+  //   title: 'test',
+    // duration: 0,
   //   id: 7
   // },
   // {

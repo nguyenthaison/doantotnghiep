@@ -66,6 +66,8 @@ export default class Drawer extends BaseComponent {
             {this.renderMenuItem("Ranking", "/ranks", "filter_list")}
             {this.renderMenuItem("Album", "/albums", "album")}
             {this.renderMenuItem("Song", "/songs", "library_music")}
+            {this.renderMenuItem("Artist", "/artists", "people")}
+            {this.renderMenuItem("Personal", "/personal", "account_circle")}
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>
         </div>

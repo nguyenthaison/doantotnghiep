@@ -1,3 +1,4 @@
+import Sound from "react-sound";
 export default class index extends PageComponent {
   constructor(props) {
     super(props);
@@ -21,7 +22,14 @@ export default class index extends PageComponent {
   render() {
     return (
       <div className="top-page col-md-12">
-        <span>Album cac the loai</span>
+        <Sound
+          url="samples/Mo - Vu Cat Tuong.mp3"
+          playStatus={Sound.status.PLAYING}
+          position={0}
+          volume={80}
+          // onPlaying={(event) => this.handleSongPlaying(event)}
+          // onFinishedPlaying={this.handleSongFinishedPlaying} />
+          />
       </div>
     )
   }
