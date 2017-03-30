@@ -28,12 +28,27 @@ export default class Song extends PageComponent {
     }
   }
 
+  componentWillMount() {
+    let state = Helper.getCurrentLocationState();
+    this.handleCallbackPlayMusic(state);
+  }
+
   playingMusic(song) {
     this.setState({
       playing: true,
       song: song,
       repeat: "one",
       list: [],
+      position: 0,
+    });
+  }
+
+  handleCallbackPlayMusic = (state) => {
+    this.setState({
+      playing: true,
+      song: state.length ? state[0] : state,
+      repeat: "one",
+      list: state.length ? state : [],
       position: 0,
     });
   }
@@ -110,8 +125,10 @@ export default class Song extends PageComponent {
   }
 
   handleChangeSlider = (event, value) => {
+    let duration = this.state.duration;
+    let position = value * duration / 100;
     this.setState({
-      position: value,
+      position: position,
     });
   }
 
@@ -213,12 +230,10 @@ export default class Song extends PageComponent {
         </div>
         <div className="button-control">
           <Sound
-            // url="samples/test.mp3"
             url={song.url || ""}
             playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
             position={this.state.position}
             volume={this.state.volume}
-            // onLoading={({bytesLoaded, bytesTotal}) => this.handleSongLoading()}
             onPlaying={(event) => this.handleSongPlaying(event)}
             onFinishedPlaying={this.handleSongFinishedPlaying} />
           <div className="row">
