@@ -7,8 +7,47 @@
   .home-center {
 
     .bxh {
-      background-color: #e5e5e5;
+      // background-color: #e5e5e5;
       height: 500px;
+
+      .child-tab {
+        .main1 {
+          float: left;
+          width: 31%;
+          border: 1px #c7c7c7 solid;
+        }
+
+        .main2, .main3 {
+          float: left;
+          width: 31%;
+          margin-left: 30px;
+          border: 1px #c7c7c7 solid;
+        }
+
+        .main1-top {
+          padding-top: 10px;
+          padding-left: 10px;
+        }
+
+        .main1-body {
+          padding-top: 10px;
+          padding-left: 10px;
+
+          span:hover {
+            color: #cc10cc;
+          }
+
+          .song-item {
+            .rank-song {
+
+            }
+
+            .content {
+
+            }
+          }
+        }
+      }
     }
 
     .new-song {
@@ -16,5 +55,9 @@
       margin-top: 20px;
       height: 500px;
     }
+  }
+
+  .home-left {
+    background-color: #e5e5e5;
   }
 }

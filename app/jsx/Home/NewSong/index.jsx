@@ -1,48 +1,53 @@
+import TmpSongs from "../../Songs/TmpSongs";
+
 export default class index extends PageComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      listVN: [],
-      ListUSUK: [],
+      listVn: [],
+      ListUs: [],
+      ListKp: [],
     };
   }
 
   componentDidMount() {
-    API.Song.getList(this.handleGetListVNCallback, this.getOptionVn())
-    API.Song.getList(this.handleGetListUsukCallback, this.getOptionUsuk())
+    API.Song.getList(this.handleGetListVnCallback, this.getOption("vn"))
+    API.Song.getList(this.handleGetListUsCallback, this.getOption("us"))
+    API.Song.getList(this.handleGetListKpCallback, this.getOption("kp"))
   }
 
-  getOptionVn() {
+  getOption(type) {
     return {
-      filter: {music_type: "Viet Nam"},
+      filter: {music_type: type},
     }
   }
 
-  getOptionUsuk() {
-    return {
-      filter: {music_type: "Au my"},
-    }
-  }
-
-  handleGetListVNCallback = (status, data) => {
+  handleGetListVnCallback = (status, data) => {
     if (!status) return;
     this.setState({
-      listVN: data.list,
+      listVn: TmpSongs,
     });
   }
 
-  handleGetListUsukCallback = (status, data) => {
+  handleGetListUsCallback = (status, data) => {
     if (!status) return;
     this.setState({
-      ListUSUK: data.list,
+      ListUs: TmpSongs,
+    });
+  }
+
+  handleGetListKpCallback = (status, data) => {
+    if (!status) return;
+    this.setState({
+      ListKp: TmpSongs,
     });
   }
 
   render() {
     return (
       <div className="child-tab">
-        new song
+      new song
       </div>
     )
   }

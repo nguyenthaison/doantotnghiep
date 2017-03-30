@@ -1,70 +1,80 @@
 export default [
   {
     url: 'samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3',
-    title: '1hz-10khz sweep',
+    title: 'Ngoi sao le loi',
     // duration: 0,
-    id: 1
+    singer: "Lil Knight",
+    id: 1,
   },
   {
     url: 'samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3',
-    title: '440hz',
+    title: 'em oi',
     // duration: 0,
+    singer: "Hakoota, Dung Ha",
     id: 2
   },
   {
     url: 'samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3',
-    title: '880hz',
+    title: 'Quinn XCII',
     // duration: 0,
+    singer: "ayokay",
     id: 3
   },
   {
     url: 'samples/Mo - Vu Cat Tuong.mp3',
-    title: 'background 0',
+    title: 'Mo',
     // duration: 0,
+    singer: "Vu Cat Tuong",
     id: 4
   },
   {
     url: 'samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3',
-    title: 'background 1',
+    title: 'Trai dat tron khong gi la khong the',
     // duration: 0,
+    singer: "Trung Quan",
     id: 5
   },
   {
     url: 'samples/XuanNayConKhongVe-QuangLe-1428282.mp3',
-    title: 'background 2',
+    title: 'xuan nay con khong ve',
     // duration: 0,
+    singer: "Quang Le",
     id: 6
   },
   // {
   //   url: 'https://s3.amazonaws.com/sonbuffetbucket/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3',
   //   title: 'test',
-    // duration: 0,
+  //   duration: 0,
   //   id: 7
   // },
-  // {
-  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-0.mp3',
-  //   title: 'button 0',
-  //   duration: 0,
-  //   id: 8
-  // },
-  // {
-  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/button-1.mp3',
-  //   title: 'button 1',
-  //   duration: 0,
-  //   id: 9
-  // },
-  // {
-  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/click-high.mp3',
-  //   title: 'click high',
-  //   duration: 0,
-  //   id: 10
-  // },
-  // {
-  //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/click-low.mp3',
-  //   title: 'click low',
-  //   duration: 0,
-  //   id: 1
-  // },
+  {
+    url: 'samples/Anh-Da-Quen-Voi-Co-Don-Soobin-Hoang-Son.flac',
+    title: 'anh da quen voi co don',
+    // duration: 0,
+    singer: "Soobin Hoang Son",
+    id: 8
+  },
+  {
+    url: 'samples/Co-Duoc-Khong-Em-Chi-Dan.flac',
+    title: 'co duoc khong em',
+    // duration: 0,
+    singer: "Chi Dan",
+    id: 9
+  },
+  {
+    url: 'samples/Con-Tim-Tan-Vo-Phan-Manh-Quynh.mp3',
+    title: 'con tim tan vo',
+    // duration: 0,
+    singer: "Phan Manh Quynh",
+    id: 10
+  },
+  {
+    url: 'samples/Trai-Qua-Khoi-My-Pudding-Vu.flac',
+    title: 'Trai qua',
+    // duration: 0,
+    singer: "Khoi My",
+    id: 7
+  },
   // {
   //   url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/coins.mp3',
   //   title: 'coins',

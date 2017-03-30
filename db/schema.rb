@@ -121,8 +121,6 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.integer  "rank_type"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "view_start"
-    t.string   "view_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -157,6 +155,18 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.index ["countries_id"], name: "index_singers_on_countries_id", using: :btree
   end
 
+  create_table "song_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "song_id"
+    t.integer  "rank_id"
+    t.integer  "rank"
+    t.string   "view_start"
+    t.string   "view_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rank_id"], name: "index_song_ranks_on_rank_id", using: :btree
+    t.index ["song_id"], name: "index_song_ranks_on_song_id", using: :btree
+  end
+
   create_table "songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "view"
@@ -180,16 +190,6 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "user_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "song_id"
-    t.integer  "rank_id"
-    t.integer  "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["rank_id"], name: "index_user_ranks_on_rank_id", using: :btree
-    t.index ["song_id"], name: "index_user_ranks_on_song_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
