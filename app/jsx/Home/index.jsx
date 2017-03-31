@@ -30,7 +30,7 @@ export default class Home extends PageComponent {
             <div className="bxh">
               <Ranking />
             </div>
-            <div className="new-song">
+            <div className="bxh">
               <NewSong />
             </div>
             <div className="new-song">
