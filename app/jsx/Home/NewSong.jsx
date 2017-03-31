@@ -1,13 +1,14 @@
-import TmpSongs from "../../Songs/TmpSongs";
+import TmpSongs from "../Songs/TmpSongs";
+import CommonRank from "./CommonRank";
 
-export default class index extends PageComponent {
+export default class NewSong extends PageComponent {
   constructor(props) {
     super(props);
 
     this.state = {
       listVn: [],
-      ListUs: [],
-      ListKp: [],
+      listUs: [],
+      listKp: [],
     };
   }
 
@@ -33,21 +34,29 @@ export default class index extends PageComponent {
   handleGetListUsCallback = (status, data) => {
     if (!status) return;
     this.setState({
-      ListUs: TmpSongs,
+      listUs: TmpSongs,
     });
   }
 
   handleGetListKpCallback = (status, data) => {
     if (!status) return;
     this.setState({
-      ListKp: TmpSongs,
+      listKp: TmpSongs,
     });
   }
 
   render() {
+    let listVn = this.state.listVn;
+    let listUs = this.state.listUs;
+    let listKp = this.state.listKp;
+
     return (
       <div className="child-tab">
-      new song
+        <CommonRank
+          listVn={listVn}
+          listUs={listUs}
+          listKp={listKp}
+        />
       </div>
     )
   }
