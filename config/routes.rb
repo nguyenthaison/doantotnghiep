@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :subjects
       resources :ranks
       resources :albums
-      resources :songs
+      resources :countries
     end
   end
 

@@ -1,2 +1,0 @@
-class Attachment < ApplicationRecord
-end

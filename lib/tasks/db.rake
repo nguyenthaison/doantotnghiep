@@ -21,11 +21,25 @@ namespace :db do
     end
 
     puts "Music type"
-    Fabricate :music_type, name: "Au My"
-    Fabricate :music_type, name: "Viet Nam"
+    Fabricate :music_type, name: "nhac tre"
+    Fabricate :music_type, name: "rock"
     Fabricate :music_type, name: "Pop"
     Fabricate :music_type, name: "Rap"
-    Fabricate :music_type, name: "Country"
+    Fabricate :music_type, name: "country"
+    Fabricate :music_type, name: "thieu nhi"
+    Fabricate :music_type, name: "blue"
+
+    puts "Country music type"
+    Fabricate :country_music_type, music_type_id: 1, country_id: 1
+    Fabricate :country_music_type, music_type_id: 2, country_id: 1
+    Fabricate :country_music_type, music_type_id: 2, country_id: 2
+    Fabricate :country_music_type, music_type_id: 3, country_id: 1
+    Fabricate :country_music_type, music_type_id: 3, country_id: 2
+    Fabricate :country_music_type, music_type_id: 4, country_id: 1
+    Fabricate :country_music_type, music_type_id: 4, country_id: 2
+    Fabricate :country_music_type, music_type_id: 5, country_id: 2
+    Fabricate :country_music_type, music_type_id: 6, country_id: 1
+    Fabricate :country_music_type, music_type_id: 7, country_id: 2
 
     puts "Album"
     5.times do |i|
