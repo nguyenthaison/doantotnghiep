@@ -1,4 +1,5 @@
 import Uploader from "./Uploader";
+import Checkbox from 'material-ui/Checkbox';
 
 export default class index extends PageComponent {
   constructor(props) {
@@ -6,6 +7,10 @@ export default class index extends PageComponent {
 
     this.state = {
       listCountry: [],
+      name: "",
+      nameSinger: "",
+      content: "",
+      country: null,
     }
   }
 
@@ -25,13 +30,66 @@ export default class index extends PageComponent {
   handleGetListCountry = (status, data) => {
     if (!status) return;
     this.setState({
-      listCountry: data.list,
+      listCountry: data.countries,
     });
   }
 
   handleSaveCallback = (song) => {
-    console.log(song);
+
   }
+
+  // handleChangeInputField = (fieldName, value) => {
+  //   let newState = update(this.state, {[fieldName]: {$set: value}});
+  //   this.setState(newState);
+  // }
+
+  handleChangeInputNameSong = (fieldName, value) => {
+    let newState = update(this.state.name, {$set: value});
+    this.setState({name: newState});
+  }
+
+  handleChangeInputNameSinger = (fieldName, value) => {
+    let newState = update(this.state.nameSinger, {$set: value});
+    this.setState({nameSinger: newState});
+  }
+
+  handleChangeInputLyric = (fieldName, value) => {
+    let newState = update(this.state.content, {$set: value});
+    this.setState({content: newState});
+  }
+
+  hanldeClickShowMusicType = (country) => {
+    this.setState({
+      country: country,
+    });
+  }
+
+  renderCountry() {
+    return this.state.listCountry.map((item, index) => {
+      return (
+        <div key={index}>
+          <span onClick={() => this.hanldeClickShowMusicType(item)}>
+            {item.full_name}
+          </span>
+        </div>
+      )
+    })
+  }
+
+renderMusicType() {
+  let country = this.state.country;
+  if (!country) return;
+
+  return country.music_types.map((item, index) => {
+    return (
+      <div key={index}>
+        <Checkbox
+          label={item.name}
+        />
+      </div>
+    )
+  })
+}
 
   render() {
     return (
@@ -46,23 +104,30 @@ export default class index extends PageComponent {
                   name="name-song"
                   fullWidth={true}
                   fieldName="name"
+                  value={this.state.name}
+                  onChange={(event, value) => this.handleChangeInputNameSong("name", value)}
                 />
 
                 <cm.TextField
                   name="singer"
                   fullWidth={true}
                   fieldName="singer"
+                  value={this.state.nameSinger}
+                  onChange={(event, value) => this.handleChangeInputNameSinger("name", value)}
                 />
 
                 <cm.TextField
                   name="lyric"
                   fullWidth={true}
                   fieldName="lyric"
+                  value={this.state.content}
+                  onChange={(event, value) => this.handleChangeInputLyric("content", value)}
                 />
-
                 <Uploader
                   onChange={() => this.handleSaveCallback()}
                 />
+                {this.renderCountry()}
+                {this.state.country ? this.renderMusicType() : ""}
               </div>
             </div>
           </div>
