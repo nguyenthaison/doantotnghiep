@@ -18,19 +18,21 @@ export default class CommonRank extends PageComponent {
   renderSongs(list) {
     return list.map((item, index) => {
       return (
-        <ul key={index}>
-          <li>
-            <div className="rank">{index + 1}</div>
-            <div className="song-name ellipsis pointer">
-              <span className="pointer" onClick={() => this.handleClickPlay(item)}>{item.title}</span>
-            </div>
-            <div className="inblock ellipsis">
-              <div className="singer-song">
-                <span className="pointer" onClick={() => this.handleClickSingerInfo(item.singer)}>
+        <ul key={index} className="sub-main1-top">
+          <li className="rank-left">{index + 1}</li>
+          <li className="rank-right">
+            <ul>
+              <li className="ellipsis">
+                <span className="pointer" title={item.title} onClick={() => this.handleClickPlay(item)}>
+                  {item.title}
+                </span>
+              </li>
+              <li className="ellipsis">
+                <span className="pointer" title={item.singer} onClick={() => this.handleClickSingerInfo(item.singer)}>
                   {item.singer}
                 </span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </li>
         </ul>
       )}
@@ -44,61 +46,72 @@ export default class CommonRank extends PageComponent {
 
     return (
       <div className="child-tab">
-        <div className="mg-pd">
-          <div className="main1">
-            <div className="main1-top row">
-              <div className="col-md-9">
-                <span onClick={this.handleClickViewDetail} className="pointer">
-                  Top music viet nam
-                </span>
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div className="row">
+            <div className="main1">
+              <div className="main1-top">
+                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div className="row">
+                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
+                      Top music viet nam
+                    </span>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listVn)}>
+                    play_circle_outline
+                  </i>
+                </div>
               </div>
-              <div className="col-md-3">
-                <i className="material-icons pointer" onClick={() => this.handleClickPlay(listVn)}>
-                  play_circle_outline
-                </i>
+              <div className="main1-body">
+                {this.renderSongs(listVn)}
               </div>
-            </div>
-            <div className="main1-body">
-              <div style={{marginTop: "8px"}}></div>
-              {this.renderSongs(listVn)}
             </div>
           </div>
-
-          <div className="main2">
-            <div className="main1-top row">
-              <div className="col-md-9">
-                <span onClick={this.handleClickViewDetail} className="pointer">
-                  Top music chau au
-                </span>
+        </div>
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div className="row">
+            <div className="main2">
+              <div className="main1-top">
+                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div className="row">
+                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
+                      Top music chau au
+                    </span>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listUs)}>
+                    play_circle_outline
+                  </i>
+                </div>
               </div>
-              <div className="col-md-3">
-                <i className="material-icons pointer" onClick={() => this.handleClickPlay(listUs)}>
-                  play_circle_outline
-                </i>
+              <div className="main1-body">
+                {this.renderSongs(listUs)}
               </div>
-            </div>
-            <div className="main1-body">
-              <div style={{marginTop: "8px"}}></div>
-              {this.renderSongs(listUs)}
             </div>
           </div>
-
-          <div className="main3">
-            <div className="main1-top row">
-              <div className="col-md-9">
-                <span onClick={this.handleClickViewDetail} className="pointer">
-                  Top music Kpop
-                </span>
+        </div>
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div className="row">
+            <div className="main3">
+              <div className="main1-top">
+                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div className="row">
+                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
+                      Top music Kpop
+                    </span>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listKp)}>
+                    play_circle_outline
+                  </i>
+                </div>
               </div>
-              <div className="col-md-3">
-                <i className="material-icons pointer" onClick={() => this.handleClickPlay(listKp)}>
-                  play_circle_outline
-                </i>
+              <div className="main1-body">
+                {this.renderSongs(listKp)}
               </div>
-            </div>
-            <div className="main1-body">
-              <div style={{marginTop: "8px"}}></div>
-              {this.renderSongs(listKp)}
             </div>
           </div>
         </div>

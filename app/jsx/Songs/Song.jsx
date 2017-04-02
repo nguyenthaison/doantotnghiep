@@ -217,53 +217,72 @@ export default class Song extends PageComponent {
     let playing = this.state.playing;
     let iconPlay = playing ? <Pause /> : <PlayArrow />;
 
+    let image = "/images/test.jpg";
+
     return (
       <div className="song-play">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" className="equilizer" viewBox="0 0 128 128">
-            <g>
-              <title>Audio Equilizer</title>
-              <rect className="bar" transform="translate(0,0)" y="15"></rect>
-              <rect className="bar" transform="translate(25,0)" y="15"></rect>
-              <rect className="bar" transform="translate(50,0)" y="15"></rect>
-              <rect className="bar" transform="translate(75,0)" y="15"></rect>
-              <rect className="bar" transform="translate(100,0)" y="15"></rect>
-            </g>
-          </svg>
-        </div>
-        <div className="display">
-          <div className="slider-music">
-            <Slider
-              value={this.state.completed}
-              min={-1}
-              max={101}
-              onChange={this.handleChangeSlider} />
+        <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+          <div className="row">
+            {/*<div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="equilizer" viewBox="0 0 128 128">
+                <g>
+                  <title>Audio Equilizer</title>
+                  <rect className="bar" transform="translate(0,0)" y="15"></rect>
+                  <rect className="bar" transform="translate(25,0)" y="15"></rect>
+                  <rect className="bar" transform="translate(50,0)" y="15"></rect>
+                  <rect className="bar" transform="translate(75,0)" y="15"></rect>
+                  <rect className="bar" transform="translate(100,0)" y="15"></rect>
+                </g>
+              </svg>*/}
+            {/*</div>*/}
+            {/*<div><img src={image} /></div>*/}
+
+            <div className="background-display-song-contain">
+              <div className="display">
+                <div className="background-display-song">
+                  <div className="background-display-song-cover"></div>
+                </div>
+                <div className="slider-music">
+                  <Slider
+                    value={this.state.completed}
+                    min={-1}
+                    max={101}
+                    onChange={this.handleChangeSlider} />
+                </div>
+              </div>
+              <div className="media-control-background"></div>
+              <div className="button-control">
+                <Sound
+                  url={song.url || ""}
+                  playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
+                  position={this.state.position}
+                  volume={this.state.volume}
+                  onPlaying={(event) => this.handleSongPlaying(event)}
+                  onFinishedPlaying={this.handleSongFinishedPlaying} />
+                {/*<div className="row">*/}
+                  {this.renderButtonPlay(<SkipPrevious />, "skip-previous background-button", () => this.handleChangeMusic(false))}
+                  {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
+                  {this.renderButtonPlay(<SkipNext />, "skip-next background-button", this.handleChangeMusic)}
+                  <div className="col-md-1"></div>
+                  <Volume btnChange={this.handleBtnChangeVolume}
+                    sliderChange={this.handleSliderChange}
+                    volume={this.state.volume}
+                    statusVolume={this.state.statusVolume}
+                    />
+                  <div className="col-md-2">
+                    <Duration duration={this.state.duration} position={this.state.position} />
+                  </div>
+                  <Repeat onChange={this.handleChangeRepeat}
+                    repeat={repeat}
+                    shuffle={shuffle} />
+                {/*</div>*/}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="button-control">
-          <Sound
-            url={song.url || ""}
-            playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
-            position={this.state.position}
-            volume={this.state.volume}
-            onPlaying={(event) => this.handleSongPlaying(event)}
-            onFinishedPlaying={this.handleSongFinishedPlaying} />
+        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div className="row">
-            {this.renderButtonPlay(<SkipPrevious />, "skip-previous", () => this.handleChangeMusic(false))}
-            {this.renderButtonPlay(iconPlay, "button-play", this.handlePlayMusic)}
-            {this.renderButtonPlay(<SkipNext />, "skip-next", this.handleChangeMusic)}
-            <div className="col-md-1"></div>
-            <Volume btnChange={this.handleBtnChangeVolume}
-              sliderChange={this.handleSliderChange}
-              volume={this.state.volume}
-              statusVolume={this.state.statusVolume}
-              />
-            <div className="col-md-2">
-              <Duration duration={this.state.duration} position={this.state.position} />
-            </div>
-            <Repeat onChange={this.handleChangeRepeat}
-              repeat={repeat}
-              shuffle={shuffle} />
+
           </div>
         </div>
       </div>

@@ -11,3 +11,66 @@
     }
   }
 }
+.main-content {
+  .song-play {
+    .background-display-song-contain {
+      height: 185px;
+      width: 100%;
+      position: relative;
+      background: black;
+
+      .display {
+        .background-display-song {
+          background-image: url("/images/test.jpg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          opacity: 0.5;
+        }
+
+        .slider-music {
+          height: 145px;
+          padding-top: 100px;
+        }
+      }
+
+      .media-control-background {
+        position: absolute;
+        height: 15%;
+        width: 100%;
+        bottom: 0;
+        background: -webkit-linear-gradient(transparent,rgba(0,0,0,.9));
+         background: linear-gradient(transparent,rgba(0,0,0,.9));
+         -webkit-transition: opacity .2s ease-out;
+         transition: opacity .2s ease-out;
+      }
+
+      .button-control {
+        .background-button {
+          background-color: rgba(255, 255, 255, 0) !important;
+          min-width: auto !important;
+
+          button {
+            background-color: rgba(162, 0, 255, 0) !important;
+            div{
+              div:hover{
+                background: rgba(255, 0, 0, 0) !important;
+                svg:hover{
+                  fill:#A200FF !important;
+                }
+              }
+            }
+          }
+        }
+
+        .slider-volume {
+          div{
+            margin-top: 4px !important;
+          }
+        }
+      }
+    }
+  }
+}
