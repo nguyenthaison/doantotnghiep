@@ -4,7 +4,6 @@ class Api::V1::SongsController < Api::BaseController
   end
 
   def create
-    byebug
     song = Song.new attachment: params[:attachment]
 
     if song.save
