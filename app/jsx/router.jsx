@@ -8,6 +8,7 @@ import Albums from "./Albums";
 import Subjects from "./Subjects";
 import Ranks from "./Ranks";
 import Singers from "./Singers";
+import Upload from "./Upload";
 
 const router = (
   <Router history={browserHistory}>
@@ -24,6 +25,8 @@ const router = (
       <Route path="ranks" component={Ranks} />
 
       <Route path="singers" component={Singers} />
+
+      <Route path="upload" component={Upload} />
     </Route>
   </Router>
 );

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329124326) do
+ActiveRecord::Schema.define(version: 20170401052349) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "view"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "attachmentable_id"
-    t.text     "notes",             limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
   end
 
   create_table "author_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -84,6 +77,15 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.string   "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "country_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "music_type_id"
+    t.integer  "country_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["country_id"], name: "index_country_music_types_on_country_id", using: :btree
+    t.index ["music_type_id"], name: "index_country_music_types_on_music_type_id", using: :btree
   end
 
   create_table "hotkey_words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -178,8 +180,12 @@ ActiveRecord::Schema.define(version: 20170329124326) do
     t.integer  "album_id"
     t.integer  "user_id"
     t.integer  "singer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
     t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
     t.index ["singer_id"], name: "index_songs_on_singer_id", using: :btree
     t.index ["user_id"], name: "index_songs_on_user_id", using: :btree
