@@ -23,14 +23,14 @@ export default class Index extends PageComponent {
         <div className="col-md-6">
           <cm.RaisedButton
             icon={icon}
-            className="button-repeat"
+            className="button-repeat background-button"
             primary={true}
             onClick={() => this.handleChangeRepeat(repeat)}/>
         </div>
         <div className="col-md-6">
           <cm.RaisedButton
             icon={<Shuffle />}
-            className="button-shuffle"
+            className="button-shuffle background-button"
             primary={true}
             onClick={() => this.handleChangeRepeat(shuffle)}/>
         </div>

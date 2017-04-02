@@ -55,13 +55,11 @@ export default class Rank extends PageComponent {
     let listTopKp = this.state.listTopKp;
 
     return (
-      <div className="child-tab">
-        <CommonRank
-          listVn={listTopVn}
-          listUs={listTopUs}
-          listKp={listTopKp}
-        />
-      </div>
+      <CommonRank
+        listVn={listTopVn}
+        listUs={listTopUs}
+        listKp={listTopKp}
+      />
     )
   }
 }

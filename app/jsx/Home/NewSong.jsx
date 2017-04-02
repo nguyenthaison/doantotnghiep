@@ -51,13 +51,11 @@ export default class NewSong extends PageComponent {
     let listKp = this.state.listKp;
 
     return (
-      <div className="child-tab">
-        <CommonRank
-          listVn={listVn}
-          listUs={listUs}
-          listKp={listKp}
-        />
-      </div>
+      <CommonRank
+        listVn={listVn}
+        listUs={listUs}
+        listKp={listKp}
+      />
     )
   }
 }
