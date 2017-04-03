@@ -16,6 +16,7 @@ gem "jbuilder", "~> 2.5"
 gem "cancancan"
 gem "devise"
 gem "config"
+gem "paperclip", git: "git@github.com:scpike/paperclip.git"
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -28,6 +29,7 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "rspec-rails"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

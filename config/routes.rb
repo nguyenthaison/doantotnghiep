@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "react_app#home"
+
+  namespace :api do
+    namespace :v1 do
+      resources :songs
+      resources :subjects
+      resources :ranks
+      resources :albums
+      resources :countries
+    end
+  end
+
+  get "*path", to: "react_app#home"
 end

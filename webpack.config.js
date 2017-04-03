@@ -6,7 +6,7 @@ const paths = {
 }
 
 module.exports = {
-  entry: paths.jsx + "/index.jsx",
+  entry: paths.jsx + "/bootstrap",
   output: {
     path: paths.js,
     filename: "react-app.js",
@@ -31,7 +31,7 @@ module.exports = {
         cm: paths.jsx + "/Common",
         BaseComponent : paths.jsx + "/BaseComponent",
         PageComponent : paths.jsx + "/PageComponent",
-        BaseMaster: paths.jsx + "/Master/BaseMaster",
+        // BaseMaster: paths.jsx + "/Master/BaseMaster",
      })
   ],
 }

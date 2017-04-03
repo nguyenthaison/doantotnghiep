@@ -1,0 +1,16 @@
+class Rank < ApplicationRecord
+  enum rank_type: [:vn, :us, :kp]
+
+  has_many :song_ranks
+  has_many :song, through: :song_ranks
+
+  class << self
+    def get_first_day_pre_week
+      DateTime.now.beginning_of_week - 7.day
+    end
+
+    def get_end_day_pre_week
+      DateTime.now.beginning_of_week - 1.day
+    end
+  end
+end

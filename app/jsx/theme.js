@@ -2,8 +2,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const theme = getMuiTheme({
   fontFamily: "Mieryo, 'メイリオ', sans-serif",
+
   palette: {
-    primary1Color: "#f49ac1",
+    primary1Color: "#a200ff",
     accent1Color: "#555555",
   },
 });
