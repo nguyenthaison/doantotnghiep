@@ -14,7 +14,10 @@
         .main1,.main2, .main3 {
           border: 1px #c7c7c7 solid;
           border-radius: 3px;
+          margin-right: 10px;
         }
+
+        .main3 {margin-right: 0}
 
         .main1-top {
           overflow: hidden;
