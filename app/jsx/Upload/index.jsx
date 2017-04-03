@@ -1,5 +1,6 @@
 import Uploader from "./Uploader";
-import Checkbox from 'material-ui/Checkbox';
+import Checkbox from "material-ui/Checkbox";
+import Countries from "./Countries";
 
 export default class index extends PageComponent {
   constructor(props) {
@@ -7,9 +8,16 @@ export default class index extends PageComponent {
 
     this.state = {
       listCountry: [],
-      name: "",
-      nameSinger: "",
-      content: "",
+      song: {
+        name: "",
+      },
+      lyric: {
+        content: "",
+      },
+      singer: {
+        name: "",
+      },
+      checkedMusicTypes: [],
       country: null,
     }
   }
@@ -34,28 +42,19 @@ export default class index extends PageComponent {
     });
   }
 
-  handleSaveCallback = (song) => {
-
-  }
-
-  // handleChangeInputField = (fieldName, value) => {
-  //   let newState = update(this.state, {[fieldName]: {$set: value}});
-  //   this.setState(newState);
-  // }
-
   handleChangeInputNameSong = (fieldName, value) => {
-    let newState = update(this.state.name, {$set: value});
-    this.setState({name: newState});
+    let newState = update(this.state.song, {[fieldName]: {$set: value}});
+    this.setState({song: newState});
   }
 
   handleChangeInputNameSinger = (fieldName, value) => {
-    let newState = update(this.state.nameSinger, {$set: value});
-    this.setState({nameSinger: newState});
+    let newState = update(this.state.singer, {[fieldName]: {$set: value}});
+    this.setState({singer: newState});
   }
 
   handleChangeInputLyric = (fieldName, value) => {
-    let newState = update(this.state.content, {$set: value});
-    this.setState({content: newState});
+    let newState = update(this.state.lyric, {[fieldName]: {$set: value}});
+    this.setState({lyric: newState});
   }
 
   hanldeClickShowMusicType = (country) => {
@@ -64,32 +63,22 @@ export default class index extends PageComponent {
     });
   }
 
-  renderCountry() {
-    return this.state.listCountry.map((item, index) => {
-      return (
-        <div key={index}>
-          <span onClick={() => this.hanldeClickShowMusicType(item)}>
-            {item.full_name}
-          </span>
-        </div>
-      )
-    })
+  handleSubmitCallback = (status, data) => {
+    if (!status) return;
+    Helper.showMessage("Create success");
   }
 
-renderMusicType() {
-  let country = this.state.country;
-  if (!country) return;
-
-  return country.music_types.map((item, index) => {
-    return (
-      <div key={index}>
-        <Checkbox
-          label={item.name}
-        />
-      </div>
-    )
-  })
-}
+  handleSubmitForm = () => {
+    let data = new FormData();
+    let attachment = this.refs.uploadFile.getAttachment();
+    let musicTypeIds = this.refs.countries.getCheckedMusicTypes();
+    data.append("attachment", attachment);
+    data.append("name", this.state.song.name);
+    data.append("singer_name", this.state.singer.name);
+    data.append("lyric_content", this.state.lyric.content);
+    data.append("music_type_song_ids", musicTypeIds);
+    API.Song.create(this.handleSubmitCallback, data);
+  }
 
   render() {
     return (
@@ -104,30 +93,35 @@ renderMusicType() {
                   name="name-song"
                   fullWidth={true}
                   fieldName="name"
-                  value={this.state.name}
+                  value={this.state.song.name}
                   onChange={(event, value) => this.handleChangeInputNameSong("name", value)}
                 />
-
                 <cm.TextField
                   name="singer"
                   fullWidth={true}
                   fieldName="singer"
-                  value={this.state.nameSinger}
+                  value={this.state.singer.name}
                   onChange={(event, value) => this.handleChangeInputNameSinger("name", value)}
                 />
-
                 <cm.TextField
                   name="lyric"
                   fullWidth={true}
                   fieldName="lyric"
-                  value={this.state.content}
+                  value={this.state.lyric.content}
                   onChange={(event, value) => this.handleChangeInputLyric("content", value)}
                 />
                 <Uploader
-                  onChange={() => this.handleSaveCallback()}
+                  song={this.state.song}
+                  ref="uploadFile"
                 />
-                {this.renderCountry()}
-                {this.state.country ? this.renderMusicType() : ""}
+                <Countries list={this.state.listCountry} ref="countries"/>
+                <cm.RaisedButton
+                  primary={true}
+                  labelPosition="after"
+                  label="Submit"
+                  className="submit-upload"
+                  onTouchTap={this.handleSubmitForm}
+                  title="Submit" />
               </div>
             </div>
           </div>

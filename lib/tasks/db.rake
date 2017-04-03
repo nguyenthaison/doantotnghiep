@@ -3,6 +3,10 @@ namespace :db do
   task remake_data: :environment do
     Rake::Task["db:migrate:reset"].invoke
 
+    puts "create user"
+    Fabricate :user, name: "son", email: "abc@gmail.com", login_id: "admin",
+      password: "123456", password_confirmation: "123456"
+
     puts "Country"
     Fabricate :country, short_name: "vn", full_name: "Viet Nam"
     Fabricate :country, short_name: "us", full_name: "American"
@@ -41,6 +45,13 @@ namespace :db do
     Fabricate :country_music_type, music_type_id: 6, country_id: 1
     Fabricate :country_music_type, music_type_id: 7, country_id: 2
 
+    puts "music type song"
+    Fabricate :music_type_song, music_type_id: 1, song_id: 2
+    Fabricate :music_type_song, music_type_id: 3, song_id: 1
+    Fabricate :music_type_song, music_type_id: 3, song_id: 2
+    Fabricate :music_type_song, music_type_id: 4, song_id: 1
+    Fabricate :music_type_song, music_type_id: 7, song_id: 3
+
     puts "Album"
     5.times do |i|
       Fabricate :album, view: i * 20, rank: i, share: i * 20, name: "Album #{i}"
@@ -51,16 +62,16 @@ namespace :db do
       download: 100, album_id: 1, user_id: 1,
       link: "samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3"
     Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 100, album_id: 1,
-      user_id: 1, singer_id: 3, link: "samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3"
+      user_id: 1, link: "samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3"
     Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 100, album_id: 1,
-      user_id: 1, singer_id: 4,
+      user_id: 1,
       link: "samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3"
     Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 100, album_id: 1,
-      user_id: 1, singer_id: 3, link: "samples/Mo - Vu Cat Tuong.mp3"
+      user_id: 1, link: "samples/Mo - Vu Cat Tuong.mp3"
     Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 100, album_id: 1,
-      user_id: 1, singer_id: 5, link: "samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3"
+      user_id: 1, link: "samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3"
     Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 100, album_id: 1,
-      user_id: 1, singer_id: 6, link: "samples/XuanNayConKhongVe-QuangLe-1428282.mp3"
+      user_id: 1, link: "samples/XuanNayConKhongVe-QuangLe-1428282.mp3"
 
     puts "Success remake data"
   end

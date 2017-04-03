@@ -19,13 +19,6 @@ export default class Singer extends PageComponent {
   }
 
   render() {
-    // return TmpSinger.map((item, index) => {
-    //   return (
-    //     <div key={index}>
-
-    //     </div>
-    //   )}
-    // )
     return (
       <div>{this.renderListSinger()}</div>
     )

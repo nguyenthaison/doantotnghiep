@@ -4,6 +4,7 @@ class CreateLyrics < ActiveRecord::Migration[5.0]
       t.text :content
       t.integer :user_id
       t.references :attachment, foreign: true, index: true
+      t.references :song, foreign: true, index: true
       t.timestamps
     end
   end

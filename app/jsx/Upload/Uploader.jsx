@@ -1,17 +1,20 @@
 import FileCloudUpload from "material-ui/svg-icons/file/cloud-upload";
 import RaisedButton from "material-ui/RaisedButton";
+import LinearProgress from 'material-ui/LinearProgress';
 
 export default class Uploader extends BaseComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      processing: false
+      processing: false,
+      completed: 0,
+      song: this.props.song || [],
+      attachment: null,
     }
   }
 
   handleUploadFiles = (event) => {
-    console.log(event);
     let file = event.target.files[0];
     if (!file) return;
     if (file.size > 130*1024*1024) {
@@ -19,23 +22,22 @@ export default class Uploader extends BaseComponent {
       return;
     }
 
-    let attachment = new FormData();
-    attachment.append("attachment", file);
-    // attachment.append("folder_id", this.props.folderId);
-
     this.setState({
       processing: true,
+      attachment: file,
     });
-    console.log(attachment);
-    API.Song.create(this.handleSaveCallback, attachment);
+
+  }
+
+  getAttachment() {
+    return this.state.attachment;
   }
 
   handleSaveCallback = (status, data) => {
     if (status) {
-      this.props.onChange(data.song);
-
       this.setState({
         processing: false,
+        song: data.song,
       });
     } else {
       this.setState({processing: false});
@@ -56,21 +58,21 @@ export default class Uploader extends BaseComponent {
     return (
       <div className="row file-uploader">
         <div className="upload-component">
-          {/*<RaisedButton
+          <RaisedButton
             primary={true}
             labelPosition="after"
             icon={<FileCloudUpload color="white" />}
             label={this.state.processing ? "Uploading" : "Choose file"}
             className="upload-button"
             title="No file choose"
-          >*/}
+          >
             <input
               onChange={this.handleUploadFiles}
               type="file"
               className="file-input"
               ref="fileInput"
             />
-          {/*</RaisedButton>*/}
+          </RaisedButton>
         </div>
       </div>
     )

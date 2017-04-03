@@ -33,34 +33,34 @@ export default class Song extends PageComponent {
     this.handleCallbackPlayMusic(state);
   }
 
-  playingMusic(song) {
-    this.setState({
-      playing: true,
-      song: song,
-      repeat: "one",
-      list: [],
-      position: 0,
-    });
-  }
+  // playingMusic(song) {
+  //   this.setState({
+  //     playing: true,
+  //     song: song,
+  //     repeat: "one",
+  //     list: [],
+  //     position: 0,
+  //   });
+  // }
 
   handleCallbackPlayMusic = (state) => {
     this.setState({
       playing: true,
       song: state.length ? state[0] : state,
-      repeat: "one",
+      repeat: state.length > 1 ? "repeat" : "one",
       list: state.length ? state : [],
       position: 0,
     });
   }
 
-  playingListMusic(listSong) {
-    this.setState({
-      list: listSong,
-      playing: true,
-      repeat: "repeat",
-      song: listSong[0],
-    })
-  }
+  // playingListMusic(listSong) {
+  //   this.setState({
+  //     list: listSong,
+  //     playing: true,
+  //     repeat: "repeat",
+  //     song: listSong[0],
+  //   })
+  // }
 
   handleFindSongInList = (list, song) => {
     let index = list.findIndex(_song => {

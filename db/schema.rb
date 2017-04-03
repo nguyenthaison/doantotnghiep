@@ -96,9 +96,11 @@ ActiveRecord::Schema.define(version: 20170404093747) do
     t.text     "content",       limit: 65535
     t.integer  "user_id"
     t.integer  "attachment_id"
+    t.integer  "song_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["attachment_id"], name: "index_lyrics_on_attachment_id", using: :btree
+    t.index ["song_id"], name: "index_lyrics_on_song_id", using: :btree
   end
 
   create_table "music_type_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -172,9 +174,8 @@ ActiveRecord::Schema.define(version: 20170404093747) do
     t.integer  "rank"
     t.integer  "download"
     t.string   "link"
-    t.integer  "author_id"
-    t.integer  "album_id"
     t.integer  "user_id"
+    t.integer  "album_id"
     t.integer  "singer_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
