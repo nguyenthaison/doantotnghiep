@@ -1,3 +1,6 @@
 class User < ApplicationRecord
-  belongs_to :country
+  # devise :database_authenticatable, :registerable,
+  #   :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable, :timeoutable, authentication_keys: [:login_id]
 end

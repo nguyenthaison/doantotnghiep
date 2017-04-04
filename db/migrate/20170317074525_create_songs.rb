@@ -9,7 +9,7 @@ class CreateSongs < ActiveRecord::Migration[5.0]
       t.string :link
       t.integer :author_id
       t.references :album, foreign: true, index: true
-      t.references :user, foreign: true, index: true
+      t.integer :user_id
       t.references :singer, foreign: true, index: true
       t.timestamps
     end

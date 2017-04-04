@@ -1,14 +1,14 @@
 class Api::BaseController < ActionController::Base
-  # include Devise::Controllers::SignInOut
-  # before_action :authenticate_user!
-  # protect_from_forgery with: :exception
+  include Devise::Controllers::SignInOut
+  before_action :authenticate_user!
+  protect_from_forgery with: :exception
 
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
-  # rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
-  # rescue_from CanCan::AccessDenied do |exception|
-  #   response_fail exception.message, 401
-  # end
+  rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from CanCan::AccessDenied do |exception|
+    response_fail exception.message, 401
+  end
 
   def response_success data = nil
     render json: {

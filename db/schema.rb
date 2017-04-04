@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401052349) do
+ActiveRecord::Schema.define(version: 20170404093747) do
 
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "view"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_avatars_on_album_id", using: :btree
     t.index ["singer_id"], name: "index_avatars_on_singer_id", using: :btree
-    t.index ["user_id"], name: "index_avatars_on_user_id", using: :btree
   end
 
   create_table "claims", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,7 +68,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["attachment_id"], name: "index_comments_on_attachment_id", using: :btree
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "countries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,7 +99,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["attachment_id"], name: "index_lyrics_on_attachment_id", using: :btree
-    t.index ["user_id"], name: "index_lyrics_on_user_id", using: :btree
   end
 
   create_table "music_type_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,7 +131,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["singer_id"], name: "index_relationships_on_singer_id", using: :btree
-    t.index ["user_id"], name: "index_relationships_on_user_id", using: :btree
   end
 
   create_table "singer_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -188,7 +184,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.datetime "attachment_updated_at"
     t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
     t.index ["singer_id"], name: "index_songs_on_singer_id", using: :btree
-    t.index ["user_id"], name: "index_songs_on_user_id", using: :btree
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -199,16 +194,25 @@ ActiveRecord::Schema.define(version: 20170401052349) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "login_id"
     t.string   "name"
-    t.string   "password"
     t.integer  "role"
-    t.string   "mail"
     t.string   "phone_number"
     t.date     "dob"
     t.integer  "country_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
     t.index ["country_id"], name: "index_users_on_country_id", using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -226,7 +230,6 @@ ActiveRecord::Schema.define(version: 20170401052349) do
     t.index ["album_id"], name: "index_videos_on_album_id", using: :btree
     t.index ["music_type_id"], name: "index_videos_on_music_type_id", using: :btree
     t.index ["singer_id"], name: "index_videos_on_singer_id", using: :btree
-    t.index ["user_id"], name: "index_videos_on_user_id", using: :btree
   end
 
 end
