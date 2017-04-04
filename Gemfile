@@ -17,6 +17,7 @@ gem "cancancan"
 gem "devise"
 gem "config"
 gem "paperclip", git: "git@github.com:scpike/paperclip.git"
+gem "active_model_serializers"
 
 group :development, :test do
   gem "byebug", platform: :mri

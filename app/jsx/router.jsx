@@ -9,9 +9,11 @@ import Subjects from "./Subjects";
 import Ranks from "./Ranks";
 import Singers from "./Singers";
 import Upload from "./Upload";
+import Login from "./Login";
 
 const router = (
   <Router history={browserHistory}>
+    <Route path="users/sign_in" component={Login} />
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
 
