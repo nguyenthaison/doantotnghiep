@@ -58,21 +58,21 @@ export default class Uploader extends BaseComponent {
     return (
       <div className="row file-uploader">
         <div className="upload-component">
-          <RaisedButton
+          {/*<RaisedButton
             primary={true}
             labelPosition="after"
             icon={<FileCloudUpload color="white" />}
             label={this.state.processing ? "Uploading" : "Choose file"}
             className="upload-button"
             title="No file choose"
-          >
+          >*/}
             <input
               onChange={this.handleUploadFiles}
               type="file"
               className="file-input"
               ref="fileInput"
             />
-          </RaisedButton>
+          {/*</RaisedButton>*/}
         </div>
       </div>
     )
