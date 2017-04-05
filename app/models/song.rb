@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  ATTRIBUTES_PARAMS = %i[attachment_file_name]
+  SONG_ATTRIBUTES_PARAMS = %i[name]
 
   has_attached_file :attachment
 
@@ -14,6 +14,9 @@ class Song < ApplicationRecord
   has_many :singers, through: :singer_songs
   has_many :song_ranks
   has_many :ranks, through: :song_ranks
+  has_many :lyrics
+
+  validates :name, presence: true, length: {maximum: 100, minimum: 1}
 
   validates_attachment_content_type :attachment,
     content_type: [
@@ -29,4 +32,12 @@ class Song < ApplicationRecord
       # "image/gif",
       # "video/mp4"
     ]
+
+  def create_singer_lyric params, current_user
+    Lyric.create(content: params[:lyric_content], user_id: current_user.id, song_id: self.id)
+    Singer.create(name: params[:singer_name])
+    params[:music_type_song_ids].split(",").each do |item|
+      MusicTypeSong.create(music_type_id: item.to_i, song_id: self.id)
+    end
+  end
 end

@@ -4,18 +4,27 @@ class Api::V1::SongsController < Api::BaseController
   end
 
   def create
-    byebug
-    song = Song.new attachment: params[:attachment]
-
+    song = Song.new(attachment: params[:attachment], name: params[:name],
+      user_id: current_user.id)
     if song.save
-      # manual_file.update link_file: "#{root_url}api/v1/download/#{manual_file.id}"
-      response_success song: song
+      ActiveRecord::Base.transaction do
+        begin
+          song.create_singer_lyric params, current_user
+          response_success song: song
+        rescue
+          response_fail
+        end
+      end
     else
-      response_fail
+      response_fail song.errors
     end
   end
 
   def update
+  end
 
+  private
+  def song_params
+    params.require(:song).permit(:name)
   end
 end

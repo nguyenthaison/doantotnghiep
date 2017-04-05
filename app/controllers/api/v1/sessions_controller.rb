@@ -5,7 +5,6 @@ class Api::V1::SessionsController < Api::BaseController
 
   def create
     user = User.where("lower(login_id) = ?", params[:login_id].downcase).first
-    byebug
     if !user || !user.valid_password?(params[:password])
       response_when_invalid_login
     else
