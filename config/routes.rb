@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :albums
       resources :countries
       resources :sessions, only: :create
+      resources :singers
     end
   end
 

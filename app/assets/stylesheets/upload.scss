@@ -3,6 +3,13 @@
   padding: 0;
 
   .box-upload {
+    .image-upload {
+      width: 250px;
+      height: 150px;
+    }
 
+    .Select-control {
+      border-bottom: 1px solid #ccc !important;
+    }
   }
 }

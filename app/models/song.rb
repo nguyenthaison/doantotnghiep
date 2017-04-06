@@ -35,9 +35,16 @@ class Song < ApplicationRecord
 
   def create_singer_lyric params, current_user
     Lyric.create(content: params[:lyric_content], user_id: current_user.id, song_id: self.id)
-    Singer.create(name: params[:singer_name])
-    params[:music_type_song_ids].split(",").each do |item|
-      MusicTypeSong.create(music_type_id: item.to_i, song_id: self.id)
+    JSON.parse(params[:singer_name]).each do |item|
+      byebug
+      if (!item["id"])
+        singer = Singer.create(name: item["name"])
+      else
+        SingerSong.create(singer_id: item["id"], song_id: self.id)
+      end
+    end
+    JSON.parse(params[:music_type_song_ids]).each do |item|
+      MusicTypeSong.create(music_type_id: item, song_id: self.id)
     end
   end
 end
