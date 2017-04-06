@@ -1,0 +1,1082 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.4
+4 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/package.json
+5 warn package.json Dependency 'babel-core' exists in both dependencies and devDependencies, using 'babel-core@^6.24.0' from dependencies
+6 warn package.json Dependency 'babel-loader' exists in both dependencies and devDependencies, using 'babel-loader@^6.4.0' from dependencies
+7 warn package.json Dependency 'babel-plugin-add-module-exports' exists in both dependencies and devDependencies, using 'babel-plugin-add-module-exports@^0.2.1' from dependencies
+8 warn package.json Dependency 'babel-plugin-transform-class-properties' exists in both dependencies and devDependencies, using 'babel-plugin-transform-class-properties@^6.23.0' from dependencies
+9 warn package.json Dependency 'babel-preset-es2015' exists in both dependencies and devDependencies, using 'babel-preset-es2015@^6.24.0' from dependencies
+10 warn package.json Dependency 'babel-preset-react' exists in both dependencies and devDependencies, using 'babel-preset-react@^6.23.0' from dependencies
+11 warn package.json Dependency 'babel-preset-stage-0' exists in both dependencies and devDependencies, using 'babel-preset-stage-0@^6.22.0' from dependencies
+12 warn package.json Dependency 'material-ui' exists in both dependencies and devDependencies, using 'material-ui@^0.17.1' from dependencies
+13 warn package.json Dependency 'react' exists in both dependencies and devDependencies, using 'react@^15.4.2' from dependencies
+14 warn package.json Dependency 'react-dom' exists in both dependencies and devDependencies, using 'react-dom@^15.4.2' from dependencies
+15 warn package.json Dependency 'react-router' exists in both dependencies and devDependencies, using 'react-router@^3.0.0' from dependencies
+16 warn package.json Dependency 'react-tap-event-plugin' exists in both dependencies and devDependencies, using 'react-tap-event-plugin@^2.0.1' from dependencies
+17 warn package.json Dependency 'react-toastr' exists in both dependencies and devDependencies, using 'react-toastr@^2.8.2' from dependencies
+18 warn package.json Dependency 'webpack' exists in both dependencies and devDependencies, using 'webpack@^1.14.0' from dependencies
+19 warn package.json Dependency 'webpack-dev-server' exists in both dependencies and devDependencies, using 'webpack-dev-server@^2.4.2' from dependencies
+20 verbose install where, deps [ '/home/sonnt/ruby/doantotnghiep',
+20 verbose install   [ 'babel-core',
+20 verbose install     'babel-loader',
+20 verbose install     'babel-plugin-add-module-exports',
+20 verbose install     'babel-plugin-transform-class-properties',
+20 verbose install     'babel-plugin-transform-es3-property-literals',
+20 verbose install     'babel-preset-es2015',
+20 verbose install     'babel-preset-react',
+20 verbose install     'babel-preset-stage-0',
+20 verbose install     'material-design-icons',
+20 verbose install     'material-ui',
+20 verbose install     'pluralize',
+20 verbose install     'react',
+20 verbose install     'react-addons-update',
+20 verbose install     'react-dom',
+20 verbose install     'react-motion',
+20 verbose install     'react-router',
+20 verbose install     'react-select',
+20 verbose install     'react-sound',
+20 verbose install     'react-tap-event-plugin',
+20 verbose install     'react-toastr',
+20 verbose install     'webpack',
+20 verbose install     'webpack-dev-server',
+20 verbose install     'babel-plugin-transform-es3-member-expression-literals' ] ]
+21 verbose install where, peers [ '/home/sonnt/ruby/doantotnghiep', [] ]
+22 verbose installManyTop reading for lifecycle /home/sonnt/ruby/doantotnghiep/package.json
+23 info preinstall doantotnghiep@1.0.0
+24 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-core/package.json
+25 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-loader/package.json
+26 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-add-module-exports/package.json
+27 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-class-properties/package.json
+28 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-member-expression-literals/package.json
+29 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-property-literals/package.json
+30 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-es2015/package.json
+31 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-react/package.json
+32 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-stage-0/package.json
+33 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-design-icons/package.json
+34 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-ui/package.json
+35 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/pluralize/package.json
+36 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react/package.json
+37 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-addons-update/package.json
+38 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-dom/package.json
+39 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-motion/package.json
+40 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-router/package.json
+41 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-sound/package.json
+42 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-tap-event-plugin/package.json
+43 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-toastr/package.json
+44 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack/package.json
+45 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack-dev-server/package.json
+46 info package.json react-tap-event-plugin@2.0.1 No license field.
+47 info package.json react-sound@0.5.2 No repository field.
+48 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/package.json
+49 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-core/package.json
+50 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-loader/package.json
+51 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-add-module-exports/package.json
+52 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-class-properties/package.json
+53 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-member-expression-literals/package.json
+54 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-property-literals/package.json
+55 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-es2015/package.json
+56 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-react/package.json
+57 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-stage-0/package.json
+58 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-design-icons/package.json
+59 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-ui/package.json
+60 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/pluralize/package.json
+61 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react/package.json
+62 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-addons-update/package.json
+63 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-dom/package.json
+64 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-motion/package.json
+65 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-router/package.json
+66 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-sound/package.json
+67 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-tap-event-plugin/package.json
+68 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-toastr/package.json
+69 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack/package.json
+70 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack-dev-server/package.json
+71 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.cache/babel-loader/package.json
+72 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.bin/webpack/package.json
+73 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.bin/webpack-dev-server/package.json
+74 silly cache add args [ 'react-select@^1.0.0-rc.1', null ]
+75 verbose cache add spec react-select@^1.0.0-rc.1
+76 silly cache add parsed spec Result {
+76 silly cache add   raw: 'react-select@^1.0.0-rc.1',
+76 silly cache add   scope: null,
+76 silly cache add   name: 'react-select',
+76 silly cache add   rawSpec: '^1.0.0-rc.1',
+76 silly cache add   spec: '>=1.0.0-rc.1 <2.0.0',
+76 silly cache add   type: 'range' }
+77 silly addNamed react-select@>=1.0.0-rc.1 <2.0.0
+78 verbose addNamed ">=1.0.0-rc.1 <2.0.0" is a valid semver range for react-select
+79 silly addNameRange { name: 'react-select',
+79 silly addNameRange   range: '>=1.0.0-rc.1 <2.0.0',
+79 silly addNameRange   hasData: false }
+80 silly mapToRegistry name react-select
+81 silly mapToRegistry using default registry
+82 silly mapToRegistry registry https://registry.npmjs.org/
+83 silly mapToRegistry data Result {
+83 silly mapToRegistry   raw: 'react-select',
+83 silly mapToRegistry   scope: null,
+83 silly mapToRegistry   name: 'react-select',
+83 silly mapToRegistry   rawSpec: '',
+83 silly mapToRegistry   spec: 'latest',
+83 silly mapToRegistry   type: 'tag' }
+84 silly mapToRegistry uri https://registry.npmjs.org/react-select
+85 verbose addNameRange registry:https://registry.npmjs.org/react-select not in flight; fetching
+86 verbose already installed skipping react-sound@^0.5.2 /home/sonnt/ruby/doantotnghiep
+87 verbose already installed skipping react-tap-event-plugin@^2.0.1 /home/sonnt/ruby/doantotnghiep
+88 verbose already installed skipping react-toastr@^2.8.2 /home/sonnt/ruby/doantotnghiep
+89 verbose already installed skipping webpack@^1.14.0 /home/sonnt/ruby/doantotnghiep
+90 verbose already installed skipping webpack-dev-server@^2.4.2 /home/sonnt/ruby/doantotnghiep
+91 verbose already installed skipping babel-plugin-transform-es3-member-expression-literals@^6.22.0 /home/sonnt/ruby/doantotnghiep
+92 verbose already installed skipping babel-core@^6.24.0 /home/sonnt/ruby/doantotnghiep
+93 verbose already installed skipping babel-plugin-add-module-exports@^0.2.1 /home/sonnt/ruby/doantotnghiep
+94 verbose already installed skipping babel-loader@^6.4.0 /home/sonnt/ruby/doantotnghiep
+95 verbose already installed skipping babel-plugin-transform-class-properties@^6.23.0 /home/sonnt/ruby/doantotnghiep
+96 verbose already installed skipping babel-plugin-transform-es3-property-literals@^6.22.0 /home/sonnt/ruby/doantotnghiep
+97 verbose already installed skipping babel-preset-es2015@^6.24.0 /home/sonnt/ruby/doantotnghiep
+98 verbose already installed skipping babel-preset-react@^6.23.0 /home/sonnt/ruby/doantotnghiep
+99 verbose already installed skipping babel-preset-stage-0@^6.22.0 /home/sonnt/ruby/doantotnghiep
+100 verbose already installed skipping material-design-icons@^3.0.1 /home/sonnt/ruby/doantotnghiep
+101 verbose already installed skipping material-ui@^0.17.1 /home/sonnt/ruby/doantotnghiep
+102 verbose already installed skipping pluralize@^4.0.0 /home/sonnt/ruby/doantotnghiep
+103 verbose already installed skipping react@^15.4.2 /home/sonnt/ruby/doantotnghiep
+104 verbose already installed skipping react-addons-update@^15.4.2 /home/sonnt/ruby/doantotnghiep
+105 verbose already installed skipping react-dom@^15.4.2 /home/sonnt/ruby/doantotnghiep
+106 verbose already installed skipping react-motion@^0.4.7 /home/sonnt/ruby/doantotnghiep
+107 verbose already installed skipping react-router@^3.0.0 /home/sonnt/ruby/doantotnghiep
+108 verbose request uri https://registry.npmjs.org/react-select
+109 verbose request no auth needed
+110 info attempt registry request try #1 at 9:31:46 PM
+111 verbose request id 7da302c8f5ab8271
+112 http request GET https://registry.npmjs.org/react-select
+113 http 200 https://registry.npmjs.org/react-select
+114 verbose headers { server: 'nginx/1.10.1',
+114 verbose headers   'content-type': 'application/json',
+114 verbose headers   'last-modified': 'Wed, 29 Mar 2017 02:49:18 GMT',
+114 verbose headers   etag: 'W/"58db20ae-2e7fd"',
+114 verbose headers   'content-encoding': 'gzip',
+114 verbose headers   'cache-control': 'max-age=300',
+114 verbose headers   'content-length': '20048',
+114 verbose headers   'accept-ranges': 'bytes',
+114 verbose headers   date: 'Thu, 06 Apr 2017 14:31:48 GMT',
+114 verbose headers   via: '1.1 varnish',
+114 verbose headers   age: '0',
+114 verbose headers   connection: 'keep-alive',
+114 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+114 verbose headers   'x-cache': 'HIT',
+114 verbose headers   'x-cache-hits': '1',
+114 verbose headers   'x-timer': 'S1491489108.003522,VS0,VE158',
+114 verbose headers   vary: 'Accept-Encoding' }
+115 silly get cb [ 200,
+115 silly get   { server: 'nginx/1.10.1',
+115 silly get     'content-type': 'application/json',
+115 silly get     'last-modified': 'Wed, 29 Mar 2017 02:49:18 GMT',
+115 silly get     etag: 'W/"58db20ae-2e7fd"',
+115 silly get     'content-encoding': 'gzip',
+115 silly get     'cache-control': 'max-age=300',
+115 silly get     'content-length': '20048',
+115 silly get     'accept-ranges': 'bytes',
+115 silly get     date: 'Thu, 06 Apr 2017 14:31:48 GMT',
+115 silly get     via: '1.1 varnish',
+115 silly get     age: '0',
+115 silly get     connection: 'keep-alive',
+115 silly get     'x-served-by': 'cache-hkg6822-HKG',
+115 silly get     'x-cache': 'HIT',
+115 silly get     'x-cache-hits': '1',
+115 silly get     'x-timer': 'S1491489108.003522,VS0,VE158',
+115 silly get     vary: 'Accept-Encoding' } ]
+116 verbose get saving react-select to /home/sonnt/.npm/registry.npmjs.org/react-select/.cache.json
+117 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+118 silly addNameRange number 2 { name: 'react-select',
+118 silly addNameRange   range: '>=1.0.0-rc.1 <2.0.0',
+118 silly addNameRange   hasData: true }
+119 silly addNameRange versions [ 'react-select',
+119 silly addNameRange   [ '0.0.1',
+119 silly addNameRange     '0.0.2',
+119 silly addNameRange     '0.0.3',
+119 silly addNameRange     '0.0.4',
+119 silly addNameRange     '0.0.5',
+119 silly addNameRange     '0.0.6',
+119 silly addNameRange     '0.0.7',
+119 silly addNameRange     '0.1.0',
+119 silly addNameRange     '0.1.1',
+119 silly addNameRange     '0.2.0',
+119 silly addNameRange     '0.2.1',
+119 silly addNameRange     '0.2.2',
+119 silly addNameRange     '0.2.3',
+119 silly addNameRange     '0.2.4',
+119 silly addNameRange     '0.2.5',
+119 silly addNameRange     '0.2.6',
+119 silly addNameRange     '0.2.7',
+119 silly addNameRange     '0.2.8',
+119 silly addNameRange     '0.2.9',
+119 silly addNameRange     '0.2.10',
+119 silly addNameRange     '0.2.11',
+119 silly addNameRange     '0.2.12',
+119 silly addNameRange     '0.2.13',
+119 silly addNameRange     '0.2.14',
+119 silly addNameRange     '0.3.0',
+119 silly addNameRange     '0.3.1',
+119 silly addNameRange     '0.3.2',
+119 silly addNameRange     '0.3.3',
+119 silly addNameRange     '0.3.4',
+119 silly addNameRange     '0.3.5',
+119 silly addNameRange     '0.4.0',
+119 silly addNameRange     '0.4.1',
+119 silly addNameRange     '0.4.2',
+119 silly addNameRange     '0.4.3',
+119 silly addNameRange     '0.4.4',
+119 silly addNameRange     '0.4.5',
+119 silly addNameRange     '0.4.6',
+119 silly addNameRange     '0.4.7',
+119 silly addNameRange     '0.4.8',
+119 silly addNameRange     '0.4.9',
+119 silly addNameRange     '0.5.0',
+119 silly addNameRange     '0.5.1',
+119 silly addNameRange     '0.5.2',
+119 silly addNameRange     '0.5.3',
+119 silly addNameRange     '0.5.4',
+119 silly addNameRange     '0.5.5',
+119 silly addNameRange     '0.5.6',
+119 silly addNameRange     '0.6.0',
+119 silly addNameRange     '0.6.1',
+119 silly addNameRange     '0.6.2',
+119 silly addNameRange     '0.6.3',
+119 silly addNameRange     '0.6.4',
+119 silly addNameRange     '0.6.5',
+119 silly addNameRange     '0.6.6',
+119 silly addNameRange     '0.6.7',
+119 silly addNameRange     '0.6.8',
+119 silly addNameRange     '0.6.9',
+119 silly addNameRange     '0.6.10',
+119 silly addNameRange     '0.6.11',
+119 silly addNameRange     '0.6.12',
+119 silly addNameRange     '0.7.0',
+119 silly addNameRange     '0.8.0',
+119 silly addNameRange     '0.8.1',
+119 silly addNameRange     '0.8.2',
+119 silly addNameRange     '0.8.3',
+119 silly addNameRange     '0.8.4',
+119 silly addNameRange     '0.9.0',
+119 silly addNameRange     '0.9.1',
+119 silly addNameRange     '1.0.0-beta1',
+119 silly addNameRange     '1.0.0-beta2',
+119 silly addNameRange     '1.0.0-beta3',
+119 silly addNameRange     '1.0.0-beta4',
+119 silly addNameRange     '1.0.0-beta5',
+119 silly addNameRange     '1.0.0-beta6',
+119 silly addNameRange     '1.0.0-beta7',
+119 silly addNameRange     '1.0.0-beta8',
+119 silly addNameRange     '1.0.0-beta9',
+119 silly addNameRange     '1.0.0-beta10',
+119 silly addNameRange     '1.0.0-beta11',
+119 silly addNameRange     '1.0.0-beta12',
+119 silly addNameRange     '1.0.0-beta13',
+119 silly addNameRange     '1.0.0-beta14',
+119 silly addNameRange     '1.0.0-rc.1',
+119 silly addNameRange     '1.0.0-rc.2',
+119 silly addNameRange     '1.0.0-rc.3' ] ]
+120 silly addNamed react-select@1.0.0-rc.3
+121 verbose addNamed "1.0.0-rc.3" is a plain semver version for react-select
+122 silly mapToRegistry name react-select
+123 silly mapToRegistry using default registry
+124 silly mapToRegistry registry https://registry.npmjs.org/
+125 silly mapToRegistry data Result {
+125 silly mapToRegistry   raw: 'react-select',
+125 silly mapToRegistry   scope: null,
+125 silly mapToRegistry   name: 'react-select',
+125 silly mapToRegistry   rawSpec: '',
+125 silly mapToRegistry   spec: 'latest',
+125 silly mapToRegistry   type: 'tag' }
+126 silly mapToRegistry uri https://registry.npmjs.org/react-select
+127 verbose addRemoteTarball https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz not in flight; adding
+128 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz',
+128 verbose addRemoteTarball   '94ade090522153067eff09282d0525249ea1d9e3' ]
+129 info retry fetch attempt 1 at 9:31:48 PM
+130 info attempt registry request try #1 at 9:31:48 PM
+131 http fetch GET https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz
+132 http fetch 200 https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz
+133 silly fetchAndShaCheck shasum 94ade090522153067eff09282d0525249ea1d9e3
+134 verbose addTmpTarball /tmp/npm-8235-528b341d/registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz not in flight; adding
+135 verbose addTmpTarball already have metadata; skipping unpack for react-select@1.0.0-rc.3
+136 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+137 silly cache afterAdd react-select@1.0.0-rc.3
+138 verbose afterAdd /home/sonnt/.npm/react-select/1.0.0-rc.3/package/package.json not in flight; writing
+139 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+140 verbose afterAdd /home/sonnt/.npm/react-select/1.0.0-rc.3/package/package.json written
+141 silly install resolved [ { name: 'react-select',
+141 silly install resolved     version: '1.0.0-rc.3',
+141 silly install resolved     description: 'A Select control built with and for ReactJS',
+141 silly install resolved     main: 'lib/Select.js',
+141 silly install resolved     style: 'dist/react-select.min.css',
+141 silly install resolved     author: { name: 'Jed Watson' },
+141 silly install resolved     license: 'MIT',
+141 silly install resolved     repository:
+141 silly install resolved      { type: 'git',
+141 silly install resolved        url: 'git+https://github.com/JedWatson/react-select.git' },
+141 silly install resolved     dependencies: { classnames: '^2.2.4', 'react-input-autosize': '^1.1.0' },
+141 silly install resolved     devDependencies:
+141 silly install resolved      { babel: '^5.8.23',
+141 silly install resolved        'babel-eslint': '^4.1.3',
+141 silly install resolved        chai: '^3.5.0',
+141 silly install resolved        coveralls: '^2.11.12',
+141 silly install resolved        eslint: '^1.10.3',
+141 silly install resolved        'eslint-plugin-react': '^3.15.0',
+141 silly install resolved        gulp: '^3.9.1',
+141 silly install resolved        'isomorphic-fetch': '^2.2.1',
+141 silly install resolved        istanbul: '^0.4.5',
+141 silly install resolved        jsdom: '^9.5.0',
+141 silly install resolved        mocha: '^3.0.2',
+141 silly install resolved        react: '^15.0',
+141 silly install resolved        'react-addons-shallow-compare': '^15.0',
+141 silly install resolved        'react-addons-test-utils': '^15.0',
+141 silly install resolved        'react-component-gulp-tasks': '^0.7.7',
+141 silly install resolved        'react-dom': '^15.0',
+141 silly install resolved        'react-gravatar': '^2.4.5',
+141 silly install resolved        'react-highlight-words': '^0.3.0',
+141 silly install resolved        'react-virtualized': '^7.23.0',
+141 silly install resolved        'react-virtualized-select': '^1.4.0',
+141 silly install resolved        sinon: '^1.17.5',
+141 silly install resolved        unexpected: '^10.17.0',
+141 silly install resolved        'unexpected-dom': '^3.1.0',
+141 silly install resolved        'unexpected-react': '^3.2.4',
+141 silly install resolved        'unexpected-sinon': '^10.4.0' },
+141 silly install resolved     peerDependencies:
+141 silly install resolved      { react: '^0.14 || ^15.0.0-rc || ^15.0',
+141 silly install resolved        'react-dom': '^0.14 || ^15.0.0-rc || ^15.0' },
+141 silly install resolved     'browserify-shim':
+141 silly install resolved      { classnames: 'global:classNames',
+141 silly install resolved        react: 'global:React',
+141 silly install resolved        'react-dom': 'global:ReactDOM',
+141 silly install resolved        'react-input-autosize': 'global:AutosizeInput' },
+141 silly install resolved     scripts:
+141 silly install resolved      { build: 'gulp clean && NODE_ENV=production gulp build',
+141 silly install resolved        bump: 'gulp bump',
+141 silly install resolved        'bump:major': 'gulp bump:major',
+141 silly install resolved        'bump:minor': 'gulp bump:minor',
+141 silly install resolved        cover: 'istanbul cover _mocha -- -u exports --compilers js:babel/register -R spec',
+141 silly install resolved        coveralls: 'NODE_ENV=test istanbul cover _mocha --report lcovonly -- -u exports --compilers js:babel/register -R spec && cat coverage/lcov.info | coveralls',
+141 silly install resolved        examples: 'gulp dev:server',
+141 silly install resolved        lint: 'eslint .',
+141 silly install resolved        'publish:examples': 'NODE_ENV=production gulp publish:examples',
+141 silly install resolved        release: 'NODE_ENV=production gulp release',
+141 silly install resolved        start: 'gulp dev',
+141 silly install resolved        test: 'npm run lint && mocha --compilers js:babel/register',
+141 silly install resolved        watch: 'gulp watch:lib' },
+141 silly install resolved     keywords:
+141 silly install resolved      [ 'combobox',
+141 silly install resolved        'form',
+141 silly install resolved        'input',
+141 silly install resolved        'multiselect',
+141 silly install resolved        'react',
+141 silly install resolved        'react-component',
+141 silly install resolved        'select',
+141 silly install resolved        'ui' ],
+141 silly install resolved     gitHead: '63a59dcececbc46e341a0b77be8af5b4da790c1d',
+141 silly install resolved     bugs: { url: 'https://github.com/JedWatson/react-select/issues' },
+141 silly install resolved     homepage: 'https://github.com/JedWatson/react-select#readme',
+141 silly install resolved     _id: 'react-select@1.0.0-rc.3',
+141 silly install resolved     _shasum: '94ade090522153067eff09282d0525249ea1d9e3',
+141 silly install resolved     _from: 'react-select@>=1.0.0-rc.1 <2.0.0',
+141 silly install resolved     _npmVersion: '3.10.9',
+141 silly install resolved     _nodeVersion: '7.2.0',
+141 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+141 silly install resolved     dist:
+141 silly install resolved      { shasum: '94ade090522153067eff09282d0525249ea1d9e3',
+141 silly install resolved        tarball: 'https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz' },
+141 silly install resolved     maintainers: [ [Object], [Object] ],
+141 silly install resolved     _npmOperationalInternal:
+141 silly install resolved      { host: 'packages-18-east.internal.npmjs.com',
+141 silly install resolved        tmp: 'tmp/react-select-1.0.0-rc.3.tgz_1485874516014_0.7496515417005867' },
+141 silly install resolved     directories: {},
+141 silly install resolved     _resolved: 'https://registry.npmjs.org/react-select/-/react-select-1.0.0-rc.3.tgz' } ]
+142 info install react-select@1.0.0-rc.3 into /home/sonnt/ruby/doantotnghiep
+143 info installOne react-select@1.0.0-rc.3
+144 verbose installOne of react-select to /home/sonnt/ruby/doantotnghiep not in flight; installing
+145 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+146 verbose lock using /home/sonnt/.npm/_locks/react-select-02d4f099ed06845c.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+147 silly install write writing react-select 1.0.0-rc.3 to /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+148 verbose unbuild node_modules/react-select
+149 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select is being purged from base /home/sonnt/ruby/doantotnghiep
+150 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+151 verbose tar unpack /home/sonnt/.npm/react-select/1.0.0-rc.3/package.tgz
+152 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+153 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select is being purged
+154 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+155 silly gunzTarPerm modes [ '775', '664' ]
+156 silly gunzTarPerm extractEntry package.json
+157 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+158 silly gunzTarPerm extractEntry .npmignore
+159 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+160 silly gunzTarPerm extractEntry README.md
+161 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+162 silly gunzTarPerm extractEntry LICENSE
+163 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+164 silly gunzTarPerm extractEntry gulpfile.js
+165 silly gunzTarPerm modified mode [ 'gulpfile.js', 420, 436 ]
+166 silly gunzTarPerm extractEntry wallaby.js
+167 silly gunzTarPerm modified mode [ 'wallaby.js', 420, 436 ]
+168 silly gunzTarPerm extractEntry TODO.md
+169 silly gunzTarPerm modified mode [ 'TODO.md', 420, 436 ]
+170 silly gunzTarPerm extractEntry .travis.yml
+171 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+172 silly gunzTarPerm extractEntry CHANGES.md
+173 silly gunzTarPerm modified mode [ 'CHANGES.md', 420, 436 ]
+174 silly gunzTarPerm extractEntry CONTRIBUTING.md
+175 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 436 ]
+176 silly gunzTarPerm extractEntry HISTORY.md
+177 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
+178 silly gunzTarPerm extractEntry ISSUE_TEMPLATE.md
+179 silly gunzTarPerm modified mode [ 'ISSUE_TEMPLATE.md', 420, 436 ]
+180 silly gunzTarPerm extractEntry .eslintignore
+181 silly gunzTarPerm modified mode [ '.eslintignore', 420, 436 ]
+182 silly gunzTarPerm extractEntry .eslintrc
+183 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
+184 silly gunzTarPerm extractEntry dist/react-select.js
+185 silly gunzTarPerm modified mode [ 'dist/react-select.js', 420, 436 ]
+186 silly gunzTarPerm extractEntry dist/react-select.min.js
+187 silly gunzTarPerm modified mode [ 'dist/react-select.min.js', 420, 436 ]
+188 silly gunzTarPerm extractEntry dist/react-select.css
+189 silly gunzTarPerm modified mode [ 'dist/react-select.css', 420, 436 ]
+190 silly gunzTarPerm extractEntry dist/react-select.min.css
+191 silly gunzTarPerm modified mode [ 'dist/react-select.min.css', 420, 436 ]
+192 silly gunzTarPerm extractEntry examples/src/.npmignore
+193 silly gunzTarPerm modified mode [ 'examples/src/.npmignore', 420, 436 ]
+194 silly gunzTarPerm extractEntry examples/src/app.js
+195 silly gunzTarPerm modified mode [ 'examples/src/app.js', 420, 436 ]
+196 silly gunzTarPerm extractEntry examples/src/components/BooleanSelect.js
+197 silly gunzTarPerm modified mode [ 'examples/src/components/BooleanSelect.js', 420, 436 ]
+198 silly gunzTarPerm extractEntry examples/src/components/Contributors.js
+199 silly gunzTarPerm modified mode [ 'examples/src/components/Contributors.js', 420, 436 ]
+200 silly gunzTarPerm extractEntry examples/src/components/Creatable.js
+201 silly gunzTarPerm modified mode [ 'examples/src/components/Creatable.js', 420, 436 ]
+202 silly gunzTarPerm extractEntry examples/src/components/CustomComponents.js
+203 silly gunzTarPerm modified mode [ 'examples/src/components/CustomComponents.js', 420, 436 ]
+204 silly gunzTarPerm extractEntry examples/src/components/CustomRender.js
+205 silly gunzTarPerm modified mode [ 'examples/src/components/CustomRender.js', 420, 436 ]
+206 silly gunzTarPerm extractEntry examples/src/components/GithubUsers.js
+207 silly gunzTarPerm modified mode [ 'examples/src/components/GithubUsers.js', 420, 436 ]
+208 silly gunzTarPerm extractEntry examples/src/components/Multiselect.js
+209 silly gunzTarPerm modified mode [ 'examples/src/components/Multiselect.js', 420, 436 ]
+210 silly gunzTarPerm extractEntry examples/src/components/NumericSelect.js
+211 silly gunzTarPerm modified mode [ 'examples/src/components/NumericSelect.js', 420, 436 ]
+212 silly gunzTarPerm extractEntry examples/src/components/States.js
+213 silly gunzTarPerm modified mode [ 'examples/src/components/States.js', 420, 436 ]
+214 silly gunzTarPerm extractEntry examples/src/components/Virtualized.js
+215 silly gunzTarPerm modified mode [ 'examples/src/components/Virtualized.js', 420, 436 ]
+216 silly gunzTarPerm extractEntry examples/src/data/cities.js
+217 silly gunzTarPerm modified mode [ 'examples/src/data/cities.js', 420, 436 ]
+218 silly gunzTarPerm extractEntry examples/src/data/contributors.js
+219 silly gunzTarPerm modified mode [ 'examples/src/data/contributors.js', 420, 436 ]
+220 silly gunzTarPerm extractEntry examples/src/data/states.js
+221 silly gunzTarPerm modified mode [ 'examples/src/data/states.js', 420, 436 ]
+222 silly gunzTarPerm extractEntry examples/src/data/users.js
+223 silly gunzTarPerm modified mode [ 'examples/src/data/users.js', 420, 436 ]
+224 silly gunzTarPerm extractEntry examples/src/example.less
+225 silly gunzTarPerm modified mode [ 'examples/src/example.less', 420, 436 ]
+226 silly gunzTarPerm extractEntry examples/src/favicon.ico
+227 silly gunzTarPerm modified mode [ 'examples/src/favicon.ico', 420, 436 ]
+228 silly gunzTarPerm extractEntry examples/src/index.html
+229 silly gunzTarPerm modified mode [ 'examples/src/index.html', 420, 436 ]
+230 silly gunzTarPerm extractEntry examples/src/standalone.html
+231 silly gunzTarPerm modified mode [ 'examples/src/standalone.html', 420, 436 ]
+232 silly gunzTarPerm extractEntry less/control.less
+233 silly gunzTarPerm modified mode [ 'less/control.less', 420, 436 ]
+234 silly gunzTarPerm extractEntry less/default.less
+235 silly gunzTarPerm modified mode [ 'less/default.less', 420, 436 ]
+236 silly gunzTarPerm extractEntry less/menu.less
+237 silly gunzTarPerm modified mode [ 'less/menu.less', 420, 436 ]
+238 silly gunzTarPerm extractEntry less/mixins.less
+239 silly gunzTarPerm modified mode [ 'less/mixins.less', 420, 436 ]
+240 silly gunzTarPerm extractEntry less/multi.less
+241 silly gunzTarPerm modified mode [ 'less/multi.less', 420, 436 ]
+242 silly gunzTarPerm extractEntry less/select.less
+243 silly gunzTarPerm modified mode [ 'less/select.less', 420, 436 ]
+244 silly gunzTarPerm extractEntry less/spinner.less
+245 silly gunzTarPerm modified mode [ 'less/spinner.less', 420, 436 ]
+246 silly gunzTarPerm extractEntry lib/Async.js
+247 silly gunzTarPerm modified mode [ 'lib/Async.js', 420, 436 ]
+248 silly gunzTarPerm extractEntry lib/AsyncCreatable.js
+249 silly gunzTarPerm modified mode [ 'lib/AsyncCreatable.js', 420, 436 ]
+250 silly gunzTarPerm extractEntry lib/Creatable.js
+251 silly gunzTarPerm modified mode [ 'lib/Creatable.js', 420, 436 ]
+252 silly gunzTarPerm extractEntry lib/Option.js
+253 silly gunzTarPerm modified mode [ 'lib/Option.js', 420, 436 ]
+254 silly gunzTarPerm extractEntry lib/Select.js
+255 silly gunzTarPerm modified mode [ 'lib/Select.js', 420, 436 ]
+256 silly gunzTarPerm extractEntry lib/Value.js
+257 silly gunzTarPerm modified mode [ 'lib/Value.js', 420, 436 ]
+258 silly gunzTarPerm extractEntry lib/utils/defaultArrowRenderer.js
+259 silly gunzTarPerm modified mode [ 'lib/utils/defaultArrowRenderer.js', 420, 436 ]
+260 silly gunzTarPerm extractEntry lib/utils/defaultClearRenderer.js
+261 silly gunzTarPerm modified mode [ 'lib/utils/defaultClearRenderer.js', 420, 436 ]
+262 silly gunzTarPerm extractEntry lib/utils/defaultFilterOptions.js
+263 silly gunzTarPerm modified mode [ 'lib/utils/defaultFilterOptions.js', 420, 436 ]
+264 silly gunzTarPerm extractEntry lib/utils/defaultMenuRenderer.js
+265 silly gunzTarPerm modified mode [ 'lib/utils/defaultMenuRenderer.js', 420, 436 ]
+266 silly gunzTarPerm extractEntry lib/utils/stripDiacritics.js
+267 silly gunzTarPerm modified mode [ 'lib/utils/stripDiacritics.js', 420, 436 ]
+268 silly gunzTarPerm extractEntry .gitattributes
+269 silly gunzTarPerm modified mode [ '.gitattributes', 420, 436 ]
+270 silly gunzTarPerm extractEntry .coveralls.yml
+271 silly gunzTarPerm modified mode [ '.coveralls.yml', 420, 436 ]
+272 silly gunzTarPerm extractEntry scss/components.scss
+273 silly gunzTarPerm modified mode [ 'scss/components.scss', 420, 436 ]
+274 silly gunzTarPerm extractEntry scss/control.scss
+275 silly gunzTarPerm modified mode [ 'scss/control.scss', 420, 436 ]
+276 silly gunzTarPerm extractEntry scss/default.scss
+277 silly gunzTarPerm modified mode [ 'scss/default.scss', 420, 436 ]
+278 silly gunzTarPerm extractEntry scss/menu.scss
+279 silly gunzTarPerm modified mode [ 'scss/menu.scss', 420, 436 ]
+280 silly gunzTarPerm extractEntry scss/mixins.scss
+281 silly gunzTarPerm modified mode [ 'scss/mixins.scss', 420, 436 ]
+282 silly gunzTarPerm extractEntry scss/multi.scss
+283 silly gunzTarPerm modified mode [ 'scss/multi.scss', 420, 436 ]
+284 silly gunzTarPerm extractEntry scss/select.scss
+285 silly gunzTarPerm modified mode [ 'scss/select.scss', 420, 436 ]
+286 silly gunzTarPerm extractEntry scss/spinner.scss
+287 silly gunzTarPerm modified mode [ 'scss/spinner.scss', 420, 436 ]
+288 silly gunzTarPerm extractEntry src/Async.js
+289 silly gunzTarPerm modified mode [ 'src/Async.js', 420, 436 ]
+290 silly gunzTarPerm extractEntry src/AsyncCreatable.js
+291 silly gunzTarPerm modified mode [ 'src/AsyncCreatable.js', 420, 436 ]
+292 silly gunzTarPerm extractEntry src/Creatable.js
+293 silly gunzTarPerm modified mode [ 'src/Creatable.js', 420, 436 ]
+294 silly gunzTarPerm extractEntry src/Option.js
+295 silly gunzTarPerm modified mode [ 'src/Option.js', 420, 436 ]
+296 silly gunzTarPerm extractEntry src/Select.js
+297 silly gunzTarPerm modified mode [ 'src/Select.js', 420, 436 ]
+298 silly gunzTarPerm extractEntry src/Value.js
+299 silly gunzTarPerm modified mode [ 'src/Value.js', 420, 436 ]
+300 silly gunzTarPerm extractEntry src/utils/defaultArrowRenderer.js
+301 silly gunzTarPerm modified mode [ 'src/utils/defaultArrowRenderer.js', 420, 436 ]
+302 silly gunzTarPerm extractEntry src/utils/defaultClearRenderer.js
+303 silly gunzTarPerm modified mode [ 'src/utils/defaultClearRenderer.js', 420, 436 ]
+304 silly gunzTarPerm extractEntry src/utils/defaultFilterOptions.js
+305 silly gunzTarPerm modified mode [ 'src/utils/defaultFilterOptions.js', 420, 436 ]
+306 silly gunzTarPerm extractEntry src/utils/defaultMenuRenderer.js
+307 silly gunzTarPerm modified mode [ 'src/utils/defaultMenuRenderer.js', 420, 436 ]
+308 silly gunzTarPerm extractEntry src/utils/stripDiacritics.js
+309 silly gunzTarPerm modified mode [ 'src/utils/stripDiacritics.js', 420, 436 ]
+310 silly gunzTarPerm extractEntry test/Async-test.js
+311 silly gunzTarPerm modified mode [ 'test/Async-test.js', 420, 436 ]
+312 silly gunzTarPerm extractEntry test/AsyncCreatable-test.js
+313 silly gunzTarPerm modified mode [ 'test/AsyncCreatable-test.js', 420, 436 ]
+314 silly gunzTarPerm extractEntry test/Creatable-test.js
+315 silly gunzTarPerm modified mode [ 'test/Creatable-test.js', 420, 436 ]
+316 silly gunzTarPerm extractEntry test/Select-test.js
+317 silly gunzTarPerm modified mode [ 'test/Select-test.js', 420, 436 ]
+318 silly gunzTarPerm extractEntry test/Value-test.js
+319 silly gunzTarPerm modified mode [ 'test/Value-test.js', 420, 436 ]
+320 silly gunzTarPerm extractEntry testHelpers/jsdomHelper.js
+321 silly gunzTarPerm modified mode [ 'testHelpers/jsdomHelper.js', 420, 436 ]
+322 silly gunzTarPerm extractEntry testHelpers/nodeListType.js
+323 silly gunzTarPerm modified mode [ 'testHelpers/nodeListType.js', 420, 436 ]
+324 silly gunzTarPerm extractEntry yarn.lock
+325 silly gunzTarPerm modified mode [ 'yarn.lock', 420, 436 ]
+326 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/package.json
+327 info preinstall react-select@1.0.0-rc.3
+328 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/package.json
+329 silly prepareForInstallMany adding classnames@^2.2.4 from react-select dependencies
+330 silly prepareForInstallMany adding react-input-autosize@^1.1.0 from react-select dependencies
+331 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/package.json
+332 silly cache add args [ 'classnames@^2.2.4', null ]
+333 verbose cache add spec classnames@^2.2.4
+334 silly cache add args [ 'react-input-autosize@^1.1.0', null ]
+335 verbose cache add spec react-input-autosize@^1.1.0
+336 silly cache add parsed spec Result {
+336 silly cache add   raw: 'classnames@^2.2.4',
+336 silly cache add   scope: null,
+336 silly cache add   name: 'classnames',
+336 silly cache add   rawSpec: '^2.2.4',
+336 silly cache add   spec: '>=2.2.4 <3.0.0',
+336 silly cache add   type: 'range' }
+337 silly addNamed classnames@>=2.2.4 <3.0.0
+338 verbose addNamed ">=2.2.4 <3.0.0" is a valid semver range for classnames
+339 silly addNameRange { name: 'classnames', range: '>=2.2.4 <3.0.0', hasData: false }
+340 silly mapToRegistry name classnames
+341 silly mapToRegistry using default registry
+342 silly mapToRegistry registry https://registry.npmjs.org/
+343 silly mapToRegistry data Result {
+343 silly mapToRegistry   raw: 'classnames',
+343 silly mapToRegistry   scope: null,
+343 silly mapToRegistry   name: 'classnames',
+343 silly mapToRegistry   rawSpec: '',
+343 silly mapToRegistry   spec: 'latest',
+343 silly mapToRegistry   type: 'tag' }
+344 silly mapToRegistry uri https://registry.npmjs.org/classnames
+345 verbose addNameRange registry:https://registry.npmjs.org/classnames not in flight; fetching
+346 silly cache add parsed spec Result {
+346 silly cache add   raw: 'react-input-autosize@^1.1.0',
+346 silly cache add   scope: null,
+346 silly cache add   name: 'react-input-autosize',
+346 silly cache add   rawSpec: '^1.1.0',
+346 silly cache add   spec: '>=1.1.0 <2.0.0',
+346 silly cache add   type: 'range' }
+347 silly addNamed react-input-autosize@>=1.1.0 <2.0.0
+348 verbose addNamed ">=1.1.0 <2.0.0" is a valid semver range for react-input-autosize
+349 silly addNameRange { name: 'react-input-autosize',
+349 silly addNameRange   range: '>=1.1.0 <2.0.0',
+349 silly addNameRange   hasData: false }
+350 silly mapToRegistry name react-input-autosize
+351 silly mapToRegistry using default registry
+352 silly mapToRegistry registry https://registry.npmjs.org/
+353 silly mapToRegistry data Result {
+353 silly mapToRegistry   raw: 'react-input-autosize',
+353 silly mapToRegistry   scope: null,
+353 silly mapToRegistry   name: 'react-input-autosize',
+353 silly mapToRegistry   rawSpec: '',
+353 silly mapToRegistry   spec: 'latest',
+353 silly mapToRegistry   type: 'tag' }
+354 silly mapToRegistry uri https://registry.npmjs.org/react-input-autosize
+355 verbose addNameRange registry:https://registry.npmjs.org/react-input-autosize not in flight; fetching
+356 verbose request uri https://registry.npmjs.org/react-input-autosize
+357 verbose request no auth needed
+358 info attempt registry request try #1 at 9:31:50 PM
+359 http request GET https://registry.npmjs.org/react-input-autosize
+360 verbose request uri https://registry.npmjs.org/classnames
+361 verbose request no auth needed
+362 info attempt registry request try #1 at 9:31:50 PM
+363 verbose etag W/"58c6dfb7-81a1"
+364 verbose lastModified Mon, 13 Mar 2017 18:06:47 GMT
+365 http request GET https://registry.npmjs.org/classnames
+366 http 200 https://registry.npmjs.org/react-input-autosize
+367 verbose headers { server: 'nginx/1.10.1',
+367 verbose headers   'content-type': 'application/json',
+367 verbose headers   'last-modified': 'Fri, 17 Mar 2017 08:22:19 GMT',
+367 verbose headers   etag: 'W/"58cb9cbb-ef67"',
+367 verbose headers   'content-encoding': 'gzip',
+367 verbose headers   'cache-control': 'max-age=300',
+367 verbose headers   'content-length': '6720',
+367 verbose headers   'accept-ranges': 'bytes',
+367 verbose headers   date: 'Thu, 06 Apr 2017 14:31:51 GMT',
+367 verbose headers   via: '1.1 varnish',
+367 verbose headers   age: '112',
+367 verbose headers   connection: 'keep-alive',
+367 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+367 verbose headers   'x-cache': 'HIT',
+367 verbose headers   'x-cache-hits': '1',
+367 verbose headers   'x-timer': 'S1491489111.231493,VS0,VE0',
+367 verbose headers   vary: 'Accept-Encoding' }
+368 silly get cb [ 200,
+368 silly get   { server: 'nginx/1.10.1',
+368 silly get     'content-type': 'application/json',
+368 silly get     'last-modified': 'Fri, 17 Mar 2017 08:22:19 GMT',
+368 silly get     etag: 'W/"58cb9cbb-ef67"',
+368 silly get     'content-encoding': 'gzip',
+368 silly get     'cache-control': 'max-age=300',
+368 silly get     'content-length': '6720',
+368 silly get     'accept-ranges': 'bytes',
+368 silly get     date: 'Thu, 06 Apr 2017 14:31:51 GMT',
+368 silly get     via: '1.1 varnish',
+368 silly get     age: '112',
+368 silly get     connection: 'keep-alive',
+368 silly get     'x-served-by': 'cache-hkg6822-HKG',
+368 silly get     'x-cache': 'HIT',
+368 silly get     'x-cache-hits': '1',
+368 silly get     'x-timer': 'S1491489111.231493,VS0,VE0',
+368 silly get     vary: 'Accept-Encoding' } ]
+369 verbose get saving react-input-autosize to /home/sonnt/.npm/registry.npmjs.org/react-input-autosize/.cache.json
+370 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+371 silly addNameRange number 2 { name: 'react-input-autosize',
+371 silly addNameRange   range: '>=1.1.0 <2.0.0',
+371 silly addNameRange   hasData: true }
+372 silly addNameRange versions [ 'react-input-autosize',
+372 silly addNameRange   [ '0.0.1',
+372 silly addNameRange     '0.1.0',
+372 silly addNameRange     '0.2.0',
+372 silly addNameRange     '0.2.1',
+372 silly addNameRange     '0.2.2',
+372 silly addNameRange     '0.2.3',
+372 silly addNameRange     '0.3.0',
+372 silly addNameRange     '0.3.1',
+372 silly addNameRange     '0.4.0',
+372 silly addNameRange     '0.4.1',
+372 silly addNameRange     '0.4.2',
+372 silly addNameRange     '0.4.3',
+372 silly addNameRange     '0.4.4',
+372 silly addNameRange     '0.4.5',
+372 silly addNameRange     '0.5.0',
+372 silly addNameRange     '0.5.1',
+372 silly addNameRange     '0.5.2',
+372 silly addNameRange     '0.5.3',
+372 silly addNameRange     '0.6.0',
+372 silly addNameRange     '0.6.1',
+372 silly addNameRange     '0.6.2',
+372 silly addNameRange     '0.6.3',
+372 silly addNameRange     '0.6.4',
+372 silly addNameRange     '0.6.5',
+372 silly addNameRange     '0.6.6',
+372 silly addNameRange     '0.6.7',
+372 silly addNameRange     '0.6.8',
+372 silly addNameRange     '0.6.9',
+372 silly addNameRange     '0.6.10',
+372 silly addNameRange     '0.6.12',
+372 silly addNameRange     '0.6.13',
+372 silly addNameRange     '1.0.0',
+372 silly addNameRange     '1.1.0' ] ]
+373 silly addNamed react-input-autosize@1.1.0
+374 verbose addNamed "1.1.0" is a plain semver version for react-input-autosize
+375 silly mapToRegistry name react-input-autosize
+376 silly mapToRegistry using default registry
+377 silly mapToRegistry registry https://registry.npmjs.org/
+378 silly mapToRegistry data Result {
+378 silly mapToRegistry   raw: 'react-input-autosize',
+378 silly mapToRegistry   scope: null,
+378 silly mapToRegistry   name: 'react-input-autosize',
+378 silly mapToRegistry   rawSpec: '',
+378 silly mapToRegistry   spec: 'latest',
+378 silly mapToRegistry   type: 'tag' }
+379 silly mapToRegistry uri https://registry.npmjs.org/react-input-autosize
+380 verbose addRemoteTarball https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz not in flight; adding
+381 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz',
+381 verbose addRemoteTarball   '3fe1ac832387d8abab85f6051ceab1c9e5570853' ]
+382 info retry fetch attempt 1 at 9:31:51 PM
+383 info attempt registry request try #1 at 9:31:51 PM
+384 http fetch GET https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz
+385 http fetch 200 https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz
+386 silly fetchAndShaCheck shasum 3fe1ac832387d8abab85f6051ceab1c9e5570853
+387 verbose addTmpTarball /tmp/npm-8235-528b341d/registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz not in flight; adding
+388 verbose addTmpTarball already have metadata; skipping unpack for react-input-autosize@1.1.0
+389 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+390 silly cache afterAdd react-input-autosize@1.1.0
+391 verbose afterAdd /home/sonnt/.npm/react-input-autosize/1.1.0/package/package.json not in flight; writing
+392 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+393 verbose afterAdd /home/sonnt/.npm/react-input-autosize/1.1.0/package/package.json written
+394 http 200 https://registry.npmjs.org/classnames
+395 verbose headers { server: 'nginx/1.10.1',
+395 verbose headers   'content-type': 'application/json',
+395 verbose headers   'last-modified': 'Tue, 04 Apr 2017 16:38:58 GMT',
+395 verbose headers   etag: 'W/"58e3cc22-81ef"',
+395 verbose headers   'content-encoding': 'gzip',
+395 verbose headers   'cache-control': 'max-age=300',
+395 verbose headers   'content-length': '6377',
+395 verbose headers   'accept-ranges': 'bytes',
+395 verbose headers   date: 'Thu, 06 Apr 2017 14:31:51 GMT',
+395 verbose headers   via: '1.1 varnish',
+395 verbose headers   age: '0',
+395 verbose headers   connection: 'keep-alive',
+395 verbose headers   'x-served-by': 'cache-hkg6823-HKG',
+395 verbose headers   'x-cache': 'HIT',
+395 verbose headers   'x-cache-hits': '1',
+395 verbose headers   'x-timer': 'S1491489112.683982,VS0,VE161',
+395 verbose headers   vary: 'Accept-Encoding' }
+396 silly get cb [ 200,
+396 silly get   { server: 'nginx/1.10.1',
+396 silly get     'content-type': 'application/json',
+396 silly get     'last-modified': 'Tue, 04 Apr 2017 16:38:58 GMT',
+396 silly get     etag: 'W/"58e3cc22-81ef"',
+396 silly get     'content-encoding': 'gzip',
+396 silly get     'cache-control': 'max-age=300',
+396 silly get     'content-length': '6377',
+396 silly get     'accept-ranges': 'bytes',
+396 silly get     date: 'Thu, 06 Apr 2017 14:31:51 GMT',
+396 silly get     via: '1.1 varnish',
+396 silly get     age: '0',
+396 silly get     connection: 'keep-alive',
+396 silly get     'x-served-by': 'cache-hkg6823-HKG',
+396 silly get     'x-cache': 'HIT',
+396 silly get     'x-cache-hits': '1',
+396 silly get     'x-timer': 'S1491489112.683982,VS0,VE161',
+396 silly get     vary: 'Accept-Encoding' } ]
+397 verbose get saving classnames to /home/sonnt/.npm/registry.npmjs.org/classnames/.cache.json
+398 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+399 silly addNameRange number 2 { name: 'classnames', range: '>=2.2.4 <3.0.0', hasData: true }
+400 silly addNameRange versions [ 'classnames',
+400 silly addNameRange   [ '1.0.0',
+400 silly addNameRange     '1.1.0',
+400 silly addNameRange     '1.1.1',
+400 silly addNameRange     '1.1.2',
+400 silly addNameRange     '1.1.3',
+400 silly addNameRange     '1.1.4',
+400 silly addNameRange     '1.2.0',
+400 silly addNameRange     '1.2.1',
+400 silly addNameRange     '1.2.2',
+400 silly addNameRange     '2.0.0',
+400 silly addNameRange     '2.1.0',
+400 silly addNameRange     '2.1.1',
+400 silly addNameRange     '2.1.2',
+400 silly addNameRange     '2.1.3',
+400 silly addNameRange     '2.1.4',
+400 silly addNameRange     '2.1.5',
+400 silly addNameRange     '2.2.0',
+400 silly addNameRange     '2.2.1',
+400 silly addNameRange     '2.2.2',
+400 silly addNameRange     '2.2.3',
+400 silly addNameRange     '2.2.4',
+400 silly addNameRange     '2.2.5' ] ]
+401 silly addNamed classnames@2.2.5
+402 verbose addNamed "2.2.5" is a plain semver version for classnames
+403 silly cache afterAdd classnames@2.2.5
+404 verbose afterAdd /home/sonnt/.npm/classnames/2.2.5/package/package.json not in flight; writing
+405 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+406 verbose afterAdd /home/sonnt/.npm/classnames/2.2.5/package/package.json written
+407 silly install resolved [ { name: 'react-input-autosize',
+407 silly install resolved     version: '1.1.0',
+407 silly install resolved     description: 'Auto-resizing Input Component for React',
+407 silly install resolved     main: 'lib/AutosizeInput.js',
+407 silly install resolved     author: { name: 'Jed Watson' },
+407 silly install resolved     license: 'MIT',
+407 silly install resolved     repository:
+407 silly install resolved      { type: 'git',
+407 silly install resolved        url: 'git+https://github.com/JedWatson/react-input-autosize.git' },
+407 silly install resolved     devDependencies:
+407 silly install resolved      { 'babel-jest': '^6.0.1',
+407 silly install resolved        eslint: '^2.11.1',
+407 silly install resolved        'eslint-config-keystone': '^2.2.0',
+407 silly install resolved        'eslint-plugin-react': '^5.1.1',
+407 silly install resolved        gulp: '^3.9.0',
+407 silly install resolved        'jest-cli': '^0.8.1',
+407 silly install resolved        react: '^15.0',
+407 silly install resolved        'react-addons-test-utils': '^15.0',
+407 silly install resolved        'react-component-gulp-tasks': '^0.7.6',
+407 silly install resolved        'react-dom': '^15.0' },
+407 silly install resolved     peerDependencies: { react: '^0.14 || ^15.0.0-rc || ^15.0' },
+407 silly install resolved     'browserify-shim': { react: 'global:React' },
+407 silly install resolved     scripts:
+407 silly install resolved      { build: 'gulp clean && NODE_ENV=production gulp build',
+407 silly install resolved        bump: 'gulp bump',
+407 silly install resolved        'bump:major': 'gulp bump:major',
+407 silly install resolved        'bump:minor': 'gulp bump:minor',
+407 silly install resolved        examples: 'gulp dev:server',
+407 silly install resolved        lint: 'eslint ./; true',
+407 silly install resolved        'publish:site': 'NODE_ENV=production gulp publish:examples',
+407 silly install resolved        release: 'NODE_ENV=production gulp release',
+407 silly install resolved        start: 'gulp dev',
+407 silly install resolved        test: 'jest; true',
+407 silly install resolved        watch: 'gulp watch:lib' },
+407 silly install resolved     jest:
+407 silly install resolved      { scriptPreprocessor: '<rootDir>/node_modules/babel-jest',
+407 silly install resolved        unmockedModulePathPatterns: [Object],
+407 silly install resolved        testPathDirs: [Object] },
+407 silly install resolved     keywords: [ 'react', 'react-component', 'input', 'autosize' ],
+407 silly install resolved     gitHead: 'dbaf3c25b755e1811dc49aec341bec6328cdeef2',
+407 silly install resolved     bugs: { url: 'https://github.com/JedWatson/react-input-autosize/issues' },
+407 silly install resolved     homepage: 'https://github.com/JedWatson/react-input-autosize#readme',
+407 silly install resolved     _id: 'react-input-autosize@1.1.0',
+407 silly install resolved     _shasum: '3fe1ac832387d8abab85f6051ceab1c9e5570853',
+407 silly install resolved     _from: 'react-input-autosize@>=1.1.0 <2.0.0',
+407 silly install resolved     _npmVersion: '3.3.6',
+407 silly install resolved     _nodeVersion: '5.0.0',
+407 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+407 silly install resolved     maintainers: [ [Object] ],
+407 silly install resolved     dist:
+407 silly install resolved      { shasum: '3fe1ac832387d8abab85f6051ceab1c9e5570853',
+407 silly install resolved        tarball: 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz' },
+407 silly install resolved     _npmOperationalInternal:
+407 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+407 silly install resolved        tmp: 'tmp/react-input-autosize-1.1.0.tgz_1468157966059_0.25969206308946013' },
+407 silly install resolved     directories: {},
+407 silly install resolved     _resolved: 'https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-1.1.0.tgz' },
+407 silly install resolved   { name: 'classnames',
+407 silly install resolved     version: '2.2.5',
+407 silly install resolved     description: 'A simple utility for conditionally joining classNames together',
+407 silly install resolved     main: 'index.js',
+407 silly install resolved     author: { name: 'Jed Watson' },
+407 silly install resolved     license: 'MIT',
+407 silly install resolved     repository:
+407 silly install resolved      { type: 'git',
+407 silly install resolved        url: 'git+https://github.com/JedWatson/classnames.git' },
+407 silly install resolved     scripts:
+407 silly install resolved      { benchmarks: 'node ./benchmarks/run',
+407 silly install resolved        unit: 'mocha tests/*.js',
+407 silly install resolved        test: 'npm run unit' },
+407 silly install resolved     keywords:
+407 silly install resolved      [ 'react',
+407 silly install resolved        'css',
+407 silly install resolved        'classes',
+407 silly install resolved        'classname',
+407 silly install resolved        'classnames',
+407 silly install resolved        'util',
+407 silly install resolved        'utility' ],
+407 silly install resolved     devDependencies: { benchmark: '^1.0.0', mocha: '^2.1.0' },
+407 silly install resolved     gitHead: '1fc62c0490bfc7d67a1178bbb60897cfa0580c7b',
+407 silly install resolved     bugs: { url: 'https://github.com/JedWatson/classnames/issues' },
+407 silly install resolved     homepage: 'https://github.com/JedWatson/classnames#readme',
+407 silly install resolved     _id: 'classnames@2.2.5',
+407 silly install resolved     _shasum: 'fb3801d453467649ef3603c7d61a02bd129bde6d',
+407 silly install resolved     _from: 'classnames@>=2.2.4 <3.0.0',
+407 silly install resolved     _npmVersion: '3.3.6',
+407 silly install resolved     _nodeVersion: '5.0.0',
+407 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+407 silly install resolved     maintainers: [ [Object] ],
+407 silly install resolved     dist:
+407 silly install resolved      { shasum: 'fb3801d453467649ef3603c7d61a02bd129bde6d',
+407 silly install resolved        tarball: 'https://registry.npmjs.org/classnames/-/classnames-2.2.5.tgz' },
+407 silly install resolved     _npmOperationalInternal:
+407 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+407 silly install resolved        tmp: 'tmp/classnames-2.2.5.tgz_1462195436082_0.17347457958385348' },
+407 silly install resolved     directories: {},
+407 silly install resolved     _resolved: 'https://registry.npmjs.org/classnames/-/classnames-2.2.5.tgz',
+407 silly install resolved     readme: 'ERROR: No README data found!' } ]
+408 info install react-input-autosize@1.1.0 into /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+409 info install classnames@2.2.5 into /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+410 info installOne react-input-autosize@1.1.0
+411 verbose installOne of react-input-autosize to /home/sonnt/ruby/doantotnghiep/node_modules/react-select not in flight; installing
+412 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+413 info installOne classnames@2.2.5
+414 verbose installOne of classnames to /home/sonnt/ruby/doantotnghiep/node_modules/react-select not in flight; installing
+415 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+416 verbose lock using /home/sonnt/.npm/_locks/react-input-autosize-bec15bfca301eb36.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+417 silly install write writing react-input-autosize 1.1.0 to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+418 verbose lock using /home/sonnt/.npm/_locks/classnames-a82fa9317921dfa8.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+419 silly install write writing classnames 2.2.5 to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+420 verbose unbuild node_modules/react-select/node_modules/react-input-autosize
+421 verbose unbuild node_modules/react-select/node_modules/classnames
+422 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize is being purged from base /home/sonnt/ruby/doantotnghiep
+423 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+424 verbose tar unpack /home/sonnt/.npm/react-input-autosize/1.1.0/package.tgz
+425 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+426 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize is being purged
+427 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+428 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames is being purged from base /home/sonnt/ruby/doantotnghiep
+429 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+430 silly gunzTarPerm modes [ '775', '664' ]
+431 verbose tar unpack /home/sonnt/.npm/classnames/2.2.5/package.tgz
+432 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+433 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames is being purged
+434 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+435 silly gunzTarPerm modes [ '775', '664' ]
+436 silly gunzTarPerm extractEntry package.json
+437 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+438 silly gunzTarPerm extractEntry package.json
+439 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+440 silly gunzTarPerm extractEntry .npmignore
+441 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+442 silly gunzTarPerm extractEntry README.md
+443 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+444 silly gunzTarPerm extractEntry README.md
+445 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+446 silly gunzTarPerm extractEntry LICENSE
+447 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+448 silly gunzTarPerm extractEntry LICENSE
+449 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+450 silly gunzTarPerm extractEntry .eslintignore
+451 silly gunzTarPerm extractEntry bind.js
+452 silly gunzTarPerm modified mode [ 'bind.js', 420, 436 ]
+453 silly gunzTarPerm extractEntry dedupe.js
+454 silly gunzTarPerm modified mode [ 'dedupe.js', 420, 436 ]
+455 silly gunzTarPerm extractEntry .editorconfig
+456 silly gunzTarPerm modified mode [ '.editorconfig', 420, 436 ]
+457 silly gunzTarPerm extractEntry dist/react-input-autosize.js
+458 silly gunzTarPerm modified mode [ 'dist/react-input-autosize.js', 420, 436 ]
+459 silly gunzTarPerm extractEntry index.js
+460 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+461 silly gunzTarPerm extractEntry dist/react-input-autosize.min.js
+462 silly gunzTarPerm modified mode [ 'dist/react-input-autosize.min.js', 420, 436 ]
+463 silly gunzTarPerm extractEntry CONTRIBUTING.md
+464 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 420, 436 ]
+465 silly gunzTarPerm extractEntry bower.json
+466 silly gunzTarPerm modified mode [ 'bower.json', 420, 436 ]
+467 silly gunzTarPerm extractEntry example/src/.npmignore
+468 silly gunzTarPerm extractEntry example/src/app.js
+469 silly gunzTarPerm modified mode [ 'example/src/app.js', 420, 436 ]
+470 silly gunzTarPerm extractEntry HISTORY.md
+471 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
+472 silly gunzTarPerm extractEntry example/src/example.less
+473 silly gunzTarPerm modified mode [ 'example/src/example.less', 420, 436 ]
+474 silly gunzTarPerm extractEntry example/src/index.html
+475 silly gunzTarPerm modified mode [ 'example/src/index.html', 420, 436 ]
+476 silly gunzTarPerm extractEntry example/src/standalone.html
+477 silly gunzTarPerm extractEntry .eslintrc
+478 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
+479 silly gunzTarPerm extractEntry lib/AutosizeInput.js
+480 silly gunzTarPerm modified mode [ 'lib/AutosizeInput.js', 420, 436 ]
+481 silly gunzTarPerm extractEntry src/AutosizeInput.js
+482 silly gunzTarPerm modified mode [ 'src/AutosizeInput.js', 420, 436 ]
+483 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames/package.json
+484 info preinstall classnames@2.2.5
+485 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames/package.json
+486 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames/package.json
+487 silly install resolved []
+488 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+489 info build /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+490 info linkStuff classnames@2.2.5
+491 silly linkStuff classnames@2.2.5 has /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules as its parent node_modules
+492 verbose linkBins classnames@2.2.5
+493 verbose linkMans classnames@2.2.5
+494 verbose rebuildBundles classnames@2.2.5
+495 info install classnames@2.2.5
+496 info postinstall classnames@2.2.5
+497 verbose unlock done using /home/sonnt/.npm/_locks/classnames-a82fa9317921dfa8.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/classnames
+498 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize/package.json
+499 info preinstall react-input-autosize@1.1.0
+500 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize/package.json
+501 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize/package.json
+502 silly install resolved []
+503 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+504 info build /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+505 info linkStuff react-input-autosize@1.1.0
+506 silly linkStuff react-input-autosize@1.1.0 has /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules as its parent node_modules
+507 verbose linkBins react-input-autosize@1.1.0
+508 verbose linkMans react-input-autosize@1.1.0
+509 verbose rebuildBundles react-input-autosize@1.1.0
+510 info install react-input-autosize@1.1.0
+511 info postinstall react-input-autosize@1.1.0
+512 verbose unlock done using /home/sonnt/.npm/_locks/react-input-autosize-bec15bfca301eb36.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select/node_modules/react-input-autosize
+513 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+514 info build /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+515 info linkStuff react-select@1.0.0-rc.3
+516 silly linkStuff react-select@1.0.0-rc.3 has /home/sonnt/ruby/doantotnghiep/node_modules as its parent node_modules
+517 verbose linkBins react-select@1.0.0-rc.3
+518 verbose linkMans react-select@1.0.0-rc.3
+519 verbose rebuildBundles react-select@1.0.0-rc.3
+520 verbose rebuildBundles [ 'classnames', 'react-input-autosize' ]
+521 info install react-select@1.0.0-rc.3
+522 info postinstall react-select@1.0.0-rc.3
+523 verbose unlock done using /home/sonnt/.npm/_locks/react-select-02d4f099ed06845c.lock for /home/sonnt/ruby/doantotnghiep/node_modules/react-select
+524 info build /home/sonnt/ruby/doantotnghiep
+525 info linkStuff doantotnghiep@1.0.0
+526 silly linkStuff doantotnghiep@1.0.0 has /home/sonnt/ruby as its parent node_modules
+527 verbose linkBins doantotnghiep@1.0.0
+528 verbose linkMans doantotnghiep@1.0.0
+529 verbose rebuildBundles doantotnghiep@1.0.0
+530 verbose rebuildBundles [ '.bin',
+530 verbose rebuildBundles   '.cache',
+530 verbose rebuildBundles   'babel-core',
+530 verbose rebuildBundles   'babel-loader',
+530 verbose rebuildBundles   'babel-plugin-add-module-exports',
+530 verbose rebuildBundles   'babel-plugin-transform-class-properties',
+530 verbose rebuildBundles   'babel-plugin-transform-es3-member-expression-literals',
+530 verbose rebuildBundles   'babel-plugin-transform-es3-property-literals',
+530 verbose rebuildBundles   'babel-preset-es2015',
+530 verbose rebuildBundles   'babel-preset-react',
+530 verbose rebuildBundles   'babel-preset-stage-0',
+530 verbose rebuildBundles   'material-design-icons',
+530 verbose rebuildBundles   'material-ui',
+530 verbose rebuildBundles   'pluralize',
+530 verbose rebuildBundles   'react',
+530 verbose rebuildBundles   'react-addons-update',
+530 verbose rebuildBundles   'react-dom',
+530 verbose rebuildBundles   'react-motion',
+530 verbose rebuildBundles   'react-router',
+530 verbose rebuildBundles   'react-select',
+530 verbose rebuildBundles   'react-sound',
+530 verbose rebuildBundles   'react-tap-event-plugin',
+530 verbose rebuildBundles   'react-toastr',
+530 verbose rebuildBundles   'webpack',
+530 verbose rebuildBundles   'webpack-dev-server' ]
+531 info install doantotnghiep@1.0.0
+532 info postinstall doantotnghiep@1.0.0
+533 info prepublish doantotnghiep@1.0.0
+534 verbose validateInstall loading /home/sonnt/ruby/doantotnghiep/package.json for validation
+535 verbose stack Error: The package webpack@1.14.0 does not satisfy its siblings' peerDependencies requirements!
+535 verbose stack     at /usr/lib/node_modules/npm/lib/install.js:125:32
+535 verbose stack     at /usr/lib/node_modules/npm/lib/install.js:268:7
+535 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+535 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+535 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+535 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+535 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+535 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+535 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+535 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+536 verbose cwd /home/sonnt/ruby/doantotnghiep
+537 error Linux 3.19.0-51-generic
+538 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install"
+539 error node v4.4.4
+540 error npm  v2.15.1
+541 error code EPEERINVALID
+542 error peerinvalid The package webpack@1.14.0 does not satisfy its siblings' peerDependencies requirements!
+542 error peerinvalid Peer babel-loader@6.4.1 wants webpack@1 || 2 || ^2.1.0-beta || ^2.2.0-rc
+542 error peerinvalid Peer webpack-dev-server@2.4.2 wants webpack@^2.2.0
+543 verbose exit [ 1, true ]
