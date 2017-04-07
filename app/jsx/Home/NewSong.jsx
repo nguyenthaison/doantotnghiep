@@ -20,7 +20,7 @@ export default class NewSong extends PageComponent {
 
   getOption(type) {
     return {
-      filter: {music_type: type},
+      filter: {country: type},
     }
   }
 
@@ -51,11 +51,13 @@ export default class NewSong extends PageComponent {
     let listKp = this.state.listKp;
 
     return (
-      <CommonRank
-        listVn={listVn}
-        listUs={listUs}
-        listKp={listKp}
-      />
+
+      <div></div>
     )
   }
 }
+{/*<CommonRank
+        listVn={listVn}
+        listUs={listUs}
+        listKp={listKp}
+      />*/}

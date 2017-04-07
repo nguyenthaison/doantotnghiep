@@ -2,6 +2,7 @@ import {Tabs, Tab} from "material-ui/Tabs";
 import NewSong from "./NewSong";
 import Singer from "./Singer";
 import Ranking from "./Ranking";
+import Album from "./Album";
 
 export default class Home extends PageComponent {
   constructor(props) {
@@ -15,25 +16,35 @@ export default class Home extends PageComponent {
     this.setToolBar("Home");
   }
 
-  // componentWillReceiveProps(nextProps) {
+  handleViewTopic = () => {
 
-  // }
+  }
 
-  // get locationState() {
-  //   return Helper.getCurrentLocationState();
-  // }
+  renderLabel(title) {
+    return (
+      <div className="home-topic">
+        <h2><span className="pointer" onClick={this.handleViewTopic}>
+          {title}<i className="material-icons">keyboard_arrow_right</i>
+        </span></h2>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
         <div className="row">
           <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div className="home-center">
+              {this.renderLabel("Ranking Music")}
               <div className="bxh">
                 <Ranking />
               </div>
+              {this.renderLabel("Ranking Album")}
               <div className="bxh">
-                <NewSong />
+                <Album />
               </div>
+              {this.renderLabel("New Song")}
               <div className="new-song">
                 <Singer />
               </div>

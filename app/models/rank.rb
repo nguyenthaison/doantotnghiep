@@ -1,8 +1,7 @@
 class Rank < ApplicationRecord
   enum rank_type: [:vn, :us, :kp]
 
-  has_many :song_ranks
-  has_many :song, through: :song_ranks
+  belongs_to :target, polymorphic: true
 
   class << self
     def get_first_day_pre_week

@@ -14,18 +14,19 @@ export default class Rank extends PageComponent {
   }
 
   componentDidMount() {
-    API.Rank.getList(this.handleGetListVnCallback, this.getOption("vn"));
-    API.Rank.getList(this.handleGetListUsCallback, this.getOption("us"));
-    API.Rank.getList(this.handleGetListKpCallback, this.getOption("kp"));
+    API.Song.getList(this.handleGetListVnCallback, this.getOption("vn"));
+    API.Song.getList(this.handleGetListUsCallback, this.getOption("vn"));
+    API.Song.getList(this.handleGetListKpCallback, this.getOption("vn"));
   }
 
   getOption(type) {
     let include = {
-      song_ranks: {include: {song: { include: {singer_songs: {include: {singer: {}}}}}}},
+      singers: {only: ["id", "name"]},
     };
     return {
+      methods: ["get_rank_previous"],
       include: JSON.stringify(include),
-      filter: {rank_type: type},
+      filter: {country: type},
       take: TAKE_RECORD,
     }
   }
@@ -33,19 +34,19 @@ export default class Rank extends PageComponent {
   handleGetListVnCallback = (status, data) => {
     if (!status) return;
     this.setState({
-      listTopVn: TmpSongs,
+      listTopVn: data.songs,
     });
   }
 
   handleGetListUsCallback = (status, data) => {
     this.setState({
-      listTopUs: TmpSongs,
+      listTopUs: data.songs,
     });
   }
 
   handleGetListKpCallback = (status, data) => {
     this.setState({
-      listTopKp: TmpSongs,
+      listTopKp: data.songs,
     });
   }
 
@@ -57,8 +58,11 @@ export default class Rank extends PageComponent {
     return (
       <CommonRank
         listVn={listTopVn}
+        titleVn="Top music viet nam"
         listUs={listTopUs}
+        titleUs="Top music au my"
         listKp={listTopKp}
+        titleKp="Top music Kpop"
       />
     )
   }
