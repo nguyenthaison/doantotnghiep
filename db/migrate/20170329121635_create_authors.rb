@@ -5,6 +5,7 @@ class CreateAuthors < ActiveRecord::Migration[5.0]
       t.integer :age
       t.date :dob
       t.text :content
+      t.integer :total_favorite
       t.references :countries, foreign: true, index: true
       t.timestamps
     end

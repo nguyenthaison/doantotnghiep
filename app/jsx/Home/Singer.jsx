@@ -20,7 +20,7 @@ export default class Singer extends PageComponent {
 
   render() {
     return (
-      <div>{this.renderListSinger()}</div>
+      <div>{/*this.renderListSinger()*/}</div>
     )
   }
 }

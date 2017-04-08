@@ -3,4 +3,5 @@ Fabricator :author do
   age
   content
   countries_id
+  total_favorite
 end
