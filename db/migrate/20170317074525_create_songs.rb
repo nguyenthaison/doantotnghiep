@@ -7,10 +7,9 @@ class CreateSongs < ActiveRecord::Migration[5.0]
       t.integer :rank
       t.integer :download
       t.string :link
-      t.integer :author_id
+      t.integer :user_id
       t.references :album, foreign: true, index: true
-      t.references :user, foreign: true, index: true
-      t.references :singer, foreign: true, index: true
+      t.references :country, foreign: true, index: true
       t.timestamps
     end
   end
