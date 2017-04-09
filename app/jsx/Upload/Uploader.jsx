@@ -56,7 +56,7 @@ export default class Uploader extends BaseComponent {
 
   render() {
     return (
-      <div className="row file-uploader">
+      <div className="file-uploader">
         <div className="upload-component">
           {/*<RaisedButton
             primary={true}
