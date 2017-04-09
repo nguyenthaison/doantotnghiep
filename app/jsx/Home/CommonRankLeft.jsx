@@ -33,15 +33,15 @@ export default class CommonRankLeft extends PageComponent {
           <li className="rank-right">
             <ul>
               <li className="ellipsis">
-                <span className="pointer" title={item.name}
+                <div className="pointer" title={item.name}
                   onClick={() => this.handleClickPlay(item)}>
                   {item.name}
-                </span>
+                </div>
               </li>
-              <li className="ellipsis">
-                <p className="pointer" title={item.singer}>
+              <li className="name-singer">
+                <div className="pointer" title={item.singer}>
                   {item.singers ? this.renderSinger(item.singers) : ""}
-                </p>
+                </div>
               </li>
             </ul>
           </li>

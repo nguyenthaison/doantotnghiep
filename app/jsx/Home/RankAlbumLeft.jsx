@@ -60,14 +60,23 @@ export default class RankAlbumLeft extends PageComponent {
     let albumKp = this.state.albumKp;
 
     return (
-      <CommonRankLeft
-        listVn={albumVn}
-        titleVn="Top album viet nam"
-        listUs={albumUs}
-        titleUs="Top album au my"
-        listKp={albumKp}
-        titleKp="Top album Kpop"
-      />
+      <div className="border-menu-right">
+        <div className="label-top">
+          BXH Bai Hat
+          <i className="material-icons">keyboard_arrow_right</i>
+          <i className="material-icons pointer">
+            play_circle_outline
+          </i>
+        </div>
+        <CommonRankLeft
+          listVn={albumVn}
+          titleVn="Top album viet nam"
+          listUs={albumUs}
+          titleUs="Top album au my"
+          listKp={albumKp}
+          titleKp="Top album Kpop"
+        />
+      </div>
     )
   }
 }
