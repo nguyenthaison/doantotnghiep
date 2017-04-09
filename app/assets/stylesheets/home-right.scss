@@ -1,0 +1,69 @@
+.home-left  {
+  .border-menu-right {
+      background-color: #f2f2f2;
+      margin-bottom: 10px;
+      position: relative;
+  }
+  .label-top {
+    background: #ffffff;
+      color: purple;
+      padding: 17px 0;
+      font-size: 20px;
+      i {
+        position: absolute;
+        top: 20px;
+      }
+      i.pointer{
+        float: right;
+        right: 15px;
+      }
+  }
+  ul.sub-main1-top {
+    margin: 0;
+    padding: 12px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #fcfcfc;
+    li {
+      text-transform: capitalize;
+      display: inline-block;
+      float: left;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    li.rank-left {
+      padding: 5px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        width: 35px;
+        line-height: 2;
+    }
+    li.rank-right {
+      width: 67%;
+      li {
+        display: inline;
+      }
+      .ellipsis {
+        white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 15px;
+          font-weight: bold;
+          width: 100%;
+      }
+      .name-singer {
+        color: #908f8f;
+        font-size: 13px;
+      }
+    }
+    li.view {
+      width: 20%;
+      text-align: right;
+      font-size: 13px;
+      color: #908f8f;
+      line-height: 3;
+    }
+  }
+}

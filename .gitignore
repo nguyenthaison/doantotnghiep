@@ -61,3 +61,4 @@ app/assets/javascripts/react-app.js
 # Ignore Byebug command history file.
 .byebug_history
 .gitignore
+public/samples

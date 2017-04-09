@@ -15,12 +15,9 @@ module.exports = {
     extensions: ["", ".js", ".jsx"]
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: [
-        "babel?cacheDirectory",
-      ],
-    }]
+    loaders: [
+      {test: /\.jsx?$/, loaders: ["babel?cacheDirectory"]},
+    ]
   },
   plugins: [
      new webpack.ProvidePlugin({

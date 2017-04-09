@@ -15,22 +15,33 @@ export default class CommonRank extends PageComponent {
     Helper.transitionTo("/song", list);
   }
 
+  renderSinger(singers) {
+    return singers.map((singer, index) => {
+      return (
+        <span key={index} onClick={() => this.handleClickSingerInfo(singer)}>
+          {singer.name + " "}
+        </span>
+      )
+    })
+  }
+
   renderSongs(list) {
     return list.map((item, index) => {
       return (
         <ul key={index} className="sub-main1-top">
-          <li className="rank-left">{index + 1}</li>
+          <li className="rank-left">{item.get_rank_previous}</li>
           <li className="rank-right">
             <ul>
               <li className="ellipsis">
-                <span className="pointer" title={item.title} onClick={() => this.handleClickPlay(item)}>
-                  {item.title}
+                <span className="pointer" title={item.name}
+                  onClick={() => this.handleClickPlay(item)}>
+                  {item.name}
                 </span>
               </li>
               <li className="ellipsis">
-                <span className="pointer" title={item.singer} onClick={() => this.handleClickSingerInfo(item.singer)}>
-                  {item.singer}
-                </span>
+                <p className="pointer" title={item.singer}>
+                  {item.singers ? this.renderSinger(item.singers) : ""}
+                </p>
               </li>
             </ul>
           </li>
@@ -43,6 +54,9 @@ export default class CommonRank extends PageComponent {
     let listVn = this.props.listVn;
     let listUs = this.props.listUs;
     let listKp = this.props.listKp;
+    let titleVn = this.props.titleVn;
+    let titleUs = this.props.titleUs;
+    let titleKp = this.props.titleKp;
 
     return (
       <div className="child-tab">
@@ -53,7 +67,7 @@ export default class CommonRank extends PageComponent {
                 <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <div className="row">
                     <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      Top music viet nam
+                      {titleVn}
                     </span>
                   </div>
                 </div>
@@ -76,7 +90,7 @@ export default class CommonRank extends PageComponent {
                 <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <div className="row">
                     <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      Top music chau au
+                      {titleUs}
                     </span>
                   </div>
                 </div>
@@ -99,7 +113,7 @@ export default class CommonRank extends PageComponent {
                 <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                   <div className="row">
                     <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      Top music Kpop
+                      {titleKp}
                     </span>
                   </div>
                 </div>

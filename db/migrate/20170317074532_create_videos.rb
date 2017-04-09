@@ -8,7 +8,7 @@ class CreateVideos < ActiveRecord::Migration[5.0]
       t.integer :download
       t.references :album, foreign: true, index: true
       t.references :music_type, foreign: true, index: true
-      t.references :user, foreign: true, index: true
+      t.integer :user_id
       t.references :singer, foreign: true, index: true
       t.timestamps
     end

@@ -48,8 +48,8 @@ export default class Drawer extends BaseComponent {
   render() {
     let drawerClass = this.props.collapsed ? "drawer-close" : "drawer-open";
     let width = this.props.collapsed ? 56 : 195;
-    let bigLogo = "/images/headphone.jpg";
-    let smallLogo = "/images/logo.png"
+    let bigLogo = "/images/logo-big.jpg";
+    let smallLogo = "/images/logo-small.jpeg"
     let logo = this.props.collapsed ? smallLogo : bigLogo;
 
     return (

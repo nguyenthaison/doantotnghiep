@@ -1,0 +1,3 @@
+Fabricator :favorite do
+
+end

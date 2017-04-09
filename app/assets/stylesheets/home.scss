@@ -5,9 +5,14 @@
   padding-left: 20px;
 
   .home-center {
+    .home-topic {
+      color: purple;
+      text-transform: uppercase;
+    }
 
     .bxh {
-      height: 700px;
+      overflow: hidden;
+      margin-bottom: 30px;
       /*margin-bottom: 30px;*/
 
       .child-tab {
@@ -40,7 +45,7 @@
 
           ul.sub-main1-top {
             margin:  0;
-            padding: 10px 0;
+            padding: 0;
             overflow: hidden;
             border-bottom: 1px solid #FFFFFF;
 
@@ -84,6 +89,7 @@
 
                 li:first-child {
                   font-weight: bold;
+                  padding-top: 5px;
                 }
 
                 li:last-child {
@@ -109,9 +115,5 @@
       margin-top: 20px;
       height: 500px;
     }
-  }
-
-  .home-left {
-    background-color: #e5e5e5;
   }
 }

@@ -53,7 +53,7 @@ export default class BaseAPI {
     options.success = (response) => {
       if (response.error) {
         if (!response.data) {
-          Helper.showMessage(t("common.message.connection_error"), "error");
+          Helper.showMessage("Connection error", "error");
         }
       }
 
@@ -64,13 +64,13 @@ export default class BaseAPI {
 
     options.error = (xhr) => {
       if (xhr.status == 422 || xhr.status == 401) {
-        Helper.showAlert(t("login.not_login"),
-          t("common.message.request_login"),
+        Helper.showAlert("Not login",
+          "Session is expired, press OK to  reload!",
           BaseAPI.handleRequestLogin);
           return false;
       }
 
-      Helper.showMessage("connection_error", "error");
+      Helper.showMessage("Connection error", "error");
 
       if (callback) {
         callback(false);
