@@ -39,7 +39,7 @@ export default class Home extends PageComponent {
             <div className="home-center">
               {this.renderLabel("New Song")}
               <div className="new-song">
-                <Singer />
+                <NewSong />
               </div>
               {this.renderLabel("Ranking Music")}
               <div className="bxh">
