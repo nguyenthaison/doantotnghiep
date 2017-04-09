@@ -253,7 +253,7 @@ export default class Song extends PageComponent {
               <div className="media-control-background"></div>
               <div className="button-control">
                 <Sound
-                  url={song.url || ""}
+                  url={song.link || ""}
                   playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
                   position={this.state.position}
                   volume={this.state.volume}

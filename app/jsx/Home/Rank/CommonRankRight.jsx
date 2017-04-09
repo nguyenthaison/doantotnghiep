@@ -1,4 +1,4 @@
-export default class CommonRankLeft extends PageComponent {
+export default class CommonRankRight extends PageComponent {
   constructor(props) {
     super(props);
   }
@@ -15,6 +15,10 @@ export default class CommonRankLeft extends PageComponent {
     Helper.transitionTo("/song", list);
   }
 
+  handleActive = (listActive) => {
+    this.props.onActive(listActive);
+  }
+
   renderSinger(singers) {
     return singers.map((singer, index) => {
       return (
@@ -26,6 +30,8 @@ export default class CommonRankLeft extends PageComponent {
   }
 
   renderSongs(list) {
+    let ckeckAlbum = this.props.album;
+
     return list.map((item, index) => {
       return (
         <ul key={index} className="sub-main1-top">
@@ -34,7 +40,7 @@ export default class CommonRankLeft extends PageComponent {
             <ul>
               <li className="ellipsis">
                 <div className="pointer" title={item.name}
-                  onClick={() => this.handleClickPlay(item)}>
+                  onClick={() => this.handleClickPlay(ckeckAlbum ? item.songs : item)}>
                   {item.name}
                 </div>
               </li>
@@ -61,17 +67,17 @@ export default class CommonRankLeft extends PageComponent {
 
     return (
       <mui.Tabs>
-        <mui.Tab label="Viet Nam" >
+        <mui.Tab label="Viet Nam" onActive={() => this.handleActive(listVn)}>
           <div>
             {this.renderSongs(listVn)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Au My" >
+        <mui.Tab label="Au My" onActive={() => this.handleActive(listUs)}>
           <div>
             {this.renderSongs(listUs)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Han Quoc">
+        <mui.Tab label="Han Quoc" onActive={() => this.handleActive(listKp)}>
           <div>
             {this.renderSongs(listKp)}
           </div>

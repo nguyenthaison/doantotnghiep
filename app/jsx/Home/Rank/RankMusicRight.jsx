@@ -1,9 +1,8 @@
 const TAKE_RECORD = 10;
-import TmpSongs from "../Songs/TmpSongs";
-import CommonRank from "./CommonRank";
-import CommonRankLeft from "./CommonRankLeft";
 
-export default class RankMusicLeft extends PageComponent {
+import CommonRankRight from "./CommonRankRight";
+
+export default class RankMusicRight extends PageComponent {
   constructor(props) {
     super(props);
 
@@ -11,6 +10,7 @@ export default class RankMusicLeft extends PageComponent {
       listTopVn: [],
       listTopUs: [],
       listTopKp: [],
+      listActive: [],
     };
   }
 
@@ -29,6 +29,7 @@ export default class RankMusicLeft extends PageComponent {
       include: JSON.stringify(include),
       filter: {country: type},
       take: TAKE_RECORD,
+      order_by: "id asc",
     }
   }
 
@@ -36,6 +37,7 @@ export default class RankMusicLeft extends PageComponent {
     if (!status) return;
     this.setState({
       listTopVn: data.songs,
+      listActive: data.songs,
     });
   }
 
@@ -51,6 +53,16 @@ export default class RankMusicLeft extends PageComponent {
     });
   }
 
+  handleActive = (listActive) => {
+    this.setState({
+      listActive: listActive,
+    })
+  }
+
+  handlePlayAll = () => {
+    Helper.transitionTo("/song", this.state.listActive);
+  }
+
   render() {
     let listTopVn = this.state.listTopVn;
     let listTopUs = this.state.listTopUs;
@@ -59,19 +71,20 @@ export default class RankMusicLeft extends PageComponent {
     return (
       <div className="border-menu-right">
         <div className="label-top">
-          BXH Bai Hat
+          RANK MUSIC
           <i className="material-icons">keyboard_arrow_right</i>
-          <i className="material-icons pointer">
+          <i className="material-icons pointer" onClick={this.handlePlayAll}>
             play_circle_outline
           </i>
         </div>
-        <CommonRankLeft
+        <CommonRankRight
           listVn={listTopVn}
           titleVn="Top music viet nam"
           listUs={listTopUs}
           titleUs="Top music au my"
           listKp={listTopKp}
           titleKp="Top music Kpop"
+          onActive={this.handleActive}
         />
       </div>
     )
