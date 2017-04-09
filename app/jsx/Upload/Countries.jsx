@@ -28,11 +28,19 @@ export default class Countries extends PageComponent {
   renderCountry() {
     return this.props.list.map((item, index) => {
       return (
-        <div key={index}>
-          <span onClick={() => this.hanldeSelectCountry(item)}>
-            {item.full_name}
-          </span>
-        </div>
+        <li key={index}>
+          <ul>
+            <li className="image-flag-country">
+              <img src="images/vietnam-flag.png" />
+            </li>
+            <li>
+              <span onClick={() => this.hanldeSelectCountry(item)}>
+                {item.full_name}
+              </span>
+            </li>
+          </ul>
+
+        </li>
       )
     })
   }
@@ -41,7 +49,7 @@ export default class Countries extends PageComponent {
     let country = this.state.country;
 
     return (
-      <div>
+      <div className="list-country">
         {this.renderCountry()}
         {country ? <MusicType
           musicTypes={country.music_types}

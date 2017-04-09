@@ -82,14 +82,18 @@ export default class index extends PageComponent {
     let imageUpload = "images/upload.png";
 
     return (
-      <div className="home-page">
-        <div className="col-md-9">
-          <div className="upload-file">
-            <div className="box-upload row">
-              <div className="col-md-3">
-                <img src={imageUpload} className="image-upload"/>
+      <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
+        <div className="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+          <div className="row">
+            <div className="box-upload">
+              <div className="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+                <div className="row">
+                  <div className="border-image-upload">
+                    <img src={imageUpload} className="image-upload"/>
+                  </div>
+                </div>
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 col-lg-9 col-sm-9 col-xs-12">
                 <cm.TextField
                   name="name-song"
                   fullWidth={true}
@@ -104,6 +108,7 @@ export default class index extends PageComponent {
                   fullWidth={true}
                   fieldName="lyric"
                   value={this.state.song.content}
+                  multiLine={true}
                   onChange={(event, value) => this.handleChangeInputText("content", value)}
                 />
                 <Uploader
@@ -122,16 +127,18 @@ export default class index extends PageComponent {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
-          <h3>Content banned upload:</h3>
-          <p>- Nội dung liên quan đến chính trị, trái thuần phong mỹ tục</p>
+        <div className="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+          <div className="row">
+            <h3>Content banned upload:</h3>
+            <p>- Nội dung liên quan đến chính trị, trái thuần phong mỹ tục</p>
 
-          <p>- Nội dung đã thuộc sở hữu của bên thứ ba, được quy định rõ ở đây.</p>
-          <p>- Nội dung đã được phát hành trên Zing MP3.</p>
-          <h3>Rules upload:</h3>
-          <p>- Kích thước file nhạc tối đa là 60MB.</p>
-          <p>- Mỗi tài khoản thường được phép upload tối đa 200 bài hát (không giới hạn đối với tài khoản VIP).</p>
-          <p>- Tính năng upload sẽ bị khóa (tạm thời) nếu bạn cố tình vi phạm nhiều lần các quy định về nội dung cấm (đã nêu ở trên)</p>
+            <p>- Nội dung đã thuộc sở hữu của bên thứ ba, được quy định rõ ở đây.</p>
+            <p>- Nội dung đã được phát hành trên Zing MP3.</p>
+            <h3>Rules upload:</h3>
+            <p>- Kích thước file nhạc tối đa là 60MB.</p>
+            <p>- Mỗi tài khoản thường được phép upload tối đa 200 bài hát (không giới hạn đối với tài khoản VIP).</p>
+            <p>- Tính năng upload sẽ bị khóa (tạm thời) nếu bạn cố tình vi phạm nhiều lần các quy định về nội dung cấm (đã nêu ở trên)</p>
+          </div>
         </div>
       </div>
     )
