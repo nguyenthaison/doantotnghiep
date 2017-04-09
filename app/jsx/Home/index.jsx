@@ -37,6 +37,10 @@ export default class Home extends PageComponent {
         <div className="row">
           <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div className="home-center">
+              {this.renderLabel("New Song")}
+              <div className="new-song">
+                <Singer />
+              </div>
               {this.renderLabel("Ranking Music")}
               <div className="bxh">
                 <Ranking />
