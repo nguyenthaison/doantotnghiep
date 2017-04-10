@@ -1,5 +1,4 @@
 import CommonRank from "./CommonRank";
-import TmpAlbum from "./TmpAlbum";
 
 const TAKE_RECORD = 10;
 

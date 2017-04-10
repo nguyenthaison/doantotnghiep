@@ -1,5 +1,5 @@
-import Ranking from "../Home/Ranking";
-import Album from "../Home/Album";
+import Ranking from "./Ranking";
+import Album from "./Album";
 
 export default class index extends PageComponent {
   constructor(props) {

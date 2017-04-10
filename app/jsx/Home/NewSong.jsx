@@ -1,6 +1,3 @@
-import TmpSongs from "../Songs/TmpSongs";
-import CommonRank from "./CommonRank";
-// import IconButton from "material-ui/IconButton";
 import StarBorder from "material-ui/svg-icons/toggle/star-border";
 
 const TAKE_RECORD = 10;

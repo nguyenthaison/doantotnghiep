@@ -1,8 +1,7 @@
 const TAKE_RECORD = 10;
-import TmpSongs from "../Songs/TmpSongs";
 import CommonRank from "./CommonRank";
 
-export default class Rank extends PageComponent {
+export default class Ranking extends PageComponent {
   constructor(props) {
     super(props);
 

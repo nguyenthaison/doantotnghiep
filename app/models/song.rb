@@ -40,7 +40,6 @@ class Song < ApplicationRecord
   def create_singer_lyric params, current_user
     Lyric.create(content: params[:lyric_content], user_id: current_user.id, song_id: self.id)
     JSON.parse(params[:singer_name]).each do |item|
-      byebug
       if (!item["id"])
         singer = Singer.create(name: item["name"])
       else

@@ -14,7 +14,12 @@ export default class AlbumCenter extends PageComponent {
   }
 
   getOption(type) {
+    let include = {
+      songs: {},
+      singers: {only: ["id", "name"]},
+    };
     return {
+      include: JSON.stringify(include),
       order_by: "created_at desc",
       take: TAKE_RECORD,
     }
@@ -25,6 +30,10 @@ export default class AlbumCenter extends PageComponent {
     this.setState({
       list: data.albums,
     });
+  }
+
+  handleClickPlayAlbum = (item) => {
+    Helper.transitionTo("/play", {songs: item.songs, singers: item.singers});
   }
 
   render() {
@@ -38,7 +47,7 @@ export default class AlbumCenter extends PageComponent {
         return (
           <div key={index} className="col-lg-2 col-md-2 col-sm-3 col-xs-6">
             <div className="item">
-            	<div className="border-image-album-item">
+            	<div className="border-image-album-item" onClick={() => this.handleClickPlayAlbum(item)}>
             		<div className="image-album-item-icon">
             			<div className="item-icon-button">
             				<a href="#">
@@ -57,7 +66,7 @@ export default class AlbumCenter extends PageComponent {
             	</div>
             </div>
             {/*<img src={image} />*/}
-            
+
           </div>
         )
       })}
