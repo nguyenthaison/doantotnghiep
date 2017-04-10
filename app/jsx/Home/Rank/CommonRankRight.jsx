@@ -11,8 +11,8 @@ export default class CommonRankRight extends PageComponent {
 
   }
 
-  handleClickPlay = (list) => {
-    Helper.transitionTo("/song", list);
+  handleClickPlayOne = (item) => {
+    Helper.transitionTo("/play", {songs: item, singers: item.singers});
   }
 
   handleActive = (listActive) => {
@@ -40,7 +40,7 @@ export default class CommonRankRight extends PageComponent {
             <ul>
               <li className="ellipsis">
                 <div className="pointer" title={item.name}
-                  onClick={() => this.handleClickPlay(ckeckAlbum ? item.songs : item)}>
+                  onClick={() => this.handleClickPlayOne(ckeckAlbum ? item.songs : item)}>
                   {item.name}
                 </div>
               </li>

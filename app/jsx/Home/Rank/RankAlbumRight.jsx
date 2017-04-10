@@ -30,7 +30,7 @@ export default class RankAlbumRight extends PageComponent {
       include: JSON.stringify(include),
       filter: {country: type},
       take: TAKE_RECORD,
-      order_by: "id asc",
+      order_by: "ranks.total_view desc",
     }
   }
 
@@ -55,6 +55,10 @@ export default class RankAlbumRight extends PageComponent {
     });
   }
 
+  handleViewRankAlbum = () => {
+    Helper.transitionTo("/Ranks");
+  }
+
   render() {
     let albumVn = this.state.albumVn;
     let albumUs = this.state.albumUs;
@@ -63,8 +67,10 @@ export default class RankAlbumRight extends PageComponent {
     return (
       <div className="border-menu-right">
         <div className="label-top">
-          RANK ALBUM
-          <i className="material-icons">keyboard_arrow_right</i>
+          <div onClick={this.handleViewRankAlbum} className="pointer">
+            RANK ALBUM
+            <i className="material-icons">keyboard_arrow_right</i>
+          </div>
         </div>
         <CommonRankRight
           listVn={albumVn}

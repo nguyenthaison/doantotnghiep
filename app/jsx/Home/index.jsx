@@ -1,7 +1,5 @@
 import NewSong from "./NewSong";
 import Singer from "./Singer";
-import Ranking from "./Ranking";
-import Album from "./Album";
 import RankMusicRight from "./Rank/RankMusicRight";
 import RankAlbumRight from "./Rank/RankAlbumRight";
 import AlbumCenter from "./AlbumCenter";
@@ -46,14 +44,7 @@ export default class Home extends PageComponent {
               {/*<div className="new-song">
                 <NewSong />
               </div>*/}
-              {/*this.renderLabel("Ranking Music")*/}
-              {/*<div className="bxh">
-                <Ranking />
-              </div>*/}
-              {/*this.renderLabel("Ranking Album")*/}
-              {/*<div className="bxh">
-                <Album />
-              </div>*/}
+
               {this.renderLabel("New Song")}
               <div className="new-song">
                 <Singer />

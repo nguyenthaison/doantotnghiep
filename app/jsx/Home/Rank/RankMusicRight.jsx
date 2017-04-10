@@ -23,13 +23,14 @@ export default class RankMusicRight extends PageComponent {
   getOption(type) {
     let include = {
       singers: {only: ["id", "name"]},
+      ranks: {},
     };
     return {
       methods: ["get_rank_previous"],
       include: JSON.stringify(include),
       filter: {country: type},
       take: TAKE_RECORD,
-      order_by: "id asc",
+      order_by: "ranks.total_view desc",
     }
   }
 
@@ -60,7 +61,12 @@ export default class RankMusicRight extends PageComponent {
   }
 
   handlePlayAll = () => {
-    Helper.transitionTo("/song", this.state.listActive);
+    let listActive = this.state.listActive;
+    Helper.transitionTo("/play", {songs: listActive});
+  }
+
+  handleViewRankMusic = () => {
+    Helper.transitionTo("/Ranks");
   }
 
   render() {
@@ -71,8 +77,10 @@ export default class RankMusicRight extends PageComponent {
     return (
       <div className="border-menu-right">
         <div className="label-top">
-          RANK MUSIC
-          <i className="material-icons">keyboard_arrow_right</i>
+          <div onClick={this.handleViewRankMusic} className="pointer">
+            RANK MUSIC
+            <i className="material-icons">keyboard_arrow_right</i>
+          </div>
           <i className="material-icons pointer" onClick={this.handlePlayAll}>
             play_circle_outline
           </i>

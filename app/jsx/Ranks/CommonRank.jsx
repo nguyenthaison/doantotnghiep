@@ -12,7 +12,7 @@ export default class CommonRank extends PageComponent {
   }
 
   handleClickPlay = (list) => {
-    Helper.transitionTo("/song", list);
+    Helper.transitionTo("/play", list);
   }
 
   renderSinger(singers) {

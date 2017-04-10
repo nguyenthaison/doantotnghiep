@@ -48,7 +48,7 @@ export default class Drawer extends BaseComponent {
   render() {
     let drawerClass = this.props.collapsed ? "drawer-close" : "drawer-open";
     let width = this.props.collapsed ? 56 : 195;
-    let bigLogo = "/images/logo-big.jpg";
+    let bigLogo = "/images/logo.jpg";
     let smallLogo = "/images/logo-small.jpeg"
     let logo = this.props.collapsed ? smallLogo : bigLogo;
 
@@ -65,7 +65,7 @@ export default class Drawer extends BaseComponent {
             {this.renderMenuItem("Subject", "/subjects", "subject")}
             {this.renderMenuItem("Ranking", "/ranks", "filter_list")}
             {this.renderMenuItem("Album", "/albums", "album")}
-            {this.renderMenuItem("Song", "/songs", "library_music")}
+            {/*this.renderMenuItem("Song", "/songs", "library_music")*/}
             {this.renderMenuItem("Artist", "/artists", "people")}
             {this.renderMenuItem("Personal", "/personal", "account_circle")}
             {this.renderMenuItem("Upload", "/upload", "cloud_upload")}

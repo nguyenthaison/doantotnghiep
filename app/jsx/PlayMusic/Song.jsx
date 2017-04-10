@@ -46,9 +46,9 @@ export default class Song extends PageComponent {
   handleCallbackPlayMusic = (state) => {
     this.setState({
       playing: true,
-      song: state.length ? state[0] : state,
-      repeat: state.length > 1 ? "repeat" : "one",
-      list: state.length ? state : [],
+      song: state.songs.length ? state.songs[0] : state.songs,
+      repeat: state.songs.length > 1 ? "repeat" : "one",
+      list: state.songs.length ? state.songs : [],
       position: 0,
     });
   }
