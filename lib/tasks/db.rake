@@ -115,6 +115,19 @@ namespace :db do
     Fabricate :album_singer, album_id: 10, singer_id: 1
     Fabricate :album_singer, album_id: 10, singer_id: 3
 
+    puts "album music type"
+    Fabricate :album_music_type, album_id: 1, music_type_id: 1
+    Fabricate :album_music_type, album_id: 1, music_type_id: 3
+    Fabricate :album_music_type, album_id: 2, music_type_id: 1
+    Fabricate :album_music_type, album_id: 3, music_type_id: 2
+    Fabricate :album_music_type, album_id: 4, music_type_id: 3
+    Fabricate :album_music_type, album_id: 5, music_type_id: 4
+    Fabricate :album_music_type, album_id: 6, music_type_id: 4
+    Fabricate :album_music_type, album_id: 7, music_type_id: 1
+    Fabricate :album_music_type, album_id: 8, music_type_id: 2
+    Fabricate :album_music_type, album_id: 9, music_type_id: 3
+    Fabricate :album_music_type, album_id: 10, music_type_id: 3
+
     puts "create rank"
     10.times do |i|
       Fabricate :rank, number: i + 1, view_start: 10, view_end: 20 + i, target_type: "song", target_id: i + 1, total_view: 10 +i

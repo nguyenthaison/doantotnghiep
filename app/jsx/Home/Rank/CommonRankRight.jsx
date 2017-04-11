@@ -12,7 +12,12 @@ export default class CommonRankRight extends PageComponent {
   }
 
   handleClickPlayOne = (item) => {
-    Helper.transitionTo("/play", {songs: item, singers: item.singers});
+    let ckeckAlbum = this.props.album;
+    if (ckeckAlbum) {
+      Helper.transitionTo("/album", item.id);
+    } else {
+      Helper.transitionTo("/song", item.id);
+    }
   }
 
   handleActive = (listActive) => {
@@ -30,17 +35,15 @@ export default class CommonRankRight extends PageComponent {
   }
 
   renderSongs(list) {
-    let ckeckAlbum = this.props.album;
-
     return list.map((item, index) => {
       return (
         <ul key={index} className="sub-main1-top">
-          <li className="rank-left">{item.get_rank_previous}</li>
+          <li className="rank-left">{index + 1}</li>
           <li className="rank-right">
             <ul>
               <li className="ellipsis">
                 <div className="pointer" title={item.name}
-                  onClick={() => this.handleClickPlayOne(ckeckAlbum ? item.songs : item)}>
+                  onClick={() => this.handleClickPlayOne(item)}>
                   {item.name}
                 </div>
               </li>

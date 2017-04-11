@@ -14,12 +14,7 @@ export default class AlbumCenter extends PageComponent {
   }
 
   getOption(type) {
-    let include = {
-      songs: {},
-      singers: {only: ["id", "name"]},
-    };
     return {
-      include: JSON.stringify(include),
       order_by: "created_at desc",
       take: TAKE_RECORD,
     }
@@ -33,7 +28,7 @@ export default class AlbumCenter extends PageComponent {
   }
 
   handleClickPlayAlbum = (item) => {
-    Helper.transitionTo("/play", {songs: item.songs, singers: item.singers});
+    Helper.transitionTo("/album", item.id);
   }
 
   render() {
@@ -65,8 +60,6 @@ export default class AlbumCenter extends PageComponent {
             		{item.name}
             	</div>
             </div>
-            {/*<img src={image} />*/}
-
           </div>
         )
       })}
@@ -74,18 +67,3 @@ export default class AlbumCenter extends PageComponent {
     )
   }
 }
-
-
-{/*<mui.GridList cols={5.2}>
-        {list.map((tile, index) => (
-            <mui.GridTile
-              key={index}
-              title={tile.name}
-              actionIcon={<mui.IconButton><StarBorder color="rgb(0, 188, 212)" /></mui.IconButton>}
-              titleStyle={styles.titleStyle}
-              titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-            >
-              <img src={image} />
-            </mui.GridTile>
-        ))}
-      </mui.GridList>*/}

@@ -13,7 +13,7 @@ export default class Song extends PageComponent {
     super(props);
 
     this.state = {
-      playing: false,
+      playing: true,
       position: 0,
       completed: 0,
       volume: 80,
@@ -28,39 +28,19 @@ export default class Song extends PageComponent {
     }
   }
 
-  componentWillMount() {
-    let state = Helper.getCurrentLocationState();
-    this.handleCallbackPlayMusic(state);
+  componentWillReceiveProps(nextProps) {
+    this.handleCallbackPlayMusic(nextProps);
   }
 
-  // playingMusic(song) {
-  //   this.setState({
-  //     playing: true,
-  //     song: song,
-  //     repeat: "one",
-  //     list: [],
-  //     position: 0,
-  //   });
-  // }
+  handleCallbackPlayMusic = (nextProps) => {
+    let checkAlbum = nextProps.album;
 
-  handleCallbackPlayMusic = (state) => {
     this.setState({
-      playing: true,
-      song: state.songs.length ? state.songs[0] : state.songs,
-      repeat: state.songs.length > 1 ? "repeat" : "one",
-      list: state.songs.length ? state.songs : [],
-      position: 0,
+      song: checkAlbum ? nextProps.item[0] : nextProps.item,
+      repeat: nextProps.item.length > 1 ? "repeat" : "one",
+      list: checkAlbum ? nextProps.item : [],
     });
   }
-
-  // playingListMusic(listSong) {
-  //   this.setState({
-  //     list: listSong,
-  //     playing: true,
-  //     repeat: "repeat",
-  //     song: listSong[0],
-  //   })
-  // }
 
   handleFindSongInList = (list, song) => {
     let index = list.findIndex(_song => {
@@ -259,7 +239,7 @@ export default class Song extends PageComponent {
                   volume={this.state.volume}
                   onPlaying={(event) => this.handleSongPlaying(event)}
                   onFinishedPlaying={this.handleSongFinishedPlaying} />
-                {/*<div className="row">*/}
+
                   {this.renderButtonPlay(<SkipPrevious />, "skip-previous background-button", () => this.handleChangeMusic(false))}
                   {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
                   {this.renderButtonPlay(<SkipNext />, "skip-next background-button", this.handleChangeMusic)}
@@ -275,7 +255,7 @@ export default class Song extends PageComponent {
                   <Repeat onChange={this.handleChangeRepeat}
                     repeat={repeat}
                     shuffle={shuffle} />
-                {/*</div>*/}
+
               </div>
             </div>
           </div>
