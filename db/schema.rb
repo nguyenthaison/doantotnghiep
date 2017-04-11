@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408054157) do
+ActiveRecord::Schema.define(version: 20170411023712) do
+
+  create_table "album_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "album_id"
+    t.integer  "music_type_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["album_id"], name: "index_album_music_types_on_album_id", using: :btree
+    t.index ["music_type_id"], name: "index_album_music_types_on_music_type_id", using: :btree
+  end
 
   create_table "album_singers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "album_id"
