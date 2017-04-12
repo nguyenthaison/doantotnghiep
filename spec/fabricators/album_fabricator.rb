@@ -1,6 +1,6 @@
 Fabricator :album do
   view
-  rank
   share
   name
+  created_at
 end

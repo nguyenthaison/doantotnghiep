@@ -1,19 +1,20 @@
 class Song < ApplicationRecord
   SONG_ATTRIBUTES_PARAMS = %i[name]
   ALLOWED_METHODS = ["get_rank_previous"]
-  JOIN_TABLES = [:singers, :author_songs, :music_types, :lyrics, :album]
+  JOIN_TABLES = [:singers, :author_songs, :music_types, :lyrics, :albums]
 
   has_attached_file :attachment
 
-  belongs_to :album
   belongs_to :user
   belongs_to :country
 
+  has_many :album_songs, dependent: :destroy
+  has_many :albums, through: :album_songs
   has_many :author_songs
   has_many :authors, through: :author_songs
-  has_many :music_type_songs
+  has_many :music_type_songs, dependent: :destroy
   has_many :music_types, through: :music_type_songs
-  has_many :singer_songs
+  has_many :singer_songs, dependent: :destroy
   has_many :singers, through: :singer_songs
   has_many :lyrics
   has_many :ranks, as: :target, dependent: :destroy
@@ -66,7 +67,7 @@ class Song < ApplicationRecord
         author_songs: {only: ["id", "name"]},
         music_types: {},
         lyrics: {include: {user: {only: ["id", "name"]}}},
-        album: {only: ["id", "name"]},
+        albums: {only: ["id", "name"]},
       },
     })
     as_json options

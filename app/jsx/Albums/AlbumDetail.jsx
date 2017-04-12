@@ -1,4 +1,5 @@
 import Song from "../PlayMusic/Song";
+const TAKE_RECORD = 20;
 
 export default class AlbumDetail extends PageComponent {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class AlbumDetail extends PageComponent {
     };
     return {
       include: JSON.stringify(include),
+      take: TAKE_RECORD,
     }
   }
 

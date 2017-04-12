@@ -18,7 +18,7 @@ export default class index extends PageComponent {
     let include = {
       music_types: {},
       author_songs: {only: ["id", "name"]},
-      album: {only: ["id", "name"]},
+      albums: {only: ["id", "name"]},
       singers: {only: ["id", "name"]},
       lyrics: {include: {user: {only: ["id", "name"]}}},
     };

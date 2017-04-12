@@ -10,12 +10,13 @@ export default class AlbumCenter extends PageComponent {
   }
 
   componentDidMount() {
-    API.Album.getList(this.handleGetListVnCallback, this.getOption("vn"))
+    API.Album.getList(this.handleGetListVnCallback, this.getOption("vn"));
   }
 
   getOption(type) {
     return {
-      order_by: "created_at desc",
+      order_by: "view desc",
+      filter: {creator: "member"},
       take: TAKE_RECORD,
     }
   }

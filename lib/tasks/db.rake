@@ -10,6 +10,7 @@ namespace :db do
     puts "Country"
     Fabricate :country, short_name: "vn", full_name: "Viet Nam"
     Fabricate :country, short_name: "us", full_name: "American"
+    Fabricate :country, short_name: "kp", full_name: "Korean"
 
     puts "Singer"
     Fabricate :singer, name: "LK", age: 20, content: "khong co gi", countries_id: 1,  total_favorite: 110
@@ -59,31 +60,38 @@ namespace :db do
 
     puts "Album"
     10.times do |i|
-      Fabricate :album, view: i * 20, rank: i + 1, share: i * 20, name: "Album #{i + 1}"
+      Fabricate :album, view: i * 20, share: i * 20, name: "Album #{i + 1}", creator: 0, country_id: 1,
+        created_at: DateTime.now.beginning_of_week
     end
+    Fabricate :album, view: 200, share: 10 * 21, name: "BXH viet nam", creator: 1, country_id: 1,
+      created_at: DateTime.now.beginning_of_week
+    Fabricate :album, view: 300, share: 10 * 22, name: "BXH au my", creator: 1, country_id: 2,
+      created_at: DateTime.now.beginning_of_week
+    Fabricate :album, view: 400, share: 10 * 23, name: "BXH han quoc", creator: 1, country_id: 3,
+      created_at: DateTime.now.beginning_of_week
 
     puts "Song"
     Fabricate :song, name: "Ngoi Sao Le Loi Lonely Star", view: 10, song_type: 1,
-      download: 10000, album_id: 1, user_id: 1,
+      download: 10000, user_id: 1,
       link: "samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3", country_id: 1
-    Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 10200, album_id: 2,
+    Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 10200,
       user_id: 1, link: "samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3", country_id: 1
-    Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 10040, album_id: 3,
+    Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 10040,
       user_id: 1,
       link: "samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3", country_id: 1
-    Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 104500, album_id: 4,
+    Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 104500,
       user_id: 1, link: "samples/Mo - Vu Cat Tuong.mp3", country_id: 1
-    Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 104560, album_id: 5,
+    Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 104560,
       user_id: 1, link: "samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3", country_id: 1
-    Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 104508, album_id: 6,
+    Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 104508,
       user_id: 1, link: "samples/XuanNayConKhongVe-QuangLe-1428282.mp3", country_id: 1
-    Fabricate :song, name: "Yeu mot nguoi co le", view: 10, song_type: 1, download: 134500, album_id: 7,
+    Fabricate :song, name: "Yeu mot nguoi co le", view: 10, song_type: 1, download: 134500,
       user_id: 1, link: "samples/Yeu Mot Nguoi Co Le - Lou Hoang Miu Le.mp3", country_id: 1
-    Fabricate :song, name: "Va the la het", view: 10, song_type: 1, download: 1045054, album_id: 8,
+    Fabricate :song, name: "Va the la het", view: 10, song_type: 1, download: 1045054,
       user_id: 1, link: "samples/Va-The-La-Het-Soobin-Hoang-Son.mp3", country_id: 1
-    Fabricate :song, name: "Con tim vo tan", view: 10, song_type: 1, download: 1045057, album_id: 9,
+    Fabricate :song, name: "Con tim vo tan", view: 10, song_type: 1, download: 1045057,
       user_id: 1, link: "samples/Con-Tim-Tan-Vo-Phan-Manh-Quynh.mp3", country_id: 1
-    Fabricate :song, name: "Co gai ngay hom qua", view: 10, song_type: 1, download: 2145057, album_id: 10,
+    Fabricate :song, name: "Co gai ngay hom qua", view: 10, song_type: 1, download: 2145057,
       user_id: 1, link: "samples/Co-Gai-Ngay-Hom-Qua-Co-Gai-Den-Tu-Hom-Qua-OST-Vu-Cat-Tuong.mp3", country_id: 1
 
 
@@ -127,6 +135,14 @@ namespace :db do
     Fabricate :album_music_type, album_id: 8, music_type_id: 2
     Fabricate :album_music_type, album_id: 9, music_type_id: 3
     Fabricate :album_music_type, album_id: 10, music_type_id: 3
+
+    puts "album song"
+    10.times do |i|
+      Fabricate :album_song, album_id: i + 1, song_id: i + 1
+      Fabricate :album_song, album_id: 11, song_id: i + 1
+      Fabricate :album_song, album_id: 12, song_id: i + 1
+      Fabricate :album_song, album_id: 13, song_id: i + 1
+    end
 
     puts "create rank"
     10.times do |i|
