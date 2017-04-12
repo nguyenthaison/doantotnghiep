@@ -3,7 +3,6 @@ Fabricator :song do
   view
   song_type
   download
-  album_id
   user_id
   link
 end

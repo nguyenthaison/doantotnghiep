@@ -4,22 +4,11 @@ import Album from "./Album";
 export default class index extends PageComponent {
   constructor(props) {
     super(props);
-
-    this.state = {
-    };
   }
 
   componentDidMount() {
     this.setToolBar("Top 10");
   }
-
-  // componentWillReceiveProps(nextProps) {
-
-  // }
-
-  // get locationState() {
-  //   return Helper.getCurrentLocationState();
-  // }
 
   render() {
     return (

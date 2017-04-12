@@ -20,8 +20,8 @@ export default class CommonRankRight extends PageComponent {
     }
   }
 
-  handleActive = (listActive) => {
-    this.props.onActive(listActive);
+  handleActive = (country) => {
+    this.props.onActive(country);
   }
 
   renderSinger(singers) {
@@ -70,17 +70,17 @@ export default class CommonRankRight extends PageComponent {
 
     return (
       <mui.Tabs>
-        <mui.Tab label="Viet Nam" onActive={() => this.handleActive(listVn)}>
+        <mui.Tab label="Viet Nam" onActive={() => this.handleActive("vn")}>
           <div>
             {this.renderSongs(listVn)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Au My" onActive={() => this.handleActive(listUs)}>
+        <mui.Tab label="Au My" onActive={() => this.handleActive("us")}>
           <div>
             {this.renderSongs(listUs)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Han Quoc" onActive={() => this.handleActive(listKp)}>
+        <mui.Tab label="Han Quoc" onActive={() => this.handleActive("kp")}>
           <div>
             {this.renderSongs(listKp)}
           </div>

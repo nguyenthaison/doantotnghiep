@@ -11,8 +11,25 @@ export default class CommonRank extends PageComponent {
 
   }
 
-  handleClickPlay = (list) => {
-    Helper.transitionTo("/play", list);
+  handleClickPlay = (item) => {
+    if (item.link) {
+      Helper.transitionTo("/song", item.id);
+    } else {
+      Helper.transitionTo("/album", item.id);
+    }
+  }
+
+  handleClickPlayAll = (country) => {
+    switch(country) {
+    case "kp":
+      Helper.transitionTo("/album", this.props.albumKp.id)
+      break;
+    case "us":
+      Helper.transitionTo("/album", this.props.albumUs.id)
+      break;
+    default:
+      Helper.transitionTo("/album", this.props.albumVn.id)
+    }
   }
 
   renderSinger(singers) {
@@ -29,7 +46,7 @@ export default class CommonRank extends PageComponent {
     return list.map((item, index) => {
       return (
         <ul key={index} className="sub-main1-top">
-          <li className="rank-left">{item.get_rank_previous}</li>
+          <li className="rank-left">{index + 1}</li>
           <li className="rank-right">
             <ul>
               <li className="ellipsis">
@@ -50,6 +67,32 @@ export default class CommonRank extends PageComponent {
     )
   }
 
+  renderChildrenMain(title, list, country) {
+    let checkAlbum = this.props.album;
+
+    return (
+      <div>
+        <div className="main1-top">
+          <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+            <div className="row">
+              <span onClick={this.handleClickViewDetail} className="pointer title-top">
+                {title}
+              </span>
+            </div>
+          </div>
+          {checkAlbum ? null : <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <i className="material-icons pointer" onClick={() => this.handleClickPlayAll(list, country)}>
+              play_circle_outline
+            </i>
+          </div>}
+        </div>
+        <div className="main1-body">
+          {this.renderSongs(list)}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     let listVn = this.props.listVn;
     let listUs = this.props.listUs;
@@ -63,69 +106,21 @@ export default class CommonRank extends PageComponent {
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="row">
             <div className="main1">
-              <div className="main1-top">
-                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                  <div className="row">
-                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      {titleVn}
-                    </span>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listVn)}>
-                    play_circle_outline
-                  </i>
-                </div>
-              </div>
-              <div className="main1-body">
-                {this.renderSongs(listVn)}
-              </div>
+              {this.renderChildrenMain(titleVn, listVn, "vn")}
             </div>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="row">
             <div className="main2">
-              <div className="main1-top">
-                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                  <div className="row">
-                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      {titleUs}
-                    </span>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listUs)}>
-                    play_circle_outline
-                  </i>
-                </div>
-              </div>
-              <div className="main1-body">
-                {this.renderSongs(listUs)}
-              </div>
+              {this.renderChildrenMain(titleUs, listUs, "us")}
             </div>
           </div>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div className="row">
             <div className="main3">
-              <div className="main1-top">
-                <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                  <div className="row">
-                    <span onClick={this.handleClickViewDetail} className="pointer title-top">
-                      {titleKp}
-                    </span>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                  <i className="material-icons pointer" onClick={() => this.handleClickPlay(listKp)}>
-                    play_circle_outline
-                  </i>
-                </div>
-              </div>
-              <div className="main1-body">
-                {this.renderSongs(listKp)}
-              </div>
+              {this.renderChildrenMain(titleUs, listKp, "kp")}
             </div>
           </div>
         </div>

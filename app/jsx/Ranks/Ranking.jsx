@@ -9,13 +9,25 @@ export default class Ranking extends PageComponent {
       listTopVn: [],
       listTopUs: [],
       listTopKp: [],
+      albumVn: {},
+      albumUs: {},
+      albumKp: {},
     };
   }
 
   componentDidMount() {
-    API.Song.getList(this.handleGetListVnCallback, this.getOption("vn"));
-    API.Song.getList(this.handleGetListUsCallback, this.getOption("vn"));
-    API.Song.getList(this.handleGetListKpCallback, this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopVn"),
+      this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopUs"),
+      this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopKp"),
+      this.getOption("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumVn"),
+      this.getOptionAlbum("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumUs"),
+      this.getOptionAlbum("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumKp"),
+      this.getOptionAlbum("vn"));
   }
 
   getOption(type) {
@@ -30,22 +42,23 @@ export default class Ranking extends PageComponent {
     }
   }
 
-  handleGetListVnCallback = (status, data) => {
+  getOptionAlbum(type) {
+    return {
+      filter: {country_author: type},
+    }
+  }
+
+  handleGetAlbumCallback = (status, data, album) => {
     if (!status) return;
     this.setState({
-      listTopVn: data.songs,
+      [album]: data.albums[0],
     });
   }
 
-  handleGetListUsCallback = (status, data) => {
+  handleGetListCallback = (status, data, list) => {
+    if (!status) return;
     this.setState({
-      listTopUs: data.songs,
-    });
-  }
-
-  handleGetListKpCallback = (status, data) => {
-    this.setState({
-      listTopKp: data.songs,
+      [list]: data.songs,
     });
   }
 
@@ -62,6 +75,9 @@ export default class Ranking extends PageComponent {
         titleUs="Top music au my"
         listKp={listTopKp}
         titleKp="Top music Kpop"
+        albumVn={this.state.albumVn}
+        albumUs={this.state.albumUs}
+        albumKp={this.state.albumKp}
       />
     )
   }

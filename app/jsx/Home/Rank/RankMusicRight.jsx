@@ -11,13 +11,26 @@ export default class RankMusicRight extends PageComponent {
       listTopUs: [],
       listTopKp: [],
       listActive: [],
+      albumVn: {},
+      albumUs: {},
+      albumKp: {},
+      albumActive: null,
     };
   }
 
   componentDidMount() {
-    API.Song.getList(this.handleGetListVnCallback, this.getOption("vn"));
-    API.Song.getList(this.handleGetListUsCallback, this.getOption("vn"));
-    API.Song.getList(this.handleGetListKpCallback, this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopVn"),
+      this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopUs"),
+      this.getOption("vn"));
+    API.Song.getList((status, data) => this.handleGetListCallback(status, data, "listTopKp"),
+      this.getOption("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumVn"),
+      this.getOptionAlbum("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumUs"),
+      this.getOptionAlbum("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumKp"),
+      this.getOptionAlbum("vn"));
   }
 
   getOption(type) {
@@ -34,35 +47,55 @@ export default class RankMusicRight extends PageComponent {
     }
   }
 
-  handleGetListVnCallback = (status, data) => {
+  getOptionAlbum(type) {
+    return {
+      filter: {country_author: type},
+    }
+  }
+
+  handleGetListCallback = (status, data, list) => {
     if (!status) return;
     this.setState({
-      listTopVn: data.songs,
-      listActive: data.songs,
+      [list]: data.songs,
     });
   }
 
-  handleGetListUsCallback = (status, data) => {
+  handleGetAlbumCallback = (status, data, album) => {
+    if (!status) return;
     this.setState({
-      listTopUs: data.songs,
+      [album]: data.albums,
     });
   }
 
-  handleGetListKpCallback = (status, data) => {
-    this.setState({
-      listTopKp: data.songs,
-    });
-  }
+  handleActive = (country) => {
+    let listActive = [];
+    let albumActive = {};
+    switch(country) {
+    case "kp":
+      listActive = this.state.listKp;
+      albumActive = this.state.albumKp;
+      break;
+    case "us":
+      listActive = this.state.listUs;
+      albumActive = this.state.albumUs;
+      break;
+    default:
+      listActive = this.state.listVn;
+      albumActive = this.state.albumVn;
+    }
 
-  handleActive = (listActive) => {
     this.setState({
       listActive: listActive,
+      albumActive: albumActive,
     })
   }
 
   handlePlayAll = () => {
-    let listActive = this.state.listActive;
-    Helper.transitionTo("/play", {songs: listActive});
+    if (this.state.albumActive) {
+      Helper.transitionTo("/album", this.state.albumActive[0].id);
+    } else {
+      Helper.transitionTo("/album", this.state.albumVn[0].id);
+    }
   }
 
   handleViewRankMusic = () => {
