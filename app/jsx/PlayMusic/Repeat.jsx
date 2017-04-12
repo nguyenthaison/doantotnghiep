@@ -1,7 +1,7 @@
 import Repeat from "material-ui/svg-icons/av/repeat";
 import RepeatOne from "material-ui/svg-icons/av/repeat-one";
-// import Replay from "material-ui/svg-icons/av/replay";
 import Shuffle from "material-ui/svg-icons/av/shuffle";
+import TimerOff from "material-ui/svg-icons/image/timer-off";
 
 export default class Index extends PageComponent {
   constructor(props) {
@@ -9,14 +9,27 @@ export default class Index extends PageComponent {
   }
 
   handleChangeRepeat = (repeat) => {
-    let repeatChange = repeat == "one" ? "repeat" : (repeat == "repeat" ? "one" : !repeat);
+    let repeatChange = "";
+    let oneSong = this.props.oneSong;
+    if (oneSong) {
+      repeatChange = repeat == "one" ? "off" : "one";
+    } else {
+      if (repeat === true) return repeatChange = false;
+      repeatChange = repeat == "one" ? "off" : (repeat == "repeat" ? "one" : "repeat");
+    }
     this.props.onChange(repeatChange);
   }
 
   render() {
     let repeat = this.props.repeat;
-    let shuffle = this.props.shuffle
-    let icon = repeat == "one" ? <RepeatOne /> : <Repeat />
+    let shuffle = this.props.shuffle;
+    let oneSong = this.props.oneSong;
+    let icon = null;
+    if (oneSong) {
+      icon = repeat == "one" ? <RepeatOne /> : <TimerOff />;
+    } else {
+      icon = repeat == "one" ? <RepeatOne /> : (repeat == "repeat" ? <Repeat /> : <TimerOff />);
+    }
 
     return (
       <div className="col-md-2 row">
@@ -27,13 +40,14 @@ export default class Index extends PageComponent {
             primary={true}
             onClick={() => this.handleChangeRepeat(repeat)}/>
         </div>
-        <div className="col-md-6">
-          <cm.RaisedButton
-            icon={<Shuffle />}
-            className="button-shuffle background-button"
-            primary={true}
-            onClick={() => this.handleChangeRepeat(shuffle)}/>
-        </div>
+        {oneSong ? null :
+          <div className="col-md-6">
+            <cm.RaisedButton
+              icon={<Shuffle />}
+              className="button-shuffle background-button"
+              primary={true}
+              onClick={() => this.handleChangeRepeat(shuffle)}/>
+          </div>}
       </div>
     )
   }
