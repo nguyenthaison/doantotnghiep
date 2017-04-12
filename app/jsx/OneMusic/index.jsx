@@ -60,7 +60,7 @@ export default class index extends PageComponent {
                   <div>{song.name}</div>
                   <div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>
                 </div>
-                <Song item={song} album={false} />
+                <Song item={song} album={false} oneSong={true} />
               </div>
               <div className="author">
               </div>

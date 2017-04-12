@@ -60,7 +60,7 @@ export default class AlbumDetail extends PageComponent {
                 </div>
               </div>
               <div className="screen-play">
-                <Song item={album.songs} album={true} />
+                <Song item={album.songs} album={true} oneSong={false} />
               </div>
               <div className="list-music">
               </div>

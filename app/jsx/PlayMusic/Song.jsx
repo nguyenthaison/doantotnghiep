@@ -25,6 +25,7 @@ export default class Song extends PageComponent {
       list: [],
       listRandom: [],
       duration: null,
+      oneSong: false,
     }
   }
 
@@ -39,6 +40,7 @@ export default class Song extends PageComponent {
       song: checkAlbum ? nextProps.item[0] : nextProps.item,
       repeat: nextProps.item.length > 1 ? "repeat" : "one",
       list: checkAlbum ? nextProps.item : [],
+      oneSong: nextProps.oneSong,
     });
   }
 
@@ -164,6 +166,7 @@ export default class Song extends PageComponent {
   }
 
   handleChangeRepeat = (repeat) => {
+    let list = this.state.list;
     let check = typeof(repeat) == "boolean"; // check shuffle or repeat
     if(check) { //check shuffle
       let listRandom = this.handleRandomList();
@@ -196,6 +199,7 @@ export default class Song extends PageComponent {
     let shuffle = this.state.shuffle;
     let playing = this.state.playing;
     let iconPlay = playing ? <Pause /> : <PlayArrow />;
+    let list = this.state.list;
 
     let image = "/images/test.jpg";
 
@@ -240,9 +244,11 @@ export default class Song extends PageComponent {
                   onPlaying={(event) => this.handleSongPlaying(event)}
                   onFinishedPlaying={this.handleSongFinishedPlaying} />
 
-                  {this.renderButtonPlay(<SkipPrevious />, "skip-previous background-button", () => this.handleChangeMusic(false))}
+                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
+                    "skip-previous background-button", () => this.handleChangeMusic(false))}
                   {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
-                  {this.renderButtonPlay(<SkipNext />, "skip-next background-button", this.handleChangeMusic)}
+                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
+                    "skip-next background-button", this.handleChangeMusic)}
                   <div className="col-md-1"></div>
                   <Volume btnChange={this.handleBtnChangeVolume}
                     sliderChange={this.handleSliderChange}
@@ -254,6 +260,7 @@ export default class Song extends PageComponent {
                   </div>
                   <Repeat onChange={this.handleChangeRepeat}
                     repeat={repeat}
+                    oneSong={this.state.oneSong}
                     shuffle={shuffle} />
 
               </div>
