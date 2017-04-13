@@ -101,6 +101,7 @@ export default class Song extends PageComponent {
         this.setState({
           song: {},
           position: 0,
+          playing: false,
         })
       }
     }

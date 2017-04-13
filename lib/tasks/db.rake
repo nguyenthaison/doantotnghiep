@@ -25,8 +25,8 @@ namespace :db do
     Fabricate :singer, name: "soo bin hoang son", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 200
 
     puts "author"
-    5.times do |i|
-      Fabricate :singer, name: "author #{i}", age: i * 12, content: "khong co gi", countries_id: 1,  total_favorite: 100
+    10.times do |i|
+      Fabricate :author, name: "author #{i}", age: i * 12, content: "khong co gi", countries_id: 1,  total_favorite: 100
     end
 
     puts "Music type"
@@ -149,6 +149,45 @@ namespace :db do
       Fabricate :rank, number: i + 1, view_start: 10, view_end: 20 + i, target_type: "song", target_id: i + 1, total_view: 10 +i
       Fabricate :rank, number: i + 1, view_start: 10, view_end: 20 + i, target_type: "album", target_id: i + 1, total_view: 10 +i
     end
+
+    puts "create author song"
+    10.times do |i|
+        Fabricate :author_song, author_id: i + 1, song_id: i + 1
+    end
+
+    puts "create lyric"
+    Fabricate :lyric,  user_id: 1, song_id: 2, content: "
+        Em ơi mình đã yêu nhau được mấy tháng rồi?
+        Em ơi mình đã qua bao nhiêu sóng gió trên đời?
+        Có mấy đêm anh thức khuya đọc những lá thư em trao đến anh
+        Em ơi mình đã xa nhau hơn cả tuần rồi!
+
+        Đây là valentine đầu tiên, anh và em có nhau, yêu nhau
+        Sao em không ở đây bên anh lúc này
+        Đây cà phê nhớ em,
+        Đây hàng me nhớ em,
+        Đây Đông Du nhớ em bên anh mỗi khi tan ca
+        Anh mong sao ngày chóng qua
+
+        Em ơi một ngày em nói yêu anh bao nhiêu lần?
+        Em ơi một tuần gặp nhau bao nhiêu là vừa?
+        Có lúc ta hay giận hờn vu vơ
+        Anh chẳng nói còn em lặng im
+        Em ơi, mình đã hiểu nhau đến bao nhiêu rồi?
+        Đây là valentine đầu tiên, anh và em có nhau, yêu nhau
+        Sao em không ở đây bên anh ngay lúc này
+        Đây Sài Gòn nhớ em
+        Đây mình anh lái xe vòng vòng
+        Đây hoàng hôn ghé thăm nơi góc phố riêng đôi ta
+        Anh mong sao ngày chóng qua
+
+        Em ơi dù mai sau có gió mưa xô nghiêng vào đầu
+        Em ơi em nhớ nắm tay anh qua thương đau
+        Em ơi lòng này yêu em
+        Chỉ có hàng me mới hiểu lòng anh
+        Em ơi hãy đừng hoài nghi vì trái tim anh ngu si
+        Anh mong mình luôn có đôi
+    "
 
     puts "Success remake data"
   end
