@@ -36,6 +36,20 @@ class Api::V1::SongsController < Api::BaseController
   def update
   end
 
+  def download
+    song = Song.find_by id: params[:id]
+    # path = Rails.root + "public" + song.link
+
+    if song
+      send_file(
+        Rails.root + "public" + song.link,
+        type: "audio/mp3",
+        disposition: "attachment",
+        x_sendfile: true,
+        filename: song.name)
+    end
+  end
+
   private
   def song_params
     params.require(:song).permit(:name)
