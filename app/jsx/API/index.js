@@ -7,6 +7,7 @@ import SongRank from "./SongRank";
 import Singer from "./Singer";
 import Country from "./Country";
 import Authentication from "./Authentication";
+import FavoriteArticle from "./FavoriteArticle";
 
 module.exports = {
   Song,
@@ -17,4 +18,5 @@ module.exports = {
   Singer,
   Country,
   Authentication,
+  FavoriteArticle,
 };

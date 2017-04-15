@@ -13,16 +13,86 @@ namespace :db do
     Fabricate :country, short_name: "kp", full_name: "Korean"
 
     puts "Singer"
-    Fabricate :singer, name: "LK", age: 20, content: "khong co gi", countries_id: 1,  total_favorite: 110
-    Fabricate :singer, name: "phuong anh", age: 30, content: "khong co gi", countries_id: 1,  total_favorite: 120
-    Fabricate :singer, name: "vu cat tuong", age: 40, content: "khong co gi", countries_id: 1,  total_favorite: 130
-    Fabricate :singer, name: "Native Tongue", age: 50, content: "khong co gi", countries_id: 2,  total_favorite: 140
-    Fabricate :singer, name: "trung quan", age: 35, content: "khong co gi", countries_id: 1,  total_favorite: 150
-    Fabricate :singer, name: "quang le", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 160
-    Fabricate :singer, name: "miu le", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 170
-    Fabricate :singer, name: "Lou Hoang", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 180
-    Fabricate :singer, name: "phan manh quynh", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 190
-    Fabricate :singer, name: "soo bin hoang son", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 200
+    Fabricate :singer, name: "LK", age: 20, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 110
+    Fabricate :singer, name: "phuong anh", age: 30, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 120
+    Fabricate :singer, name: "vu cat tuong", age: 40, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 130
+    Fabricate :singer, name: "Native Tongue", age: 50, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 2,  total_favorite: 140
+    Fabricate :singer, name: "trung quan", age: 35, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 150
+    Fabricate :singer, name: "quang le", age: 25, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 160
+    Fabricate :singer, name: "miu le", age: 25, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 170
+    Fabricate :singer, name: "Lou Hoang", age: 25, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 180
+    Fabricate :singer, name: "phan manh quynh", age: 25, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 190
+    Fabricate :singer, name: "soo bin hoang son", age: 25, content: "Tại Hà Nội.
+        Emily được biết đến từ Giải nhất cuộc thi Miss Audition năm 2007,
+        là hot girl,người mẫu ảnh và bắt đầu con đường ca hát từ năm 2010.
+        Cô theo đuổi dòng nhạc Hiphop/R&B và tham gia trong Ladykillah-
+        một nhóm các Rapper,Singer đình đám của dòng nhạc Hiphop Underground tại Hà Nội.
+        Giọng hát trong,dễ thương và phong cách cá tính,trẻ trung Emily được các
+        bạn trẻ yêu thích và ủng hộ,có thể kể đến các bài hát như: Xin anh đừng,
+        Tình cờ, Ngọn nến trước gió,Quên đi....", countries_id: 1,  total_favorite: 200
 
     puts "author"
     10.times do |i|

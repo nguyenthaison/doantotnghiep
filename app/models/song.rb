@@ -63,7 +63,7 @@ class Song < ApplicationRecord
   def json_data options = {}
     options = options.deep_merge({
       include: {
-        singers: {only: ["id", "name"]},
+        singers: {},
         author_songs: {only: ["id", "name"]},
         music_types: {},
         lyrics: {include: {user: {only: ["id", "name"]}}},
