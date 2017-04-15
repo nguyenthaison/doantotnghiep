@@ -1,5 +1,4 @@
 import Song from "../PlayMusic/Song";
-const TAKE_RECORD = 20;
 
 export default class AlbumDetail extends PageComponent {
   constructor(props) {
@@ -11,19 +10,7 @@ export default class AlbumDetail extends PageComponent {
 
   componentDidMount() {
     let state = Helper.getCurrentLocationState();
-    API.Album.get(this.handerGetAlbum, state, this.getOption());
-  }
-
-  getOption() {
-    let include = {
-      music_types: {},
-      singers: {only: ["id", "name"]},
-      songs: {},
-    };
-    return {
-      include: JSON.stringify(include),
-      take: TAKE_RECORD,
-    }
+    API.Album.get(this.handerGetAlbum, state, {include: JSON.stringify({})});
   }
 
   handerGetAlbum = (status, data) => {
