@@ -13,7 +13,7 @@ export default class Song extends PageComponent {
     super(props);
 
     this.state = {
-      playing: false,
+      playing: true,
       position: 0,
       completed: 0,
       volume: 80,
@@ -25,42 +25,24 @@ export default class Song extends PageComponent {
       list: [],
       listRandom: [],
       duration: null,
+      oneSong: false,
     }
   }
 
-  componentWillMount() {
-    let state = Helper.getCurrentLocationState();
-    this.handleCallbackPlayMusic(state);
+  componentWillReceiveProps(nextProps) {
+    this.handleCallbackPlayMusic(nextProps);
   }
 
-  // playingMusic(song) {
-  //   this.setState({
-  //     playing: true,
-  //     song: song,
-  //     repeat: "one",
-  //     list: [],
-  //     position: 0,
-  //   });
-  // }
+  handleCallbackPlayMusic = (nextProps) => {
+    let checkAlbum = nextProps.album;
 
-  handleCallbackPlayMusic = (state) => {
     this.setState({
-      playing: true,
-      song: state.length ? state[0] : state,
-      repeat: state.length > 1 ? "repeat" : "one",
-      list: state.length ? state : [],
-      position: 0,
+      song: checkAlbum ? nextProps.item[0] : nextProps.item,
+      repeat: nextProps.item.length > 1 ? "repeat" : "one",
+      list: checkAlbum ? nextProps.item : [],
+      oneSong: nextProps.oneSong,
     });
   }
-
-  // playingListMusic(listSong) {
-  //   this.setState({
-  //     list: listSong,
-  //     playing: true,
-  //     repeat: "repeat",
-  //     song: listSong[0],
-  //   })
-  // }
 
   handleFindSongInList = (list, song) => {
     let index = list.findIndex(_song => {
@@ -119,6 +101,7 @@ export default class Song extends PageComponent {
         this.setState({
           song: {},
           position: 0,
+          playing: false,
         })
       }
     }
@@ -184,6 +167,7 @@ export default class Song extends PageComponent {
   }
 
   handleChangeRepeat = (repeat) => {
+    let list = this.state.list;
     let check = typeof(repeat) == "boolean"; // check shuffle or repeat
     if(check) { //check shuffle
       let listRandom = this.handleRandomList();
@@ -216,6 +200,7 @@ export default class Song extends PageComponent {
     let shuffle = this.state.shuffle;
     let playing = this.state.playing;
     let iconPlay = playing ? <Pause /> : <PlayArrow />;
+    let list = this.state.list;
 
     let image = "/images/test.jpg";
 
@@ -253,16 +238,18 @@ export default class Song extends PageComponent {
               <div className="media-control-background"></div>
               <div className="button-control">
                 <Sound
-                  url={song.url || ""}
+                  url={song.link || ""}
                   playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
                   position={this.state.position}
                   volume={this.state.volume}
                   onPlaying={(event) => this.handleSongPlaying(event)}
                   onFinishedPlaying={this.handleSongFinishedPlaying} />
-                {/*<div className="row">*/}
-                  {this.renderButtonPlay(<SkipPrevious />, "skip-previous background-button", () => this.handleChangeMusic(false))}
+
+                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
+                    "skip-previous background-button", () => this.handleChangeMusic(false))}
                   {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
-                  {this.renderButtonPlay(<SkipNext />, "skip-next background-button", this.handleChangeMusic)}
+                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
+                    "skip-next background-button", this.handleChangeMusic)}
                   <div className="col-md-1"></div>
                   <Volume btnChange={this.handleBtnChangeVolume}
                     sliderChange={this.handleSliderChange}
@@ -274,8 +261,9 @@ export default class Song extends PageComponent {
                   </div>
                   <Repeat onChange={this.handleChangeRepeat}
                     repeat={repeat}
+                    oneSong={this.state.oneSong}
                     shuffle={shuffle} />
-                {/*</div>*/}
+
               </div>
             </div>
           </div>

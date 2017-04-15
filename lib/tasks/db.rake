@@ -10,6 +10,7 @@ namespace :db do
     puts "Country"
     Fabricate :country, short_name: "vn", full_name: "Viet Nam"
     Fabricate :country, short_name: "us", full_name: "American"
+    Fabricate :country, short_name: "kp", full_name: "Korean"
 
     puts "Singer"
     Fabricate :singer, name: "LK", age: 20, content: "khong co gi", countries_id: 1,  total_favorite: 110
@@ -24,8 +25,8 @@ namespace :db do
     Fabricate :singer, name: "soo bin hoang son", age: 25, content: "khong co gi", countries_id: 1,  total_favorite: 200
 
     puts "author"
-    5.times do |i|
-      Fabricate :singer, name: "author #{i}", age: i * 12, content: "khong co gi", countries_id: 1,  total_favorite: 100
+    10.times do |i|
+      Fabricate :author, name: "author #{i}", age: i * 12, content: "khong co gi", countries_id: 1,  total_favorite: 100
     end
 
     puts "Music type"
@@ -59,31 +60,38 @@ namespace :db do
 
     puts "Album"
     10.times do |i|
-      Fabricate :album, view: i * 20, rank: i + 1, share: i * 20, name: "Album #{i + 1}"
+      Fabricate :album, view: i * 20, share: i * 20, name: "Album #{i + 1}", creator: 0, country_id: 1,
+        created_at: DateTime.now.beginning_of_week
     end
+    Fabricate :album, view: 200, share: 10 * 21, name: "BXH viet nam", creator: 1, country_id: 1,
+      created_at: DateTime.now.beginning_of_week
+    Fabricate :album, view: 300, share: 10 * 22, name: "BXH au my", creator: 1, country_id: 2,
+      created_at: DateTime.now.beginning_of_week
+    Fabricate :album, view: 400, share: 10 * 23, name: "BXH han quoc", creator: 1, country_id: 3,
+      created_at: DateTime.now.beginning_of_week
 
     puts "Song"
     Fabricate :song, name: "Ngoi Sao Le Loi Lonely Star", view: 10, song_type: 1,
-      download: 10000, album_id: 1, user_id: 1,
+      download: 10000, user_id: 1,
       link: "samples/Ngoi Sao Le Loi Lonely Star - LK P A JustaTee.mp3", country_id: 1
-    Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 10200, album_id: 2,
+    Fabricate :song, name: "Em oi", view: 10, song_type: 1, download: 10200,
       user_id: 1, link: "samples/Em-Oi-Vu-Cat-Tuong-Hakoota-Dung-Ha.mp3", country_id: 1
-    Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 10040, album_id: 3,
+    Fabricate :song, name: "Quinn XCII", view: 10, song_type: 1, download: 10040,
       user_id: 1,
       link: "samples/Quinn XCII - Native Tongue (Prod. by ayokay) ( www.Mp3Zone.co ).mp3", country_id: 1
-    Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 104500, album_id: 4,
+    Fabricate :song, name: "Mo", view: 10, song_type: 1, download: 104500,
       user_id: 1, link: "samples/Mo - Vu Cat Tuong.mp3", country_id: 1
-    Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 104560, album_id: 5,
+    Fabricate :song, name: "Trai Dat Tron Khong Gi La Khong The", view: 10, song_type: 1, download: 104560,
       user_id: 1, link: "samples/Trai Dat Tron Khong Gi La Khong The - Trung Quan Idol.mp3", country_id: 1
-    Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 104508, album_id: 6,
+    Fabricate :song, name: "Xuan nay con khong ve", view: 10, song_type: 1, download: 104508,
       user_id: 1, link: "samples/XuanNayConKhongVe-QuangLe-1428282.mp3", country_id: 1
-    Fabricate :song, name: "Yeu mot nguoi co le", view: 10, song_type: 1, download: 134500, album_id: 7,
+    Fabricate :song, name: "Yeu mot nguoi co le", view: 10, song_type: 1, download: 134500,
       user_id: 1, link: "samples/Yeu Mot Nguoi Co Le - Lou Hoang Miu Le.mp3", country_id: 1
-    Fabricate :song, name: "Va the la het", view: 10, song_type: 1, download: 1045054, album_id: 8,
+    Fabricate :song, name: "Va the la het", view: 10, song_type: 1, download: 1045054,
       user_id: 1, link: "samples/Va-The-La-Het-Soobin-Hoang-Son.mp3", country_id: 1
-    Fabricate :song, name: "Con tim vo tan", view: 10, song_type: 1, download: 1045057, album_id: 9,
+    Fabricate :song, name: "Con tim vo tan", view: 10, song_type: 1, download: 1045057,
       user_id: 1, link: "samples/Con-Tim-Tan-Vo-Phan-Manh-Quynh.mp3", country_id: 1
-    Fabricate :song, name: "Co gai ngay hom qua", view: 10, song_type: 1, download: 2145057, album_id: 10,
+    Fabricate :song, name: "Co gai ngay hom qua", view: 10, song_type: 1, download: 2145057,
       user_id: 1, link: "samples/Co-Gai-Ngay-Hom-Qua-Co-Gai-Den-Tu-Hom-Qua-OST-Vu-Cat-Tuong.mp3", country_id: 1
 
 
@@ -115,11 +123,71 @@ namespace :db do
     Fabricate :album_singer, album_id: 10, singer_id: 1
     Fabricate :album_singer, album_id: 10, singer_id: 3
 
+    puts "album music type"
+    Fabricate :album_music_type, album_id: 1, music_type_id: 1
+    Fabricate :album_music_type, album_id: 1, music_type_id: 3
+    Fabricate :album_music_type, album_id: 2, music_type_id: 1
+    Fabricate :album_music_type, album_id: 3, music_type_id: 2
+    Fabricate :album_music_type, album_id: 4, music_type_id: 3
+    Fabricate :album_music_type, album_id: 5, music_type_id: 4
+    Fabricate :album_music_type, album_id: 6, music_type_id: 4
+    Fabricate :album_music_type, album_id: 7, music_type_id: 1
+    Fabricate :album_music_type, album_id: 8, music_type_id: 2
+    Fabricate :album_music_type, album_id: 9, music_type_id: 3
+    Fabricate :album_music_type, album_id: 10, music_type_id: 3
+
+    puts "album song"
+    10.times do |i|
+      Fabricate :album_song, album_id: i + 1, song_id: i + 1
+      Fabricate :album_song, album_id: 11, song_id: i + 1
+      Fabricate :album_song, album_id: 12, song_id: i + 1
+      Fabricate :album_song, album_id: 13, song_id: i + 1
+    end
+
     puts "create rank"
     10.times do |i|
       Fabricate :rank, number: i + 1, view_start: 10, view_end: 20 + i, target_type: "song", target_id: i + 1, total_view: 10 +i
       Fabricate :rank, number: i + 1, view_start: 10, view_end: 20 + i, target_type: "album", target_id: i + 1, total_view: 10 +i
     end
+
+    puts "create author song"
+    10.times do |i|
+        Fabricate :author_song, author_id: i + 1, song_id: i + 1
+    end
+
+    puts "create lyric"
+    Fabricate :lyric,  user_id: 1, song_id: 2, content: "
+        Em ơi mình đã yêu nhau được mấy tháng rồi?
+        Em ơi mình đã qua bao nhiêu sóng gió trên đời?
+        Có mấy đêm anh thức khuya đọc những lá thư em trao đến anh
+        Em ơi mình đã xa nhau hơn cả tuần rồi!
+
+        Đây là valentine đầu tiên, anh và em có nhau, yêu nhau
+        Sao em không ở đây bên anh lúc này
+        Đây cà phê nhớ em,
+        Đây hàng me nhớ em,
+        Đây Đông Du nhớ em bên anh mỗi khi tan ca
+        Anh mong sao ngày chóng qua
+
+        Em ơi một ngày em nói yêu anh bao nhiêu lần?
+        Em ơi một tuần gặp nhau bao nhiêu là vừa?
+        Có lúc ta hay giận hờn vu vơ
+        Anh chẳng nói còn em lặng im
+        Em ơi, mình đã hiểu nhau đến bao nhiêu rồi?
+        Đây là valentine đầu tiên, anh và em có nhau, yêu nhau
+        Sao em không ở đây bên anh ngay lúc này
+        Đây Sài Gòn nhớ em
+        Đây mình anh lái xe vòng vòng
+        Đây hoàng hôn ghé thăm nơi góc phố riêng đôi ta
+        Anh mong sao ngày chóng qua
+
+        Em ơi dù mai sau có gió mưa xô nghiêng vào đầu
+        Em ơi em nhớ nắm tay anh qua thương đau
+        Em ơi lòng này yêu em
+        Chỉ có hàng me mới hiểu lòng anh
+        Em ơi hãy đừng hoài nghi vì trái tim anh ngu si
+        Anh mong mình luôn có đôi
+    "
 
     puts "Success remake data"
   end

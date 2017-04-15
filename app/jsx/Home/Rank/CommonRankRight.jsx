@@ -1,4 +1,4 @@
-export default class CommonRankLeft extends PageComponent {
+export default class CommonRankRight extends PageComponent {
   constructor(props) {
     super(props);
   }
@@ -11,8 +11,17 @@ export default class CommonRankLeft extends PageComponent {
 
   }
 
-  handleClickPlay = (list) => {
-    Helper.transitionTo("/song", list);
+  handleClickPlayOne = (item) => {
+    let ckeckAlbum = this.props.album;
+    if (ckeckAlbum) {
+      Helper.transitionTo("/album", item.id);
+    } else {
+      Helper.transitionTo("/song", item.id);
+    }
+  }
+
+  handleActive = (country) => {
+    this.props.onActive(country);
   }
 
   renderSinger(singers) {
@@ -29,12 +38,12 @@ export default class CommonRankLeft extends PageComponent {
     return list.map((item, index) => {
       return (
         <ul key={index} className="sub-main1-top">
-          <li className="rank-left">{item.get_rank_previous}</li>
+          <li className="rank-left">{index + 1}</li>
           <li className="rank-right">
             <ul>
               <li className="ellipsis">
                 <div className="pointer" title={item.name}
-                  onClick={() => this.handleClickPlay(item)}>
+                  onClick={() => this.handleClickPlayOne(item)}>
                   {item.name}
                 </div>
               </li>
@@ -61,17 +70,17 @@ export default class CommonRankLeft extends PageComponent {
 
     return (
       <mui.Tabs>
-        <mui.Tab label="Viet Nam" >
+        <mui.Tab label="Viet Nam" onActive={() => this.handleActive("vn")}>
           <div>
             {this.renderSongs(listVn)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Au My" >
+        <mui.Tab label="Au My" onActive={() => this.handleActive("us")}>
           <div>
             {this.renderSongs(listUs)}
           </div>
         </mui.Tab>
-        <mui.Tab label="Han Quoc">
+        <mui.Tab label="Han Quoc" onActive={() => this.handleActive("kp")}>
           <div>
             {this.renderSongs(listKp)}
           </div>

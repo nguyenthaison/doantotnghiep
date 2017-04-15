@@ -12,8 +12,9 @@ Rails.application.routes.draw do
       resources :countries
       resources :sessions, only: :create
       resources :singers
+
+      get "download/:id" => "songs#download"
     end
   end
-
   get "*path", to: "react_app#home"
 end

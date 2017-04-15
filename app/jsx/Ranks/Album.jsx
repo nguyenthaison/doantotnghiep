@@ -1,5 +1,4 @@
 import CommonRank from "./CommonRank";
-import TmpAlbum from "./TmpAlbum";
 
 const TAKE_RECORD = 10;
 
@@ -15,42 +14,33 @@ export default class NewSong extends PageComponent {
   }
 
   componentDidMount() {
-    API.Album.getList(this.handleGetAlbumVnCallback, this.getOption("vn"))
-    API.Album.getList(this.handleGetAlbumUsCallback, this.getOption("vn"))
-    API.Album.getList(this.handleGetAlbumKpCallback, this.getOption("vn"))
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumVn"),
+      this.getOption("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumUs"),
+      this.getOption("vn"));
+    API.Album.getList((status, data) => this.handleGetAlbumCallback(status, data, "albumKp"),
+      this.getOption("vn"));
   }
 
   getOption(type) {
     let include = {
       ranks: {},
       singers: {only: ["id", "name"]},
+      songs: {},
     };
     return {
       methods: ["get_rank_previous"],
       include: JSON.stringify(include),
       filter: {country: type},
       take: TAKE_RECORD,
+      order_by: "ranks.total_view desc",
     }
   }
 
-  handleGetAlbumVnCallback = (status, data) => {
+  handleGetAlbumCallback = (status, data, albums) => {
     if (!status) return;
     this.setState({
-      albumVn: data.albums,
-    });
-  }
-
-  handleGetAlbumUsCallback = (status, data) => {
-    if (!status) return;
-    this.setState({
-      albumUs: data.albums,
-    });
-  }
-
-  handleGetAlbumKpCallback = (status, data) => {
-    if (!status) return;
-    this.setState({
-      albumKp: data.albums,
+      [albums]: data.albums,
     });
   }
 
@@ -67,6 +57,7 @@ export default class NewSong extends PageComponent {
         titleUs="Top album au my"
         listKp={albumKp}
         titleKp="Top album Kpop"
+        album={true}
       />
     )
   }

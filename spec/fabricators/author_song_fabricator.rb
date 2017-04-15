@@ -1,2 +1,4 @@
-Fabricator(:author_song) do
+Fabricator :author_song do
+  author_id
+  song_id
 end

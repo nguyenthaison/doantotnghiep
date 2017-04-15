@@ -1,9 +1,8 @@
-import CommonRankLeft from "./CommonRankLeft";
-import TmpAlbum from "./TmpAlbum";
+import CommonRankRight from "./CommonRankRight";
 
 const TAKE_RECORD = 5;
 
-export default class RankAlbumLeft extends PageComponent {
+export default class RankAlbumRight extends PageComponent {
   constructor(props) {
     super(props);
 
@@ -24,12 +23,14 @@ export default class RankAlbumLeft extends PageComponent {
     let include = {
       ranks: {},
       singers: {only: ["id", "name"]},
+      songs: {},
     };
     return {
       methods: ["get_rank_previous"],
       include: JSON.stringify(include),
       filter: {country: type},
       take: TAKE_RECORD,
+      order_by: "ranks.total_view desc",
     }
   }
 
@@ -54,6 +55,10 @@ export default class RankAlbumLeft extends PageComponent {
     });
   }
 
+  handleViewRankAlbum = () => {
+    Helper.transitionTo("/Ranks");
+  }
+
   render() {
     let albumVn = this.state.albumVn;
     let albumUs = this.state.albumUs;
@@ -62,19 +67,19 @@ export default class RankAlbumLeft extends PageComponent {
     return (
       <div className="border-menu-right">
         <div className="label-top">
-          BXH Bai Hat
-          <i className="material-icons">keyboard_arrow_right</i>
-          <i className="material-icons pointer">
-            play_circle_outline
-          </i>
+          <div onClick={this.handleViewRankAlbum} className="pointer">
+            RANK ALBUM
+            <i className="material-icons">keyboard_arrow_right</i>
+          </div>
         </div>
-        <CommonRankLeft
+        <CommonRankRight
           listVn={albumVn}
           titleVn="Top album viet nam"
           listUs={albumUs}
           titleUs="Top album au my"
           listKp={albumKp}
           titleKp="Top album Kpop"
+          album={true}
         />
       </div>
     )

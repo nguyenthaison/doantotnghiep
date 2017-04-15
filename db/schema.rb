@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408054157) do
+ActiveRecord::Schema.define(version: 20170412063030) do
+
+  create_table "album_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "album_id"
+    t.integer  "music_type_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["album_id"], name: "index_album_music_types_on_album_id", using: :btree
+    t.index ["music_type_id"], name: "index_album_music_types_on_music_type_id", using: :btree
+  end
 
   create_table "album_singers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "album_id"
@@ -21,11 +30,21 @@ ActiveRecord::Schema.define(version: 20170408054157) do
     t.index ["singer_id"], name: "index_album_singers_on_singer_id", using: :btree
   end
 
+  create_table "album_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "album_id"
+    t.integer  "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_album_songs_on_album_id", using: :btree
+    t.index ["song_id"], name: "index_album_songs_on_song_id", using: :btree
+  end
+
   create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "view"
-    t.integer  "rank"
     t.integer  "share"
     t.string   "name"
+    t.integer  "creator"
+    t.integer  "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -222,7 +241,6 @@ ActiveRecord::Schema.define(version: 20170408054157) do
     t.integer  "download"
     t.string   "link"
     t.integer  "user_id"
-    t.integer  "album_id"
     t.integer  "country_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
@@ -230,7 +248,6 @@ ActiveRecord::Schema.define(version: 20170408054157) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
-    t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
     t.index ["country_id"], name: "index_songs_on_country_id", using: :btree
   end
 
