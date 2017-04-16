@@ -41,6 +41,7 @@ export default class Song extends PageComponent {
       repeat: nextProps.item.length > 1 ? "repeat" : "one",
       list: checkAlbum ? nextProps.item : [],
       oneSong: nextProps.oneSong,
+      position: nextProps.position,
     });
   }
 

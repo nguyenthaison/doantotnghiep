@@ -3,8 +3,10 @@ import FileDownload from "material-ui/svg-icons/file/file-download";
 import Feedback from "material-ui/svg-icons/action/feedback";
 import Add from "material-ui/svg-icons/content/add";
 import Share from "material-ui/svg-icons/social/share";
+import ContentLeft from "./ContentLeft";
 
-const TAKE_RECORD = 10;
+const TAKE_RECORD_ALBUM = 10;
+const TAKE_RECORD_SONG_RELATED = 20;
 
 export default class index extends PageComponent {
   constructor(props) {
@@ -13,19 +15,45 @@ export default class index extends PageComponent {
     this.state = {
       song: {},
       albums: [],
+      songs: [],
     }
   }
 
   componentDidMount() {
     let state = Helper.getCurrentLocationState();
-    API.Song.get((status, data) => this.handerGetData(status, data, "song"), state, {include: JSON.stringify({})});
-    API.Album.getList((status, data) => this.handerGetData(status, data, "albums"), this.getOption(state));
+    this.getList(state);
   }
 
-  getOption(state) {
+  componentWillReceiveProps(nextProps) {
+   let state = Helper.getCurrentLocationState();
+    this.getList(state);
+  }
+
+  getList(id) {
+    API.Song.get((status, data) => this.handerGetData(status, data, "song"), id,
+      {include: JSON.stringify({})});
+    API.Album.getList((status, data) => this.handerGetData(status, data, "albums"),
+      this.getOptionAlbum(id));
+    API.Song.getList((status, data) => this.handerGetData(status, data, "songs"),
+      this.getOptionSongRelated(id));
+  }
+
+  getOptionAlbum(state) {
     return {
       filter: {song: state, creator: "member"},
-      take: TAKE_RECORD,
+      take: TAKE_RECORD_ALBUM,
+    }
+  }
+
+  getOptionSongRelated(state) {
+    let include = {
+      singers: {only: ["id", "name"]},
+    };
+
+    return {
+      include: JSON.stringify(include),
+      filter: {music_type: state},
+      take: TAKE_RECORD_SONG_RELATED,
     }
   }
 
@@ -41,7 +69,7 @@ export default class index extends PageComponent {
   }
 
   handleCareSinger = (singer) => {
-    console.log(App.auth.id);
+    // console.log(App.auth.id);
     // API.FavoriteArticle.create(this.handleFavoriteSinger, singer)
   }
 
@@ -106,6 +134,7 @@ export default class index extends PageComponent {
 
   render() {
     let song = this.state.song;
+    let listSongRelated = this.state.songs;
 
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
@@ -117,7 +146,7 @@ export default class index extends PageComponent {
                   <h1 className="play-song-label">{song.name}</h1>
                   {/*<div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>*/}
                 </div>
-                <Song item={song} album={false} oneSong={true} />
+                <Song item={song} album={false} oneSong={true} position={0} />
                 <div className="action-play-song">
                   {this.renderButtonAction("Add To", <Add />, "add-to")}
                   {this.renderButtonAction("Download", <FileDownload />, "download",
@@ -138,9 +167,7 @@ export default class index extends PageComponent {
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div className="row">
-              <div className="home-left">
-
-              </div>
+              <ContentLeft listRelated={listSongRelated}/>
             </div>
           </div>
         </div>
