@@ -13,6 +13,7 @@ class AuthenticationSerializer < ActiveModel::Serializer
   def authorized_pages
     member_auth = {
       song: true,
+      album: true,
     }
 
     # role = object.admin? && @options[:field_id] ? "manager" : object.role

@@ -58,14 +58,14 @@ export default class index extends PageComponent {
     )
   }
 
-  renderButtonAction(label, icon, handleAction) {
+  renderButtonAction(label, icon, className, handleAction) {
     return (
       <cm.RaisedButton
         icon={icon}
         primary={true}
         labelPosition="after"
         label={label}
-        className="submit-upload"
+        className={"action-song " + className}
         onTouchTap={handleAction}
         title={label} />
     )
@@ -73,22 +73,31 @@ export default class index extends PageComponent {
 
   renderSinger(singer) {
     return (
-      <div className="singer row">
-        <div className="col-md-3">
-        </div>
-        <div className="col-md-9">
-          <div>
-            <span className="name">
-              {singer.name}
-            </span>
-            <cm.RaisedButton
-              icon={<Add />}
-              className="care"
-              primary={true}
-              onClick={() => this.handleCareSinger(singer)}/>
+      <div className="singer">
+        <div className="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+            <div className="row">
+              <div className="image-singer">
+                <div className="border-image-singer">
+                  <img src="/images/logo.jpg" />
+                </div>
+              </div>
             </div>
-            <div className="content">
-              {singer.content}
+        </div>
+        <div className="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+          <div className="row">
+            <div className="info-singer">
+              <span className="name-singer">
+                {singer.name}
+              </span>
+              <cm.RaisedButton
+                icon={<Add />}
+                className="follow-singer"
+                primary={true}
+                onClick={() => this.handleCareSinger(singer)}/>
+              </div>
+              <div className="content">
+                {singer.content}
+              </div>
             </div>
         </div>
       </div>
@@ -105,16 +114,16 @@ export default class index extends PageComponent {
             <div className="home-center">
               <div className="play-song">
                 <div className="top-info">
-                  <div>{song.name}</div>
-                  <div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>
+                  <h1 className="play-song-label">{song.name}</h1>
+                  {/*<div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>*/}
                 </div>
                 <Song item={song} album={false} oneSong={true} />
-                <div className="action">
-                  {this.renderButtonAction("Add To", <Add />)}
-                  {this.renderButtonAction("Download", <FileDownload />,
+                <div className="action-play-song">
+                  {this.renderButtonAction("Add To", <Add />, "add-to")}
+                  {this.renderButtonAction("Download", <FileDownload />, "download",
                     ()=>this.handleDownload(song.id))}
-                  {this.renderButtonAction("Feedback", <Feedback />)}
-                  {this.renderButtonAction("Share", <Share />)}
+                  {this.renderButtonAction("Feedback", <Feedback />, "feedback")}
+                  {this.renderButtonAction("Share", <Share />, "share")}
                 </div>
               </div>
               <div className="author">
