@@ -2,9 +2,72 @@
   .play-song {
     float: left;
     width: 100%;
+    .top-info {
+    	h1.play-song-label {
+    		font-size: 23px;
+		    font-weight: bold;
+		    text-transform: capitalize;
+    	}	
+    }
+    .action-play-song {
+    	padding: 30px 0;
+    	.common-raised-button.action-song {
+    		margin-right: 10px;
+    		button {
+    			background-color: rgb(255, 255, 255) !important;;
+    			border: 1px solid #ececec !important;
+    			span {
+    				color: rgb(162, 0, 255) !important;
+    				text-transform: none !important; 
+    				padding-left: 0px !important;
+    			}
+    			svg {
+    				fill: rgb(167, 16, 255) !important;
+    			}
+    		}
+    		button:hover {
+    			background-color: #a200ff !important;
+    			span {
+    				color: #ffffff !important;
+    			}
+    			svg {
+    				fill: #ffffff !important;
+    			}
+    		}
+    	}
+    }
   }
 
   .lyrics {
     clear: left;
+  }
+  .singer{
+  	overflow: hidden;
+  	.image-singer{
+  		padding: 20px;
+  		.border-image-singer {
+		  	border: 1px solid #ececec;
+		    padding: 4px;
+		    border-radius: 2px;
+		    img {
+		  		width: 100%;
+		  	}
+  		}
+  	}
+  	.info-singer{
+		padding: 20px 0;
+		.name-singer {
+			text-transform: capitalize;
+	    font-size: 17px;
+	    font-weight: bold;
+		}
+		.follow-singer {
+    		padding: 0 10px;
+    		line-height: 27px !important;
+    		button {
+    			height: 30px !important;
+    		}
+		}
+	}
   }
 }

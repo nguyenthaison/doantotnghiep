@@ -184,7 +184,7 @@ export default class Song extends PageComponent {
 
   renderButtonPlay(icon, className, handle) {
     return (
-      <div className="col-md-1">
+      <div className="play-button button-play-music">
         <cm.RaisedButton
           icon={icon}
           className={className}
@@ -206,8 +206,6 @@ export default class Song extends PageComponent {
 
     return (
       <div className="song-play">
-        <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-          <div className="row">
             {/*<div>
               <svg xmlns="http://www.w3.org/2000/svg" className="equilizer" viewBox="0 0 128 128">
                 <g>
@@ -245,20 +243,20 @@ export default class Song extends PageComponent {
                   onPlaying={(event) => this.handleSongPlaying(event)}
                   onFinishedPlaying={this.handleSongFinishedPlaying} />
 
-                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
-                    "skip-previous background-button", () => this.handleChangeMusic(false))}
-                  {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
-                  {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
-                    "skip-next background-button", this.handleChangeMusic)}
-                  <div className="col-md-1"></div>
+                  <div className={this.state.oneSong ? "contain-play-song"  : "contain-play-song album"}>
+                    {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
+                      "skip-previous background-button", () => this.handleChangeMusic(false))}
+                    {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
+                    {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
+                      "skip-next background-button", this.handleChangeMusic)}
+                  </div>
+
                   <Volume btnChange={this.handleBtnChangeVolume}
                     sliderChange={this.handleSliderChange}
                     volume={this.state.volume}
                     statusVolume={this.state.statusVolume}
                     />
-                  <div className="col-md-2">
-                    <Duration duration={this.state.duration} position={this.state.position} />
-                  </div>
+                  <Duration duration={this.state.duration} position={this.state.position} />
                   <Repeat onChange={this.handleChangeRepeat}
                     repeat={repeat}
                     oneSong={this.state.oneSong}
@@ -266,13 +264,8 @@ export default class Song extends PageComponent {
 
               </div>
             </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-          <div className="row">
-
-          </div>
-        </div>
+         {/* </div>
+        </div>*/}
       </div>
     );
   }
