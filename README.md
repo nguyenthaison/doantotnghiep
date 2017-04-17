@@ -1,25 +1,49 @@
-# README
+# Graduation project - Website Music
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Environment
+* Requires Ruby version >= 2.3 and Rails version >= 4.0
 
-Things you may want to cover:
+## DevDependencies
+* [https://facebook.github.io/react/] Reactjs
+* [http://babeljs.io/] Babel
+* [https://webpack.github.io/docs/] Webpack
+* [http://exploringjs.com/es6/] ES6
 
-* Ruby version
+## Function
+* login, logout
+* play one music
+* play album
+* repeat one music, repeat album, shuffe
+* upload, download music
+* show ranking music, album
 
-* System dependencies
+## How to run the test suite
 
-* Configuration
+* After install ruby on rails, clone or download project in https://github.com/nguyenthaison/doantotnghiep.
+* create file database.yml same database.yml.example in path: app/config/database.yml.example.
 
-* Database creation
+<pre>
+  <code>
+    $ cd doantotnghiep
+    $ rails db:remake_data
+    $ bundle install
+    $ npm install
+    $ npm start
+    //open two terminal
+    $ rails s //one terminal
+    $ webpack --w //one terminal
+  </code>
+</pre>
 
-* Database initialization
+* open website and typing: localhost:3000 and login with account
 
-* How to run the test suite
+<pre>
+   <code>
+    username: admin
+    password: 123456
+   </code>
+</pre>
 
-* Services (job queues, cache servers, search engines, etc.)
+## How to contribute
 
-* Deployment instructions
-
-* ...
-# doantotnghiep
+* Feel free to fork and send PRs or issues, be it for features, bug fixes, or documentation!
