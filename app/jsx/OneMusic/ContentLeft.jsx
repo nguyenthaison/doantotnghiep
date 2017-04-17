@@ -8,13 +8,24 @@ export default class ContentLeft extends PageComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-
-    }
+    // this.state = {
+    //   autoNext: true,
+    // }
   }
 
   handleToggle = () => {
+    let song = this.props.listRelated[0];
+    // if (this.state.autoNext) {
+      // this.setState({
+      //   onAutoNext: false,
+      // })
+    // } else {
+      // this.setState({
+      //   onAutoNext: true,
+      // });
 
+      this.props.onAutoNext(song);
+    // }
   }
 
   handleClickPlayOne = (item) => {
@@ -73,6 +84,7 @@ export default class ContentLeft extends PageComponent {
           label="Suggest"
           labelStyle={styles.toggle}
           onToggle={this.handleToggle}
+          toggled={this.props.autoNext}
         />
         {this.renderSuggestContent()}
       </div>
