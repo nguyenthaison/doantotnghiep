@@ -16,6 +16,8 @@ export default class index extends PageComponent {
       song: {},
       albums: [],
       songs: [],
+      autoNext: true,
+      nextSong: null,
     }
   }
 
@@ -71,6 +73,49 @@ export default class index extends PageComponent {
   handleCareSinger = (singer) => {
     // console.log(App.auth.id);
     // API.FavoriteArticle.create(this.handleFavoriteSinger, singer)
+  }
+
+  handleAutoNext = (song) => {
+    let autoNext = true;
+    let nextSong = null;
+    let songs = this.state.songs;
+    if (this.state.autoNext) {
+      // this.setState({
+      //   autoNext: false,
+      // })
+      autoNext = false;
+      nextSong = null;
+    } else {
+      // this.setState({
+      //   autoNext: true,
+      // })
+      autoNext = true;
+      let index = songs.findIndex((_song) => song.id === _song.id);
+      if (index) {
+        if (index + 1 === songs.length) {
+          // Helper.transitionTo("/song", songs[0]);
+          nextSong = songs[0];
+        } else {
+          // Helper.transitionTo("/song", songs[index + 1]);
+          nextSong = songs[index + 1];
+        }
+      } else {
+        // Helper.transitionTo("/song", song);
+        nextSong = song;
+      }
+    }
+
+    this.setState({
+      autoNext: autoNext,
+      nextSong: nextSong,
+    })
+  }
+
+  handleOffAutoNext = () => {
+    this.setState({
+      autoNext: false,
+      nextSong: null,
+    })
   }
 
   renderInfoTop(list) {
@@ -146,7 +191,10 @@ export default class index extends PageComponent {
                   <h1 className="play-song-label">{song.name}</h1>
                   {/*<div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>*/}
                 </div>
-                <Song item={song} album={false} oneSong={true} position={0} />
+                <Song item={song} album={false} oneSong={true} position={0}
+                  autoNext={this.state.autoNext}
+                  nextSong={this.state.nextSong}
+                  onOffAutoNext={this.handleOffAutoNext} />
                 <div className="action-play-song">
                   {this.renderButtonAction("Add To", <Add />, "add-to")}
                   {this.renderButtonAction("Download", <FileDownload />, "download",
@@ -167,7 +215,11 @@ export default class index extends PageComponent {
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div className="row">
-              <ContentLeft listRelated={listSongRelated}/>
+              <ContentLeft
+                listRelated={listSongRelated}
+                onAutoNext={this.handleAutoNext}
+                autoNext={this.state.autoNext}
+              />
             </div>
           </div>
         </div>

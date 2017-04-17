@@ -26,11 +26,22 @@ export default class Song extends PageComponent {
       listRandom: [],
       duration: null,
       oneSong: false,
+      autoNext: false,
+      nextSong: null,
     }
   }
 
   componentWillReceiveProps(nextProps) {
+    // console.log("vao day");
     this.handleCallbackPlayMusic(nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextState);
+    console.log(this.state);
+    console.log(nextProps.value !== this.props.value);
+    console.log(nextState.value !== this.state.value);
+    return nextProps.value !== this.props.value;
   }
 
   handleCallbackPlayMusic = (nextProps) => {
@@ -38,10 +49,12 @@ export default class Song extends PageComponent {
 
     this.setState({
       song: checkAlbum ? nextProps.item[0] : nextProps.item,
-      repeat: nextProps.item.length > 1 ? "repeat" : "one",
+      repeat: nextProps.item.length > 1 ? "repeat" : "off",
       list: checkAlbum ? nextProps.item : [],
       oneSong: nextProps.oneSong,
       position: nextProps.position,
+      autoNext: nextProps.autoNext ? true : false,
+      nextSong: nextProps.nextSong ? nextProps.nextSong : null,
     });
   }
 
@@ -168,6 +181,9 @@ export default class Song extends PageComponent {
   }
 
   handleChangeRepeat = (repeat) => {
+    if (this.props.autoNext && repeat === "one") {
+      this.state.onOffAutoNext();
+    }
     let list = this.state.list;
     let check = typeof(repeat) == "boolean"; // check shuffle or repeat
     if(check) { //check shuffle
