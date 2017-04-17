@@ -4,10 +4,10 @@
 * Requires Ruby version >= 2.3 and Rails version >= 4.0
 
 ## DevDependencies
-* [https://facebook.github.io/react/] Reactjs
-* [http://babeljs.io/] Babel
-* [https://webpack.github.io/docs/] Webpack
-* [http://exploringjs.com/es6/] ES6
+* [Reactjs](https://facebook.github.io/react/ "Reactjs")
+* [Babel](http://babeljs.io/ "Babel")
+* [Webpack](https://webpack.github.io/docs/ "Webpack")
+* [ES6](http://exploringjs.com/es6/ "ES6")
 
 ## Function
 * login, logout
