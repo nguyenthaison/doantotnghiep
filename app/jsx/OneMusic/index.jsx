@@ -13,7 +13,7 @@ export default class index extends PageComponent {
     super(props);
 
     this.state = {
-      song: {},
+      song: null,
       albums: [],
       songs: [],
     }
@@ -39,7 +39,12 @@ export default class index extends PageComponent {
   }
 
   getOptionAlbum(state) {
+    let include = {
+      singers: {only: ["id", "name"]},
+    };
+
     return {
+      include: JSON.stringify(include),
       filter: {song: state, creator: "member"},
       take: TAKE_RECORD_ALBUM,
     }
@@ -71,6 +76,14 @@ export default class index extends PageComponent {
   handleCareSinger = (singer) => {
     // console.log(App.auth.id);
     // API.FavoriteArticle.create(this.handleFavoriteSinger, singer)
+  }
+
+  handlePlayAlbum = (album) => {
+    Helper.transitionTo("/album", album.id);
+  }
+
+  handleViewSinger = (singers) => {
+    Helper.transitionTo("/singers", singers[0]);
   }
 
   renderInfoTop(list) {
@@ -132,9 +145,45 @@ export default class index extends PageComponent {
     )
   }
 
+  renderAlbum(singer) {
+    let albums = this.state.albums;
+    if (!albums) return null;
+
+    return (
+      <div className="albums">
+        {<span className="title"><h1>{"Album " + singer.name}</h1></span>}
+        <div className="album-list">
+          {albums.map((album) => {
+            let singerName = album.singers.length > 1 ? "Many artists" : singer.name;
+
+            return (
+              <div key={album.id} onClick={() => this.handlePlayAlbum(album)}>
+                <div className="img-album pointer">
+                  <img src="/images/logo.jpg" />
+                </div>
+                <div>
+                  <span className="pointer" onClick={() => this.handlePlayAlbum(album)}>
+                    {album.name}
+                  </span>
+                </div>
+                <div>
+                  <span className="pointer" onClick={() => this.handleViewSinger(album.singers)}>
+                    {singerName}
+                  </span>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     let song = this.state.song;
+    if (!song) return null;
     let listSongRelated = this.state.songs;
+    let singer = song.singers[0]
 
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
@@ -156,13 +205,12 @@ export default class index extends PageComponent {
                 </div>
               </div>
               <div className="author">
-
               </div>
-
               <div className="lyrics">
                 {song.lyrics && song.lyrics.length > 0 ? song.lyrics[0].content : null}
               </div>
-              {song.singers ? this.renderSinger(song.singers[0]) : null}
+              {this.renderSinger(song.singers[0])}
+              {this.renderAlbum(singer)}
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
