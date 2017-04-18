@@ -7,7 +7,7 @@
     		font-size: 23px;
 		    font-weight: bold;
 		    text-transform: capitalize;
-    	}	
+    	}
     }
     .action-play-song {
     	padding: 30px 0;
@@ -18,7 +18,7 @@
     			border: 1px solid #ececec !important;
     			span {
     				color: rgb(162, 0, 255) !important;
-    				text-transform: none !important; 
+    				text-transform: none !important;
     				padding-left: 0px !important;
     			}
     			svg {
@@ -41,6 +41,7 @@
   .lyrics {
     clear: left;
   }
+
   .singer{
   	overflow: hidden;
   	.image-singer{
@@ -54,20 +55,33 @@
 		  	}
   		}
   	}
+
   	.info-singer{
-		padding: 20px 0;
-		.name-singer {
-			text-transform: capitalize;
-	    font-size: 17px;
-	    font-weight: bold;
-		}
-		.follow-singer {
-    		padding: 0 10px;
-    		line-height: 27px !important;
-    		button {
-    			height: 30px !important;
-    		}
-		}
-	}
+  		padding: 20px 0;
+  		.name-singer {
+  			text-transform: capitalize;
+  	    font-size: 17px;
+  	    font-weight: bold;
+  		}
+  		.follow-singer {
+      		padding: 0 10px;
+      		line-height: 27px !important;
+      		button {
+      			height: 30px !important;
+      		}
+  		}
+  	}
+  }
+
+  .albums {
+    .album-list {
+      display: inline-flex;
+      width: 100%;
+      overflow: overlay;
+
+      .img-album {
+        padding-right: 5px;
+      }
+    }
   }
 }
