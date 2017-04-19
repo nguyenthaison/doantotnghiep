@@ -2,6 +2,7 @@ import Song from "../PlayMusic/Song";
 import FileDownload from "material-ui/svg-icons/file/file-download";
 import Feedback from "material-ui/svg-icons/action/feedback";
 import Add from "material-ui/svg-icons/content/add";
+import Done from "material-ui/svg-icons/action/done";
 import Share from "material-ui/svg-icons/social/share";
 import ContentLeft from "./ContentLeft";
 
@@ -16,6 +17,7 @@ export default class index extends PageComponent {
       song: null,
       albums: [],
       songs: [],
+      favorite_articles: [],
     }
   }
 
@@ -30,12 +32,13 @@ export default class index extends PageComponent {
   }
 
   getList(id) {
-    API.Song.get((status, data) => this.handerGetData(status, data, "song"), id,
+    API.Song.get((status, data) => this.handlerGetData(status, data, "song"), id,
       {include: JSON.stringify({})});
-    API.Album.getList((status, data) => this.handerGetData(status, data, "albums"),
+    API.Album.getList((status, data) => this.handlerGetData(status, data, "albums"),
       this.getOptionAlbum(id));
-    API.Song.getList((status, data) => this.handerGetData(status, data, "songs"),
+    API.Song.getList((status, data) => this.handlerGetData(status, data, "songs"),
       this.getOptionSongRelated(id));
+    API.FavoriteArticle.getList((status, data) => this.handlerGetData(status, data, "favorite_articles"));
   }
 
   getOptionAlbum(state) {
@@ -62,7 +65,7 @@ export default class index extends PageComponent {
     }
   }
 
-  handerGetData = (status, data, name) => {
+  handlerGetData = (status, data, name) => {
     if (!status) return;
     this.setState({
       [name]: data[name],
@@ -73,9 +76,33 @@ export default class index extends PageComponent {
     window.open(`/api/v1/download/${id}`, "_self");
   }
 
-  handleCareSinger = (singer) => {
-    // console.log(App.auth.id);
-    // API.FavoriteArticle.create(this.handleFavoriteSinger, singer)
+  handleCareSinger = (event, singer, favorite) => {
+    if (favorite) {
+      Helper.showConfirm(
+        "", "Are you sure?",
+        () => this.handleConfirmDelete(favorite));
+
+      event.stopPropagation();
+    } else {
+      let favorite_article = {};
+      favorite_article["article_type"] = "singer";
+      favorite_article["article_id"] = singer.id;
+      API.FavoriteArticle.create(this.handleFavoriteSinger, favorite_article)
+    }
+  }
+
+  handleConfirmDelete = (favorite) => {
+    API.FavoriteArticle.delete((status, data) => this.handleFavoriteSinger(status, data, favorite),
+      favorite.id)
+  }
+
+  handleFavoriteSinger = (status, data, favorite) => {
+    if (status) {
+      if (favorite) {
+        Helper.showMessage("Oke! You don't care");
+      }
+      API.FavoriteArticle.getList((status, data) => this.handlerGetData(status, data, "favorite_articles"));
+    }
   }
 
   handlePlayAlbum = (album) => {
@@ -113,6 +140,14 @@ export default class index extends PageComponent {
   }
 
   renderSinger(singer) {
+    let favoriteArticles = this.state.favorite_articles;
+    const checkFavorite = favoriteArticles.findIndex(item =>
+      item.user_id === App.auth.id && item.article_id === singer.id);
+    let numberFavorite = 0;
+    favoriteArticles.map((item, index) => {
+      if (item.article_id === singer.id) {numberFavorite += 1}
+    });
+
     return (
       <div className="singer">
         <div className="col-md-3 col-lg-3 col-sm-3 col-xs-12">
@@ -131,15 +166,16 @@ export default class index extends PageComponent {
                 {singer.name}
               </span>
               <cm.RaisedButton
-                icon={<Add />}
+                icon={checkFavorite > -1 ? <Done /> : <Add />}
                 className="follow-singer"
                 primary={true}
-                onClick={() => this.handleCareSinger(singer)}/>
-              </div>
-              <div className="content">
-                {singer.content}
-              </div>
+                onClick={(event) => this.handleCareSinger(event, singer, favoriteArticles[checkFavorite])}/>
+              <span>{numberFavorite}</span>
             </div>
+            <div className="content">
+              {singer.content}
+            </div>
+          </div>
         </div>
       </div>
     )
