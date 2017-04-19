@@ -12,6 +12,8 @@ class Song < ApplicationRecord
   has_many :albums, through: :album_songs
   has_many :author_songs, dependent: :destroy
   has_many :authors, through: :author_songs
+  has_many :play_list_songs, dependent: :destroy
+  has_many :play_lists, through: :play_list_songs
   has_many :music_type_songs, dependent: :destroy
   has_many :music_types, through: :music_type_songs
   has_many :singer_songs, dependent: :destroy

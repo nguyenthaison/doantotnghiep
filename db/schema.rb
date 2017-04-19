@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415073734) do
+ActiveRecord::Schema.define(version: 20170419122827) do
 
   create_table "album_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "album_id"
@@ -173,6 +173,15 @@ ActiveRecord::Schema.define(version: 20170415073734) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "play_list_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "play_list_id"
+    t.integer  "song_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["play_list_id"], name: "index_play_list_songs_on_play_list_id", using: :btree
+    t.index ["song_id"], name: "index_play_list_songs_on_song_id", using: :btree
   end
 
   create_table "play_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
