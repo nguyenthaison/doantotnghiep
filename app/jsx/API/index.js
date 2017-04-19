@@ -8,6 +8,7 @@ import Singer from "./Singer";
 import Country from "./Country";
 import Authentication from "./Authentication";
 import FavoriteArticle from "./FavoriteArticle";
+import PlayList from "./PlayList";
 
 module.exports = {
   Song,
@@ -19,4 +20,5 @@ module.exports = {
   Country,
   Authentication,
   FavoriteArticle,
+  PlayList,
 };

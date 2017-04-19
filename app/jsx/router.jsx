@@ -13,6 +13,7 @@ import Singers from "./Singers";
 import Upload from "./Upload";
 import Login from "./Login";
 import Song from "./OneMusic";
+import Personal from "./Personal";
 
 const router = (
   <Router history={browserHistory}>
@@ -34,6 +35,8 @@ const router = (
       <Route path="ranks" component={Ranks} />
 
       <Route path="singers" component={Singers} />
+
+      <Route path="personal" component={Personal} />
 
       <Route path="upload" component={Upload} />
     </Route>
