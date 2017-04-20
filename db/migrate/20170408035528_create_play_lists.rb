@@ -5,7 +5,6 @@ class CreatePlayLists < ActiveRecord::Migration[5.0]
       t.integer :view
       t.text :describe
       t.references :user, index: true, foreign: true
-      t.references :song, index: true, foreign: true
       t.timestamps
     end
   end
