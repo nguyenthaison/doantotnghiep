@@ -40,6 +40,15 @@
   cursor: pointer;
 }
 
+.required {
+  color: red;
+  display: inline-block;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: 10px;
+  padding: 0px 3px 1px 3px;
+}
+
 .mg-pd {
   margin: 0px;
   padding: 0px;

@@ -189,10 +189,8 @@ ActiveRecord::Schema.define(version: 20170419122827) do
     t.integer  "view"
     t.text     "describe",   limit: 65535
     t.integer  "user_id"
-    t.integer  "song_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["song_id"], name: "index_play_lists_on_song_id", using: :btree
     t.index ["user_id"], name: "index_play_lists_on_user_id", using: :btree
   end
 
