@@ -25,6 +25,8 @@ export default class PlayListForm extends BaseComponent {
   }
 
   getDataForSubmit() {
+    let attachment_ids = this.refs.fileUpload.getAttachmentIds();
+    console.log(attachment_ids);
     return this.state.data;
   }
 
@@ -123,7 +125,7 @@ export default class PlayListForm extends BaseComponent {
         <div className="base-master-form row">
           <div className="avatar col-md-3">
             <div className="upload">
-
+              <cm.FileUploader ref="fileUpload"/>
             </div>
           </div>
           {this.renderDialogContent()}

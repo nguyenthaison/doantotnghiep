@@ -21,8 +21,12 @@ export default class index extends PageComponent {
   }
 
   getOption() {
+    let include = {
+      attachments: {},
+    }
     return {
       methods: ["count_song"],
+      include: JSON.stringify(include),
     }
   }
 
