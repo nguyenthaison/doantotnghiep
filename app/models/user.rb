@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :favorite_articles, dependent: :destroy
+  has_many :play_lists, dependent: :destroy
   has_many :singers, through: :favorite_articles
   has_many :authors, through: :favorite_articles
 

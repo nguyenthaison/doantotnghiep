@@ -25,8 +25,6 @@ export default class PlayListForm extends BaseComponent {
   }
 
   getDataForSubmit() {
-    let attachment_ids = this.refs.fileUpload.getAttachmentIds();
-    console.log(attachment_ids);
     return this.state.data;
   }
 
@@ -36,6 +34,8 @@ export default class PlayListForm extends BaseComponent {
 
   handleClickSubmit =() => {
     let data = this.getDataForSubmit();
+    let attachment_ids = this.refs.fileUpload.getAttachmentIds();
+    data["attachment_ids"] = attachment_ids;
 
     if (data.id) {
       API.PlayList.update(this.handleSaveCallback, data);

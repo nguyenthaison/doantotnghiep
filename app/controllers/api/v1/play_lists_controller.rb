@@ -19,6 +19,14 @@ class Api::V1::PlayListsController < Api::BaseController
     end
   end
 
+  def destroy
+    if @play_list.destroy
+      response_success
+    else
+      response_fail play_list: @play_list.errors
+    end
+  end
+
   private
   def play_list_params
     params.require(:play_list).permit(PlayList::ATTRIBUTE_PARAMS).merge(user_id)
