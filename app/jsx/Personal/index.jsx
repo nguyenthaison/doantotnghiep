@@ -1,4 +1,6 @@
 import AddBox from "material-ui/svg-icons/content/add-box";
+import Edit from "material-ui/svg-icons/image/edit";
+import DeleteForever from "material-ui/svg-icons/action/delete-forever";
 import PlayListForm from "./PlayListForm";
 
 const TAKE_RECORD = 10;
@@ -22,8 +24,16 @@ export default class index extends PageComponent {
 
   getOption() {
     let include = {
-      attachments: {},
+      attachments: {methods: ["url"]},
+      songs: {
+        include: {
+          singers: {only: ["id", "name"]},
+          lyrics: {include: {user: {only: ["id", "name"]}}},
+        }
+      },
+      user: {only: ["id", "name"]},
     }
+
     return {
       methods: ["count_song"],
       include: JSON.stringify(include),
@@ -56,6 +66,34 @@ export default class index extends PageComponent {
     this.getList(this.take);
   }
 
+  handlePlayPlayList = (playList) => {
+    Helper.transitionTo("/personal/PlayListDetail", playList);
+  }
+
+  handleEditPlayList = (playList) => {
+
+  }
+
+  handleDeletePlayList = (playList) => {
+    Helper.showConfirm(
+      t("common.message.confirmation.title"),
+      t("common.message.confirmation.delete"),
+      () => this.handleConfirmDelete(playList));
+  }
+
+  handleConfirmDelete = (playList) => {
+    API.PlayList.delete(this.handleCallbackDelete, playList.id)
+  }
+
+  handleCallbackDelete = (status, data) => {
+    if (status) {
+      Helper.showMessage(t("common.message.deleted_success"));
+      this.getList(TAKE_RECORD);
+    } else {
+      this.showMessage(data, "error");
+    }
+  }
+
   renderPlayLists() {
     let list = this.state.play_lists;
     return (
@@ -63,9 +101,14 @@ export default class index extends PageComponent {
         {list.map((item) => {
           return (
             <div className="item" key={item.id}>
+              <div className="avatar">
+                <img style={{height: "80px", width: "80px"}} src={item.attachments[0].url} />
+              </div>
               <div className="e-item">
                 <a href="" className=""></a>
-                <h3 className="title-item ellipsis">{item.name}</h3>
+                <h3 className="title-item ellipsis">
+                  <span onClick={() => this.handlePlayPlayList(item)}>{item.name}</span>
+                </h3>
                 <p className="title-sd-item">
                   <span className="txt-info">Create at: {item.created_at}</span>
                   <span className="txt-info">Songs: {item.count_song}</span>
@@ -74,7 +117,23 @@ export default class index extends PageComponent {
                   <span className="txt-info">Listens: {item.view}</span>
                 </p>
               </div>
-              <div className="item-tool"></div>
+              <div className="item-tool">
+                <cm.RaisedButton
+                  title={t("common.edit")}
+                  labelPosition="after"
+                  primary={true}
+                  icon={<Edit />}
+                  onClick={() => this.handleEditPlayList(item)}
+                />
+
+                <cm.RaisedButton
+                  title={t("common.delete")}
+                  labelPosition="after"
+                  primary={true}
+                  icon={<DeleteForever />}
+                  onClick={() => this.handleDeletePlayList(item)}
+                />
+              </div>
             </div>
           )
         })}

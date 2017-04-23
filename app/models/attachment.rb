@@ -1,5 +1,6 @@
 class Attachment < ApplicationRecord
   IMAGE_TYPES = ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  ALLOWED_METHODS = [:url]
 
   has_attached_file :attachment,
     styles: lambda {|a| a.instance.get_style},
@@ -19,5 +20,9 @@ class Attachment < ApplicationRecord
       url: attachment.url,
       # thumb_url: attachment.url(:thumb),
     })
+  end
+
+  def url
+    self.attachment.url
   end
 end

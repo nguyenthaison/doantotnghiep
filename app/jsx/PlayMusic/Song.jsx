@@ -13,7 +13,7 @@ export default class Song extends PageComponent {
     super(props);
 
     this.state = {
-      playing: false,
+      playing: true,
       position: 0,
       completed: 0,
       volume: 80,
