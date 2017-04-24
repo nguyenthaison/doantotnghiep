@@ -125,7 +125,7 @@ export default class PlayListForm extends BaseComponent {
         <div className="base-master-form row">
           <div className="avatar col-md-3">
             <div className="upload">
-              <cm.FileUploader ref="fileUpload"/>
+              <cm.FileUploader ref="fileUpload" defaultFiles={this.state.data.attachments}/>
             </div>
           </div>
           {this.renderDialogContent()}

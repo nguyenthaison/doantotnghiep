@@ -71,7 +71,7 @@ export default class index extends PageComponent {
   }
 
   handleEditPlayList = (playList) => {
-
+    this.refs.playListForm.open(playList);
   }
 
   handleDeletePlayList = (playList) => {
