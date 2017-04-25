@@ -10,7 +10,6 @@ export default class List extends PageComponent {
   render() {
     let list = this.props.list;
     let image = "/images/p9.jpg";
-    console.log(list);
 
     return (
       <div className="list-new-albumcenter">

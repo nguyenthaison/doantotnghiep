@@ -1,10 +1,12 @@
-import Song from "../PlayMusic/Song";
+import Song from "../../PlayMusic/Song";
+import ListSongInAlbum from "./ListSongInAlbum";
 
 export default class AlbumDetail extends PageComponent {
   constructor(props) {
     super(props);
     this.state = {
       album: {},
+      songActive: {id: null},
     }
   }
 
@@ -17,7 +19,14 @@ export default class AlbumDetail extends PageComponent {
     if (!status) return;
     this.setState({
       album: data.album,
+      songActive: data.album.songs[0],
     });
+  }
+
+  handleChangeSongActive = (song) => {
+    this.setState({
+      songActive: song,
+    })
   }
 
   renderInfoTop(list) {
@@ -49,10 +58,16 @@ export default class AlbumDetail extends PageComponent {
                 </div>
               </div>
               <div className="screen-play">
-                <Song item={album.songs} album={true} oneSong={false} />
+                <Song item={album.songs}
+                  album={true}
+                  oneSong={false}
+                  onChangeSongActive={this.handleChangeSongActive}
+                  songActive={this.state.songActive}
+                  ref="song" />
               </div>
-              <div className="list-music">
-              </div>
+              <ListSongInAlbum list={album.songs}
+                onChangeSongActive={this.handleChangeSongActive}
+                songActive={this.state.songActive} />
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
