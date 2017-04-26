@@ -21,8 +21,23 @@
       }
 
       .playing {
-        // line-height: 50px;
         text-align: center;
+      }
+
+      ul li:first-child {
+        padding-right: 40px !important;
+        width: 20px;
+      }
+
+      ul li:nth-child(2) {
+        width: 300px;
+        padding-right: 40px !important;
+        text-align: left;
+      }
+
+      ul li:last-child {
+        float: right;
+        padding-right: 40px !important;
       }
     }
   }
