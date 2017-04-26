@@ -37,7 +37,8 @@ export default class Song extends PageComponent {
     let checkAlbum = nextProps.album;
 
     this.setState({
-      song: checkAlbum ? nextProps.item[0] : nextProps.item,
+      // song: checkAlbum ? nextProps.item[0] : nextProps.item,
+      song: checkAlbum ? nextProps.songActive : nextProps.item,
       repeat: nextProps.item.length > 1 ? "repeat" : "one",
       list: checkAlbum ? nextProps.item : [],
       oneSong: nextProps.oneSong,
@@ -71,13 +72,15 @@ export default class Song extends PageComponent {
     let repeat = this.state.repeat;
     let shuffle = this.state.shuffle;
     let song = this.state.song;
+    let songActive = {};
 
     if (shuffle) {
       let listRandom = this.state.listRandom;
       let index = this.handleFindSongInList(listRandom, song);
+      songActive = index === listRandom.length -1 ? listRandom[0] : listRandom[index + 1];
 
       this.setState({
-        song: index === listRandom.length -1 ? listRandom[0] : listRandom[index + 1],
+        song: songActive,
         shuffle: true,
         position: 0,
       })
@@ -92,9 +95,10 @@ export default class Song extends PageComponent {
       } else if (repeat == "repeat") {
         let song = this.state.song;
         let index = this.handleFindSongInList(list, song);
+        songActive = index === list.length - 1 ? list[0] : list[index + 1];
 
         this.setState({
-          song: index === list.length - 1 ? list[0] : list[index + 1],
+          song: songActive,
           repeat: "repeat",
           position: 0,
         })
@@ -106,6 +110,8 @@ export default class Song extends PageComponent {
         })
       }
     }
+
+    this.props.onChangeSongActive(songActive);
   }
 
   handleChangeSlider = (event, value) => {
@@ -134,7 +140,7 @@ export default class Song extends PageComponent {
       song: newSong,
       position: 0,
       playing: true,
-    })
+    }, this.props.onChangeSongActive(newSong));
   }
 
   handleBtnChangeVolume = (boolean) => {
@@ -168,10 +174,11 @@ export default class Song extends PageComponent {
   }
 
   handleChangeRepeat = (repeat) => {
-    let list = this.state.list;
+    let list = this.props.list;
     let check = typeof(repeat) == "boolean"; // check shuffle or repeat
     if(check) { //check shuffle
       let listRandom = this.handleRandomList();
+      this.props.randomList();
       this.setState({
         shuffle: repeat,
         listRandom: listRandom,
@@ -207,66 +214,49 @@ export default class Song extends PageComponent {
 
     return (
       <div className="song-play">
-            {/*<div>
-              <svg xmlns="http://www.w3.org/2000/svg" className="equilizer" viewBox="0 0 128 128">
-                <g>
-                  <title>Audio Equilizer</title>
-                  <rect className="bar" transform="translate(0,0)" y="15"></rect>
-                  <rect className="bar" transform="translate(25,0)" y="15"></rect>
-                  <rect className="bar" transform="translate(50,0)" y="15"></rect>
-                  <rect className="bar" transform="translate(75,0)" y="15"></rect>
-                  <rect className="bar" transform="translate(100,0)" y="15"></rect>
-                </g>
-              </svg>*/}
-            {/*</div>*/}
-            {/*<div><img src={image} /></div>*/}
-
-            <div className="background-display-song-contain">
-              <div className="display">
-                <div className="background-display-song">
-                  <div className="background-display-song-cover"></div>
-                </div>
-                <div className="slider-music">
-                  <Slider
-                    value={this.state.completed}
-                    min={-1}
-                    max={101}
-                    onChange={this.handleChangeSlider} />
-                </div>
-              </div>
-              <div className="media-control-background"></div>
-              <div className="button-control">
-                <Sound
-                  url={song.link || ""}
-                  playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
-                  position={this.state.position}
-                  volume={this.state.volume}
-                  onPlaying={(event) => this.handleSongPlaying(event)}
-                  onFinishedPlaying={this.handleSongFinishedPlaying} />
-
-                  <div className={this.state.oneSong ? "contain-play-song"  : "contain-play-song album"}>
-                    {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
-                      "skip-previous background-button", () => this.handleChangeMusic(false))}
-                    {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
-                    {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
-                      "skip-next background-button", this.handleChangeMusic)}
-                  </div>
-
-                  <Volume btnChange={this.handleBtnChangeVolume}
-                    sliderChange={this.handleSliderChange}
-                    volume={this.state.volume}
-                    statusVolume={this.state.statusVolume}
-                    />
-                  <Duration duration={this.state.duration} position={this.state.position} />
-                  <Repeat onChange={this.handleChangeRepeat}
-                    repeat={repeat}
-                    oneSong={this.state.oneSong}
-                    shuffle={shuffle} />
-
-              </div>
+        <div className="background-display-song-contain">
+          <div className="display">
+            <div className="background-display-song">
+              <div className="background-display-song-cover"></div>
             </div>
-         {/* </div>
-        </div>*/}
+            <div className="slider-music">
+              <Slider
+                value={this.state.completed}
+                min={-1}
+                max={101}
+                onChange={this.handleChangeSlider} />
+            </div>
+          </div>
+          <div className="media-control-background"></div>
+          <div className="button-control">
+            <Sound
+              url={song.link || ""}
+              playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
+              position={this.state.position}
+              volume={this.state.volume}
+              onPlaying={(event) => this.handleSongPlaying(event)}
+              onFinishedPlaying={this.handleSongFinishedPlaying} />
+
+              <div className={this.state.oneSong ? "contain-play-song"  : "contain-play-song album"}>
+                {this.state.oneSong ? null : this.renderButtonPlay(<SkipPrevious />,
+                  "skip-previous background-button", () => this.handleChangeMusic(false))}
+                {this.renderButtonPlay(iconPlay, "button-play background-button", this.handlePlayMusic)}
+                {this.state.oneSong ? null : this.renderButtonPlay(<SkipNext />,
+                  "skip-next background-button", this.handleChangeMusic)}
+              </div>
+
+              <Volume btnChange={this.handleBtnChangeVolume}
+                sliderChange={this.handleSliderChange}
+                volume={this.state.volume}
+                statusVolume={this.state.statusVolume}
+                />
+              <Duration duration={this.state.duration} position={this.state.position} />
+              <Repeat onChange={this.handleChangeRepeat}
+                repeat={repeat}
+                oneSong={this.state.oneSong}
+                shuffle={shuffle} />
+          </div>
+        </div>
       </div>
     );
   }

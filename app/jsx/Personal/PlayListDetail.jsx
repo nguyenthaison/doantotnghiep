@@ -5,6 +5,7 @@ export default class PlayListDetail extends PageComponent {
     super(props);
     this.state = {
       playList: {},
+      songActive: {id: null},
     }
   }
 
@@ -16,7 +17,14 @@ export default class PlayListDetail extends PageComponent {
   getPlayList(playList) {
     this.setState({
       playList: playList,
+      songActive: playList.songs[0],
     });
+  }
+
+  handleChangeSongActive = (song) => {
+    this.setState({
+      songActive: song,
+    })
   }
 
   renderInfoTop(list) {
@@ -48,7 +56,11 @@ export default class PlayListDetail extends PageComponent {
               </div>
               <div className="screen-play">
                 {playList.songs && playList.songs.length == 0 ? "khong co gi" :
-                  <Song item={playList.songs} album={true} oneSong={false} />
+                  <Song item={playList.songs}
+                    songActive={this.state.songActive}
+                    onChangeSongActive={this.handleChangeSongActive}
+                    album={true}
+                    oneSong={false} />
                 }
               </div>
               <div className="list-music">
