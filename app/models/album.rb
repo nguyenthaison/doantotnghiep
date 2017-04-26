@@ -32,7 +32,7 @@ class Album < ApplicationRecord
   def json_data options = {}
     options = options.deep_merge({
       include: {
-        songs: {},
+        songs: {include: {singers: {only: ["id", "name"]}}},
         singers: {only: ["id", "name"]},
         music_types: {},
       },
