@@ -14,7 +14,7 @@ export default class index extends PageComponent {
     super(props);
 
     this.state = {
-      song: null,
+      song: {},
       albums: [],
       songs: [],
       favorite_articles: [],
@@ -140,6 +140,7 @@ export default class index extends PageComponent {
   }
 
   renderSinger(singer) {
+    if (!singer) return null;
     let favoriteArticles = this.state.favorite_articles;
     const checkFavorite = favoriteArticles.findIndex(item =>
       item.user_id === App.auth.id && item.article_id === singer.id);
@@ -184,13 +185,14 @@ export default class index extends PageComponent {
   renderAlbum(singer) {
     let albums = this.state.albums;
     if (!albums) return null;
+    let name = singer ? singer.name : null;
 
     return (
       <div className="albums">
-        {<span className="title"><h1>{"Album " + singer.name}</h1></span>}
+        {<span className="title"><h1>{"Album " + name}</h1></span>}
         <div className="album-list">
           {albums.map((album) => {
-            let singerName = album.singers.length > 1 ? "Many artists" : singer.name;
+            let singerName = album.singers.length > 1 ? "Many artists" : name;
 
             return (
               <div key={album.id} onClick={() => this.handlePlayAlbum(album)}>
@@ -219,7 +221,7 @@ export default class index extends PageComponent {
     let song = this.state.song;
     if (!song) return null;
     let listSongRelated = this.state.songs;
-    let singer = song.singers[0]
+    let singer = song.singers ? song.singers[0] : null;
 
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
@@ -229,7 +231,7 @@ export default class index extends PageComponent {
               <div className="play-song">
                 <div className="top-info">
                   <h1 className="play-song-label">{song.name}</h1>
-                  {/*<div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>*/}
+                  {<div>"Phát hành: "{this.renderInfoTop(song.singers)}</div>}
                 </div>
                 <Song item={song} album={false} oneSong={true} position={0} />
                 <div className="action-play-song">
@@ -245,13 +247,13 @@ export default class index extends PageComponent {
               <div className="lyrics">
                 {song.lyrics && song.lyrics.length > 0 ? song.lyrics[0].content : null}
               </div>
-              {this.renderSinger(song.singers[0])}
+              {this.renderSinger(singer)}
               {this.renderAlbum(singer)}
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div className="row">
-              <ContentLeft listRelated={listSongRelated}/>
+             { <ContentLeft listRelated={listSongRelated}/>}
             </div>
           </div>
         </div>

@@ -7,10 +7,6 @@ const styles = {
 export default class ContentLeft extends PageComponent {
   constructor(props) {
     super(props);
-
-    this.state = {
-
-    }
   }
 
   handleToggle = () => {
@@ -27,6 +23,7 @@ export default class ContentLeft extends PageComponent {
 
   renderSuggestContent() {
     let list = this.props.listRelated;
+
     if (!list) return null;
     return (
       <div className="suggest-content">
