@@ -48,7 +48,6 @@ export default class index extends PageComponent {
   }
 
   render() {
-    // console.log(this.state.albumVn);
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
         <div className="row">
