@@ -28,7 +28,7 @@ export default class List extends PageComponent {
                 </div>
                 <div className="image-album-item">
                   <a href="#">
-                    <img src={image} alt="" />
+                    <img src={image}/>
                   </a>
                 </div>
               </div>

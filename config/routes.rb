@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :singers
       resources :favorite_articles, only: [:create, :destroy, :index]
       resources :play_lists
+      resources :play_list_songs, only: [:create, :destroy]
       resources :attachments, only: [:create, :destroy]
 
       get "download/:id" => "songs#download"
