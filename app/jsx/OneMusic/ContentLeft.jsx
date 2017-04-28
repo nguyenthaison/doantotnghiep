@@ -22,7 +22,7 @@ export default class ContentLeft extends PageComponent {
   }
 
   renderSuggestContent() {
-    let list = this.props.listRelated;
+    const list = this.props.listRelated;
 
     if (!list) return null;
     return (
