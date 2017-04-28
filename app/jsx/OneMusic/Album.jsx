@@ -27,7 +27,7 @@ export default class Album extends PageComponent {
             return (
               <div key={album.id}>
                 <div className="img-album pointer" onClick={() => this.handlePlayAlbum(album)}>
-                  <img src="/images/logo.jpg" />
+                  <img src="/images/logo.jpg" style={{height: "200px", width: "200px"}} />
                 </div>
                 <div>
                   <span className="pointer" onClick={() => this.handlePlayAlbum(album)}>

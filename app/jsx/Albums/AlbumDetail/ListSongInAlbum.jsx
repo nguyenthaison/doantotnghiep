@@ -1,17 +1,62 @@
 import Add from "material-ui/svg-icons/content/add";
 import FileDownload from "material-ui/svg-icons/file/file-download";
 import OpenInNew from "material-ui/svg-icons/action/open-in-new";
+import ActionFavorite from 'material-ui/svg-icons/action/favorite';
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+import Visibility from 'material-ui/svg-icons/action/visibility';
+import VisibilityOff from 'material-ui/svg-icons/action/visibility-off';
+import Checkbox from 'material-ui/Checkbox';
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
 
 export default class ListSongInAlbum extends PageComponent {
   constructor(props) {
     super(props);
+
+    this.state = {
+      open: false,
+      playLists: [],
+    }
+  }
+
+  componentDidMount() {
+    API.PlayList.getList(this.handleGetListPlayList, this.getOption());
+  }
+
+  getOption() {
+    let include = {
+      play_list_songs: {},
+    }
+
+    return {
+      filter: {user_id: App.auth.id},
+      include: JSON.stringify(include),
+    }
+  }
+
+  handleGetListPlayList = (status, data) => {
+    if (!status) return;
+    this.setState({
+      playLists: data.play_lists,
+    })
   }
 
   handleChangeSongActive = (song) => {
     this.props.onChangeSongActive(song);
   }
 
-  handleAddToPlayList = () => {
+  handleAddToPlayList = (event) => {
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
   }
 
   handleDownloadSong = (id) => {
@@ -24,6 +69,26 @@ export default class ListSongInAlbum extends PageComponent {
 
   handleDetailSinger = (singer) => {
     Helper.transitionTo("/singers", singer);
+  }
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+  handleCheckFavorite = (song, playList) => {
+    let play_list_song = {};
+    play_list_song["play_list_id"] = playList.id;
+    play_list_song["song_id"] = song.id;
+    API.PlayListSong.create(this.handleAddSongToPlayList, play_list_song);
+  }
+
+  handleAddSongToPlayList = (status, data) => {
+    if (!status) return;
+    // this.setState({
+
+    // })
   }
 
   renderSongAnimation() {
@@ -67,7 +132,38 @@ export default class ListSongInAlbum extends PageComponent {
         <Add onClick={this.handleAddToPlayList} className="pointer item-tool" />
         <FileDownload onClick={() => this.handleDownloadSong(item.id)} className="pointer item-tool" />
         <OpenInNew onClick={() => this.handlePlayOneSong(item.id)} className="pointer item-tool"  />
+        {this.renderPlayList(item)}
       </div>
+    )
+  }
+
+  renderPlayList(song) {
+    const playLists = this.state.playLists;
+
+    return (
+      <mui.Popover
+        open={this.state.open}
+        anchorEl={this.state.anchorEl}
+        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+        targetOrigin={{horizontal: 'left', vertical: 'top'}}
+        onRequestClose={this.handleRequestClose}
+      >
+        {playLists.map((item) => {
+          let index = item.play_list_songs.findIndex((play_list_song) => song.id === play_list_song.song_id)
+
+          return (
+            <mui.Checkbox
+              key={item.id}
+              checkedIcon={<ActionFavorite />}
+              uncheckedIcon={<ActionFavoriteBorder />}
+              label={item.name}
+              checked={index === -1 ? false : true}
+              style={styles.checkbox}
+              onCheck={() => this.handleCheckFavorite(song, item)}
+            />
+          )
+        })}
+      </mui.Popover>
     )
   }
 

@@ -10,6 +10,7 @@ import Authentication from "./Authentication";
 import FavoriteArticle from "./FavoriteArticle";
 import PlayList from "./PlayList";
 import Attachment from "./Attachment";
+import PlayListSong from "./PlayListSong";
 
 module.exports = {
   Song,
@@ -23,4 +24,5 @@ module.exports = {
   FavoriteArticle,
   PlayList,
   Attachment,
+  PlayListSong,
 };
