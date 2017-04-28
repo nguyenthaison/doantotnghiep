@@ -1,10 +1,12 @@
-import Song from "../PlayMusic/Song";
 import FileDownload from "material-ui/svg-icons/file/file-download";
 import Feedback from "material-ui/svg-icons/action/feedback";
 import Add from "material-ui/svg-icons/content/add";
-import Done from "material-ui/svg-icons/action/done";
 import Share from "material-ui/svg-icons/social/share";
 import ContentLeft from "./ContentLeft";
+
+import Song from "../PlayMusic/Song";
+import Singer from "./Singer";
+import Album from "./Album";
 
 const TAKE_RECORD_ALBUM = 10;
 const TAKE_RECORD_SONG_RELATED = 20;
@@ -17,7 +19,6 @@ export default class index extends PageComponent {
       song: {},
       albums: [],
       songs: [],
-      favorite_articles: [],
     }
   }
 
@@ -38,7 +39,6 @@ export default class index extends PageComponent {
       this.getOptionAlbum(id));
     API.Song.getList((status, data) => this.handlerGetData(status, data, "songs"),
       this.getOptionSongRelated(id));
-    API.FavoriteArticle.getList((status, data) => this.handlerGetData(status, data, "favorite_articles"));
   }
 
   getOptionAlbum(state) {
@@ -76,43 +76,6 @@ export default class index extends PageComponent {
     window.open(`/api/v1/download/${id}`, "_self");
   }
 
-  handleCareSinger = (event, singer, favorite) => {
-    if (favorite) {
-      Helper.showConfirm(
-        "", "Are you sure?",
-        () => this.handleConfirmDelete(favorite));
-
-      event.stopPropagation();
-    } else {
-      let favorite_article = {};
-      favorite_article["article_type"] = "singer";
-      favorite_article["article_id"] = singer.id;
-      API.FavoriteArticle.create(this.handleFavoriteSinger, favorite_article)
-    }
-  }
-
-  handleConfirmDelete = (favorite) => {
-    API.FavoriteArticle.delete((status, data) => this.handleFavoriteSinger(status, data, favorite),
-      favorite.id)
-  }
-
-  handleFavoriteSinger = (status, data, favorite) => {
-    if (status) {
-      if (favorite) {
-        Helper.showMessage("Oke! You don't care");
-      }
-      API.FavoriteArticle.getList((status, data) => this.handlerGetData(status, data, "favorite_articles"));
-    }
-  }
-
-  handlePlayAlbum = (album) => {
-    Helper.transitionTo("/album", album.id);
-  }
-
-  handleViewSinger = (singers) => {
-    Helper.transitionTo("/singers", singers[0]);
-  }
-
   renderInfoTop(list) {
     if (!list) return;
     return (
@@ -136,84 +99,6 @@ export default class index extends PageComponent {
         className={"action-song " + className}
         onTouchTap={handleAction}
         title={label} />
-    )
-  }
-
-  renderSinger(singer) {
-    if (!singer) return null;
-    let favoriteArticles = this.state.favorite_articles;
-    const checkFavorite = favoriteArticles.findIndex(item =>
-      item.user_id === App.auth.id && item.article_id === singer.id);
-    let numberFavorite = 0;
-    favoriteArticles.map((item, index) => {
-      if (item.article_id === singer.id) {numberFavorite += 1}
-    });
-
-    return (
-      <div className="singer">
-        <div className="col-md-3 col-lg-3 col-sm-3 col-xs-12">
-            <div className="row">
-              <div className="image-singer">
-                <div className="border-image-singer">
-                  <img src="/images/logo.jpg" />
-                </div>
-              </div>
-            </div>
-        </div>
-        <div className="col-md-9 col-lg-9 col-sm-9 col-xs-12">
-          <div className="row">
-            <div className="info-singer">
-              <span className="name-singer">
-                {singer.name}
-              </span>
-              <cm.RaisedButton
-                icon={checkFavorite > -1 ? <Done /> : <Add />}
-                className="follow-singer"
-                primary={true}
-                onClick={(event) => this.handleCareSinger(event, singer, favoriteArticles[checkFavorite])}/>
-              <span>{numberFavorite}</span>
-            </div>
-            <div className="content">
-              {singer.content}
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  renderAlbum(singer) {
-    let albums = this.state.albums;
-    if (!albums) return null;
-    let name = singer ? singer.name : null;
-
-    return (
-      <div className="albums">
-        {<span className="title"><h1>{"Album " + name}</h1></span>}
-        <div className="album-list">
-          {albums.map((album) => {
-            let singerName = album.singers.length > 1 ? "Many artists" : name;
-
-            return (
-              <div key={album.id} onClick={() => this.handlePlayAlbum(album)}>
-                <div className="img-album pointer">
-                  <img src="/images/logo.jpg" />
-                </div>
-                <div>
-                  <span className="pointer" onClick={() => this.handlePlayAlbum(album)}>
-                    {album.name}
-                  </span>
-                </div>
-                <div>
-                  <span className="pointer" onClick={() => this.handleViewSinger(album.singers)}>
-                    {singerName}
-                  </span>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
     )
   }
 
@@ -247,8 +132,8 @@ export default class index extends PageComponent {
               <div className="lyrics">
                 {song.lyrics && song.lyrics.length > 0 ? song.lyrics[0].content : null}
               </div>
-              {this.renderSinger(singer)}
-              {this.renderAlbum(singer)}
+              <Singer singer={singer} />
+              <Album singer={singer} list={this.state.albums} />
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
