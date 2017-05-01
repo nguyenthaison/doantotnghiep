@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501104212) do
+ActiveRecord::Schema.define(version: 20170421101641) do
 
   create_table "album_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "album_id"
@@ -137,15 +137,6 @@ ActiveRecord::Schema.define(version: 20170501104212) do
     t.index ["user_id"], name: "index_favorite_articles_on_user_id", using: :btree
   end
 
-  create_table "favorite_musics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_favorite_musics_on_song_id", using: :btree
-    t.index ["user_id"], name: "index_favorite_musics_on_user_id", using: :btree
-  end
-
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "favorite"
     t.datetime "created_at",  null: false
@@ -208,10 +199,11 @@ ActiveRecord::Schema.define(version: 20170501104212) do
   create_table "play_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "view"
-    t.text     "describe",   limit: 65535
+    t.text     "describe",       limit: 65535
+    t.string   "play_list_type"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["user_id"], name: "index_play_lists_on_user_id", using: :btree
   end
 
