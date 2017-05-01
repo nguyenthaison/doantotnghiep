@@ -20,7 +20,7 @@ class Api::V1::PlayListSongsController < Api::BaseController
   end
 
   private
-  def play_list_params
+  def play_list_song_params
     params.require(:play_list_song).permit(PlayListSong::ATTRIBUTE_PARAMS)
   end
 end
