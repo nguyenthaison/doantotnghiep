@@ -19,6 +19,7 @@ export default class index extends PageComponent {
   }
 
   componentDidMount() {
+    this.setToolBar("Personal Page");
     this.getList(TAKE_RECORD);
   }
 
@@ -95,14 +96,17 @@ export default class index extends PageComponent {
   }
 
   renderPlayLists() {
-    let list = this.state.play_lists;
+    const list = this.state.play_lists;
+    const defaultImageAlbum = "/images/default-playlist.jpg";
+
     return (
       <div className="play_lists">
         {list.map((item) => {
+          let urlImageAlbum = item.attachments.length > 0 ? item.attachments[0].url : defaultImageAlbum;
           return (
             <div className="item" key={item.id}>
               <div className="avatar">
-                <img style={{height: "80px", width: "80px"}} src={item.attachments[0].url} />
+                <img style={{height: "80px", width: "80px"}} src={urlImageAlbum} />
               </div>
               <div className="e-item">
                 <a href="" className=""></a>
