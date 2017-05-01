@@ -18,8 +18,9 @@ class Song < ApplicationRecord
   has_many :music_types, through: :music_type_songs
   has_many :singer_songs, dependent: :destroy
   has_many :singers, through: :singer_songs
-  has_many :lyrics
+  has_many :lyrics, dependent: :destroy
   has_many :ranks, as: :target, dependent: :destroy
+  has_many :favorite_musics, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 100, minimum: 1}
 
