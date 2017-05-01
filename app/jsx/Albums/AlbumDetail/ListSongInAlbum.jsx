@@ -6,6 +6,7 @@ import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import Visibility from 'material-ui/svg-icons/action/visibility';
 import VisibilityOff from 'material-ui/svg-icons/action/visibility-off';
 import Checkbox from 'material-ui/Checkbox';
+import CreatePlayList from "./CreatePlayList";
 
 const styles = {
   block: {
@@ -27,6 +28,10 @@ export default class ListSongInAlbum extends PageComponent {
   }
 
   componentDidMount() {
+    this.getList();
+  }
+
+  getList() {
     API.PlayList.getList(this.handleGetListPlayList, this.getOption());
   }
 
@@ -53,6 +58,9 @@ export default class ListSongInAlbum extends PageComponent {
   }
 
   handleAddToPlayList = (event) => {
+
+    event.preventDefault();
+
     this.setState({
       open: true,
       anchorEl: event.currentTarget,
@@ -75,20 +83,32 @@ export default class ListSongInAlbum extends PageComponent {
     this.setState({
       open: false,
     });
-  };
+  }
 
-  handleCheckFavorite = (song, playList) => {
-    let play_list_song = {};
-    play_list_song["play_list_id"] = playList.id;
-    play_list_song["song_id"] = song.id;
-    API.PlayListSong.create(this.handleAddSongToPlayList, play_list_song);
+  handleCheckFavorite = (song, playList, index) => {
+    if (index === -1) {
+      let play_list_song = {};
+      play_list_song["play_list_id"] = playList.id;
+      play_list_song["song_id"] = song.id;
+      API.PlayListSong.create(this.handleAddSongToPlayList, play_list_song);
+    } else {
+
+      API.PlayListSong.delete(this.handleDeleteFavorite, playList.play_list_songs[index].id);
+    }
   }
 
   handleAddSongToPlayList = (status, data) => {
     if (!status) return;
-    // this.setState({
+    this.getList();
+  }
 
-    // })
+  handleDeleteFavorite = (status, data) => {
+    if (!status) return;
+    this.getList();
+  }
+
+  handleCreatePlayList = () => {
+    this.getList();
   }
 
   renderSongAnimation() {
@@ -127,6 +147,7 @@ export default class ListSongInAlbum extends PageComponent {
   }
 
   renderTool(item) {
+    const playLists = this.state.playLists;
     return (
       <div className="tool">
         <Add onClick={this.handleAddToPlayList} className="pointer item-tool" />
@@ -159,10 +180,11 @@ export default class ListSongInAlbum extends PageComponent {
               label={item.name}
               checked={index === -1 ? false : true}
               style={styles.checkbox}
-              onCheck={() => this.handleCheckFavorite(song, item)}
+              onCheck={() => this.handleCheckFavorite(song, item, index)}
             />
           )
         })}
+        <CreatePlayList onCreate={this.handleCreatePlayList} />
       </mui.Popover>
     )
   }
