@@ -14,7 +14,7 @@ import Upload from "./Upload";
 import Login from "./Login";
 import Song from "./OneMusic";
 import Personal from "./Personal";
-import PlayListDetail from "./Personal/PlayListDetail";
+import PlayListDetail from "./Personal/TabPlayList/PlayListDetail";
 
 const router = (
   <Router history={browserHistory}>

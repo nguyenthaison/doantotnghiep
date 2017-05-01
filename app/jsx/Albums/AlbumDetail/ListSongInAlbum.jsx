@@ -43,6 +43,7 @@ export default class ListSongInAlbum extends PageComponent {
     return {
       filter: {user_id: App.auth.id},
       include: JSON.stringify(include),
+      order_by: "id asc"
     }
   }
 
@@ -175,8 +176,8 @@ export default class ListSongInAlbum extends PageComponent {
           return (
             <mui.Checkbox
               key={item.id}
-              checkedIcon={<ActionFavorite />}
-              uncheckedIcon={<ActionFavoriteBorder />}
+              checkedIcon={item.play_list_type === "Favorite" ? <ActionFavorite /> : null}
+              uncheckedIcon={item.play_list_type === "Favorite" ? <ActionFavoriteBorder /> : null}
               label={item.name}
               checked={index === -1 ? false : true}
               style={styles.checkbox}

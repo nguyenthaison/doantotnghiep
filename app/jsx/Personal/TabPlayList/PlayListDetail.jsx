@@ -1,4 +1,4 @@
-import Song from "../PlayMusic/Song";
+import Song from "../../PlayMusic/Song";
 
 export default class PlayListDetail extends PageComponent {
   constructor(props) {

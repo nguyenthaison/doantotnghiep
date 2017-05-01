@@ -1,3 +1,5 @@
+import Clear from "material-ui/svg-icons/content/clear";
+
 export default class CreatePlayList extends PageComponent {
   constructor(props) {
     super(props);
@@ -43,6 +45,13 @@ export default class CreatePlayList extends PageComponent {
     })
   }
 
+  handleClearContentInput = () => {
+    let play_list = update(this.state.play_list, {name: {$set: null}});
+    this.setState({
+      play_list: play_list,
+    });
+  }
+
   renderContent() {
     let openForm = this.state.openForm;
     const error = this.state.errors;
@@ -58,6 +67,7 @@ export default class CreatePlayList extends PageComponent {
               value={this.state.play_list.name || ""}
               onChange={(event, value) => this.handleChangeTextField("name", value)}
             />
+            <Clear className="pointer" onClick={this.handleClearContentInput} />
             <cm.RaisedButton
               label={t("common.create")}
               primary={true}

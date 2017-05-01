@@ -4,8 +4,11 @@ namespace :db do
     Rake::Task["db:migrate:reset"].invoke
 
     puts "create user"
-    Fabricate :user, name: "son", email: "abc@gmail.com", login_id: "admin",
+    user = Fabricate :user, name: "son", email: "abc@gmail.com", login_id: "admin",
       password: "123456", password_confirmation: "123456"
+
+    puts "create favorite music"
+    Fabricate :play_list, name: "Favorite Song", user_id: user.id, play_list_type: "Favorite"
 
     puts "Country"
     Fabricate :country, short_name: "vn", full_name: "Viet Nam"
