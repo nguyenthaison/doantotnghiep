@@ -4,5 +4,5 @@ class FavoriteArticle < ApplicationRecord
   belongs_to :user
   belongs_to :article, polymorphic: true
 
-  validates :user_id, presence: true, uniqueness: true
+  # validates :user_id, presence: true, uniqueness: true
 end

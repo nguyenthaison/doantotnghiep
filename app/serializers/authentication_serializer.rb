@@ -17,6 +17,7 @@ class AuthenticationSerializer < ActiveModel::Serializer
       singers: true,
       personal: true,
       albums: true,
+      artists: true,
     }
 
     # role = object.admin? && @options[:field_id] ? "manager" : object.role

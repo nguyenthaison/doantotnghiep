@@ -8,7 +8,6 @@ class Api::V1::SingersController < Api::BaseController
   end
 
   def update
-    byebug
     @singer.update_attributes singer_params
     response_success singer: @singer
   end

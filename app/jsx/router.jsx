@@ -7,6 +7,8 @@ import Home from "./Home";
 import PlayMusic from "./PlayMusic/Song";
 import Albums from "./Albums";
 import AlbumDetail from "./Albums/AlbumDetail";
+import Artists from "./Artists";
+import ListArtist from "./Artists/ListArtist";
 import Subjects from "./Subjects";
 import Ranks from "./Ranks";
 import Singers from "./Singers";
@@ -35,6 +37,8 @@ const router = (
 
       <Route path="ranks" component={Ranks} />
 
+      <Route path="artists" component={Artists} />
+      <Route path="artists/:name" component={ListArtist} />
       <Route path="singers" component={Singers} />
 
       <Route path="personal" component={Personal} />

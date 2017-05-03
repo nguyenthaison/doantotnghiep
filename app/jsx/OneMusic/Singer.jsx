@@ -10,7 +10,7 @@ export default class Singer extends PageComponent {
   }
 
   ComponentDidMount() {
-    API.FavoriteArticle.getList((status, data) => this.handleGetData(status, data, "favorite_articles"));
+    API.FavoriteArticle.getList(this.handleGetData);
   }
 
   handleGetData = (status, data) => {
