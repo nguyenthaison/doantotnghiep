@@ -1,28 +1,17 @@
 import Add from "material-ui/svg-icons/content/add";
 import FileDownload from "material-ui/svg-icons/file/file-download";
 import OpenInNew from "material-ui/svg-icons/action/open-in-new";
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import Visibility from 'material-ui/svg-icons/action/visibility';
 import VisibilityOff from 'material-ui/svg-icons/action/visibility-off';
 import Checkbox from 'material-ui/Checkbox';
-import CreatePlayList from "./CreatePlayList";
 
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
-};
+import Popover from "./Popover";
 
 export default class ListSongInAlbum extends PageComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      open: false,
       playLists: [],
     }
   }
@@ -58,14 +47,9 @@ export default class ListSongInAlbum extends PageComponent {
     this.props.onChangeSongActive(song);
   }
 
-  handleAddToPlayList = (event) => {
-
+  handleAddToPlayList = (event, song) => {
+    this.refs.popover.open({currentTarget: event.currentTarget, song: song});
     event.preventDefault();
-
-    this.setState({
-      open: true,
-      anchorEl: event.currentTarget,
-    });
   }
 
   handleDownloadSong = (id) => {
@@ -80,35 +64,7 @@ export default class ListSongInAlbum extends PageComponent {
     Helper.transitionTo("/singers", singer);
   }
 
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  }
-
-  handleCheckFavorite = (song, playList, index) => {
-    if (index === -1) {
-      let play_list_song = {};
-      play_list_song["play_list_id"] = playList.id;
-      play_list_song["song_id"] = song.id;
-      API.PlayListSong.create(this.handleAddSongToPlayList, play_list_song);
-    } else {
-
-      API.PlayListSong.delete(this.handleDeleteFavorite, playList.play_list_songs[index].id);
-    }
-  }
-
-  handleAddSongToPlayList = (status, data) => {
-    if (!status) return;
-    this.getList();
-  }
-
-  handleDeleteFavorite = (status, data) => {
-    if (!status) return;
-    this.getList();
-  }
-
-  handleCreatePlayList = () => {
+  handleEventListener = () => {
     this.getList();
   }
 
@@ -147,46 +103,19 @@ export default class ListSongInAlbum extends PageComponent {
     )
   }
 
-  renderTool(item) {
+  renderTool(song) {
     const playLists = this.state.playLists;
     return (
       <div className="tool">
-        <Add onClick={this.handleAddToPlayList} className="pointer item-tool" />
-        <FileDownload onClick={() => this.handleDownloadSong(item.id)} className="pointer item-tool" />
-        <OpenInNew onClick={() => this.handlePlayOneSong(item.id)} className="pointer item-tool"  />
-        {this.renderPlayList(item)}
+        <Add onClick={(event) => this.handleAddToPlayList(event, song)} className="pointer item-tool" />
+        <FileDownload onClick={() => this.handleDownloadSong(song.id)} className="pointer item-tool" />
+        <OpenInNew onClick={() => this.handlePlayOneSong(song.id)} className="pointer item-tool"  />
+        <Popover
+          playLists={this.state.playLists}
+          ref="popover"
+          onEventListener={this.handleEventListener}
+        />
       </div>
-    )
-  }
-
-  renderPlayList(song) {
-    const playLists = this.state.playLists;
-
-    return (
-      <mui.Popover
-        open={this.state.open}
-        anchorEl={this.state.anchorEl}
-        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-        targetOrigin={{horizontal: 'left', vertical: 'top'}}
-        onRequestClose={this.handleRequestClose}
-      >
-        {playLists.map((item) => {
-          let index = item.play_list_songs.findIndex((play_list_song) => song.id === play_list_song.song_id)
-
-          return (
-            <mui.Checkbox
-              key={item.id}
-              checkedIcon={item.play_list_type === "Favorite" ? <ActionFavorite /> : null}
-              uncheckedIcon={item.play_list_type === "Favorite" ? <ActionFavoriteBorder /> : null}
-              label={item.name}
-              checked={index === -1 ? false : true}
-              style={styles.checkbox}
-              onCheck={() => this.handleCheckFavorite(song, item, index)}
-            />
-          )
-        })}
-        <CreatePlayList onCreate={this.handleCreatePlayList} />
-      </mui.Popover>
     )
   }
 
