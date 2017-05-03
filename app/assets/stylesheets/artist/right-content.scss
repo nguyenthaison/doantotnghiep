@@ -1,0 +1,44 @@
+.home-right {
+  .content {
+    background-color: #e5e5e5;
+
+    .singer {
+      border-bottom: 1px solid #ffffff;
+
+      ul {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        list-style-type: none;
+        overflow: hidden;
+        position: relative;
+      }
+
+      li {
+          float: left;
+      }
+
+      li a {
+        display: block;
+        color: #484848;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .tool {
+        position: absolute;
+        top: 40px;
+        right: 100px;
+      }
+
+      li p {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+}

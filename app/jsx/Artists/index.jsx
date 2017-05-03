@@ -1,6 +1,7 @@
-const TAKE = 10;
+const TAKE = 20;
 
 import FavoriteArtist from "./FavoriteArtist";
+import RightContent from "./RightContent";
 
 export default class index extends PageComponent {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class index extends PageComponent {
       singersKp: [],
       authors: [],
       favorite_articles: [],
+      rankingSinger: [],
     }
   }
 
@@ -27,6 +29,8 @@ export default class index extends PageComponent {
       this.getOption("2"));
     API.Singer.getList((status, data) => this.handleGetListSinger(status, data, "singersVn"),
       this.getOption("3"));
+    API.Singer.getList((status, data) => this.handleGetListSinger(status, data, "rankingSinger"),
+      this.getOptionRank());
     API.Author.getList(this.handleGetListAuthor, this.getOption("1"));
     API.FavoriteArticle.getList(this.handleGetData, this.getOptionFA());
   }
@@ -45,6 +49,18 @@ export default class index extends PageComponent {
       filter: {country_id: countryId},
       methods: ["total_favorite"],
       take: TAKE,
+      include: JSON.stringify(include),
+    }
+  }
+
+  getOptionRank() {
+    let include = {
+      favorite_articles: {}
+    }
+    return {
+      order_by: "total_favorite desc",
+      take: TAKE,
+      methods: ["total_favorite"],
       include: JSON.stringify(include),
     }
   }
@@ -154,8 +170,13 @@ export default class index extends PageComponent {
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div className="row">
-              <div className="home-left">
+              <div className="home-right">
                 <span className="pointer"><h1>HOT ARTIST</h1></span>
+                <RightContent
+                  rankingSinger={this.state.rankingSinger}
+                  favorite_articles={this.state.favorite_articles}
+                  onChange={this.handleChangeFavorite}
+                />
               </div>
             </div>
           </div>

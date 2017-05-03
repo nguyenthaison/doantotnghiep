@@ -5,25 +5,19 @@ export default class FavoriteArtist extends PageComponent {
 
   handleFavoriteArtist = (artist, articleType, favoriteArticle) => {
     if (favoriteArticle) {
-      Helper.showConfirm(
-        "", "Are you sure?",
-        () => this.handleConfirmDelete(favoriteArticle));
-
+      API.FavoriteArticle.delete((status, data) => this.handleFavoriteSinger(status, data, favoriteArticle),
+        favoriteArticle.id)
       event.stopPropagation();
     } else {
       let favorite_article = {};
-      favorite_article["article_type"] = "singer";
+      favorite_article["article_type"] = articleType;
       favorite_article["article_id"] = artist.id;
       API.FavoriteArticle.create(this.handleFavoriteSinger, favorite_article)
     }
   }
 
-  handleConfirmDelete = (favorite) => {
-    API.FavoriteArticle.delete((status, data) => this.handleFavoriteSinger(status, data, favorite),
-      favorite.id)
-  }
-
   handleFavoriteSinger = (status, data, favorite) => {
+    let numberFavorite = this.state.numberFavorite;
     if (status) {
       if (favorite) {
         Helper.showMessage("Artist is deleted in your favorite");
