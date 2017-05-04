@@ -15,6 +15,12 @@ import Login from "./Login";
 import Song from "./OneMusic";
 import Personal from "./Personal";
 import PlayListDetail from "./Personal/TabPlayList/PlayListDetail";
+import Admin from "./Admin";
+import AdminUsers from "./Admin/Users";
+import AdminAlbums from "./Admin/Albums";
+import AdminSongs from "./Admin/Songs";
+import AdminAuthors from "./Admin/Authors";
+import AdminSingers from "./Admin/Singers";
 
 const router = (
   <Router history={browserHistory}>
@@ -41,6 +47,13 @@ const router = (
       <Route path="personal/PlayListDetail" component={PlayListDetail} />
 
       <Route path="upload" component={Upload} />
+
+      <Route path="admin" component={Admin} />
+      <Route path="admin/users" component={AdminUsers} />
+      <Route path="admin/songs" component={AdminSongs} />
+      <Route path="admin/singers" component={AdminSingers} />
+      <Route path="admin/authors" component={AdminAuthors} />
+      <Route path="admin/albums" component={AdminAlbums} />
     </Route>
   </Router>
 );
