@@ -22,7 +22,12 @@ class Album < ApplicationRecord
 
   scope :filter_by_song, -> id do
     singer = Singer.joins(:songs).where("songs.id = ?", id).first
-    joins(:singers).where("singers.id = ?", singer.id)
+    # joins(:singers).where("singers.id = ?", singer.id)
+    filter_by_singer singer.id
+  end
+
+  scope :filter_by_singer, -> singer_id do
+    joins(:singers).where("singers.id = ?", singer_id)
   end
 
   def get_rank_previous

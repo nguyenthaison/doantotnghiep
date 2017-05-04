@@ -48,6 +48,10 @@ class Song < ApplicationRecord
     joins(:music_types).where("music_types.name IN (?)", name_music_types).uniq
   end
 
+  scope :filter_by_singer, -> singer_id do
+    joins(:singers).where("singers.id = ?", singer_id)
+  end
+
   def create_singer_lyric params, current_user
     Lyric.create(content: params[:lyric_content], user_id: current_user.id, song_id: self.id)
     JSON.parse(params[:singer_name]).each do |item|
