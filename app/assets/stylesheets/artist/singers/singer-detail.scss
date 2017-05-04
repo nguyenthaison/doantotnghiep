@@ -1,0 +1,36 @@
+.home-center {
+  .header {
+    img {
+      width: 100%;
+      height: 300px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .avatar {
+      position: absolute;
+      z-index: 2;
+      right: 90%;
+      top: 200px;
+
+      img {
+        float: left;
+      }
+
+      .text-content {
+      }
+    }
+  }
+
+  .body {
+    .parent-tab {
+      button {
+        color: black !important;
+      }
+    }
+  }
+}
+
+.home-right {
+
+}

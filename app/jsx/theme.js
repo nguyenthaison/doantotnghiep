@@ -4,7 +4,7 @@ const theme = getMuiTheme({
   fontFamily: "Mieryo, 'メイリオ', sans-serif",
 
   palette: {
-    primary1Color: "#a200ff",
+    primary1Color: "#e9ebee",
     accent1Color: "#555555",
   },
 });

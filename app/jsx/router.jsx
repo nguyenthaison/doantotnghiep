@@ -2,16 +2,14 @@ import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router'
 
 import App from "./App";
 import Home from "./Home";
-// import Songs from "./Songs";
-// import Song from "./Songs/Song";
 import PlayMusic from "./PlayMusic/Song";
 import Albums from "./Albums";
 import AlbumDetail from "./Albums/AlbumDetail";
 import Artists from "./Artists";
-import ListArtist from "./Artists/ListArtist";
 import Subjects from "./Subjects";
 import Ranks from "./Ranks";
-import Singers from "./Singers";
+import Singers from "./Artists/Singers";
+import SingerDetail from "./Artists/Singers/SingerDetail";
 import Upload from "./Upload";
 import Login from "./Login";
 import Song from "./OneMusic";
@@ -24,8 +22,6 @@ const router = (
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
 
-      {/*<Route path="songs" component={Songs} />*/}
-      {/*<Route path="song" component={Song} />*/}
       <Route path="play" component={PlayMusic} />
 
       <Route path="albums" component={Albums} />
@@ -38,7 +34,7 @@ const router = (
       <Route path="ranks" component={Ranks} />
 
       <Route path="artists" component={Artists} />
-      <Route path="artists/:name" component={ListArtist} />
+      <Route path="artists/:name" component={SingerDetail} />
       <Route path="singers" component={Singers} />
 
       <Route path="personal" component={Personal} />

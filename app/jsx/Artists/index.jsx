@@ -42,26 +42,18 @@ export default class index extends PageComponent {
   }
 
   getOption(countryId) {
-    let include = {
-      favorite_articles: {}
-    }
     return {
       filter: {country_id: countryId},
       methods: ["total_favorite"],
       take: TAKE,
-      include: JSON.stringify(include),
     }
   }
 
   getOptionRank() {
-    let include = {
-      favorite_articles: {}
-    }
     return {
       order_by: "total_favorite desc",
       take: TAKE,
       methods: ["total_favorite"],
-      include: JSON.stringify(include),
     }
   }
 
@@ -94,7 +86,7 @@ export default class index extends PageComponent {
     if (articleType === "Author") {
 
     } else {
-      Helper.transitionTo("/singers", artist);
+      Helper.transitionTo(`/artists/${artist.name}`, artist);
     }
   }
 
@@ -127,13 +119,15 @@ export default class index extends PageComponent {
                   <div className="border-image-album-item"
                     onClick={() => this.handleClickViewDetail(artist, articleType)}>
                     <div className="image-album-item">
-                      <a href="#">
+                      <a>
                         <img src={image} alt="" />
                       </a>
                     </div>
                   </div>
                   <div className="border-title-album-item">
-                    {artist.name}
+                    <span className="pointer" onClick={() => this.handleClickViewDetail(artist, articleType)}>
+                      {artist.name}
+                    </span>
                   </div>
                   <FavoriteArtist artist={artist} articleType={articleType}
                     favorite_articles={this.state.favorite_articles}
@@ -173,7 +167,7 @@ export default class index extends PageComponent {
               <div className="home-right">
                 <span className="pointer"><h1>HOT ARTIST</h1></span>
                 <RightContent
-                  rankingSinger={this.state.rankingSinger}
+                  singers={this.state.rankingSinger}
                   favorite_articles={this.state.favorite_articles}
                   onChange={this.handleChangeFavorite}
                 />
