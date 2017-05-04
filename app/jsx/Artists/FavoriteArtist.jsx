@@ -17,7 +17,6 @@ export default class FavoriteArtist extends PageComponent {
   }
 
   handleFavoriteSinger = (status, data, favorite) => {
-    let numberFavorite = this.state.numberFavorite;
     if (status) {
       if (favorite) {
         Helper.showMessage("Artist is deleted in your favorite");

@@ -6,7 +6,7 @@ export default class RightContent extends PageComponent {
   }
 
   handleViewSinger = (singer) => {
-    Helper.transitionTo("/singers", singer);
+    Helper.transitionTo(`/artists/${singer.name}`, singer);
   }
 
   handleChangeFavorite = () => {
@@ -14,12 +14,12 @@ export default class RightContent extends PageComponent {
   }
 
   render() {
-    const rankingSingers = this.props.rankingSinger;
+    const singers = this.props.singers;
 
     let image = "/images/p9.jpg"
     return (
       <div className="content">
-        {rankingSingers.map((singer, index) => {
+        {singers.map((singer, index) => {
           return (
             <div className="singer" key={singer.id}>
               <ul>
