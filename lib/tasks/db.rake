@@ -264,4 +264,16 @@ namespace :db do
 
     puts "Success remake data"
   end
+
+  task update_total_favorite_artist: :environment do
+    Singer.find_each do |singer|
+      number_favorite = singer.favorite_articles.size
+      singer.update_column :total_favorite, number_favorite
+    end
+
+    Author.find_each do |author|
+      number_favorite = author.favorite_articles.size
+      author.update_column :total_favorite, number_favorite
+    end
+  end
 end
