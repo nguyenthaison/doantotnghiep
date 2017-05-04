@@ -1,5 +1,5 @@
 export default class TabOverview extends PageComponent {
-  costructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {

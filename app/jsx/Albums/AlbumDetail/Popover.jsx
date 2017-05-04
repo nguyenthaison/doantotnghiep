@@ -32,6 +32,14 @@ export default class Popover extends PageComponent {
     })
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   handleCheckFavorite = (song, playList, index) => {
     if (index === -1) {
       let play_list_song = {};
@@ -61,6 +69,7 @@ export default class Popover extends PageComponent {
   render() {
     const playLists = this.props.playLists;
     const song = this.state.song;
+    console.log(this._isMounted);
 
     return (
       <mui.Popover

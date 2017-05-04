@@ -3,7 +3,7 @@ const TAKE = 10;
 import RightContent from "../RightContent";
 import TabOverview from "./TabOverview";
 import TabSongs from "./TabSongs";
-import TabPlaylist from "./TabPlaylist";
+import TabAlbum from "./TabAlbum";
 
 export default class SingerDetail extends PageComponent {
   constructor(props) {
@@ -13,6 +13,9 @@ export default class SingerDetail extends PageComponent {
       favorite_articles: [],
       singer: {},
       singers: [],
+      openTabOverview: true,
+      openAlbum: false,
+      openSong: false,
     }
   }
 
@@ -92,13 +95,13 @@ export default class SingerDetail extends PageComponent {
               <div className="body">
                 <mui.Tabs className="parent-tab">
                   <mui.Tab label="Overview" onActive={() => this.handleActive("overview")}>
-                    <TabOverview />
+                    <TabOverview singer={singer} />
                   </mui.Tab>
                   <mui.Tab label="Songs" onActive={() => this.handleActive("songs")}>
-                    <TabSongs />
+                    <TabSongs singer={singer} />
                   </mui.Tab>
-                  <mui.Tab label="Playlist" onActive={() => this.handleActive("playlist")}>
-                    <TabPlaylist />
+                  <mui.Tab label="Album" onActive={() => this.handleActive("playlist")}>
+                    <TabAlbum singer={singer} />
                   </mui.Tab>
                 </mui.Tabs>
               </div>
