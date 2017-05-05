@@ -1,0 +1,163 @@
+.singer-index {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  .body-index {
+    position: absolute;
+    top: 92px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+
+    .table-header {
+      margin-left: 0 !important;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: rgb(224, 224, 224);
+      height: 57px !important;
+      background:#fff !important;
+
+      .header-title {
+        span {
+          font-size: 14px !important;
+          font-weight:bold !important;
+        }
+      }
+    }
+
+    .table-index {
+      top: 57px;
+      position: absolute;
+      overflow-x: hidden;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+
+      overflow-x: hidden;
+      padding-bottom: 20px;
+
+      > thead > tr > th{
+        font-size: 16px !important;
+      }
+
+      .btn-show-more {
+        text-align: center;
+        padding-top: 15px;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #F6F6F6 !important;
+      }
+
+      .avatar {
+        margin-top: -15px;
+      }
+    }
+  }
+
+  .header-modal {
+    padding: 0px !important;
+  }
+
+  .btn-group {
+    padding-top: 6px;
+    text-align: right;
+    padding-right: 0px;
+
+    .addition-btn {
+      margin-right: 15px;
+    }
+  }
+
+  .icon-header {
+    margin: 30px 15px 30px 30px;
+    font-size: 36px;
+  }
+
+  .left-area {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+
+    span {
+      padding-top: 35px;
+      font-size: 20px;
+      line-height: normal;
+      position: absolute;
+      font-weight: bold;
+    }
+  }
+
+  .right-area {
+    float: right !important;
+    margin-top: 20px;
+    margin-right: 25px;
+    height: 40px;
+
+    .input-search {
+      height: 40px !important;
+      border-radius: 4px 0px 0px 4px;
+      background-color: white !important;
+      box-shadow: rgba(0, 0, 0, 0.15686) -2px 0px 10px;
+      width:475px !important;;
+
+      div {
+        margin-left: 15px;
+        bottom: 8px !important;
+      }
+
+      input {
+        margin-left: 15px !important;
+      }
+    }
+
+    .icon-search {
+      box-shadow: rgba(0, 0, 0, 0.15686) 5px 0px 10px;
+      padding: 0 !important;
+      background-color: white !important;
+      height: 40px !important;
+      width: 40px !important;
+      margin-top: 10px;
+      bottom: -7px;
+      border-radius: 0px 4px 4px 0px;
+      z-index: 1;
+    }
+
+    hr {
+      border-style: none !important;
+    }
+  }
+
+  .detail {
+    font-weight: 400;
+    color: #00bcd4;
+
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .body-line {
+    height: 316px;
+  }
+
+  .table-header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    .sort-button {
+      padding-top: 8px !important;
+    }
+
+    .sorting-button {
+      button {
+        background: #ee5351 !important;
+      }
+    }
+  }
+}

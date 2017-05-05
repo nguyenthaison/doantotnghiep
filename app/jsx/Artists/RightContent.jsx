@@ -32,7 +32,7 @@ export default class RightContent extends PageComponent {
                   <FavoriteArtist artist={singer} articleType="singer"
                     favorite_articles={this.props.favorite_articles}
                     onChange={this.handleChangeFavorite}
-                    favorite={singer.total_favorite}
+                    favorite={singer.total_favorites}
                   />
                 </li>
               </ul>

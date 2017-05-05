@@ -83,13 +83,13 @@ ActiveRecord::Schema.define(version: 20170503081145) do
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "age"
-    t.date     "dob"
+    t.datetime "dob"
     t.text     "content",        limit: 65535
     t.integer  "total_favorite"
-    t.integer  "countries_id"
+    t.integer  "country_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["countries_id"], name: "index_authors_on_countries_id", using: :btree
+    t.index ["country_id"], name: "index_authors_on_country_id", using: :btree
   end
 
   create_table "avatars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -252,13 +252,13 @@ ActiveRecord::Schema.define(version: 20170503081145) do
   create_table "singers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "age"
-    t.date     "dob"
+    t.datetime "dob"
     t.text     "content",        limit: 65535
     t.integer  "total_favorite"
-    t.integer  "countries_id"
+    t.integer  "country_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["countries_id"], name: "index_singers_on_countries_id", using: :btree
+    t.index ["country_id"], name: "index_singers_on_country_id", using: :btree
   end
 
   create_table "song_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
