@@ -25,6 +25,8 @@ export default {
     publish: "Publish",
     unpublish: "Unpublish",
     accept: "Accept",
+    no: "No.",
+    image: "Image",
     checkbox: {
       check_all: "Check All"
     },
@@ -52,6 +54,9 @@ export default {
       creator_id: "Registor",
       updater_id: "Updater",
       id: "ID",
+      name: "Name",
+      age: "Age",
+      country: "Country",
     },
   },
   login: {
@@ -79,5 +84,12 @@ export default {
       file_type: "File type is invalid",
       file_size: "File size must be less than %(size)s MB",
     },
+  },
+  singers: {
+    attributes: {
+      name: "Full Name",
+      dob: "DOB",
+      content: "Story",
+    }
   }
 }

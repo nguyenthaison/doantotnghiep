@@ -44,7 +44,7 @@ export default class index extends PageComponent {
   getOption(countryId) {
     return {
       filter: {country_id: countryId},
-      methods: ["total_favorite"],
+      methods: ["total_favorites"],
       take: TAKE,
     }
   }
@@ -53,7 +53,7 @@ export default class index extends PageComponent {
     return {
       order_by: "total_favorite desc",
       take: TAKE,
-      methods: ["total_favorite"],
+      methods: ["total_favorites"],
     }
   }
 
@@ -132,7 +132,7 @@ export default class index extends PageComponent {
                   <FavoriteArtist artist={artist} articleType={articleType}
                     favorite_articles={this.state.favorite_articles}
                     onChange={this.handleChangeFavorite}
-                    favorite={artist.total_favorite}
+                    favorite={artist.total_favorites}
                   />
                 </div>
               </div>

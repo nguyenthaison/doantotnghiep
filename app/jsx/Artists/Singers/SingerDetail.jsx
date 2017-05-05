@@ -88,7 +88,7 @@ export default class SingerDetail extends PageComponent {
                   <mui.Avatar src={imageAvatar} size={80} />
                   <div className="text-content">
                     <p>{singer.name}</p>
-                    <p>{singer.total_favorite}</p>
+                    <p>{singer.total_favorites}</p>
                   </div>
                 </div>
               </div>

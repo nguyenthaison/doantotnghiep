@@ -3,10 +3,10 @@ class CreateSingers < ActiveRecord::Migration[5.0]
     create_table :singers do |t|
       t.string :name
       t.integer :age
-      t.date :dob
+      t.datetime :dob
       t.text :content
       t.integer :total_favorite
-      t.references :countries, foreign: true, index: true
+      t.references :country, foreign: true, index: true
       t.timestamps
     end
   end

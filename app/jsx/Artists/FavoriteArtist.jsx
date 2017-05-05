@@ -38,7 +38,7 @@ export default class FavoriteArtist extends PageComponent {
           onClick={() => this.handleFavoriteArtist(artist, articleType, favoriteArticles[index])}>
           favorite
         </i>
-        {artist.total_favorite}
+        {artist.total_favorites}
       </div>
     )
   }
