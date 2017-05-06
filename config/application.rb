@@ -12,5 +12,9 @@ module Doantotnghiep
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths << Rails.root.join("app/services")
+    config.paperclip_defaults = {
+      path: ":rails_root/public/system/:class/:id/:style/:custom_filename",
+      url: "/system/:class/:id/:style/:custom_filename"
+    }
   end
 end

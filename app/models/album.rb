@@ -1,4 +1,6 @@
 class Album < ApplicationRecord
+  include SmartAsJson
+
   ALLOWED_METHODS = ["get_rank_previous"]
   JOIN_TABLES = [:singers, :songs, :music_types]
   enum creator: [:member, :admin]
@@ -20,6 +22,16 @@ class Album < ApplicationRecord
       short_name, 1, DateTime.now.beginning_of_week)
   end
 
+  scope :filter_by_song, -> id do
+    singer = Singer.joins(:songs).where("songs.id = ?", id).first
+    # joins(:singers).where("singers.id = ?", singer.id)
+    filter_by_singer singer.id
+  end
+
+  scope :filter_by_singer, -> singer_id do
+    joins(:singers).where("singers.id = ?", singer_id)
+  end
+
   def get_rank_previous
     self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "album").first.number
   end
@@ -27,7 +39,11 @@ class Album < ApplicationRecord
   def json_data options = {}
     options = options.deep_merge({
       include: {
-        songs: {},
+        songs: {
+          include: {
+            singers: {only: ["id", "name"]},
+          }
+        },
         singers: {only: ["id", "name"]},
         music_types: {},
       },

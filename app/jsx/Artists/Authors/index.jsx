@@ -6,16 +6,8 @@ export default class index extends PageComponent {
     };
   }
 
-  componentDidMount() {
-    // this.setToolBar("Top 40");
-  }
-
-  // componentWillReceiveProps(nextProps) {
-
-  // }
-
-  // get locationState() {
-  //   return Helper.getCurrentLocationState();
+  // componentDidMount() {
+  //   this.setToolBar("Author Detail");
   // }
 
   render() {

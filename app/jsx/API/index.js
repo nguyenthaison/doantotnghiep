@@ -7,6 +7,11 @@ import SongRank from "./SongRank";
 import Singer from "./Singer";
 import Country from "./Country";
 import Authentication from "./Authentication";
+import FavoriteArticle from "./FavoriteArticle";
+import PlayList from "./PlayList";
+import Attachment from "./Attachment";
+import PlayListSong from "./PlayListSong";
+import Author from "./Author";
 
 module.exports = {
   Song,
@@ -17,4 +22,9 @@ module.exports = {
   Singer,
   Country,
   Authentication,
+  FavoriteArticle,
+  PlayList,
+  Attachment,
+  PlayListSong,
+  Author,
 };

@@ -95,7 +95,7 @@ export default class FileUploader extends BaseComponent {
       <div className="list-attachment" key={image.id}>
         <div className="attachment-border">
           <div className="attachment-item">
-            <img src={image.thumb_url}/>
+            <img src={image.url} style={{height: "170px", width: "180px"}}/>
             <div className="uploaded-file">
               <Chip
                 title={image.attachment_file_name}

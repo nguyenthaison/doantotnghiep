@@ -32,8 +32,9 @@ export default class Index extends PageComponent {
     }
 
     return (
-      <div className="col-md-2 row">
-        <div className="col-md-6">
+      // <div className="contain-button-repeat button-play-music " + {oneSong ? "": "album"}>
+      <div className={oneSong ? "contain-button-repeat button-play-music" : "contain-button-repeat button-play-music album"}>
+        <div className="button-repeat-btn  ">
           <cm.RaisedButton
             icon={icon}
             className="button-repeat background-button"
@@ -41,7 +42,7 @@ export default class Index extends PageComponent {
             onClick={() => this.handleChangeRepeat(repeat)}/>
         </div>
         {oneSong ? null :
-          <div className="col-md-6">
+          <div className="button-shuffle-btn">
             <cm.RaisedButton
               icon={<Shuffle />}
               className="button-shuffle background-button"

@@ -38,7 +38,6 @@ class Api::V1::SongsController < Api::BaseController
 
   def download
     song = Song.find_by id: params[:id]
-    # path = Rails.root + "public" + song.link
 
     if song
       send_file(

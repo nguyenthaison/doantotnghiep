@@ -40,6 +40,15 @@
   cursor: pointer;
 }
 
+.required {
+  color: red;
+  display: inline-block;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: 10px;
+  padding: 0px 3px 1px 3px;
+}
+
 .mg-pd {
   margin: 0px;
   padding: 0px;
@@ -54,7 +63,7 @@ span:hover {
 }
 
 //---------------------------------------
-$max: 100px;
+$max: 20px;
 
 .equilizer {
   height: $max;
@@ -86,6 +95,89 @@ $max: 100px;
 
 .bar:nth-child(5) {
   animation-duration: 2.1s;
+}
+
+.btn-create {
+  margin-left: 30px;
+  height:40px !important;
+  button {
+    background-color: #555555 !important;
+    height:40px !important;
+  }
+}
+
+.btn-delete {
+  margin-left: 5px;
+  span {
+    color: white !important;
+  }
+
+  svg {
+    fill: white !important;
+  }
+
+  button {
+    background: #ee5351 !important;
+  }
+}
+
+.btn-edit {
+  button {
+    background-color: #555555 !important;
+  }
+}
+
+// .btn-mr5 {
+//   margin: 0px 5px !important;
+// }
+
+.btn-mt {
+  margin-top: -11px;
+}
+
+.table-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(224, 224, 224);
+  height: 53px;
+  padding-right:15px;
+
+  .td {
+    padding-left: 24px;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+    padding-top: 20px;
+  }
+}
+
+.table-row-striped:nth-of-type(even) {
+  background: #F6F6F6;
+}
+
+.table-row-striped:nth-of-type(odd) {
+  background: #FFFFFF;
+}
+
+.table-row-striped-2:nth-of-type(odd) {
+  background: #F6F6F6;
+}
+
+.table-row-striped-2:nth-of-type(even) {
+  background: #FFFFFF;
+}
+
+.table-row:hover {
+  background: #F6F6F6;
+}
+
+.ellipsis-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 @keyframes equalize {

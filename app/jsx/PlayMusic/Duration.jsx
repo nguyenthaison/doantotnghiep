@@ -39,7 +39,7 @@ export default class Index extends PageComponent {
     let durationEstimate = this.renderDurationEstimate();
     let countDuration = this.renderCountDuration();
     return (
-      <div>
+      <div className="time-play-song button-play-music">
         {countDuration} | {durationEstimate}
       </div>
     )

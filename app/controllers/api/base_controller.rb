@@ -3,7 +3,7 @@ class Api::BaseController < ActionController::Base
   before_action :authenticate_user!
   protect_from_forgery with: :exception
 
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
   rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from CanCan::AccessDenied do |exception|
@@ -147,6 +147,12 @@ class Api::BaseController < ActionController::Base
     elsif action_name == "update"
       {updater_id: current_user.id}
     end
+  end
+
+  def user_id
+    {
+      user_id: current_user.id
+    }
   end
 
   private

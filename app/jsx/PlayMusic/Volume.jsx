@@ -27,26 +27,20 @@ export default class Index extends PageComponent {
     icon = this.props.statusVolume ? icon : <VolumeOff />
 
     return (
-      <div className="col-md-4">
-        <div className="row">
-          <div className="col-md-2 col-lg-2 col-sm- col-xs-12">
-            <div className="row">
-              <cm.RaisedButton
-              icon={icon}
-              className="button-volume background-button"
-              primary={true}
-              onClick={this.handleClickBtnVolume}/>
-            </div>
-          </div>
-          <div className="col-md-8 col-lg-8 col-sm-8 col-xs-12">
-            <div className="row">
-              <Slider min={0}
-              className="slider-volume"
-              max={100}
-              onChange={this.handleSliderChangeVolume}
-              value={this.props.volume} />
-            </div>
-          </div>
+      <div className="contain-volume button-play-music">
+        <div className="button-volume-contain">
+          <cm.RaisedButton
+          icon={icon}
+          className="button-volume background-button"
+          primary={true}
+          onClick={this.handleClickBtnVolume}/>
+        </div>
+        <div className="slider-volume-contain">
+          <Slider min={0}
+          className="slider-volume"
+          max={100}
+          onChange={this.handleSliderChangeVolume}
+          value={this.props.volume} />
         </div>
       </div>
     )
