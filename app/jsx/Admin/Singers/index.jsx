@@ -27,22 +27,16 @@ export default class index extends PageComponent {
   }
 
   getListMaster() {
-    // this.searchQuery = this.typingQuery;
+    this.searchQuery = this.typingQuery;
     let options = this.getOptions();
-    // let include = update(options["include"] || {}, {$merge: {
-    //   creator: {only: ["name"]},
-    //   updater: {only: ["name"]},
-    // }});
+    options = update(options, {$merge: {
+      search_query: this.searchQuery,
+      take: TAKE,
+      // methods: ["background_image", "avatar_image"],
+    }})
 
-    // options = update(options, {$merge: {
-    //   search_query: this.searchQuery,
-    //   take: take,
-    //   include: JSON.stringify(include),
-    // }})
-
-    // API[this.apiName].getList(this.handleGetDataListCallback, options);
-    // this.setState({error: ""})
     API.Singer.getList(this.handleGetList, options);
+    this.setState({error: ""})
   }
 
   getOptions() {
