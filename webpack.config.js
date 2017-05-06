@@ -28,6 +28,7 @@ module.exports = {
         cm: paths.jsx + "/Common",
         BaseComponent : paths.jsx + "/BaseComponent",
         PageComponent : paths.jsx + "/PageComponent",
+        t: "counterpart",
         // BaseMaster: paths.jsx + "/Master/BaseMaster",
      })
   ],

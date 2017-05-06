@@ -5,11 +5,11 @@ injectTapEventPlugin();
 
 global.API = require("./API");
 
-// import Locales from "./Locales";
-// t.registerTranslations("en", Locales.English);
+import Locales from "./Locales";
+t.registerTranslations("en", Locales.English);
 // t.registerTranslations("ja", Locales.Japanese);
-// t.setLocale(config.locale || "en");
-// t.setFallbackLocale("en");
+t.setLocale(config.locale || "en");
+t.setFallbackLocale("en");
 
 String.prototype.escape = function() {
   return this.replace(/&/g, "&amp;")

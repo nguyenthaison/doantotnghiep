@@ -19,6 +19,61 @@
       position: relative;
       background: black;
 
+      .button-play-music {
+        float: left;
+        width: 180px;
+        padding-left: 20px;
+        .button-repeat-btn  {
+          overflow: hidden;
+          float: right;
+          padding: 0 20px;
+          .background-button{
+            float: left;
+            padding-right: 5px;
+            svg {
+              height: 20px !important;
+            }
+          }
+        }
+      }
+      .button-play-music.album{
+        width: 100px !important;
+        .button-repeat-btn  {
+          overflow: inherit;
+          float: none;
+          padding: 0;
+        }
+        svg{
+            height: 20px !important;
+          }
+      }
+      .contain-play-song {
+        width: 60px;
+        float: left;
+        .play-button {
+          width: 50px;
+        }
+      }
+      .contain-play-song.album {
+        width: 155px !important;
+      }
+      
+      .contain-volume {
+        width: 300px;
+        height: 40px;
+        .button-volume-contain {
+          width: 45px;
+          float: left;
+        }
+        .slider-volume-contain {
+          width: 150px;
+          float: left;
+        }
+      }
+      .time-play-song {
+          width: 240px;
+          /*text-align: center;*/
+        }
       .display {
         .background-display-song {
           background-image: url("/images/test.jpg");

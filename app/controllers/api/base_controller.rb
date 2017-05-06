@@ -149,6 +149,12 @@ class Api::BaseController < ActionController::Base
     end
   end
 
+  def user_id
+    {
+      user_id: current_user.id
+    }
+  end
+
   private
   def check_valid_field
     if (current_user.manager? || current_user.member?) && current_user.team.field_id.nil?

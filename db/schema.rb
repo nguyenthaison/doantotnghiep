@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415073734) do
+ActiveRecord::Schema.define(version: 20170503081145) do
 
   create_table "album_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "album_id"
@@ -49,6 +49,28 @@ ActiveRecord::Schema.define(version: 20170415073734) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "artist_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "artist_type"
+    t.integer  "artist_id"
+    t.integer  "music_type_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["artist_type", "artist_id"], name: "index_artist_music_types_on_artist_type_and_artist_id", using: :btree
+    t.index ["music_type_id"], name: "index_artist_music_types_on_music_type_id", using: :btree
+  end
+
+  create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "attachmentable_type"
+    t.integer  "attachmentable_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.index ["attachmentable_type", "attachmentable_id"], name: "index_attachments_on_attachmentable_type_and_attachmentable_id", using: :btree
+  end
+
   create_table "author_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "song_id"
     t.integer  "author_id"
@@ -61,13 +83,13 @@ ActiveRecord::Schema.define(version: 20170415073734) do
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "age"
-    t.date     "dob"
+    t.datetime "dob"
     t.text     "content",        limit: 65535
     t.integer  "total_favorite"
-    t.integer  "countries_id"
+    t.integer  "country_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["countries_id"], name: "index_authors_on_countries_id", using: :btree
+    t.index ["country_id"], name: "index_authors_on_country_id", using: :btree
   end
 
   create_table "avatars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -175,15 +197,23 @@ ActiveRecord::Schema.define(version: 20170415073734) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "play_list_songs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "play_list_id"
+    t.integer  "song_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["play_list_id"], name: "index_play_list_songs_on_play_list_id", using: :btree
+    t.index ["song_id"], name: "index_play_list_songs_on_song_id", using: :btree
+  end
+
   create_table "play_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "view"
-    t.text     "describe",   limit: 65535
+    t.text     "describe",       limit: 65535
+    t.string   "play_list_type"
     t.integer  "user_id"
-    t.integer  "song_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["song_id"], name: "index_play_lists_on_song_id", using: :btree
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["user_id"], name: "index_play_lists_on_user_id", using: :btree
   end
 
@@ -222,13 +252,13 @@ ActiveRecord::Schema.define(version: 20170415073734) do
   create_table "singers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "age"
-    t.date     "dob"
+    t.datetime "dob"
     t.text     "content",        limit: 65535
     t.integer  "total_favorite"
-    t.integer  "countries_id"
+    t.integer  "country_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["countries_id"], name: "index_singers_on_countries_id", using: :btree
+    t.index ["country_id"], name: "index_singers_on_country_id", using: :btree
   end
 
   create_table "song_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

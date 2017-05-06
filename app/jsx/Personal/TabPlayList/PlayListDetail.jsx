@@ -1,23 +1,30 @@
-import Song from "../PlayMusic/Song";
+import Song from "../../PlayMusic/Song";
 
-export default class AlbumDetail extends PageComponent {
+export default class PlayListDetail extends PageComponent {
   constructor(props) {
     super(props);
     this.state = {
-      album: {},
+      playList: {},
+      songActive: {id: null},
     }
   }
 
   componentDidMount() {
     let state = Helper.getCurrentLocationState();
-    API.Album.get(this.handerGetAlbum, state, {include: JSON.stringify({})});
+    this.getPlayList(state);
   }
 
-  handerGetAlbum = (status, data) => {
-    if (!status) return;
+  getPlayList(playList) {
     this.setState({
-      album: data.album,
+      playList: playList,
+      songActive: playList.songs[0],
     });
+  }
+
+  handleChangeSongActive = (song) => {
+    this.setState({
+      songActive: song,
+    })
   }
 
   renderInfoTop(list) {
@@ -34,7 +41,7 @@ export default class AlbumDetail extends PageComponent {
   }
 
   render() {
-    let album = this.state.album;
+    let playList = this.state.playList;
 
     return (
       <div className="home-page col-md-12 col-lg-12 col-xs-12 col-sm-12">
@@ -43,13 +50,18 @@ export default class AlbumDetail extends PageComponent {
             <div className="home-center">
               <div>
                 <div className="top-info">
-                  <div>{album.name}</div>
-                  <div>"Phát hành: "{this.renderInfoTop(album.singers)}</div>
-                  <div>{this.renderInfoTop(album.music_types)}</div>
+                  <div>{playList.name}</div>
+                  <div>Creator: </div>
                 </div>
               </div>
               <div className="screen-play">
-                <Song item={album.songs} album={true} oneSong={false} />
+                {playList.songs && playList.songs.length == 0 ? "khong co gi" :
+                  <Song item={playList.songs}
+                    songActive={this.state.songActive}
+                    onChangeSongActive={this.handleChangeSongActive}
+                    album={true}
+                    oneSong={false} />
+                }
               </div>
               <div className="list-music">
               </div>

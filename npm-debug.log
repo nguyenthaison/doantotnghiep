@@ -1,0 +1,1360 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.4
+4 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/package.json
+5 warn package.json Dependency 'babel-core' exists in both dependencies and devDependencies, using 'babel-core@^6.24.0' from dependencies
+6 warn package.json Dependency 'babel-loader' exists in both dependencies and devDependencies, using 'babel-loader@^6.4.0' from dependencies
+7 warn package.json Dependency 'babel-plugin-add-module-exports' exists in both dependencies and devDependencies, using 'babel-plugin-add-module-exports@^0.2.1' from dependencies
+8 warn package.json Dependency 'babel-plugin-transform-class-properties' exists in both dependencies and devDependencies, using 'babel-plugin-transform-class-properties@^6.23.0' from dependencies
+9 warn package.json Dependency 'babel-preset-es2015' exists in both dependencies and devDependencies, using 'babel-preset-es2015@^6.24.0' from dependencies
+10 warn package.json Dependency 'babel-preset-react' exists in both dependencies and devDependencies, using 'babel-preset-react@^6.23.0' from dependencies
+11 warn package.json Dependency 'babel-preset-stage-0' exists in both dependencies and devDependencies, using 'babel-preset-stage-0@^6.22.0' from dependencies
+12 warn package.json Dependency 'material-ui' exists in both dependencies and devDependencies, using 'material-ui@^0.17.1' from dependencies
+13 warn package.json Dependency 'react' exists in both dependencies and devDependencies, using 'react@^15.4.2' from dependencies
+14 warn package.json Dependency 'react-dom' exists in both dependencies and devDependencies, using 'react-dom@^15.4.2' from dependencies
+15 warn package.json Dependency 'react-router' exists in both dependencies and devDependencies, using 'react-router@^3.0.0' from dependencies
+16 warn package.json Dependency 'react-tap-event-plugin' exists in both dependencies and devDependencies, using 'react-tap-event-plugin@^2.0.1' from dependencies
+17 warn package.json Dependency 'react-toastr' exists in both dependencies and devDependencies, using 'react-toastr@^2.8.2' from dependencies
+18 warn package.json Dependency 'webpack' exists in both dependencies and devDependencies, using 'webpack@^1.14.0' from dependencies
+19 warn package.json Dependency 'webpack-dev-server' exists in both dependencies and devDependencies, using 'webpack-dev-server@^2.4.2' from dependencies
+20 verbose install where, deps [ '/home/sonnt/ruby/doantotnghiep',
+20 verbose install   [ 'babel-core',
+20 verbose install     'babel-loader',
+20 verbose install     'babel-plugin-add-module-exports',
+20 verbose install     'babel-plugin-transform-class-properties',
+20 verbose install     'babel-plugin-transform-es3-property-literals',
+20 verbose install     'babel-preset-es2015',
+20 verbose install     'babel-preset-react',
+20 verbose install     'babel-preset-stage-0',
+20 verbose install     'counterpart',
+20 verbose install     'material-design-icons',
+20 verbose install     'material-ui',
+20 verbose install     'pluralize',
+20 verbose install     'react',
+20 verbose install     'react-addons-update',
+20 verbose install     'react-dom',
+20 verbose install     'react-motion',
+20 verbose install     'react-router',
+20 verbose install     'react-select',
+20 verbose install     'react-sound',
+20 verbose install     'react-tap-event-plugin',
+20 verbose install     'react-toastr',
+20 verbose install     'webpack',
+20 verbose install     'webpack-dev-server',
+20 verbose install     'babel-plugin-transform-es3-member-expression-literals' ] ]
+21 verbose install where, peers [ '/home/sonnt/ruby/doantotnghiep', [] ]
+22 verbose installManyTop reading for lifecycle /home/sonnt/ruby/doantotnghiep/package.json
+23 info preinstall doantotnghiep@1.0.0
+24 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-core/package.json
+25 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-loader/package.json
+26 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-add-module-exports/package.json
+27 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-class-properties/package.json
+28 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-member-expression-literals/package.json
+29 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-property-literals/package.json
+30 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-es2015/package.json
+31 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-react/package.json
+32 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-stage-0/package.json
+33 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-design-icons/package.json
+34 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-ui/package.json
+35 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/pluralize/package.json
+36 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react/package.json
+37 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-addons-update/package.json
+38 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-dom/package.json
+39 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-motion/package.json
+40 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-router/package.json
+41 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/package.json
+42 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-sound/package.json
+43 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-tap-event-plugin/package.json
+44 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-toastr/package.json
+45 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack/package.json
+46 verbose installManyTop reading scoped package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack-dev-server/package.json
+47 info package.json react-tap-event-plugin@2.0.1 No license field.
+48 info package.json react-sound@0.5.2 No repository field.
+49 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/package.json
+50 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-core/package.json
+51 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-loader/package.json
+52 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-add-module-exports/package.json
+53 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-class-properties/package.json
+54 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-member-expression-literals/package.json
+55 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-plugin-transform-es3-property-literals/package.json
+56 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-es2015/package.json
+57 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-react/package.json
+58 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/babel-preset-stage-0/package.json
+59 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-design-icons/package.json
+60 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/material-ui/package.json
+61 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/pluralize/package.json
+62 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react/package.json
+63 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-addons-update/package.json
+64 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-dom/package.json
+65 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-motion/package.json
+66 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-router/package.json
+67 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-select/package.json
+68 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-sound/package.json
+69 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-tap-event-plugin/package.json
+70 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/react-toastr/package.json
+71 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack/package.json
+72 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/webpack-dev-server/package.json
+73 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.bin/webpack/package.json
+74 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.bin/webpack-dev-server/package.json
+75 verbose targetResolver reading package data from /home/sonnt/ruby/doantotnghiep/node_modules/.cache/babel-loader/package.json
+76 verbose already installed skipping react-select@^1.0.0-rc.1 /home/sonnt/ruby/doantotnghiep
+77 verbose already installed skipping react-sound@^0.5.2 /home/sonnt/ruby/doantotnghiep
+78 verbose already installed skipping react-tap-event-plugin@^2.0.1 /home/sonnt/ruby/doantotnghiep
+79 verbose already installed skipping react-toastr@^2.8.2 /home/sonnt/ruby/doantotnghiep
+80 verbose already installed skipping webpack@^1.14.0 /home/sonnt/ruby/doantotnghiep
+81 verbose already installed skipping webpack-dev-server@^2.4.2 /home/sonnt/ruby/doantotnghiep
+82 verbose already installed skipping babel-plugin-transform-es3-member-expression-literals@^6.22.0 /home/sonnt/ruby/doantotnghiep
+83 verbose already installed skipping babel-core@^6.24.0 /home/sonnt/ruby/doantotnghiep
+84 verbose already installed skipping babel-loader@^6.4.0 /home/sonnt/ruby/doantotnghiep
+85 verbose already installed skipping babel-plugin-add-module-exports@^0.2.1 /home/sonnt/ruby/doantotnghiep
+86 verbose already installed skipping babel-plugin-transform-class-properties@^6.23.0 /home/sonnt/ruby/doantotnghiep
+87 verbose already installed skipping babel-plugin-transform-es3-property-literals@^6.22.0 /home/sonnt/ruby/doantotnghiep
+88 verbose already installed skipping babel-preset-es2015@^6.24.0 /home/sonnt/ruby/doantotnghiep
+89 verbose already installed skipping babel-preset-react@^6.23.0 /home/sonnt/ruby/doantotnghiep
+90 verbose already installed skipping babel-preset-stage-0@^6.22.0 /home/sonnt/ruby/doantotnghiep
+91 silly cache add args [ 'counterpart@^0.17.8', null ]
+92 verbose cache add spec counterpart@^0.17.8
+93 silly cache add parsed spec Result {
+93 silly cache add   raw: 'counterpart@^0.17.8',
+93 silly cache add   scope: null,
+93 silly cache add   name: 'counterpart',
+93 silly cache add   rawSpec: '^0.17.8',
+93 silly cache add   spec: '>=0.17.8 <0.18.0',
+93 silly cache add   type: 'range' }
+94 silly addNamed counterpart@>=0.17.8 <0.18.0
+95 verbose addNamed ">=0.17.8 <0.18.0" is a valid semver range for counterpart
+96 silly addNameRange { name: 'counterpart',
+96 silly addNameRange   range: '>=0.17.8 <0.18.0',
+96 silly addNameRange   hasData: false }
+97 silly mapToRegistry name counterpart
+98 silly mapToRegistry using default registry
+99 silly mapToRegistry registry https://registry.npmjs.org/
+100 silly mapToRegistry data Result {
+100 silly mapToRegistry   raw: 'counterpart',
+100 silly mapToRegistry   scope: null,
+100 silly mapToRegistry   name: 'counterpart',
+100 silly mapToRegistry   rawSpec: '',
+100 silly mapToRegistry   spec: 'latest',
+100 silly mapToRegistry   type: 'tag' }
+101 silly mapToRegistry uri https://registry.npmjs.org/counterpart
+102 verbose addNameRange registry:https://registry.npmjs.org/counterpart not in flight; fetching
+103 verbose already installed skipping material-design-icons@^3.0.1 /home/sonnt/ruby/doantotnghiep
+104 verbose already installed skipping material-ui@^0.17.1 /home/sonnt/ruby/doantotnghiep
+105 verbose already installed skipping pluralize@^4.0.0 /home/sonnt/ruby/doantotnghiep
+106 verbose already installed skipping react@^15.4.2 /home/sonnt/ruby/doantotnghiep
+107 verbose already installed skipping react-addons-update@^15.4.2 /home/sonnt/ruby/doantotnghiep
+108 verbose already installed skipping react-dom@^15.4.2 /home/sonnt/ruby/doantotnghiep
+109 verbose already installed skipping react-motion@^0.4.7 /home/sonnt/ruby/doantotnghiep
+110 verbose already installed skipping react-router@^3.0.0 /home/sonnt/ruby/doantotnghiep
+111 verbose request uri https://registry.npmjs.org/counterpart
+112 verbose request no auth needed
+113 info attempt registry request try #1 at 6:02:57 PM
+114 verbose request id 4222e5dda6770f77
+115 verbose etag "B9CSHS2VTTAHACJ4NGNMSPOWM"
+116 http request GET https://registry.npmjs.org/counterpart
+117 http 200 https://registry.npmjs.org/counterpart
+118 verbose headers { server: 'nginx/1.10.3',
+118 verbose headers   'content-type': 'application/json',
+118 verbose headers   'last-modified': 'Wed, 29 Mar 2017 13:21:02 GMT',
+118 verbose headers   etag: 'W/"58dbb4be-d121"',
+118 verbose headers   'content-encoding': 'gzip',
+118 verbose headers   'cache-control': 'max-age=300',
+118 verbose headers   'content-length': '8034',
+118 verbose headers   'accept-ranges': 'bytes',
+118 verbose headers   date: 'Sun, 23 Apr 2017 11:02:59 GMT',
+118 verbose headers   via: '1.1 varnish',
+118 verbose headers   age: '0',
+118 verbose headers   connection: 'keep-alive',
+118 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+118 verbose headers   'x-cache': 'MISS',
+118 verbose headers   'x-cache-hits': '0',
+118 verbose headers   'x-timer': 'S1492945379.085729,VS0,VE201',
+118 verbose headers   vary: 'Accept-Encoding' }
+119 silly get cb [ 200,
+119 silly get   { server: 'nginx/1.10.3',
+119 silly get     'content-type': 'application/json',
+119 silly get     'last-modified': 'Wed, 29 Mar 2017 13:21:02 GMT',
+119 silly get     etag: 'W/"58dbb4be-d121"',
+119 silly get     'content-encoding': 'gzip',
+119 silly get     'cache-control': 'max-age=300',
+119 silly get     'content-length': '8034',
+119 silly get     'accept-ranges': 'bytes',
+119 silly get     date: 'Sun, 23 Apr 2017 11:02:59 GMT',
+119 silly get     via: '1.1 varnish',
+119 silly get     age: '0',
+119 silly get     connection: 'keep-alive',
+119 silly get     'x-served-by': 'cache-hkg6822-HKG',
+119 silly get     'x-cache': 'MISS',
+119 silly get     'x-cache-hits': '0',
+119 silly get     'x-timer': 'S1492945379.085729,VS0,VE201',
+119 silly get     vary: 'Accept-Encoding' } ]
+120 verbose get saving counterpart to /home/sonnt/.npm/registry.npmjs.org/counterpart/.cache.json
+121 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+122 silly addNameRange number 2 { name: 'counterpart', range: '>=0.17.8 <0.18.0', hasData: true }
+123 silly addNameRange versions [ 'counterpart',
+123 silly addNameRange   [ '0.10.0',
+123 silly addNameRange     '0.11.0',
+123 silly addNameRange     '0.11.1',
+123 silly addNameRange     '0.12.0',
+123 silly addNameRange     '0.12.1',
+123 silly addNameRange     '0.13.0',
+123 silly addNameRange     '0.14.0',
+123 silly addNameRange     '0.14.1',
+123 silly addNameRange     '0.14.2',
+123 silly addNameRange     '0.15.0',
+123 silly addNameRange     '0.16.0',
+123 silly addNameRange     '0.16.1',
+123 silly addNameRange     '0.16.2',
+123 silly addNameRange     '0.16.3',
+123 silly addNameRange     '0.16.4',
+123 silly addNameRange     '0.16.5',
+123 silly addNameRange     '0.16.6',
+123 silly addNameRange     '0.16.7',
+123 silly addNameRange     '0.16.8',
+123 silly addNameRange     '0.16.9',
+123 silly addNameRange     '0.16.10',
+123 silly addNameRange     '0.17.0',
+123 silly addNameRange     '0.17.1',
+123 silly addNameRange     '0.17.2',
+123 silly addNameRange     '0.17.3',
+123 silly addNameRange     '0.17.4',
+123 silly addNameRange     '0.17.5',
+123 silly addNameRange     '0.17.6',
+123 silly addNameRange     '0.17.7',
+123 silly addNameRange     '0.17.8' ] ]
+124 silly addNamed counterpart@0.17.8
+125 verbose addNamed "0.17.8" is a plain semver version for counterpart
+126 silly mapToRegistry name counterpart
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry data Result {
+129 silly mapToRegistry   raw: 'counterpart',
+129 silly mapToRegistry   scope: null,
+129 silly mapToRegistry   name: 'counterpart',
+129 silly mapToRegistry   rawSpec: '',
+129 silly mapToRegistry   spec: 'latest',
+129 silly mapToRegistry   type: 'tag' }
+130 silly mapToRegistry uri https://registry.npmjs.org/counterpart
+131 verbose addRemoteTarball https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz not in flight; adding
+132 verbose addRemoteTarball [ 'https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz',
+132 verbose addRemoteTarball   '42d4cda6bb92d2d8c69acc6ef1a9b8c50d18be9b' ]
+133 info retry fetch attempt 1 at 6:02:59 PM
+134 info attempt registry request try #1 at 6:02:59 PM
+135 http fetch GET https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz
+136 http fetch 200 https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz
+137 silly fetchAndShaCheck shasum 42d4cda6bb92d2d8c69acc6ef1a9b8c50d18be9b
+138 verbose addTmpTarball /tmp/npm-8518-a8ba977e/registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz not in flight; adding
+139 verbose addTmpTarball already have metadata; skipping unpack for counterpart@0.17.8
+140 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+141 silly cache afterAdd counterpart@0.17.8
+142 verbose afterAdd /home/sonnt/.npm/counterpart/0.17.8/package/package.json not in flight; writing
+143 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+144 verbose afterAdd /home/sonnt/.npm/counterpart/0.17.8/package/package.json written
+145 silly install resolved [ { name: 'counterpart',
+145 silly install resolved     version: '0.17.8',
+145 silly install resolved     description: 'A translation and localization library for Node.js and the browser',
+145 silly install resolved     main: 'index.js',
+145 silly install resolved     repository:
+145 silly install resolved      { type: 'git',
+145 silly install resolved        url: 'git+https://github.com/martinandert/counterpart.git' },
+145 silly install resolved     keywords:
+145 silly install resolved      [ 'globalization',
+145 silly install resolved        'g11n',
+145 silly install resolved        'internationalization',
+145 silly install resolved        'i18n',
+145 silly install resolved        'localization',
+145 silly install resolved        'l10n',
+145 silly install resolved        'translation',
+145 silly install resolved        'translate',
+145 silly install resolved        'localize' ],
+145 silly install resolved     scripts: { test: 'make test', lint: 'make lint' },
+145 silly install resolved     author: { name: 'Martin Andert', email: 'mandert@gmail.com' },
+145 silly install resolved     contributors: [ [Object] ],
+145 silly install resolved     license: 'MIT',
+145 silly install resolved     bugs: { url: 'https://github.com/martinandert/counterpart/issues' },
+145 silly install resolved     homepage: 'https://github.com/martinandert/counterpart',
+145 silly install resolved     dependencies:
+145 silly install resolved      { 'date-names': '^0.1.7',
+145 silly install resolved        except: '^0.1.3',
+145 silly install resolved        extend: '^3.0.0',
+145 silly install resolved        pluralizers: '^0.1.4',
+145 silly install resolved        'sprintf-js': '^1.0.3' },
+145 silly install resolved     devDependencies: { jshint: '^2.5.10', mocha: '^2.0.1', time: '^0.11.1' },
+145 silly install resolved     gitHead: 'ec211c584b0f62a6db306232cbc74d775cc97335',
+145 silly install resolved     _id: 'counterpart@0.17.8',
+145 silly install resolved     _shasum: '42d4cda6bb92d2d8c69acc6ef1a9b8c50d18be9b',
+145 silly install resolved     _from: 'counterpart@>=0.17.8 <0.18.0',
+145 silly install resolved     _npmVersion: '3.10.8',
+145 silly install resolved     _nodeVersion: '6.9.1',
+145 silly install resolved     _npmUser: { name: 'martinandert', email: 'mandert@gmail.com' },
+145 silly install resolved     dist:
+145 silly install resolved      { shasum: '42d4cda6bb92d2d8c69acc6ef1a9b8c50d18be9b',
+145 silly install resolved        tarball: 'https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz' },
+145 silly install resolved     maintainers: [ [Object] ],
+145 silly install resolved     _npmOperationalInternal:
+145 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+145 silly install resolved        tmp: 'tmp/counterpart-0.17.8.tgz_1490793660051_0.3154786336235702' },
+145 silly install resolved     directories: {},
+145 silly install resolved     _resolved: 'https://registry.npmjs.org/counterpart/-/counterpart-0.17.8.tgz' } ]
+146 info install counterpart@0.17.8 into /home/sonnt/ruby/doantotnghiep
+147 info installOne counterpart@0.17.8
+148 verbose installOne of counterpart to /home/sonnt/ruby/doantotnghiep not in flight; installing
+149 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+150 verbose lock using /home/sonnt/.npm/_locks/counterpart-086d34e28624dfa6.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+151 silly install write writing counterpart 0.17.8 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+152 verbose unbuild node_modules/counterpart
+153 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart is being purged from base /home/sonnt/ruby/doantotnghiep
+154 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+155 verbose tar unpack /home/sonnt/.npm/counterpart/0.17.8/package.tgz
+156 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+157 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart is being purged
+158 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+159 silly gunzTarPerm modes [ '775', '664' ]
+160 silly gunzTarPerm extractEntry package.json
+161 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+162 silly gunzTarPerm extractEntry README.md
+163 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+164 silly gunzTarPerm extractEntry LICENSE
+165 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+166 silly gunzTarPerm extractEntry index.js
+167 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+168 silly gunzTarPerm extractEntry strftime.js
+169 silly gunzTarPerm modified mode [ 'strftime.js', 420, 436 ]
+170 silly gunzTarPerm extractEntry locales/de.js
+171 silly gunzTarPerm modified mode [ 'locales/de.js', 420, 436 ]
+172 silly gunzTarPerm extractEntry locales/en.js
+173 silly gunzTarPerm modified mode [ 'locales/en.js', 420, 436 ]
+174 silly gunzTarPerm extractEntry locales/pt-br.js
+175 silly gunzTarPerm modified mode [ 'locales/pt-br.js', 420, 436 ]
+176 silly gunzTarPerm extractEntry locales/ru.js
+177 silly gunzTarPerm modified mode [ 'locales/ru.js', 420, 436 ]
+178 silly gunzTarPerm extractEntry v2/package.json
+179 silly gunzTarPerm modified mode [ 'v2/package.json', 420, 436 ]
+180 silly gunzTarPerm extractEntry v2/.npmignore
+181 silly gunzTarPerm modified mode [ 'v2/.npmignore', 420, 436 ]
+182 silly gunzTarPerm extractEntry v2/README.md
+183 silly gunzTarPerm modified mode [ 'v2/README.md', 420, 436 ]
+184 silly gunzTarPerm extractEntry v2/LICENSE
+185 silly gunzTarPerm modified mode [ 'v2/LICENSE', 420, 436 ]
+186 silly gunzTarPerm extractEntry v2/webpack.config.js
+187 silly gunzTarPerm modified mode [ 'v2/webpack.config.js', 420, 436 ]
+188 silly gunzTarPerm extractEntry v2/old-spec.js
+189 silly gunzTarPerm modified mode [ 'v2/old-spec.js', 420, 436 ]
+190 silly gunzTarPerm extractEntry v2/spec-old.js
+191 silly gunzTarPerm modified mode [ 'v2/spec-old.js', 420, 436 ]
+192 silly gunzTarPerm extractEntry v2/modules/__tests__/Translator.test.js
+193 silly gunzTarPerm modified mode [ 'v2/modules/__tests__/Translator.test.js', 420, 436 ]
+194 silly gunzTarPerm extractEntry v2/.babelrc
+195 silly gunzTarPerm modified mode [ 'v2/.babelrc', 420, 436 ]
+196 silly gunzTarPerm extractEntry v2/CHANGELOG.md
+197 silly gunzTarPerm modified mode [ 'v2/CHANGELOG.md', 420, 436 ]
+198 silly gunzTarPerm extractEntry v2/examples/plain/translations.js
+199 silly gunzTarPerm modified mode [ 'v2/examples/plain/translations.js', 420, 436 ]
+200 silly gunzTarPerm extractEntry v2/scripts/build.js
+201 silly gunzTarPerm modified mode [ 'v2/scripts/build.js', 420, 436 ]
+202 silly gunzTarPerm extractEntry v2/CONTRIBUTING.md
+203 silly gunzTarPerm modified mode [ 'v2/CONTRIBUTING.md', 420, 436 ]
+204 silly gunzTarPerm extractEntry v2/yarn.lock
+205 silly gunzTarPerm modified mode [ 'v2/yarn.lock', 420, 436 ]
+206 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/package.json
+207 info preinstall counterpart@0.17.8
+208 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/package.json
+209 silly prepareForInstallMany adding date-names@^0.1.7 from counterpart dependencies
+210 silly prepareForInstallMany adding except@^0.1.3 from counterpart dependencies
+211 silly prepareForInstallMany adding extend@^3.0.0 from counterpart dependencies
+212 silly prepareForInstallMany adding pluralizers@^0.1.4 from counterpart dependencies
+213 silly prepareForInstallMany adding sprintf-js@^1.0.3 from counterpart dependencies
+214 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/package.json
+215 silly cache add args [ 'extend@^3.0.0', null ]
+216 verbose cache add spec extend@^3.0.0
+217 silly cache add parsed spec Result {
+217 silly cache add   raw: 'extend@^3.0.0',
+217 silly cache add   scope: null,
+217 silly cache add   name: 'extend',
+217 silly cache add   rawSpec: '^3.0.0',
+217 silly cache add   spec: '>=3.0.0 <4.0.0',
+217 silly cache add   type: 'range' }
+218 silly addNamed extend@>=3.0.0 <4.0.0
+219 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for extend
+220 silly addNameRange { name: 'extend', range: '>=3.0.0 <4.0.0', hasData: false }
+221 silly mapToRegistry name extend
+222 silly mapToRegistry using default registry
+223 silly mapToRegistry registry https://registry.npmjs.org/
+224 silly mapToRegistry data Result {
+224 silly mapToRegistry   raw: 'extend',
+224 silly mapToRegistry   scope: null,
+224 silly mapToRegistry   name: 'extend',
+224 silly mapToRegistry   rawSpec: '',
+224 silly mapToRegistry   spec: 'latest',
+224 silly mapToRegistry   type: 'tag' }
+225 silly mapToRegistry uri https://registry.npmjs.org/extend
+226 verbose addNameRange registry:https://registry.npmjs.org/extend not in flight; fetching
+227 silly cache add args [ 'pluralizers@^0.1.4', null ]
+228 verbose cache add spec pluralizers@^0.1.4
+229 silly cache add parsed spec Result {
+229 silly cache add   raw: 'pluralizers@^0.1.4',
+229 silly cache add   scope: null,
+229 silly cache add   name: 'pluralizers',
+229 silly cache add   rawSpec: '^0.1.4',
+229 silly cache add   spec: '>=0.1.4 <0.2.0',
+229 silly cache add   type: 'range' }
+230 silly addNamed pluralizers@>=0.1.4 <0.2.0
+231 verbose addNamed ">=0.1.4 <0.2.0" is a valid semver range for pluralizers
+232 silly addNameRange { name: 'pluralizers', range: '>=0.1.4 <0.2.0', hasData: false }
+233 silly mapToRegistry name pluralizers
+234 silly mapToRegistry using default registry
+235 silly mapToRegistry registry https://registry.npmjs.org/
+236 silly mapToRegistry data Result {
+236 silly mapToRegistry   raw: 'pluralizers',
+236 silly mapToRegistry   scope: null,
+236 silly mapToRegistry   name: 'pluralizers',
+236 silly mapToRegistry   rawSpec: '',
+236 silly mapToRegistry   spec: 'latest',
+236 silly mapToRegistry   type: 'tag' }
+237 silly mapToRegistry uri https://registry.npmjs.org/pluralizers
+238 verbose addNameRange registry:https://registry.npmjs.org/pluralizers not in flight; fetching
+239 silly cache add args [ 'sprintf-js@^1.0.3', null ]
+240 verbose cache add spec sprintf-js@^1.0.3
+241 silly cache add parsed spec Result {
+241 silly cache add   raw: 'sprintf-js@^1.0.3',
+241 silly cache add   scope: null,
+241 silly cache add   name: 'sprintf-js',
+241 silly cache add   rawSpec: '^1.0.3',
+241 silly cache add   spec: '>=1.0.3 <2.0.0',
+241 silly cache add   type: 'range' }
+242 silly addNamed sprintf-js@>=1.0.3 <2.0.0
+243 verbose addNamed ">=1.0.3 <2.0.0" is a valid semver range for sprintf-js
+244 silly addNameRange { name: 'sprintf-js', range: '>=1.0.3 <2.0.0', hasData: false }
+245 silly mapToRegistry name sprintf-js
+246 silly mapToRegistry using default registry
+247 silly mapToRegistry registry https://registry.npmjs.org/
+248 silly mapToRegistry data Result {
+248 silly mapToRegistry   raw: 'sprintf-js',
+248 silly mapToRegistry   scope: null,
+248 silly mapToRegistry   name: 'sprintf-js',
+248 silly mapToRegistry   rawSpec: '',
+248 silly mapToRegistry   spec: 'latest',
+248 silly mapToRegistry   type: 'tag' }
+249 silly mapToRegistry uri https://registry.npmjs.org/sprintf-js
+250 verbose addNameRange registry:https://registry.npmjs.org/sprintf-js not in flight; fetching
+251 silly cache add args [ 'date-names@^0.1.7', null ]
+252 verbose cache add spec date-names@^0.1.7
+253 silly cache add parsed spec Result {
+253 silly cache add   raw: 'date-names@^0.1.7',
+253 silly cache add   scope: null,
+253 silly cache add   name: 'date-names',
+253 silly cache add   rawSpec: '^0.1.7',
+253 silly cache add   spec: '>=0.1.7 <0.2.0',
+253 silly cache add   type: 'range' }
+254 silly addNamed date-names@>=0.1.7 <0.2.0
+255 verbose addNamed ">=0.1.7 <0.2.0" is a valid semver range for date-names
+256 silly addNameRange { name: 'date-names', range: '>=0.1.7 <0.2.0', hasData: false }
+257 silly mapToRegistry name date-names
+258 silly mapToRegistry using default registry
+259 silly mapToRegistry registry https://registry.npmjs.org/
+260 silly mapToRegistry data Result {
+260 silly mapToRegistry   raw: 'date-names',
+260 silly mapToRegistry   scope: null,
+260 silly mapToRegistry   name: 'date-names',
+260 silly mapToRegistry   rawSpec: '',
+260 silly mapToRegistry   spec: 'latest',
+260 silly mapToRegistry   type: 'tag' }
+261 silly mapToRegistry uri https://registry.npmjs.org/date-names
+262 verbose addNameRange registry:https://registry.npmjs.org/date-names not in flight; fetching
+263 silly cache add args [ 'except@^0.1.3', null ]
+264 verbose cache add spec except@^0.1.3
+265 silly cache add parsed spec Result {
+265 silly cache add   raw: 'except@^0.1.3',
+265 silly cache add   scope: null,
+265 silly cache add   name: 'except',
+265 silly cache add   rawSpec: '^0.1.3',
+265 silly cache add   spec: '>=0.1.3 <0.2.0',
+265 silly cache add   type: 'range' }
+266 silly addNamed except@>=0.1.3 <0.2.0
+267 verbose addNamed ">=0.1.3 <0.2.0" is a valid semver range for except
+268 silly addNameRange { name: 'except', range: '>=0.1.3 <0.2.0', hasData: false }
+269 silly mapToRegistry name except
+270 silly mapToRegistry using default registry
+271 silly mapToRegistry registry https://registry.npmjs.org/
+272 silly mapToRegistry data Result {
+272 silly mapToRegistry   raw: 'except',
+272 silly mapToRegistry   scope: null,
+272 silly mapToRegistry   name: 'except',
+272 silly mapToRegistry   rawSpec: '',
+272 silly mapToRegistry   spec: 'latest',
+272 silly mapToRegistry   type: 'tag' }
+273 silly mapToRegistry uri https://registry.npmjs.org/except
+274 verbose addNameRange registry:https://registry.npmjs.org/except not in flight; fetching
+275 verbose request uri https://registry.npmjs.org/date-names
+276 verbose request no auth needed
+277 info attempt registry request try #1 at 6:03:01 PM
+278 verbose etag "6O9UAG9CAL6NPW1ERFZH814BO"
+279 http request GET https://registry.npmjs.org/date-names
+280 verbose request uri https://registry.npmjs.org/extend
+281 verbose request no auth needed
+282 info attempt registry request try #1 at 6:03:01 PM
+283 verbose etag "6EEO3XK61RD5ZADL8JJORMJWB"
+284 http request GET https://registry.npmjs.org/extend
+285 verbose request uri https://registry.npmjs.org/sprintf-js
+286 verbose request no auth needed
+287 info attempt registry request try #1 at 6:03:01 PM
+288 verbose etag "7X6RLKCBTAKIMKC8S74EJKJKO"
+289 http request GET https://registry.npmjs.org/sprintf-js
+290 verbose request uri https://registry.npmjs.org/pluralizers
+291 verbose request no auth needed
+292 info attempt registry request try #1 at 6:03:01 PM
+293 verbose etag "2JAW797EF677L79N52RNWPU4Q"
+294 http request GET https://registry.npmjs.org/pluralizers
+295 verbose request uri https://registry.npmjs.org/except
+296 verbose request no auth needed
+297 info attempt registry request try #1 at 6:03:01 PM
+298 verbose etag "2Y37SODW67EEJ72JOQC54D5AG"
+299 http request GET https://registry.npmjs.org/except
+300 http 200 https://registry.npmjs.org/date-names
+301 verbose headers { server: 'nginx/1.10.1',
+301 verbose headers   'content-type': 'application/json',
+301 verbose headers   'last-modified': 'Mon, 07 Nov 2016 10:11:44 GMT',
+301 verbose headers   etag: 'W/"58205360-323c"',
+301 verbose headers   'content-encoding': 'gzip',
+301 verbose headers   'cache-control': 'max-age=300',
+301 verbose headers   'content-length': '2446',
+301 verbose headers   'accept-ranges': 'bytes',
+301 verbose headers   date: 'Sun, 23 Apr 2017 11:03:01 GMT',
+301 verbose headers   via: '1.1 varnish',
+301 verbose headers   age: '0',
+301 verbose headers   connection: 'keep-alive',
+301 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+301 verbose headers   'x-cache': 'MISS',
+301 verbose headers   'x-cache-hits': '0',
+301 verbose headers   'x-timer': 'S1492945382.689134,VS0,VE206',
+301 verbose headers   vary: 'Accept-Encoding' }
+302 silly get cb [ 200,
+302 silly get   { server: 'nginx/1.10.1',
+302 silly get     'content-type': 'application/json',
+302 silly get     'last-modified': 'Mon, 07 Nov 2016 10:11:44 GMT',
+302 silly get     etag: 'W/"58205360-323c"',
+302 silly get     'content-encoding': 'gzip',
+302 silly get     'cache-control': 'max-age=300',
+302 silly get     'content-length': '2446',
+302 silly get     'accept-ranges': 'bytes',
+302 silly get     date: 'Sun, 23 Apr 2017 11:03:01 GMT',
+302 silly get     via: '1.1 varnish',
+302 silly get     age: '0',
+302 silly get     connection: 'keep-alive',
+302 silly get     'x-served-by': 'cache-hkg6822-HKG',
+302 silly get     'x-cache': 'MISS',
+302 silly get     'x-cache-hits': '0',
+302 silly get     'x-timer': 'S1492945382.689134,VS0,VE206',
+302 silly get     vary: 'Accept-Encoding' } ]
+303 verbose get saving date-names to /home/sonnt/.npm/registry.npmjs.org/date-names/.cache.json
+304 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+305 silly addNameRange number 2 { name: 'date-names', range: '>=0.1.7 <0.2.0', hasData: true }
+306 silly addNameRange versions [ 'date-names',
+306 silly addNameRange   [ '0.1.0',
+306 silly addNameRange     '0.1.1',
+306 silly addNameRange     '0.1.2',
+306 silly addNameRange     '0.1.3',
+306 silly addNameRange     '0.1.4',
+306 silly addNameRange     '0.1.5',
+306 silly addNameRange     '0.1.6',
+306 silly addNameRange     '0.1.7',
+306 silly addNameRange     '0.1.8' ] ]
+307 silly addNamed date-names@0.1.8
+308 verbose addNamed "0.1.8" is a plain semver version for date-names
+309 silly cache afterAdd date-names@0.1.8
+310 verbose afterAdd /home/sonnt/.npm/date-names/0.1.8/package/package.json not in flight; writing
+311 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+312 verbose afterAdd /home/sonnt/.npm/date-names/0.1.8/package/package.json written
+313 http 200 https://registry.npmjs.org/extend
+314 verbose headers { server: 'nginx/1.10.3',
+314 verbose headers   'content-type': 'application/json',
+314 verbose headers   'last-modified': 'Fri, 21 Apr 2017 02:24:10 GMT',
+314 verbose headers   etag: 'W/"58f96d4a-3880"',
+314 verbose headers   'content-encoding': 'gzip',
+314 verbose headers   'cache-control': 'max-age=300',
+314 verbose headers   'content-length': '3149',
+314 verbose headers   'accept-ranges': 'bytes',
+314 verbose headers   date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+314 verbose headers   via: '1.1 varnish',
+314 verbose headers   age: '154',
+314 verbose headers   connection: 'keep-alive',
+314 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+314 verbose headers   'x-cache': 'HIT',
+314 verbose headers   'x-cache-hits': '4',
+314 verbose headers   'x-timer': 'S1492945382.109439,VS0,VE0',
+314 verbose headers   vary: 'Accept-Encoding' }
+315 silly get cb [ 200,
+315 silly get   { server: 'nginx/1.10.3',
+315 silly get     'content-type': 'application/json',
+315 silly get     'last-modified': 'Fri, 21 Apr 2017 02:24:10 GMT',
+315 silly get     etag: 'W/"58f96d4a-3880"',
+315 silly get     'content-encoding': 'gzip',
+315 silly get     'cache-control': 'max-age=300',
+315 silly get     'content-length': '3149',
+315 silly get     'accept-ranges': 'bytes',
+315 silly get     date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+315 silly get     via: '1.1 varnish',
+315 silly get     age: '154',
+315 silly get     connection: 'keep-alive',
+315 silly get     'x-served-by': 'cache-hkg6824-HKG',
+315 silly get     'x-cache': 'HIT',
+315 silly get     'x-cache-hits': '4',
+315 silly get     'x-timer': 'S1492945382.109439,VS0,VE0',
+315 silly get     vary: 'Accept-Encoding' } ]
+316 verbose get saving extend to /home/sonnt/.npm/registry.npmjs.org/extend/.cache.json
+317 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+318 silly addNameRange number 2 { name: 'extend', range: '>=3.0.0 <4.0.0', hasData: true }
+319 silly addNameRange versions [ 'extend',
+319 silly addNameRange   [ '1.0.0',
+319 silly addNameRange     '1.1.0',
+319 silly addNameRange     '1.1.1',
+319 silly addNameRange     '1.1.3',
+319 silly addNameRange     '1.2.0',
+319 silly addNameRange     '1.2.1',
+319 silly addNameRange     '1.3.0',
+319 silly addNameRange     '2.0.0',
+319 silly addNameRange     '2.0.1',
+319 silly addNameRange     '3.0.0' ] ]
+320 silly addNamed extend@3.0.0
+321 verbose addNamed "3.0.0" is a plain semver version for extend
+322 silly cache afterAdd extend@3.0.0
+323 verbose afterAdd /home/sonnt/.npm/extend/3.0.0/package/package.json not in flight; writing
+324 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+325 http 200 https://registry.npmjs.org/sprintf-js
+326 verbose headers { server: 'nginx/1.10.1',
+326 verbose headers   'content-type': 'application/json',
+326 verbose headers   'last-modified': 'Sat, 25 Mar 2017 16:03:09 GMT',
+326 verbose headers   etag: 'W/"58d694bd-275d"',
+326 verbose headers   'content-encoding': 'gzip',
+326 verbose headers   'cache-control': 'max-age=300',
+326 verbose headers   'content-length': '3175',
+326 verbose headers   'accept-ranges': 'bytes',
+326 verbose headers   date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+326 verbose headers   via: '1.1 varnish',
+326 verbose headers   age: '60',
+326 verbose headers   connection: 'keep-alive',
+326 verbose headers   'x-served-by': 'cache-hkg6820-HKG',
+326 verbose headers   'x-cache': 'HIT',
+326 verbose headers   'x-cache-hits': '3',
+326 verbose headers   'x-timer': 'S1492945382.118379,VS0,VE0',
+326 verbose headers   vary: 'Accept-Encoding' }
+327 silly get cb [ 200,
+327 silly get   { server: 'nginx/1.10.1',
+327 silly get     'content-type': 'application/json',
+327 silly get     'last-modified': 'Sat, 25 Mar 2017 16:03:09 GMT',
+327 silly get     etag: 'W/"58d694bd-275d"',
+327 silly get     'content-encoding': 'gzip',
+327 silly get     'cache-control': 'max-age=300',
+327 silly get     'content-length': '3175',
+327 silly get     'accept-ranges': 'bytes',
+327 silly get     date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+327 silly get     via: '1.1 varnish',
+327 silly get     age: '60',
+327 silly get     connection: 'keep-alive',
+327 silly get     'x-served-by': 'cache-hkg6820-HKG',
+327 silly get     'x-cache': 'HIT',
+327 silly get     'x-cache-hits': '3',
+327 silly get     'x-timer': 'S1492945382.118379,VS0,VE0',
+327 silly get     vary: 'Accept-Encoding' } ]
+328 verbose get saving sprintf-js to /home/sonnt/.npm/registry.npmjs.org/sprintf-js/.cache.json
+329 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+330 verbose afterAdd /home/sonnt/.npm/extend/3.0.0/package/package.json written
+331 silly addNameRange number 2 { name: 'sprintf-js', range: '>=1.0.3 <2.0.0', hasData: true }
+332 silly addNameRange versions [ 'sprintf-js', [ '0.0.7', '1.0.1', '1.0.2', '1.0.3' ] ]
+333 silly addNamed sprintf-js@1.0.3
+334 verbose addNamed "1.0.3" is a plain semver version for sprintf-js
+335 silly cache afterAdd sprintf-js@1.0.3
+336 verbose afterAdd /home/sonnt/.npm/sprintf-js/1.0.3/package/package.json not in flight; writing
+337 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+338 verbose afterAdd /home/sonnt/.npm/sprintf-js/1.0.3/package/package.json written
+339 http 200 https://registry.npmjs.org/except
+340 verbose headers { server: 'nginx/1.10.3',
+340 verbose headers   'content-type': 'application/json',
+340 verbose headers   'last-modified': 'Thu, 11 Dec 2014 09:52:20 GMT',
+340 verbose headers   etag: 'W/"54896954-17ee"',
+340 verbose headers   'content-encoding': 'gzip',
+340 verbose headers   'cache-control': 'max-age=300',
+340 verbose headers   'content-length': '1460',
+340 verbose headers   'accept-ranges': 'bytes',
+340 verbose headers   date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+340 verbose headers   via: '1.1 varnish',
+340 verbose headers   age: '0',
+340 verbose headers   connection: 'keep-alive',
+340 verbose headers   'x-served-by': 'cache-hkg6820-HKG',
+340 verbose headers   'x-cache': 'MISS',
+340 verbose headers   'x-cache-hits': '0',
+340 verbose headers   'x-timer': 'S1492945382.124402,VS0,VE186',
+340 verbose headers   vary: 'Accept-Encoding' }
+341 silly get cb [ 200,
+341 silly get   { server: 'nginx/1.10.3',
+341 silly get     'content-type': 'application/json',
+341 silly get     'last-modified': 'Thu, 11 Dec 2014 09:52:20 GMT',
+341 silly get     etag: 'W/"54896954-17ee"',
+341 silly get     'content-encoding': 'gzip',
+341 silly get     'cache-control': 'max-age=300',
+341 silly get     'content-length': '1460',
+341 silly get     'accept-ranges': 'bytes',
+341 silly get     date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+341 silly get     via: '1.1 varnish',
+341 silly get     age: '0',
+341 silly get     connection: 'keep-alive',
+341 silly get     'x-served-by': 'cache-hkg6820-HKG',
+341 silly get     'x-cache': 'MISS',
+341 silly get     'x-cache-hits': '0',
+341 silly get     'x-timer': 'S1492945382.124402,VS0,VE186',
+341 silly get     vary: 'Accept-Encoding' } ]
+342 verbose get saving except to /home/sonnt/.npm/registry.npmjs.org/except/.cache.json
+343 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+344 http 200 https://registry.npmjs.org/pluralizers
+345 verbose headers { server: 'nginx/1.10.1',
+345 verbose headers   'content-type': 'application/json',
+345 verbose headers   'last-modified': 'Tue, 08 Nov 2016 07:50:37 GMT',
+345 verbose headers   etag: 'W/"582183cd-2554"',
+345 verbose headers   'content-encoding': 'gzip',
+345 verbose headers   'cache-control': 'max-age=300',
+345 verbose headers   'content-length': '2166',
+345 verbose headers   'accept-ranges': 'bytes',
+345 verbose headers   date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+345 verbose headers   via: '1.1 varnish',
+345 verbose headers   age: '0',
+345 verbose headers   connection: 'keep-alive',
+345 verbose headers   'x-served-by': 'cache-hkg6823-HKG',
+345 verbose headers   'x-cache': 'MISS',
+345 verbose headers   'x-cache-hits': '0',
+345 verbose headers   'x-timer': 'S1492945382.108874,VS0,VE221',
+345 verbose headers   vary: 'Accept-Encoding' }
+346 silly get cb [ 200,
+346 silly get   { server: 'nginx/1.10.1',
+346 silly get     'content-type': 'application/json',
+346 silly get     'last-modified': 'Tue, 08 Nov 2016 07:50:37 GMT',
+346 silly get     etag: 'W/"582183cd-2554"',
+346 silly get     'content-encoding': 'gzip',
+346 silly get     'cache-control': 'max-age=300',
+346 silly get     'content-length': '2166',
+346 silly get     'accept-ranges': 'bytes',
+346 silly get     date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+346 silly get     via: '1.1 varnish',
+346 silly get     age: '0',
+346 silly get     connection: 'keep-alive',
+346 silly get     'x-served-by': 'cache-hkg6823-HKG',
+346 silly get     'x-cache': 'MISS',
+346 silly get     'x-cache-hits': '0',
+346 silly get     'x-timer': 'S1492945382.108874,VS0,VE221',
+346 silly get     vary: 'Accept-Encoding' } ]
+347 verbose get saving pluralizers to /home/sonnt/.npm/registry.npmjs.org/pluralizers/.cache.json
+348 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+349 silly addNameRange number 2 { name: 'except', range: '>=0.1.3 <0.2.0', hasData: true }
+350 silly addNameRange versions [ 'except', [ '0.1.0', '0.1.1', '0.1.2', '0.1.3' ] ]
+351 silly addNamed except@0.1.3
+352 verbose addNamed "0.1.3" is a plain semver version for except
+353 silly addNameRange number 2 { name: 'pluralizers', range: '>=0.1.4 <0.2.0', hasData: true }
+354 silly addNameRange versions [ 'pluralizers',
+354 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5' ] ]
+355 silly addNamed pluralizers@0.1.5
+356 verbose addNamed "0.1.5" is a plain semver version for pluralizers
+357 silly cache afterAdd except@0.1.3
+358 verbose afterAdd /home/sonnt/.npm/except/0.1.3/package/package.json not in flight; writing
+359 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+360 silly cache afterAdd pluralizers@0.1.5
+361 verbose afterAdd /home/sonnt/.npm/pluralizers/0.1.5/package/package.json not in flight; writing
+362 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+363 verbose afterAdd /home/sonnt/.npm/except/0.1.3/package/package.json written
+364 verbose afterAdd /home/sonnt/.npm/pluralizers/0.1.5/package/package.json written
+365 silly install resolved [ { name: 'date-names',
+365 silly install resolved     version: '0.1.8',
+365 silly install resolved     description: 'Repository of localized month and day names',
+365 silly install resolved     main: 'index.js',
+365 silly install resolved     repository:
+365 silly install resolved      { type: 'git',
+365 silly install resolved        url: 'git+https://github.com/martinandert/date-names.git' },
+365 silly install resolved     keywords:
+365 silly install resolved      [ 'localization',
+365 silly install resolved        'translation',
+365 silly install resolved        'translate',
+365 silly install resolved        'localize',
+365 silly install resolved        'month',
+365 silly install resolved        'weekday',
+365 silly install resolved        'day',
+365 silly install resolved        'names',
+365 silly install resolved        'i18n',
+365 silly install resolved        'l10n' ],
+365 silly install resolved     author: { name: 'Martin Andert', email: 'mandert@gmail.com' },
+365 silly install resolved     license: 'MIT',
+365 silly install resolved     bugs: { url: 'https://github.com/martinandert/date-names/issues' },
+365 silly install resolved     homepage: 'https://github.com/martinandert/date-names',
+365 silly install resolved     devDependencies: { jshint: '^2.5.10', mocha: '^2.0.1' },
+365 silly install resolved     gitHead: '37c14006bcb6aa2b3506920e6f3c701833b82843',
+365 silly install resolved     _id: 'date-names@0.1.8',
+365 silly install resolved     scripts: {},
+365 silly install resolved     _shasum: '56c916622b658f60185c998719419084c0b0db4b',
+365 silly install resolved     _from: 'date-names@>=0.1.7 <0.2.0',
+365 silly install resolved     _npmVersion: '3.10.8',
+365 silly install resolved     _nodeVersion: '6.9.1',
+365 silly install resolved     _npmUser: { name: 'martinandert', email: 'mandert@gmail.com' },
+365 silly install resolved     dist:
+365 silly install resolved      { shasum: '56c916622b658f60185c998719419084c0b0db4b',
+365 silly install resolved        tarball: 'https://registry.npmjs.org/date-names/-/date-names-0.1.8.tgz' },
+365 silly install resolved     maintainers: [ [Object] ],
+365 silly install resolved     _npmOperationalInternal:
+365 silly install resolved      { host: 'packages-18-east.internal.npmjs.com',
+365 silly install resolved        tmp: 'tmp/date-names-0.1.8.tgz_1478513504352_0.7028233197052032' },
+365 silly install resolved     directories: {},
+365 silly install resolved     _resolved: 'https://registry.npmjs.org/date-names/-/date-names-0.1.8.tgz',
+365 silly install resolved     readme: 'ERROR: No README data found!' },
+365 silly install resolved   { name: 'extend',
+365 silly install resolved     author:
+365 silly install resolved      { name: 'Stefan Thomas',
+365 silly install resolved        email: 'justmoon@members.fsf.org',
+365 silly install resolved        url: 'http://www.justmoon.net' },
+365 silly install resolved     version: '3.0.0',
+365 silly install resolved     description: 'Port of jQuery.extend for node.js and the browser',
+365 silly install resolved     main: 'index',
+365 silly install resolved     scripts:
+365 silly install resolved      { test: 'npm run lint && node test/index.js && npm run coverage-quiet',
+365 silly install resolved        coverage: 'covert test/index.js',
+365 silly install resolved        'coverage-quiet': 'covert test/index.js --quiet',
+365 silly install resolved        lint: 'npm run jscs && npm run eslint',
+365 silly install resolved        jscs: 'jscs *.js */*.js',
+365 silly install resolved        eslint: 'eslint *.js */*.js' },
+365 silly install resolved     contributors: [ [Object] ],
+365 silly install resolved     keywords: [ 'extend', 'clone', 'merge' ],
+365 silly install resolved     repository:
+365 silly install resolved      { type: 'git',
+365 silly install resolved        url: 'git+https://github.com/justmoon/node-extend.git' },
+365 silly install resolved     dependencies: {},
+365 silly install resolved     devDependencies:
+365 silly install resolved      { tape: '^4.0.0',
+365 silly install resolved        covert: '^1.1.0',
+365 silly install resolved        jscs: '^1.13.1',
+365 silly install resolved        eslint: '^0.24.0' },
+365 silly install resolved     license: 'MIT',
+365 silly install resolved     gitHead: '148e7270cab2e9413af2cd0cab147070d755ed6d',
+365 silly install resolved     bugs: { url: 'https://github.com/justmoon/node-extend/issues' },
+365 silly install resolved     homepage: 'https://github.com/justmoon/node-extend#readme',
+365 silly install resolved     _id: 'extend@3.0.0',
+365 silly install resolved     _shasum: '5a474353b9f3353ddd8176dfd37b91c83a46f1d4',
+365 silly install resolved     _from: 'extend@>=3.0.0 <4.0.0',
+365 silly install resolved     _npmVersion: '2.11.3',
+365 silly install resolved     _nodeVersion: '2.3.1',
+365 silly install resolved     _npmUser: { name: 'ljharb', email: 'ljharb@gmail.com' },
+365 silly install resolved     dist:
+365 silly install resolved      { shasum: '5a474353b9f3353ddd8176dfd37b91c83a46f1d4',
+365 silly install resolved        tarball: 'https://registry.npmjs.org/extend/-/extend-3.0.0.tgz' },
+365 silly install resolved     maintainers: [ [Object], [Object] ],
+365 silly install resolved     directories: {},
+365 silly install resolved     _resolved: 'https://registry.npmjs.org/extend/-/extend-3.0.0.tgz',
+365 silly install resolved     readme: 'ERROR: No README data found!' },
+365 silly install resolved   { name: 'sprintf-js',
+365 silly install resolved     version: '1.0.3',
+365 silly install resolved     description: 'JavaScript sprintf implementation',
+365 silly install resolved     author:
+365 silly install resolved      { name: 'Alexandru Marasteanu',
+365 silly install resolved        email: 'hello@alexei.ro',
+365 silly install resolved        url: 'http://alexei.ro/' },
+365 silly install resolved     main: 'src/sprintf.js',
+365 silly install resolved     scripts: { test: 'mocha test/test.js' },
+365 silly install resolved     repository:
+365 silly install resolved      { type: 'git',
+365 silly install resolved        url: 'git+https://github.com/alexei/sprintf.js.git' },
+365 silly install resolved     license: 'BSD-3-Clause',
+365 silly install resolved     devDependencies:
+365 silly install resolved      { mocha: '*',
+365 silly install resolved        grunt: '*',
+365 silly install resolved        'grunt-contrib-watch': '*',
+365 silly install resolved        'grunt-contrib-uglify': '*' },
+365 silly install resolved     gitHead: '747b806c2dab5b64d5c9958c42884946a187c3b1',
+365 silly install resolved     bugs: { url: 'https://github.com/alexei/sprintf.js/issues' },
+365 silly install resolved     homepage: 'https://github.com/alexei/sprintf.js#readme',
+365 silly install resolved     _id: 'sprintf-js@1.0.3',
+365 silly install resolved     _shasum: '04e6926f662895354f3dd015203633b857297e2c',
+365 silly install resolved     _from: 'sprintf-js@>=1.0.3 <2.0.0',
+365 silly install resolved     _npmVersion: '2.10.1',
+365 silly install resolved     _nodeVersion: '0.12.4',
+365 silly install resolved     _npmUser: { name: 'alexei', email: 'hello@alexei.ro' },
+365 silly install resolved     dist:
+365 silly install resolved      { shasum: '04e6926f662895354f3dd015203633b857297e2c',
+365 silly install resolved        tarball: 'https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz' },
+365 silly install resolved     maintainers: [ [Object] ],
+365 silly install resolved     directories: {},
+365 silly install resolved     _resolved: 'https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz',
+365 silly install resolved     readme: 'ERROR: No README data found!' },
+365 silly install resolved   { name: 'except',
+365 silly install resolved     version: '0.1.3',
+365 silly install resolved     description: 'A function that returns a copy of the plain object given as first argument but without the keys provided as the other argument(s)',
+365 silly install resolved     main: 'index.js',
+365 silly install resolved     scripts: { test: 'make test' },
+365 silly install resolved     homepage: 'https://github.com/martinandert/except',
+365 silly install resolved     repository:
+365 silly install resolved      { type: 'git',
+365 silly install resolved        url: 'git+https://github.com/martinandert/except.git' },
+365 silly install resolved     bugs: { url: 'https://github.com/martinandert/except/issues' },
+365 silly install resolved     keywords: [ 'object', 'except', 'omit', 'without' ],
+365 silly install resolved     author: { name: 'Martin Andert', email: 'mandert@gmail.com' },
+365 silly install resolved     license: 'MIT',
+365 silly install resolved     dependencies: { indexof: '0.0.1' },
+365 silly install resolved     devDependencies: { jshint: '^2.5.10', mocha: '^2.0.1' },
+365 silly install resolved     gitHead: 'ac9398ae43cf268efaa2ff815d47acab0a742978',
+365 silly install resolved     _id: 'except@0.1.3',
+365 silly install resolved     _shasum: '98261c91958551536b44482238e9783fb73d292a',
+365 silly install resolved     _from: 'except@>=0.1.3 <0.2.0',
+365 silly install resolved     _npmVersion: '1.4.23',
+365 silly install resolved     _npmUser: { name: 'martinandert', email: 'mandert@gmail.com' },
+365 silly install resolved     maintainers: [ [Object] ],
+365 silly install resolved     dist:
+365 silly install resolved      { shasum: '98261c91958551536b44482238e9783fb73d292a',
+365 silly install resolved        tarball: 'https://registry.npmjs.org/except/-/except-0.1.3.tgz' },
+365 silly install resolved     directories: {},
+365 silly install resolved     _resolved: 'https://registry.npmjs.org/except/-/except-0.1.3.tgz',
+365 silly install resolved     readme: 'ERROR: No README data found!' },
+365 silly install resolved   { name: 'pluralizers',
+365 silly install resolved     version: '0.1.5',
+365 silly install resolved     description: 'Repository of localized pluralization functions',
+365 silly install resolved     main: 'index.js',
+365 silly install resolved     repository:
+365 silly install resolved      { type: 'git',
+365 silly install resolved        url: 'git+https://github.com/martinandert/pluralizers.git' },
+365 silly install resolved     keywords:
+365 silly install resolved      [ 'localization',
+365 silly install resolved        'translation',
+365 silly install resolved        'translate',
+365 silly install resolved        'localize',
+365 silly install resolved        'plural',
+365 silly install resolved        'pluralization',
+365 silly install resolved        'pluralize',
+365 silly install resolved        'i18n',
+365 silly install resolved        'l10n' ],
+365 silly install resolved     author: { name: 'Martin Andert', email: 'mandert@gmail.com' },
+365 silly install resolved     license: 'MIT',
+365 silly install resolved     bugs: { url: 'https://github.com/martinandert/pluralizers/issues' },
+365 silly install resolved     homepage: 'https://github.com/martinandert/pluralizers',
+365 silly install resolved     devDependencies: { jshint: '^2.5.10', mocha: '^2.0.1' },
+365 silly install resolved     gitHead: 'c6d410303617f92bf50e35d157b7142d3752d406',
+365 silly install resolved     _id: 'pluralizers@0.1.5',
+365 silly install resolved     scripts: {},
+365 silly install resolved     _shasum: '9b5de28afe16b92c9c056cdf5100acddd752be0d',
+365 silly install resolved     _from: 'pluralizers@>=0.1.4 <0.2.0',
+365 silly install resolved     _npmVersion: '3.10.8',
+365 silly install resolved     _nodeVersion: '6.9.1',
+365 silly install resolved     _npmUser: { name: 'martinandert', email: 'mandert@gmail.com' },
+365 silly install resolved     dist:
+365 silly install resolved      { shasum: '9b5de28afe16b92c9c056cdf5100acddd752be0d',
+365 silly install resolved        tarball: 'https://registry.npmjs.org/pluralizers/-/pluralizers-0.1.5.tgz' },
+365 silly install resolved     maintainers: [ [Object] ],
+365 silly install resolved     _npmOperationalInternal:
+365 silly install resolved      { host: 'packages-18-east.internal.npmjs.com',
+365 silly install resolved        tmp: 'tmp/pluralizers-0.1.5.tgz_1478591436634_0.6014578924514353' },
+365 silly install resolved     directories: {},
+365 silly install resolved     _resolved: 'https://registry.npmjs.org/pluralizers/-/pluralizers-0.1.5.tgz',
+365 silly install resolved     readme: 'ERROR: No README data found!' } ]
+366 info install date-names@0.1.8 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+367 info install extend@3.0.0 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+368 info install sprintf-js@1.0.3 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+369 info install except@0.1.3 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+370 info install pluralizers@0.1.5 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+371 info installOne date-names@0.1.8
+372 verbose installOne of date-names to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart not in flight; installing
+373 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+374 info installOne extend@3.0.0
+375 verbose installOne of extend to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart not in flight; installing
+376 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+377 info installOne sprintf-js@1.0.3
+378 verbose installOne of sprintf-js to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart not in flight; installing
+379 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+380 info installOne except@0.1.3
+381 verbose installOne of except to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart not in flight; installing
+382 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+383 info installOne pluralizers@0.1.5
+384 verbose installOne of pluralizers to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart not in flight; installing
+385 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+386 verbose lock using /home/sonnt/.npm/_locks/date-names-a4c2ad47b0bfdc7e.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+387 verbose lock using /home/sonnt/.npm/_locks/sprintf-js-4eec34c6bf7d3c64.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+388 silly install write writing date-names 0.1.8 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+389 silly install write writing sprintf-js 1.0.3 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+390 verbose lock using /home/sonnt/.npm/_locks/extend-e6c8a31717c9ccb5.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+391 verbose lock using /home/sonnt/.npm/_locks/except-58183fbc73215d7d.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+392 verbose lock using /home/sonnt/.npm/_locks/pluralizers-5a9533f2857675f7.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+393 silly install write writing extend 3.0.0 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+394 silly install write writing except 0.1.3 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+395 silly install write writing pluralizers 0.1.5 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+396 verbose unbuild node_modules/counterpart/node_modules/date-names
+397 verbose unbuild node_modules/counterpart/node_modules/sprintf-js
+398 verbose unbuild node_modules/counterpart/node_modules/extend
+399 verbose unbuild node_modules/counterpart/node_modules/except
+400 verbose unbuild node_modules/counterpart/node_modules/pluralizers
+401 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names is being purged from base /home/sonnt/ruby/doantotnghiep
+402 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+403 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js is being purged from base /home/sonnt/ruby/doantotnghiep
+404 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+405 verbose tar unpack /home/sonnt/.npm/date-names/0.1.8/package.tgz
+406 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+407 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names is being purged
+408 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+409 verbose tar unpack /home/sonnt/.npm/sprintf-js/1.0.3/package.tgz
+410 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+411 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js is being purged
+412 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+413 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend is being purged from base /home/sonnt/ruby/doantotnghiep
+414 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+415 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except is being purged from base /home/sonnt/ruby/doantotnghiep
+416 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+417 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers is being purged from base /home/sonnt/ruby/doantotnghiep
+418 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+419 silly gunzTarPerm modes [ '775', '664' ]
+420 silly gunzTarPerm modes [ '775', '664' ]
+421 verbose tar unpack /home/sonnt/.npm/extend/3.0.0/package.tgz
+422 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+423 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend is being purged
+424 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+425 verbose tar unpack /home/sonnt/.npm/except/0.1.3/package.tgz
+426 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+427 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except is being purged
+428 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+429 verbose tar unpack /home/sonnt/.npm/pluralizers/0.1.5/package.tgz
+430 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+431 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers is being purged
+432 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+433 silly gunzTarPerm modes [ '775', '664' ]
+434 silly gunzTarPerm modes [ '775', '664' ]
+435 silly gunzTarPerm modes [ '775', '664' ]
+436 silly gunzTarPerm extractEntry package.json
+437 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+438 silly gunzTarPerm extractEntry package.json
+439 silly gunzTarPerm extractEntry package.json
+440 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+441 silly gunzTarPerm extractEntry package.json
+442 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+443 silly gunzTarPerm extractEntry package.json
+444 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+445 silly gunzTarPerm extractEntry README.md
+446 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+447 silly gunzTarPerm extractEntry LICENSE
+448 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+449 silly gunzTarPerm extractEntry .npmignore
+450 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+451 silly gunzTarPerm extractEntry README.md
+452 silly gunzTarPerm extractEntry .npmignore
+453 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+454 silly gunzTarPerm extractEntry README.md
+455 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+456 silly gunzTarPerm extractEntry README.md
+457 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+458 silly gunzTarPerm extractEntry index.js
+459 silly gunzTarPerm extractEntry README.md
+460 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+461 silly gunzTarPerm extractEntry LICENSE
+462 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+463 silly gunzTarPerm extractEntry ru.js
+464 silly gunzTarPerm modified mode [ 'ru.js', 420, 436 ]
+465 silly gunzTarPerm extractEntry en.js
+466 silly gunzTarPerm modified mode [ 'en.js', 420, 436 ]
+467 silly gunzTarPerm extractEntry LICENSE
+468 silly gunzTarPerm extractEntry gruntfile.js
+469 silly gunzTarPerm extractEntry LICENSE
+470 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+471 silly gunzTarPerm extractEntry index.js
+472 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+473 silly gunzTarPerm extractEntry ru.js
+474 silly gunzTarPerm modified mode [ 'ru.js', 420, 436 ]
+475 silly gunzTarPerm extractEntry de.js
+476 silly gunzTarPerm modified mode [ 'de.js', 420, 436 ]
+477 silly gunzTarPerm extractEntry pt-br.js
+478 silly gunzTarPerm modified mode [ 'pt-br.js', 420, 436 ]
+479 silly gunzTarPerm extractEntry fi.js
+480 silly gunzTarPerm modified mode [ 'fi.js', 420, 436 ]
+481 silly gunzTarPerm extractEntry dist/angular-sprintf.min.js
+482 silly gunzTarPerm extractEntry dist/sprintf.min.js
+483 silly gunzTarPerm extractEntry CHANGELOG.md
+484 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
+485 silly gunzTarPerm extractEntry .jscs.json
+486 silly gunzTarPerm modified mode [ '.jscs.json', 420, 436 ]
+487 silly gunzTarPerm extractEntry pt-br.js
+488 silly gunzTarPerm modified mode [ 'pt-br.js', 420, 436 ]
+489 silly gunzTarPerm extractEntry es.js
+490 silly gunzTarPerm modified mode [ 'es.js', 420, 436 ]
+491 silly gunzTarPerm extractEntry index.js
+492 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+493 silly gunzTarPerm extractEntry de.js
+494 silly gunzTarPerm modified mode [ 'de.js', 420, 436 ]
+495 silly gunzTarPerm extractEntry dist/angular-sprintf.min.js.map
+496 silly gunzTarPerm extractEntry component.json
+497 silly gunzTarPerm modified mode [ 'component.json', 420, 436 ]
+498 silly gunzTarPerm extractEntry index.js
+499 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+500 silly gunzTarPerm extractEntry en.js
+501 silly gunzTarPerm modified mode [ 'en.js', 420, 436 ]
+502 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/package.json
+503 silly gunzTarPerm extractEntry es.js
+504 silly gunzTarPerm modified mode [ 'es.js', 420, 436 ]
+505 silly gunzTarPerm extractEntry dist/angular-sprintf.min.map
+506 silly gunzTarPerm extractEntry dist/sprintf.min.js.map
+507 silly gunzTarPerm extractEntry .eslintrc
+508 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
+509 silly gunzTarPerm extractEntry .travis.yml
+510 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+511 info preinstall except@0.1.3
+512 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/package.json
+513 silly gunzTarPerm extractEntry dist/sprintf.min.map
+514 silly gunzTarPerm extractEntry bower.json
+515 silly prepareForInstallMany adding indexof@0.0.1 from except dependencies
+516 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/package.json
+517 silly gunzTarPerm extractEntry src/angular-sprintf.js
+518 silly gunzTarPerm extractEntry src/sprintf.js
+519 silly cache add args [ 'indexof@0.0.1', null ]
+520 verbose cache add spec indexof@0.0.1
+521 silly cache add parsed spec Result {
+521 silly cache add   raw: 'indexof@0.0.1',
+521 silly cache add   scope: null,
+521 silly cache add   name: 'indexof',
+521 silly cache add   rawSpec: '0.0.1',
+521 silly cache add   spec: '0.0.1',
+521 silly cache add   type: 'version' }
+522 silly addNamed indexof@0.0.1
+523 verbose addNamed "0.0.1" is a plain semver version for indexof
+524 silly mapToRegistry name indexof
+525 silly mapToRegistry using default registry
+526 silly mapToRegistry registry https://registry.npmjs.org/
+527 silly mapToRegistry data Result {
+527 silly mapToRegistry   raw: 'indexof',
+527 silly mapToRegistry   scope: null,
+527 silly mapToRegistry   name: 'indexof',
+527 silly mapToRegistry   rawSpec: '',
+527 silly mapToRegistry   spec: 'latest',
+527 silly mapToRegistry   type: 'tag' }
+528 silly mapToRegistry uri https://registry.npmjs.org/indexof
+529 verbose addNameVersion registry:https://registry.npmjs.org/indexof not in flight; fetching
+530 verbose request uri https://registry.npmjs.org/indexof
+531 verbose request no auth needed
+532 info attempt registry request try #1 at 6:03:02 PM
+533 verbose etag W/"54e089c8-423"
+534 verbose lastModified Sun, 15 Feb 2015 11:58:00 GMT
+535 http request GET https://registry.npmjs.org/indexof
+536 silly gunzTarPerm extractEntry demo/angular.html
+537 silly gunzTarPerm extractEntry test/test.js
+538 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers/package.json
+539 info preinstall pluralizers@0.1.5
+540 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers/package.json
+541 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names/package.json
+542 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers/package.json
+543 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend/package.json
+544 info preinstall date-names@0.1.8
+545 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names/package.json
+546 info preinstall extend@3.0.0
+547 silly install resolved []
+548 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+549 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+550 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend/package.json
+551 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names/package.json
+552 info linkStuff pluralizers@0.1.5
+553 silly linkStuff pluralizers@0.1.5 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules as its parent node_modules
+554 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend/package.json
+555 silly install resolved []
+556 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+557 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+558 silly install resolved []
+559 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+560 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+561 info linkStuff date-names@0.1.8
+562 silly linkStuff date-names@0.1.8 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules as its parent node_modules
+563 verbose linkBins pluralizers@0.1.5
+564 verbose linkMans pluralizers@0.1.5
+565 verbose rebuildBundles pluralizers@0.1.5
+566 info install pluralizers@0.1.5
+567 info linkStuff extend@3.0.0
+568 silly linkStuff extend@3.0.0 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules as its parent node_modules
+569 info postinstall pluralizers@0.1.5
+570 verbose unlock done using /home/sonnt/.npm/_locks/pluralizers-5a9533f2857675f7.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/pluralizers
+571 verbose linkBins date-names@0.1.8
+572 verbose linkMans date-names@0.1.8
+573 verbose rebuildBundles date-names@0.1.8
+574 info install date-names@0.1.8
+575 info postinstall date-names@0.1.8
+576 verbose linkBins extend@3.0.0
+577 verbose linkMans extend@3.0.0
+578 verbose rebuildBundles extend@3.0.0
+579 info install extend@3.0.0
+580 verbose unlock done using /home/sonnt/.npm/_locks/date-names-a4c2ad47b0bfdc7e.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/date-names
+581 info postinstall extend@3.0.0
+582 verbose unlock done using /home/sonnt/.npm/_locks/extend-e6c8a31717c9ccb5.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/extend
+583 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js/package.json
+584 info preinstall sprintf-js@1.0.3
+585 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js/package.json
+586 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js/package.json
+587 silly install resolved []
+588 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+589 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+590 info linkStuff sprintf-js@1.0.3
+591 silly linkStuff sprintf-js@1.0.3 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules as its parent node_modules
+592 verbose linkBins sprintf-js@1.0.3
+593 verbose linkMans sprintf-js@1.0.3
+594 verbose rebuildBundles sprintf-js@1.0.3
+595 info install sprintf-js@1.0.3
+596 info postinstall sprintf-js@1.0.3
+597 verbose unlock done using /home/sonnt/.npm/_locks/sprintf-js-4eec34c6bf7d3c64.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/sprintf-js
+598 http 304 https://registry.npmjs.org/indexof
+599 verbose headers { date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+599 verbose headers   via: '1.1 varnish',
+599 verbose headers   'cache-control': 'max-age=300',
+599 verbose headers   etag: 'W/"54e089c8-423"',
+599 verbose headers   age: '4',
+599 verbose headers   connection: 'keep-alive',
+599 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+599 verbose headers   'x-cache': 'HIT',
+599 verbose headers   'x-cache-hits': '3',
+599 verbose headers   'x-timer': 'S1492945383.681963,VS0,VE0',
+599 verbose headers   vary: 'Accept-Encoding' }
+600 silly get cb [ 304,
+600 silly get   { date: 'Sun, 23 Apr 2017 11:03:02 GMT',
+600 silly get     via: '1.1 varnish',
+600 silly get     'cache-control': 'max-age=300',
+600 silly get     etag: 'W/"54e089c8-423"',
+600 silly get     age: '4',
+600 silly get     connection: 'keep-alive',
+600 silly get     'x-served-by': 'cache-hkg6822-HKG',
+600 silly get     'x-cache': 'HIT',
+600 silly get     'x-cache-hits': '3',
+600 silly get     'x-timer': 'S1492945383.681963,VS0,VE0',
+600 silly get     vary: 'Accept-Encoding' } ]
+601 verbose etag https://registry.npmjs.org/indexof from cache
+602 verbose get saving indexof to /home/sonnt/.npm/registry.npmjs.org/indexof/.cache.json
+603 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+604 silly cache afterAdd indexof@0.0.1
+605 verbose afterAdd /home/sonnt/.npm/indexof/0.0.1/package/package.json not in flight; writing
+606 verbose correctMkdir /home/sonnt/.npm correctMkdir not in flight; initializing
+607 verbose afterAdd /home/sonnt/.npm/indexof/0.0.1/package/package.json written
+608 silly install resolved [ { name: 'indexof',
+608 silly install resolved     description: 'Microsoft sucks',
+608 silly install resolved     version: '0.0.1',
+608 silly install resolved     keywords: [ 'index', 'array', 'indexOf' ],
+608 silly install resolved     dependencies: {},
+608 silly install resolved     component: { scripts: [Object] },
+608 silly install resolved     _id: 'indexof@0.0.1',
+608 silly install resolved     dist:
+608 silly install resolved      { shasum: '82dc336d232b9062179d05ab3293a66059fd435d',
+608 silly install resolved        tarball: 'https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz' },
+608 silly install resolved     maintainers: [ [Object] ],
+608 silly install resolved     directories: {},
+608 silly install resolved     _shasum: '82dc336d232b9062179d05ab3293a66059fd435d',
+608 silly install resolved     _resolved: 'https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz',
+608 silly install resolved     _from: 'indexof@0.0.1',
+608 silly install resolved     readme: 'ERROR: No README data found!' } ]
+609 info install indexof@0.0.1 into /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+610 info installOne indexof@0.0.1
+611 verbose installOne of indexof to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except not in flight; installing
+612 verbose correctMkdir /home/sonnt/.npm/_locks correctMkdir not in flight; initializing
+613 verbose lock using /home/sonnt/.npm/_locks/indexof-2e2e5929469992d0.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+614 silly install write writing indexof 0.0.1 to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+615 verbose unbuild node_modules/counterpart/node_modules/except/node_modules/indexof
+616 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof is being purged from base /home/sonnt/ruby/doantotnghiep
+617 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+618 verbose tar unpack /home/sonnt/.npm/indexof/0.0.1/package.tgz
+619 verbose tar unpacking to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+620 silly gentlyRm /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof is being purged
+621 verbose gentlyRm don't care about contents; nuking /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+622 silly gunzTarPerm modes [ '775', '664' ]
+623 silly gunzTarPerm extractEntry package.json
+624 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+625 silly gunzTarPerm extractEntry .npmignore
+626 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+627 silly gunzTarPerm extractEntry index.js
+628 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+629 silly gunzTarPerm extractEntry component.json
+630 silly gunzTarPerm modified mode [ 'component.json', 420, 436 ]
+631 silly gunzTarPerm extractEntry Makefile
+632 silly gunzTarPerm modified mode [ 'Makefile', 420, 436 ]
+633 silly gunzTarPerm extractEntry Readme.md
+634 silly gunzTarPerm modified mode [ 'Readme.md', 420, 436 ]
+635 verbose write writing to /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof/package.json
+636 info preinstall indexof@0.0.1
+637 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof/package.json
+638 verbose readDependencies loading dependencies from /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof/package.json
+639 silly install resolved []
+640 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+641 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+642 info linkStuff indexof@0.0.1
+643 silly linkStuff indexof@0.0.1 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules as its parent node_modules
+644 verbose linkBins indexof@0.0.1
+645 verbose linkMans indexof@0.0.1
+646 verbose rebuildBundles indexof@0.0.1
+647 info install indexof@0.0.1
+648 info postinstall indexof@0.0.1
+649 verbose unlock done using /home/sonnt/.npm/_locks/indexof-2e2e5929469992d0.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except/node_modules/indexof
+650 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+651 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+652 info linkStuff except@0.1.3
+653 silly linkStuff except@0.1.3 has /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules as its parent node_modules
+654 verbose linkBins except@0.1.3
+655 verbose linkMans except@0.1.3
+656 verbose rebuildBundles except@0.1.3
+657 verbose rebuildBundles [ 'indexof' ]
+658 info install except@0.1.3
+659 info postinstall except@0.1.3
+660 verbose unlock done using /home/sonnt/.npm/_locks/except-58183fbc73215d7d.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart/node_modules/except
+661 verbose about to build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+662 info build /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+663 info linkStuff counterpart@0.17.8
+664 silly linkStuff counterpart@0.17.8 has /home/sonnt/ruby/doantotnghiep/node_modules as its parent node_modules
+665 verbose linkBins counterpart@0.17.8
+666 verbose linkMans counterpart@0.17.8
+667 verbose rebuildBundles counterpart@0.17.8
+668 verbose rebuildBundles [ 'date-names', 'except', 'extend', 'pluralizers', 'sprintf-js' ]
+669 info install counterpart@0.17.8
+670 info postinstall counterpart@0.17.8
+671 verbose unlock done using /home/sonnt/.npm/_locks/counterpart-086d34e28624dfa6.lock for /home/sonnt/ruby/doantotnghiep/node_modules/counterpart
+672 info build /home/sonnt/ruby/doantotnghiep
+673 info linkStuff doantotnghiep@1.0.0
+674 silly linkStuff doantotnghiep@1.0.0 has /home/sonnt/ruby as its parent node_modules
+675 verbose linkBins doantotnghiep@1.0.0
+676 verbose linkMans doantotnghiep@1.0.0
+677 verbose rebuildBundles doantotnghiep@1.0.0
+678 verbose rebuildBundles [ '.bin',
+678 verbose rebuildBundles   '.cache',
+678 verbose rebuildBundles   'babel-core',
+678 verbose rebuildBundles   'babel-loader',
+678 verbose rebuildBundles   'babel-plugin-add-module-exports',
+678 verbose rebuildBundles   'babel-plugin-transform-class-properties',
+678 verbose rebuildBundles   'babel-plugin-transform-es3-member-expression-literals',
+678 verbose rebuildBundles   'babel-plugin-transform-es3-property-literals',
+678 verbose rebuildBundles   'babel-preset-es2015',
+678 verbose rebuildBundles   'babel-preset-react',
+678 verbose rebuildBundles   'babel-preset-stage-0',
+678 verbose rebuildBundles   'counterpart',
+678 verbose rebuildBundles   'material-design-icons',
+678 verbose rebuildBundles   'material-ui',
+678 verbose rebuildBundles   'pluralize',
+678 verbose rebuildBundles   'react',
+678 verbose rebuildBundles   'react-addons-update',
+678 verbose rebuildBundles   'react-dom',
+678 verbose rebuildBundles   'react-motion',
+678 verbose rebuildBundles   'react-router',
+678 verbose rebuildBundles   'react-select',
+678 verbose rebuildBundles   'react-sound',
+678 verbose rebuildBundles   'react-tap-event-plugin',
+678 verbose rebuildBundles   'react-toastr',
+678 verbose rebuildBundles   'webpack',
+678 verbose rebuildBundles   'webpack-dev-server' ]
+679 info install doantotnghiep@1.0.0
+680 info postinstall doantotnghiep@1.0.0
+681 info prepublish doantotnghiep@1.0.0
+682 verbose validateInstall loading /home/sonnt/ruby/doantotnghiep/package.json for validation
+683 verbose stack Error: The package webpack@1.14.0 does not satisfy its siblings' peerDependencies requirements!
+683 verbose stack     at /usr/lib/node_modules/npm/lib/install.js:125:32
+683 verbose stack     at /usr/lib/node_modules/npm/lib/install.js:268:7
+683 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+683 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+683 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+683 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+683 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+683 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+683 verbose stack     at cb (/usr/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+683 verbose stack     at /usr/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+684 verbose cwd /home/sonnt/ruby/doantotnghiep
+685 error Linux 3.19.0-51-generic
+686 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install"
+687 error node v4.4.4
+688 error npm  v2.15.1
+689 error code EPEERINVALID
+690 error peerinvalid The package webpack@1.14.0 does not satisfy its siblings' peerDependencies requirements!
+690 error peerinvalid Peer babel-loader@6.4.1 wants webpack@1 || 2 || ^2.1.0-beta || ^2.2.0-rc
+690 error peerinvalid Peer webpack-dev-server@2.4.2 wants webpack@^2.2.0
+691 verbose exit [ 1, true ]

@@ -4,8 +4,8 @@ class CreatePlayLists < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :view
       t.text :describe
+      t.string :play_list_type
       t.references :user, index: true, foreign: true
-      t.references :song, index: true, foreign: true
       t.timestamps
     end
   end

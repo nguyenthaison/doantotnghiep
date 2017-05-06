@@ -12,12 +12,15 @@ class Song < ApplicationRecord
   has_many :albums, through: :album_songs
   has_many :author_songs, dependent: :destroy
   has_many :authors, through: :author_songs
+  has_many :play_list_songs, dependent: :destroy
+  has_many :play_lists, through: :play_list_songs
   has_many :music_type_songs, dependent: :destroy
   has_many :music_types, through: :music_type_songs
   has_many :singer_songs, dependent: :destroy
   has_many :singers, through: :singer_songs
-  has_many :lyrics
+  has_many :lyrics, dependent: :destroy
   has_many :ranks, as: :target, dependent: :destroy
+  has_many :favorite_musics, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 100, minimum: 1}
 
@@ -37,6 +40,16 @@ class Song < ApplicationRecord
     ]
 
   scope :filter_by_country, -> country do
+  end
+
+  scope :filter_by_music_type, -> id do
+    song = Song.find id
+    name_music_types = song.music_types.pluck(:name)
+    joins(:music_types).where("music_types.name IN (?)", name_music_types).uniq
+  end
+
+  scope :filter_by_singer, -> singer_id do
+    joins(:singers).where("singers.id = ?", singer_id)
   end
 
   def create_singer_lyric params, current_user
@@ -63,7 +76,7 @@ class Song < ApplicationRecord
   def json_data options = {}
     options = options.deep_merge({
       include: {
-        singers: {},
+        singers: {include: {favorite_articles: {}}},
         author_songs: {only: ["id", "name"]},
         music_types: {},
         lyrics: {include: {user: {only: ["id", "name"]}}},

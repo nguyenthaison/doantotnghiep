@@ -2,6 +2,6 @@ Fabricator :singer do
   name
   age
   content
-  countries_id
+  country_id
   total_favorite
 end

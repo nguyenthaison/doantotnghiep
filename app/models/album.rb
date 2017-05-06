@@ -22,7 +22,12 @@ class Album < ApplicationRecord
 
   scope :filter_by_song, -> id do
     singer = Singer.joins(:songs).where("songs.id = ?", id).first
-    joins(:singers).where("singers.id = ?", singer.id)
+    # joins(:singers).where("singers.id = ?", singer.id)
+    filter_by_singer singer.id
+  end
+
+  scope :filter_by_singer, -> singer_id do
+    joins(:singers).where("singers.id = ?", singer_id)
   end
 
   def get_rank_previous
@@ -32,7 +37,11 @@ class Album < ApplicationRecord
   def json_data options = {}
     options = options.deep_merge({
       include: {
-        songs: {},
+        songs: {
+          include: {
+            singers: {only: ["id", "name"]},
+          }
+        },
         singers: {only: ["id", "name"]},
         music_types: {},
       },
