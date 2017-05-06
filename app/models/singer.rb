@@ -1,4 +1,6 @@
 class Singer < ApplicationRecord
+  include SmartAsJson
+
   ATTRIBUTES_PARAMS = [:name, :age, :dob, :content, :total_favorite, :country_id]
   ALLOWED_METHODS = [:total_favorites]
 

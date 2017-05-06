@@ -5,15 +5,13 @@ export default class Detail extends BaseComponent {
     this.state = {
       data: null,
       show: false,
-      additionData: {},
     }
   }
 
-  open = (data, additionData) => {
+  open = (data) => {
     this.setState({
       show: true,
       data: data,
-      additionData: additionData
     });
   }
 
@@ -27,105 +25,46 @@ export default class Detail extends BaseComponent {
     this.close();
   }
 
-  handleClickOk = () => {
-    this.close();
-    this.props.onAccept();
-  }
-
-  handleShowChildren = () => {
-    this.props.onShowChildren(this.state.data);
-    this.close();
-  }
-
   renderButton = () => {
-    if (this.props.isConfirmation) {
-      return(
-        <div>
-          <div className="confirm-question">
-            {this.state.data.id ? t("master.confirm_edit") : t("master.confirm_create")}
-          </div>
-          <div>
-            <cm.RaisedButton
-              className="btn-mr5"
-              label={t("common.cancel")}
-              secondary={true}
-              onClick={this.handleClose} />
-            <cm.RaisedButton
-              label={t("common.ok")}
-              primary={true}
-              onClick={this.handleClickOk} />
-          </div>
-        </div>
-      )
-    } else {
-      let child = this.props.child;
-      if (!child) return;
-      return (
-        <div className="row">
-          <cm.RaisedButton
-            className="btn-close"
-            label={t(`${this.props.transPath}.child`)}
-            secondary={true}
-            onClick={this.handleShowChildren} />
-        </div>
-      )
-    }
+    return (
+      <div className="row">
+        <cm.RaisedButton
+          className="btn-close"
+          label={t("common.close")}
+          secondary={true}
+          onClick={this.handleClose}
+        />
+      </div>
+    )
   }
 
-  renderDataRow = (content, key) => {
-    let data = this.state.data;
-    if (typeof content == "string") {
-      return (
-        <div className="row detail-row" key={key}>
-          <div className="col-label item">{t(`${this.props.transPath}.attributes.${content}`)}</div>
-          <div className="col-value item">{data[content]}</div>
-        </div>
-      );
-    }
-    else {
-      return (
-        <div key={content.key} className="row detail-row">
-          <div className="col-label item">{content.name}</div>
-          <div className="col-value item">{content.value}</div>
-        </div>
-      );
-    }
+  renderDataRow(label, value) {
+    return (
+      <div className="row detail-row">
+        <div className="col-label item">{label}</div>
+        <div className="item">{value}</div>
+      </div>
+    )
   }
 
-  renderIdField = () => {
-    let data = this.state.data;
-    let idField = "";
+  renderContent() {
+    const data = this.state.data;
 
-    if (!this.props.isConfirmation) {
-      idField = data.id ? this.renderDataRow({name: t("common.attributes.id"), value: data.id}) : "";
-      return idField;
-    }
-  }
-
-  renderAuthor = () => {
-    let data = this.state.data;
-
-    if(!this.props.isConfirmation) {
-      return(
-        <div>
-          <div className="row detail-row">
-            <div className="col-label item">{t("common.attributes.created_at")}</div>
-            <div className="col-value-half item">{data.created_at}</div>
-            <div className="col-label item">{t("common.attributes.updated_at")}</div>
-            <div className="col-value-half item">{data.updated_at}</div>
-          </div>
-          <div className="row detail-row">
-            <div className="col-label item">{t("common.attributes.creator_id")}</div>
-            <div className="col-value-half item">{data.creator ? data.creator.name : ""}</div>
-            <div className="col-label item">{t("common.attributes.updater_id")}</div>
-            <div className="col-value-half item">{data.updater ? data.updater.name : ""}</div>
-          </div>
+    return (
+      <div className="row">
+        <div className="col-xs-4">
         </div>
-      )
-    }
-  }
-
-  renderPrimaryFields() {
+        <div className="col-xs-8">
+          {this.renderDataRow(t("common.attributes.id"), data.id)}
+          {this.renderDataRow(t("singers.attributes.name"), data.name)}
+          {this.renderDataRow(t("common.attributes.age"), data.age)}
+          {this.renderDataRow(t("singers.attributes.dob"), data.dob)}
+          {this.renderDataRow(t("common.attributes.created_at"), data.created_at)}
+          {this.renderDataRow(t("common.attributes.updated_at"), data.updated_at)}
+          {this.renderDataRow(t("singers.attributes.content"), data.content)}
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -135,17 +74,14 @@ export default class Detail extends BaseComponent {
 
     return (
       <cm.Dialog
-        dialogType={this.props.isConfirmation ? t("common.confirmation") :
-          t("common.detail")}
+        dialogType={t("common.detail")}
         title={this.state.data.name}
         className="base-master-detail"
         actions={this.renderButton()}
         onRequestClose={this.handleClose}
         open={this.state.show}>
         <div className="master-detail-content">
-          {this.renderIdField()}
-          {this.renderPrimaryFields()}
-          {this.renderAuthor()}
+          {this.renderContent()}
         </div>
       </cm.Dialog>
     );

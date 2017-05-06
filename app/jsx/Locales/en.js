@@ -88,7 +88,7 @@ export default {
   singers: {
     attributes: {
       name: "Full Name",
-      dob: "DOB",
+      dob: "Date of birth",
       content: "Story",
     }
   }

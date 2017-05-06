@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+  include SmartAsJson
+
   SONG_ATTRIBUTES_PARAMS = %i[name]
   ALLOWED_METHODS = ["get_rank_previous"]
   JOIN_TABLES = [:singers, :author_songs, :music_types, :lyrics, :albums]

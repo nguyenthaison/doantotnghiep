@@ -1,4 +1,6 @@
 class Album < ApplicationRecord
+  include SmartAsJson
+
   ALLOWED_METHODS = ["get_rank_previous"]
   JOIN_TABLES = [:singers, :songs, :music_types]
   enum creator: [:member, :admin]

@@ -1,4 +1,6 @@
 class Author < ApplicationRecord
+  include SmartAsJson
+
   ALLOWED_METHODS = [:total_favorites]
 
   has_many :author_songs, dependent: :destroy

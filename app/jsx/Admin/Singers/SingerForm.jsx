@@ -180,7 +180,7 @@ export default class Form extends BaseComponent {
             {this.renderTextInput("content", {
               multiLine: true,
               textareaStyle: styles.note,
-              rowsMax: 10,
+              rowsMax: 5,
             })}
           </div>
         </div>
