@@ -4,43 +4,45 @@ import Feedback from "material-ui/svg-icons/action/feedback";
 import Add from "material-ui/svg-icons/content/add";
 import Share from "material-ui/svg-icons/social/share";
 
+const TAKE_RECORD = 10;
+
 export default class index extends PageComponent {
   constructor(props) {
     super(props);
 
     this.state = {
       song: {},
+      albums: [],
     }
   }
 
   componentDidMount() {
     let state = Helper.getCurrentLocationState();
-    API.Song.get(this.handerGetAlbum, state, this.getOption());
+    API.Song.get((status, data) => this.handerGetData(status, data, "song"), state, {include: JSON.stringify({})});
+    API.Album.getList((status, data) => this.handerGetData(status, data, "albums"), this.getOption(state));
   }
 
-  getOption() {
-    let include = {
-      music_types: {},
-      // author_songs: {only: ["id", "name"]},
-      authors: {only: ["id", "name"]},
-      albums: {only: ["id", "name"]},
-      singers: {only: ["id", "name"]},
-      lyrics: {include: {user: {only: ["id", "name"]}}},
-    };
+  getOption(state) {
     return {
-      include: JSON.stringify(include),
+      filter: {song: state, creator: "member"},
+      take: TAKE_RECORD,
     }
   }
 
-  handerGetAlbum = (status, data) => {
+  handerGetData = (status, data, name) => {
     if (!status) return;
     this.setState({
-      song: data.song,
+      [name]: data[name],
     })
   }
 
   handleDownload = (id) => {
     window.open(`/api/v1/download/${id}`, "_self");
+  }
+
+  handleCareSinger = (singer) => {
+    console.log(App.auth.id);
+    // API.FavoriteArticle.create(this.handleFavoriteSinger, singer)
   }
 
   renderInfoTop(list) {
@@ -66,6 +68,30 @@ export default class index extends PageComponent {
         className="submit-upload"
         onTouchTap={handleAction}
         title={label} />
+    )
+  }
+
+  renderSinger(singer) {
+    return (
+      <div className="singer row">
+        <div className="col-md-3">
+        </div>
+        <div className="col-md-9">
+          <div>
+            <span className="name">
+              {singer.name}
+            </span>
+            <cm.RaisedButton
+              icon={<Add />}
+              className="care"
+              primary={true}
+              onClick={() => this.handleCareSinger(singer)}/>
+            </div>
+            <div className="content">
+              {singer.content}
+            </div>
+        </div>
+      </div>
     )
   }
 
@@ -98,6 +124,7 @@ export default class index extends PageComponent {
               <div className="lyrics">
                 {song.lyrics && song.lyrics.length > 0 ? song.lyrics[0].content : null}
               </div>
+              {song.singers ? this.renderSinger(song.singers[0]) : null}
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">

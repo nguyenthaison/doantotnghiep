@@ -20,6 +20,11 @@ class Album < ApplicationRecord
       short_name, 1, DateTime.now.beginning_of_week)
   end
 
+  scope :filter_by_song, -> id do
+    singer = Singer.joins(:songs).where("songs.id = ?", id).first
+    joins(:singers).where("singers.id = ?", singer.id)
+  end
+
   def get_rank_previous
     self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "album").first.number
   end
