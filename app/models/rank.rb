@@ -1,4 +1,6 @@
 class Rank < ApplicationRecord
+  include SmartAsJson
+
   enum rank_type: [:vn, :us, :kp]
 
   belongs_to :target, polymorphic: true

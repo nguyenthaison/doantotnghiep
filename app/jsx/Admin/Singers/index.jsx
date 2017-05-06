@@ -94,7 +94,6 @@ export default class index extends PageComponent {
   }
 
   renderActionHeader() {
-    // if (this.noActionHeader) return;
     return (
       <div>
         <mui.TextField className="input-search"
@@ -215,7 +214,6 @@ export default class index extends PageComponent {
           primary={true}
           icon={<EditorModeEdit />}
           onClick={() => this.handleClickEdit(item)} />
-        {/*this.renderAdditionRowButton(item)*/}
       </div>
     );
   }
@@ -223,22 +221,13 @@ export default class index extends PageComponent {
   renderDialogs() {
     return (
       <div>
-        {/*<SingerDetail
-          // ref="singerDetail"
-          // parent={this.parent}
-          // additionData={this.additionData}
-          // onShowChildren={this.handleShowChildren}
-          // child={this.child}
-          // transPath={this.transPath}
-        />*/}
+        <SingerDetail
+          ref="singerDetail"
+        />
         <SingerForm
           ref="singerForm"
-          // parent={this.parent}
-          // additionData={this.additionData}
-          // transPath={this.transPath}
           onSubmit={this.handleSearch}
         />
-        {/*this.renderAdditionDialogs()*/}
       </div>
     );
   }

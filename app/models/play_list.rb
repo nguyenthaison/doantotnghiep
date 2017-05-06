@@ -1,4 +1,6 @@
 class PlayList < ApplicationRecord
+  # include SmartAsJson
+
   ALLOWED_METHODS = [:count_song]
   ATTRIBUTE_PARAMS = [:name, :describe, attachment_ids: []]
 
