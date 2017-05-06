@@ -22,7 +22,7 @@
       .button-play-music {
         float: left;
         width: 180px;
-        padding-left: 20px;
+        padding-left: 10px;
         .button-repeat-btn  {
           overflow: hidden;
           float: right;
@@ -37,7 +37,7 @@
         }
       }
       .button-play-music.album{
-        width: 100px !important;
+        width: 90px !important;
         .button-repeat-btn  {
           overflow: inherit;
           float: none;

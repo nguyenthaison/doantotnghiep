@@ -1,0 +1,110 @@
+.my-page{
+	overflow: hidden;
+	.header {
+		overflow: hidden;
+		padding-bottom: 13px;
+		border-bottom: 1px solid #dedede;
+		margin-bottom: 15px;
+		h3 {
+		    text-transform: uppercase;
+		    font-weight: 300;
+		    color: purple;
+		}
+		.btn-create {
+			.common-raised-button {
+				float: right;
+				button {
+    				background-color: #800080 !important;
+    				margin: 15px 0 0 !important;
+				}
+			}
+		}
+	}
+	.content {
+		.play_lists {
+			.item {
+				.item-sub {
+					border: 1px solid #ececec;
+				    padding: 2px;
+				    background: #ececec;
+				    border-radius: 10px;
+					.wrapp {
+						.avatar {
+							cursor: pointer;
+							width: 100px;
+						    height: 100px;
+						    margin: auto;
+						    img {
+						    	width: 100%;
+						    	height: 100%;
+						    }
+						    .avatar-background {
+						    	display: none;
+								cursor: pointer;
+								width: 100px;
+							    height: 100px;
+							    position: absolute;
+							    top: 3px;
+							    background: rgba(0, 0, 0, 0.35);
+							}
+						}
+						.avatar:hover .avatar-background{
+							display: block;
+						}
+					}
+					.e-item {
+						text-align: center;
+						h4.title-item {
+							color: #800080;
+						}
+						.title-sd-item {
+							.txt-info {
+								clear: both;
+								span {
+									font-weight: bold;
+								}
+							}
+						}
+					}
+					.item-tool {
+						.item-tool-sub {
+						    width: 90px;
+	   						margin: auto;
+							.common-raised-button {
+								min-width: 40px !important;
+								margin-right: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.wrapp-popup {
+	top: -40px !important;
+	.dialog-content {
+		width: 60% !important;
+		.upload {
+			.file-uploader {
+				.upload-component {
+					.upload-button {
+						div {
+							div {
+								position: relative;
+								input {
+									position: absolute;
+									color: #7c4dff; 
+									opacity: 0;
+								}
+							}
+						}
+					}
+				}
+				.list-uploaded-file {
+					margin: 10px 0;
+				}
+			}
+		}
+	}
+}

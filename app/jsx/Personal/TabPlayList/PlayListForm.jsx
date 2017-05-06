@@ -68,7 +68,7 @@ export default class PlayListForm extends BaseComponent {
 
   renderDialogContent() {
     return (
-      <div className="input-text col-md-9">
+      <div className="input-text col-md-6 col-lg-6 col-sm-12 col-xs-12">
         {this.renderTextInput("name", {
           maxLength: 80,
           required: true
@@ -123,7 +123,7 @@ export default class PlayListForm extends BaseComponent {
         open={this.state.show}
         dialogType="Create">
         <div className="base-master-form row">
-          <div className="avatar col-md-3">
+          <div className="avatar col-md-6 col-lg-6 col-sm-12 col-xs-12">
             <div className="upload">
               <cm.FileUploader ref="fileUpload" defaultFiles={this.state.data.attachments}/>
             </div>

@@ -138,13 +138,15 @@ export default class index extends PageComponent {
 
     return (
       <div className="favorite-music">
-        <cm.RaisedButton
-          label="PLAY ALL"
-          labelPosition="after"
-          className="pointer"
-          primary={true}
-          onClick={() => this.handlePlayAll(playList)}
-          icon={<PlayCircleFilled />} />
+        <div className="wrapp-play">
+          <cm.RaisedButton
+            label="PLAY ALL"
+            labelPosition="after"
+            className="pointer"
+            primary={true}
+            onClick={() => this.handlePlayAll(playList)}
+            icon={<PlayCircleFilled />} />
+        </div>
         {this.renderListSongs(songs)}
       </div>
     )

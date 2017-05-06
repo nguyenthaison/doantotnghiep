@@ -104,38 +104,46 @@ export default class index extends PageComponent {
           let urlImageAlbum = item.attachments.length > 0 ? item.attachments[0].url : defaultImageAlbum;
           return (
             <div className="item" key={item.id}>
-              <div className="avatar">
-                <img style={{height: "80px", width: "80px"}} src={urlImageAlbum} />
-              </div>
-              <div className="e-item">
-                <a href="" className=""></a>
-                <h3 className="title-item ellipsis">
-                  <span onClick={() => this.handlePlayPlayList(item)}>{item.name}</span>
-                </h3>
-                <p className="title-sd-item">
-                  <span className="txt-info">Create at: {item.created_at}</span>
-                  <span className="txt-info">Songs: {item.count_song}</span>
-                </p>
-                <p className="title-sd-item">
-                  <span className="txt-info">Listens: {item.view}</span>
-                </p>
-              </div>
-              <div className="item-tool">
-                <cm.RaisedButton
-                  title={t("common.edit")}
-                  labelPosition="after"
-                  primary={true}
-                  icon={<Edit />}
-                  onClick={() => this.handleEditPlayList(item)}
-                />
+              <div className="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div className="item-sub">
+                  <div className="wrapp">
+                    <div className="avatar">
+                      <img src={urlImageAlbum} />
+                      <div className="avatar-background"></div>
+                    </div>
+                  </div>
+                  <div className="e-item">
+                    <h4 className="title-item ellipsis">
+                      <span onClick={() => this.handlePlayPlayList(item)}>{item.name}</span>
+                    </h4>
+                    <p className="title-sd-item">
+                      <span className="txt-info"><span>Create at:</span> {item.created_at}</span>
+                      <span className="txt-info"><span>Songs:</span> {item.count_song}</span>
+                    </p>
+                    <p className="title-sd-item">
+                      <span className="txt-info">Listens: {item.view}</span>
+                    </p>
+                  </div>
+                  <div className="item-tool">
+                    <div className="item-tool-sub">
+                      <cm.RaisedButton
+                        title={t("common.edit")}
+                        labelPosition="after"
+                        primary={true}
+                        icon={<Edit />}
+                        onClick={() => this.handleEditPlayList(item)}
+                      />
 
-                <cm.RaisedButton
-                  title={t("common.delete")}
-                  labelPosition="after"
-                  primary={true}
-                  icon={<DeleteForever />}
-                  onClick={() => this.handleDeletePlayList(item)}
-                />
+                      <cm.RaisedButton
+                        title={t("common.delete")}
+                        labelPosition="after"
+                        primary={true}
+                        icon={<DeleteForever />}
+                        onClick={() => this.handleDeletePlayList(item)}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )
@@ -147,36 +155,43 @@ export default class index extends PageComponent {
   render() {
     return (
       <div className="my-page">
-        <div className="header">
-          <h3 className="title">PLAY LIST</h3>
-          <div className="btn-create">
-            <cm.RaisedButton
-              label="Create Playlist"
-              labelPosition="after"
-              primary={true}
-              icon={<AddBox />}
-              onClick={this.handleCreatePlayList} />
+        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div className="row">
+            <div className="header">
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h3 className="title">PLAY LIST</h3>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div className="btn-create">
+                    <cm.RaisedButton
+                      label="Create Playlist"
+                      labelPosition="after"
+                      primary={true}
+                      icon={<AddBox />}
+                      onClick={this.handleCreatePlayList} />
+                </div>
+              </div>
+            </div>
+            <div className="content">
+              {this.renderPlayLists()}
+              {this.state.hasMore ?
+                <div className="btn-show-more">
+                  <cm.RaisedButton
+                    label={t("common.show_more")}
+                    onTouchTap={this.handleClickLoadMore}
+                    backgroundColor="lightgray"
+                    style={{
+                      width: "90%",
+                    }}
+                    labelStyle={{
+                      fontWeight: "bold",
+                    }}
+                  />
+                </div> : null}
+            </div>
+            <PlayListForm ref="playListForm" onSubmit={this.handleSubmit} />
           </div>
         </div>
-        <div className="content">
-          {this.renderPlayLists()}
-          {this.state.hasMore ?
-            <div className="btn-show-more">
-              <cm.RaisedButton
-                label={t("common.show_more")}
-                onTouchTap={this.handleClickLoadMore}
-                backgroundColor="lightgray"
-                style={{
-                  width: "90%",
-                }}
-                labelStyle={{
-                  fontWeight: "bold",
-                }}
-              />
-            </div> : null}
-        </div>
-
-        <PlayListForm ref="playListForm" onSubmit={this.handleSubmit} />
       </div>
     )
   }

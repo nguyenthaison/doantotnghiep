@@ -59,15 +59,18 @@ export default class CreatePlayList extends PageComponent {
     return (
       <div>
         {openForm ?
-          <div>
+          <div className="popup-create">
             <cm.TextField
-              fieldName="name"
+              // fieldName="name"
+              hintText="Enter you name"
               name="name"
               errorText={error ? error[0] : null}
               value={this.state.play_list.name || ""}
               onChange={(event, value) => this.handleChangeTextField("name", value)}
             />
-            <Clear className="pointer" onClick={this.handleClearContentInput} />
+            <div className="popup-pointer">
+              <Clear className="pointer" onClick={this.handleClearContentInput} />
+            </div>
             <cm.RaisedButton
               label={t("common.create")}
               primary={true}
@@ -79,7 +82,9 @@ export default class CreatePlayList extends PageComponent {
               onClick={this.handleCancelCreatePlayList}
             />
           </div> :
-          <div onClick={this.handleOpenForm}><span>create new play list</span></div>
+          <div onClick={this.handleOpenForm} className="popup-create">
+            <span>create new play list</span>
+          </div>
         }
       </div>
     )
