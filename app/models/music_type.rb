@@ -1,4 +1,6 @@
 class MusicType < ApplicationRecord
+  include SmartAsJson
+
   has_many :album_music_types, dependent: :destroy
   has_many :albums, through: :album_music_types
   has_many :artist_music_types, dependent: :destroy

@@ -1,4 +1,6 @@
 class Attachment < ApplicationRecord
+  include SmartAsJson
+
   IMAGE_TYPES = ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   ALLOWED_METHODS = [:url]
 
