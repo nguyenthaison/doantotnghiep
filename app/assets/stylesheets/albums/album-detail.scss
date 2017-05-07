@@ -1,0 +1,113 @@
+.home-page {
+  .home-center {
+    .list-music {
+      border-left: 1px solid #d5d5d5;
+      border-right: 1px solid #d5d5d5;
+      padding-top: 10px;
+      background-color: #f1f1f1;
+
+      ul {
+        border-bottom: 1px solid #d5d5d5;
+        height: 50px;
+        list-style-type: none;
+      }
+
+      li {
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        .tool {
+          svg {
+            margin-right: 7px; 
+          }
+        }
+      }
+
+      .playing {
+        text-align: center;
+      }
+
+      ul li:first-child {
+        padding-right: 40px !important;
+        width: 20px;
+      }
+
+      ul li:nth-child(2) {
+        width: 300px;
+        padding-right: 40px !important;
+        text-align: left;
+      }
+
+      ul li:last-child {
+        float: right;
+        padding-right: 40px !important;
+      }
+    }
+  }
+}
+.popup-add-wishlist {        
+  width: 260px;
+  padding: 10px;
+  border: 1px solid #ececec;
+
+  .popup-title {
+    font-weight: bold;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 7px;
+  }
+
+  .item-popup {
+    margin: 5px 0 !important; 
+  }
+  .popup-create {
+      padding-top: 5px;
+      border-top: 1px solid #ececec;
+      text-transform: capitalize;
+      position: relative;
+
+      .common-textfield {
+        position: relative;
+
+        div{
+          width: 220px !important;
+        }
+      }
+
+      .popup-pointer {
+        position: absolute;
+        top: 20px;
+        right: 0;
+
+        svg {
+          height: 18px !important;
+          width: 20px !important;
+
+          path {
+            height: 18px !important;
+            width: 20px !important;
+          }
+        }
+      }
+
+      .common-raised-button {
+        width: 69px !important;
+        min-width: 60px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        margin-right: 6px;
+
+        div {
+          height: 30px !important;
+
+          span {
+          text-transform: capitalize !important;
+          padding-left: 5px !important;
+          padding-right: 5px !important; 
+        }
+        }
+      }
+  }
+}

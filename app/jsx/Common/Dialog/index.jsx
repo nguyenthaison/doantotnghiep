@@ -32,7 +32,7 @@ export default class Dialog extends BaseComponent {
     return (
       <mui.Dialog
         {...this.props}
-        className={"dialog " + (this.props.className || "")}
+        className={"wrapp-popup dialog " + (this.props.className || "")}
         title={headerModal}
         contentClassName="dialog-content"
         bodyClassName="dialog-body awesome-scroll"

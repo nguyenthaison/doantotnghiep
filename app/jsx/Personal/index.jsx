@@ -19,13 +19,13 @@ export default class index extends PageComponent {
   render() {
     return (
       <div className="my-page">
-        <mui.Tabs>
-          <mui.Tab label="My Play List" onActive={this.handleActive}>
+        <mui.Tabs tabItemContainerStyle={{backgroundColor: "white"}} inkBarStyle={{width: "15%"}}>
+          <mui.Tab label="My Play List" onActive={this.handleActive} className="tab-name">
             <div>
               <TabPlayList />
             </div>
           </mui.Tab>
-          <mui.Tab label="My Favorite Song" onActive={this.handleActive}>
+          <mui.Tab label="My Favorite Song" onActive={this.handleActive} className="tab-name">
             <div>
               <TabFavoriteMusic />
             </div>
