@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170503081145) do
   end
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "image_type"
     t.string   "attachmentable_type"
     t.integer  "attachmentable_id"
     t.datetime "created_at",              null: false

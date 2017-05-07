@@ -9,7 +9,7 @@ export default class Form extends BaseComponent {
     super(props);
     this.state = {
       show: false,
-      data: {},
+      data: {id: null},
       errors: "",
       countries: [],
     };
@@ -157,10 +157,19 @@ export default class Form extends BaseComponent {
   }
 
   renderDialogContent() {
+    const attachments = this.state.data;
+
     return(
       <div>
         <div className="row">
           <div className="col-xs-4">
+            <div className="upload">
+              {/*<cm.FileUploader ref="fileUpload" defaultFiles={this.state.data}/>*/}
+            </div>
+
+            <div className="upload">
+              {/*<cm.FileUploader ref="fileUpload" defaultFiles={this.state.data}/>*/}
+            </div>
           </div>
           <div className="col-xs-8">
             {this.renderTextInput("name",
@@ -201,12 +210,6 @@ export default class Form extends BaseComponent {
             {this.renderDialogContent()}
           </div>
         </cm.Dialog>
-        {/*<this.objectDetail ref="objectDetail"
-          transPath={this.props.transPath}
-          parent={this.props.parent}
-          // additionData={this.props.additionData}
-          isConfirmation={true}
-          onAccept={this.handleAccept} />*/}
       </div>
     )
   }
