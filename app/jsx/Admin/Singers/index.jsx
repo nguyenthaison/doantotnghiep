@@ -12,7 +12,7 @@ export default class index extends PageComponent {
     super(props);
 
     this.state = {
-      singers: [],
+      data: [],
       error: "",
       hasMore: false,
     }
@@ -33,9 +33,12 @@ export default class index extends PageComponent {
       search_query: this.searchQuery,
       take: TAKE,
     }})
-
-    API.Singer.getList(this.handleGetList, options);
+    this.apiGetList(options);
     this.setState({error: ""})
+  }
+
+  apiGetList(options) {
+    API.Singer.getList(this.handleGetList, options);
   }
 
   getOptions() {
@@ -52,7 +55,7 @@ export default class index extends PageComponent {
   handleGetList = (status, data) => {
     if (!status) return;
     this.setState({
-      singers: data.singers,
+      data: data.singers,
     })
   }
 
@@ -155,7 +158,7 @@ export default class index extends PageComponent {
 
   renderListElement() {
     return (
-      this.state.singers.map((item, index) => {
+      this.state.data.map((item, index) => {
         return (
           <div
             className={"pointer row table-row table-row-striped-2"}
@@ -236,13 +239,13 @@ export default class index extends PageComponent {
       <div className="singer-index">
         <ListHeader
           icon={icon}
-          title="Singers"
+          title="singers"
         >
           {this.renderActionHeader()}
         </ListHeader>
-        {this.state.singers ?
+        {this.state.data ?
           <div className="body-index">
-            {this.state.singers.length ?
+            {this.state.data.length ?
               this.renderTable(this.renderListElement()) :
               <div className="no-record">Have no record!</div>}
           </div> : null
