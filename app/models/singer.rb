@@ -40,7 +40,6 @@ class Singer < ApplicationRecord
       current_ids = self.background_attachments.pluck(:id).map {|id| id.to_s}
       not_change_ids = current_ids & background_attachment_ids
       add_more_ids = background_attachment_ids - not_change_ids
-      byebug
       remove_ids = current_ids - not_change_ids
 
       Attachment.where("id IN (?)" , add_more_ids).
