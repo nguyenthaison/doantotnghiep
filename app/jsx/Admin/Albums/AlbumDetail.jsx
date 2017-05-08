@@ -1,4 +1,4 @@
-export default class Albums extends PageComponent {
+export default class AlbumDetail extends PageComponent {
   constructor(props) {
     super(props);
 
@@ -9,7 +9,7 @@ export default class Albums extends PageComponent {
 
   render() {
     return (
-      <div></div>
+      <div>asdfads</div>
     )
   }
 }

@@ -6,6 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :creator
       t.integer :country_id
+      t.text :notes
       t.timestamps
     end
   end

@@ -4,7 +4,12 @@ class Api::V1::AlbumsController < Api::BaseController
   end
 
   def create
-
+    byebug
+    if @album.save
+      response_success album: @album
+    else
+      response_fail @album.errors
+    end
   end
 
   def show
@@ -22,5 +27,10 @@ class Api::V1::AlbumsController < Api::BaseController
 
   def update
 
+  end
+
+  private
+  def album_params
+    params.require(:album).permit(Album::ATTRIBUTES_PARAMS)
   end
 end

@@ -91,5 +91,11 @@ export default {
       dob: "Date of birth",
       content: "Story",
     }
+  },
+  albums: {
+    attributes: {
+      name: "Name",
+      notes: "Notes",
+    }
   }
 }
