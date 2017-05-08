@@ -32,7 +32,6 @@ export default class index extends PageComponent {
     options = update(options, {$merge: {
       search_query: this.searchQuery,
       take: TAKE,
-      // methods: ["background_image", "avatar_image"],
     }})
 
     API.Singer.getList(this.handleGetList, options);
@@ -42,6 +41,8 @@ export default class index extends PageComponent {
   getOptions() {
     let include = {
       country: {},
+      attachments: {},
+      background_attachments: {},
     }
     return {
       include: JSON.stringify(include),
@@ -169,7 +170,9 @@ export default class index extends PageComponent {
   }
 
   renderDataRow(item, index) {
-    let image = "/images/p9.jpg";
+    const defaultImg = "/images/default-playlist.jpg";
+    const avatar = item.attachments[0] ? item.attachments[0].url : defaultImg
+
     return (
       <div>
         <div className="col-xs-1 td ellipsis-text"
@@ -177,7 +180,7 @@ export default class index extends PageComponent {
           <span>{index + 1}</span>
         </div>
         <div className="col-xs-1 td">
-          <mui.Avatar src={image} size={40} className="avatar"/>
+          <mui.Avatar src={avatar} size={40} className="avatar"/>
         </div>
         <div className="col-xs-2 td"
           title={item.name}>

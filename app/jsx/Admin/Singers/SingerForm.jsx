@@ -3,6 +3,7 @@ const styles = {
     height: "74%",
   }
 }
+
 import SelectCountry from "./SelectCountry";
 export default class Form extends BaseComponent {
   constructor(props) {
@@ -52,7 +53,15 @@ export default class Form extends BaseComponent {
   handleClickSubmit = () => {
     let data = this.state.data;
     const country_id = this.refs.selectCountry.getSelectedCountry();
+
+    let imgBackgroundIds = this.refs.imgBackground.getAttachmentIds();
+    imgBackgroundIds = imgBackgroundIds.length > 0 ? imgBackgroundIds : [""];
+    let avatarIds = this.refs.avatar.getAttachmentIds();
+    avatarIds = avatarIds.length > 0 ? avatarIds : [""];
+
     data["country_id"] = country_id;
+    data["attachment_ids"] = avatarIds;
+    data["background_attachment_ids"] = imgBackgroundIds;
 
     if(this.state.data.id) {
       API.Singer.update(this.handleSaveCallback, data);
@@ -157,19 +166,16 @@ export default class Form extends BaseComponent {
   }
 
   renderDialogContent() {
-    const attachments = this.state.data;
+    const data = this.state.data;
 
     return(
       <div>
         <div className="row">
           <div className="col-xs-4">
-            <div className="upload">
-              {/*<cm.FileUploader ref="fileUpload" defaultFiles={this.state.data}/>*/}
-            </div>
-
-            <div className="upload">
-              {/*<cm.FileUploader ref="fileUpload" defaultFiles={this.state.data}/>*/}
-            </div>
+            {this.renderUpLoadLogoField("imgBackground", data.background_attachments,
+              "Image Background", "Image Background")}
+            {this.renderUpLoadLogoField("avatar", data.attachments,
+              "Avatar", "Avatar")}
           </div>
           <div className="col-xs-8">
             {this.renderTextInput("name",
@@ -178,6 +184,7 @@ export default class Form extends BaseComponent {
             {this.renderLabel("Dob")}
             <mui.DatePicker hintText="Date of birth"
               onChange={this.handleChangeDatePicker}
+              value={data.dob ? new Date(data.dob) : null}
             />
 
             <SelectCountry fieldName="country_id"
@@ -195,6 +202,22 @@ export default class Form extends BaseComponent {
         </div>
       </div>
     )
+  }
+
+  renderUpLoadLogoField(ref, attachment, note, label) {
+    return (
+      <div>
+        <h4>
+          <i className="material-icons">panorama</i>
+          <span>{label}</span>
+        </h4>
+        <div className="avatar col-md-6 col-lg-6 col-sm-12 col-xs-12">
+          <div className="upload">
+            <cm.FileUploader ref={ref} defaultFiles={attachment} numberUploadFile={1} />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {

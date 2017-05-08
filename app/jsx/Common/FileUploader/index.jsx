@@ -151,25 +151,25 @@ export default class FileUploader extends BaseComponent {
     return (
       <div className="row file-uploader">
         <div className="upload-component">
-          <RaisedButton
-            primary={true}
-            labelPosition="after"
-            disabled={disableUpload}
-            icon={<FileCloudUpload color="white" />}
-            label={this.state.processing ? t("attachment.btn_uploading") : t("attachment.btn_choose_file")}
-            className="upload-button"
-          >
-            <input
-              type="file"
+          {!disableUpload ?
+            <RaisedButton
+              primary={true}
+              labelPosition="after"
               disabled={disableUpload}
-              onChange={this.handleUploadFiles}
-              className="file-input"
-            />
-          </RaisedButton>
-
-          <div className="list-uploaded-file list-file">
-            {this.renderUploadedFile()}
-          </div>
+              icon={<FileCloudUpload color="white" />}
+              label={this.state.processing ? t("attachment.btn_uploading") : t("attachment.btn_choose_file")}
+              className="upload-button"
+            >
+              <input
+                type="file"
+                disabled={disableUpload}
+                onChange={this.handleUploadFiles}
+                className="file-input"
+              />
+            </RaisedButton> :
+            <div className="list-uploaded-file list-file">
+              {this.renderUploadedFile()}
+            </div>}
         </div>
       </div>
     );
