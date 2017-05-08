@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20170503081145) do
     t.string   "name"
     t.integer  "creator"
     t.integer  "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "notes",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "artist_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -60,7 +61,6 @@ ActiveRecord::Schema.define(version: 20170503081145) do
   end
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image_type"
     t.string   "attachmentable_type"
     t.integer  "attachmentable_id"
     t.datetime "created_at",              null: false

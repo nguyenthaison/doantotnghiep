@@ -15,8 +15,8 @@ class Author < ApplicationRecord
     class_name: Attachment.name, foreign_key: "attachmentable_id"
 
   validates :name, presence: true, length: {maximum: 100, minimum: 1}
-  validates :dob, :country_id, presence: true
-  validate :dob_must_be_before_or_equal_current_date
+  # validates :dob, :country_id, presence: true
+  # validate :dob_must_be_before_or_equal_current_date
 
   after_save :update_background_attachments
 

@@ -1,9 +1,10 @@
+import ListHeader from "../ListHeader";
 import SingerIndex from "../Singers";
 
 export default class index extends SingerIndex {
-  apiGetList(options) {
-    console.log("aaa");
-    API.Author.getList(this.handleGetList, options);
+  constructor(props) {
+    super(props);
+    this.apiName = "Author";
   }
 
   handleGetList = (status, data) => {
@@ -11,5 +12,17 @@ export default class index extends SingerIndex {
     this.setState({
       data: data.authors,
     })
+  }
+
+  renderHeader() {
+    let icon = <i className="material-icons icon-header">account_circle</i>;
+    return (
+      <ListHeader
+        icon={icon}
+        title="Authors"
+      >
+        {this.renderActionHeader()}
+      </ListHeader>
+    )
   }
 }
