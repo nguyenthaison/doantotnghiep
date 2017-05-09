@@ -183,7 +183,7 @@ export default class AlbumForm extends PageComponent {
           <div className="col-xs-8">
             {this.renderTextInput("name",
               {maxLength: 80, required: true})}
-
+            {this.renderLabel("Singer", true)}
             <Singer singers={this.state.listSinger} ref="singers"
               defaultSelectSingers={this.state.data.singers} />
 

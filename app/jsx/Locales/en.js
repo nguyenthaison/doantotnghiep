@@ -57,6 +57,7 @@ export default {
       name: "Name",
       age: "Age",
       country: "Country",
+      image: "Image",
     },
   },
   login: {
@@ -96,6 +97,9 @@ export default {
     attributes: {
       name: "Name",
       notes: "Notes",
+      view: "View",
+      share: "share",
+      singer: "Singer",
     }
   }
 }

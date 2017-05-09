@@ -9,6 +9,13 @@ export default class index extends MasterIndex {
     this.objectDetail = SingerDetail;
     this.objectForm = SingerForm;
     this.apiName = "Singer";
+    this.transPath = "singers";
+
+    this.fields = [
+      {name: "name", width: 3},
+      {name: "age", width: 1},
+      {name: "country", width: 2, transform: (item) => {return item.country.full_name}},
+    ];
   }
 
   getOptions() {
@@ -20,12 +27,5 @@ export default class index extends MasterIndex {
     return {
       include: JSON.stringify(include),
     }
-  }
-
-  handleGetList = (status, data) => {
-    if (!status) return;
-    this.setState({
-      data: data.singers,
-    })
   }
 }

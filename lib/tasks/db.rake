@@ -133,15 +133,15 @@ namespace :db do
 
     puts "Album"
     10.times do |i|
-      Fabricate :album, view: i * 20, share: i * 20, name: "Album #{i + 1}", creator: 0, country_id: 1,
-        created_at: DateTime.now.beginning_of_week
+      Fabricate :album, view: i * 20, share: i * 20, name: "Album #{i + 1}", creator: 0,
+      country_id: 1, created_at: DateTime.now.beginning_of_week, album_type: "singer"
     end
-    Fabricate :album, view: 200, share: 10 * 21, name: "BXH viet nam", creator: 1, country_id: 1,
-      created_at: DateTime.now.beginning_of_week
-    Fabricate :album, view: 300, share: 10 * 22, name: "BXH au my", creator: 1, country_id: 2,
-      created_at: DateTime.now.beginning_of_week
-    Fabricate :album, view: 400, share: 10 * 23, name: "BXH han quoc", creator: 1, country_id: 3,
-      created_at: DateTime.now.beginning_of_week
+    Fabricate :album, view: 200, share: 10 * 21, name: "BXH viet nam", creator: 1,
+      country_id: 1, created_at: DateTime.now.beginning_of_week, album_type: "system"
+    Fabricate :album, view: 300, share: 10 * 22, name: "BXH au my", creator: 1,
+      country_id: 2, created_at: DateTime.now.beginning_of_week, album_type: "system"
+    Fabricate :album, view: 400, share: 10 * 23, name: "BXH han quoc", creator: 1,
+      country_id: 3, created_at: DateTime.now.beginning_of_week, album_type: "system"
 
     puts "Song"
     Fabricate :song, name: "Ngoi Sao Le Loi Lonely Star", view: 10, song_type: 1,
