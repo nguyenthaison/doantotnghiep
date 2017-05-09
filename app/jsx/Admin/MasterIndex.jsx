@@ -2,8 +2,6 @@ import ListHeader from "./ListHeader";
 import ContentAddCircleIcon from "material-ui/svg-icons/content/add-circle";
 import ActionSearch from "material-ui/svg-icons/action/search";
 import EditorModeEdit from "material-ui/svg-icons/editor/mode-edit";
-// import SingerDetail from "./SingerDetail";
-// import SingerForm from "./SingerForm";
 
 const TAKE = 20;
 
@@ -42,14 +40,10 @@ export default class index extends PageComponent {
   }
 
   getOptions() {
-    // let include = {
-    //   country: {},
-    //   attachments: {},
-    //   background_attachments: {},
-    // }
-    // return {
-    //   include: JSON.stringify(include),
-    // }
+  }
+
+  getAdditionDataForChildren() {
+    return;
   }
 
   handleGetList = (status, data) => {
@@ -117,22 +111,25 @@ export default class index extends PageComponent {
       <div>
         <div className="row table-header table-row">
           <div className="col-xs-1 header-title td">
-            <span>{t("common.no")}</span>
+            <span>{t("common.attributes.id")}</span>
           </div>
           <div className="col-xs-1 header-title td">
-            <span>{t("common.image")}</span>
+            <span>{t("common.attributes.image")}</span>
           </div>
+          {
+            this.fields.map((field) => {
+              return (
+                <div
+                  className={`col-xs-${field.width} header-title td custom-${field.name}`}
+                  key={field.name}>
+                    <span>{t(`common.attributes.${field.name}`,
+                      {fallback: t(`${this.transPath}.attributes.${field.name}`)})}</span>
+                </div>
+              );
+            })
+          }
           <div className="col-xs-2 header-title td">
-            <span>{t("common.attributes.name")}</span>
-          </div>
-          <div className="col-xs-1 header-title td">
-            <span>{t("common.attributes.age")}</span>
-          </div>
-          <div className="col-xs-2 header-title td">
-            <span>{t("common.attributes.country")}</span>
-          </div>
-          <div className="col-xs-2 header-title td">
-            <span>{t("common.attributes.updated_at")}</span>
+            <span>{t("common.attributes.created_at")}</span>
           </div>
         </div>
         <div className="table-index">
@@ -161,7 +158,7 @@ export default class index extends PageComponent {
       this.state.data.map((item, index) => {
         return (
           <div
-            className={"pointer row table-row table-row-striped-2"}
+            className={(this.isShowHoverPointer ? "pointer" : "") + " row table-row table-row-striped-2"}
             key={item.id}
             onClick={() => this.handleClickDetail(item)}>
             {this.renderDataRow(item, index)}
@@ -173,33 +170,31 @@ export default class index extends PageComponent {
   }
 
   renderDataRow(item, index) {
+    let dataRow = this.fields.map((field) => {
+      let text = field.transform ? field.transform(item) : item[field.name];
+      return (
+        <div className={`col-xs-${field.width} td ellipsis-text custom-${field.name}`} key={field.name}
+          title={text}>
+          <span>{text}</span>
+        </div>
+      );
+    });
     const defaultImg = "/images/default-playlist.jpg";
     const avatar = item.attachments[0] ? item.attachments[0].url : defaultImg
 
     return (
       <div>
         <div className="col-xs-1 td ellipsis-text"
-          title={index + 1}>
+          title={item.id}>
           <span>{index + 1}</span>
         </div>
         <div className="col-xs-1 td">
           <mui.Avatar src={avatar} size={40} className="avatar"/>
         </div>
+        {dataRow}
         <div className="col-xs-2 td"
-          title={item.name}>
-          <span>{item.name}</span>
-        </div>
-        <div className="col-xs-1 td"
-          title={item.age}>
-          <span>{item.age}</span>
-        </div>
-        <div className="col-xs-2 td"
-          title={item.country.full_name}>
-          <span>{item.country.full_name}</span>
-        </div>
-        <div className="col-xs-3 td"
-          title={item.updated_at}>
-          <span>{item.updated_at}</span>
+          title={item.created_at}>
+          <span>{item.created_at}</span>
         </div>
       </div>
     )
@@ -207,15 +202,39 @@ export default class index extends PageComponent {
 
   renderItemButtonGroup(item) {
     return (
-      <div className={`col-xs-2 td btn-group`}>
+      <div className={`col-xs-${this.child ? 3 : 2} td btn-group`}>
         <cm.RaisedButton
           className="btn-edit btn-mt"
           label={t("common.edit")}
           primary={true}
           icon={<EditorModeEdit />}
           onClick={() => this.handleClickEdit(item)} />
+        {this.renderAdditionRowButton(item)}
       </div>
     );
+  }
+
+  renderAdditionRowButton(item) {
+    if (this.child) {
+      return (
+        <cm.RaisedButton
+          className="addition-btn"
+          label={t(`${this.transPath}.child`)}
+          secondary={true}
+          icon={<EditorFormatListBulleted />}
+          onTouchTap={(event) => this.handleShowChildren(item)} />
+      );
+    }
+  }
+
+  handleShowChildren = (data) => {
+    this.refs.objectChild.open(data, this.getAdditionDataForChildren());
+  }
+
+  renderAdditionDialogs() {
+    if (this.child) {
+      return <this.child.dialog ref="objectChild" />;
+    }
   }
 
   renderDialogs() {
@@ -228,6 +247,7 @@ export default class index extends PageComponent {
           ref="objectForm"
           onSubmit={this.handleSearch}
         />
+        {this.renderAdditionDialogs()}
       </div>
     );
   }

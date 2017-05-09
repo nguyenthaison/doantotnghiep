@@ -180,6 +180,18 @@ $max: 20px;
   display: block;
 }
 
+.Select-control {
+  border: none !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.select-country {
+  width: 100% !important;
+  svg {
+    fill: #999 !important;
+  }
+}
+
 @keyframes equalize {
   0% {
     height: 60px;

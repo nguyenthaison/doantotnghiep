@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170503081145) do
     t.integer  "share"
     t.string   "name"
     t.integer  "creator"
+    t.string   "album_type"
     t.integer  "country_id"
     t.text     "notes",      limit: 65535
     t.datetime "created_at",               null: false

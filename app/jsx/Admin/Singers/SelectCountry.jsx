@@ -34,6 +34,7 @@ export default class SelectCountry extends PageComponent {
         floatingLabelText="Country"
         value={this.state.selectedCountry}
         onChange={this.handleChange}
+        className="select-country"
       >
         {this.renderMenuItem()}
       </mui.SelectField>

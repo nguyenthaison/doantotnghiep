@@ -5,6 +5,7 @@ export default class index extends SingerIndex {
   constructor(props) {
     super(props);
     this.apiName = "Author";
+    this.transPath = "authors";
   }
 
   handleGetList = (status, data) => {
