@@ -2,6 +2,7 @@ import ListHeader from "../ListHeader";
 import AlbumDetail from "./AlbumDetail";
 import AlbumForm from "./AlbumForm";
 import MasterIndex from "../MasterIndex";
+import Songs from "./Songs";
 
 export default class index extends MasterIndex {
   constructor(props) {
@@ -12,24 +13,25 @@ export default class index extends MasterIndex {
     this.transPath = "albums";
 
     this.fields = [
-      {name: "name", width: 2},
-      // {name: "share", width: 1},
+      {name: "name", width: 1},
       {name: "singer", width: 2, transform: (item) => {
         let singers = "";
-        if (item.singers.length === 0) return "";
-        if (item.singers.length > 1) {
+        if (item.singers.length === 0 || item.singers.length > 2) return "Many Singers";
+        if (item.singers.length > 0) {
           for (let _item of item.singers) {
-            let childItemFormat = _item.name + ",";
+            let childItemFormat = " " + _item.name + ",";
             singers += childItemFormat;
           };
           return singers = singers.replace(/.$/," ");
-        } else {
-          return item.singers[0].name;
         }
       }},
       {name: "country", width: 1, transform: (item) => {return item.country.full_name}},
       {name: "view", width: 1},
     ];
+
+    this.child = {
+      dialog: Songs,
+    }
   }
 
   getOptions() {
