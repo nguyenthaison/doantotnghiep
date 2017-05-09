@@ -127,30 +127,12 @@ $max: 20px;
   }
 }
 
-// .btn-mr5 {
-//   margin: 0px 5px !important;
-// }
+.btn-mr5 {
+  margin: 0px 5px !important;
+}
 
 .btn-mt {
   margin-top: -11px;
-}
-
-.table-row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(224, 224, 224);
-  height: 53px;
-  padding-right:15px;
-
-  .td {
-    padding-left: 24px;
-    text-align: left;
-    font-size: 13px;
-    white-space: nowrap;
-    padding-top: 20px;
-  }
 }
 
 .table-row-striped:nth-of-type(even) {

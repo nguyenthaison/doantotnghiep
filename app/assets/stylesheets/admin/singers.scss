@@ -5,6 +5,16 @@
   right: 0px;
   bottom: 0px;
 
+  .btn-group {
+    padding-top: 6px !important;
+    text-align: right;
+    padding-right: 0px;
+
+    .addition-btn {
+      margin-right: 15px;
+    }
+  }
+
   .body-index {
     position: absolute;
     top: 92px;

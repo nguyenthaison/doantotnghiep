@@ -58,6 +58,7 @@ export default {
       age: "Age",
       country: "Country",
       image: "Image",
+      no: "No.",
     },
   },
   login: {
@@ -100,6 +101,10 @@ export default {
       view: "View",
       share: "share",
       singer: "Singer",
+    },
+    child: "Song",
+    songs: {
+
     }
   }
 }

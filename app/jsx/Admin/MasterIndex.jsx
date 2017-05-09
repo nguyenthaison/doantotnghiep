@@ -2,6 +2,7 @@ import ListHeader from "./ListHeader";
 import ContentAddCircleIcon from "material-ui/svg-icons/content/add-circle";
 import ActionSearch from "material-ui/svg-icons/action/search";
 import EditorModeEdit from "material-ui/svg-icons/editor/mode-edit";
+import EditorFormatListBulleted from "material-ui/svg-icons/editor/format-list-bulleted";
 
 const TAKE = 20;
 
@@ -111,7 +112,7 @@ export default class index extends PageComponent {
       <div>
         <div className="row table-header table-row">
           <div className="col-xs-1 header-title td">
-            <span>{t("common.attributes.id")}</span>
+            <span>{t("common.attributes.no")}</span>
           </div>
           <div className="col-xs-1 header-title td">
             <span>{t("common.attributes.image")}</span>
@@ -204,7 +205,7 @@ export default class index extends PageComponent {
     return (
       <div className={`col-xs-${this.child ? 3 : 2} td btn-group`}>
         <cm.RaisedButton
-          className="btn-edit btn-mt"
+          className="btn-edit btn-mr5"
           label={t("common.edit")}
           primary={true}
           icon={<EditorModeEdit />}

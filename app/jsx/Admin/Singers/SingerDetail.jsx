@@ -73,6 +73,7 @@ export default class Detail extends BaseComponent {
           {this.renderDataRow(t("singers.attributes.name"), data.name)}
           {this.renderDataRow(t("common.attributes.age"), data.age)}
           {this.renderDataRow(t("singers.attributes.dob"), data.dob)}
+          {this.renderDataRow(t("common.attributes.country"), data.country.full_name)}
           {this.renderDataRow(t("common.attributes.created_at"), data.created_at)}
           {this.renderDataRow(t("common.attributes.updated_at"), data.updated_at)}
           {this.renderDataRow(t("singers.attributes.content"), data.content)}
