@@ -4,7 +4,6 @@ class Api::V1::AlbumsController < Api::BaseController
   end
 
   def create
-    byebug
     if @album.save
       response_success album: @album
     else
@@ -26,7 +25,8 @@ class Api::V1::AlbumsController < Api::BaseController
   end
 
   def update
-
+    @album.update_attributes album_params
+    response_success album: @album
   end
 
   private
