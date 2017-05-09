@@ -101,10 +101,14 @@ export default {
       view: "View",
       share: "share",
       singer: "Singer",
+      album: "Album",
     },
     child: "Song",
     songs: {
 
     }
+  },
+  songs: {
+
   }
 }

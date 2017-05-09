@@ -185,7 +185,7 @@ export default class AlbumForm extends PageComponent {
               {maxLength: 80, required: true})}
             {this.renderLabel("Singer", true)}
             <Singer singers={this.state.listSinger} ref="singers"
-              defaultSelectSingers={this.state.data.singers} />
+              defaultSelectSingers={data.singers} />
 
             <SelectCountry fieldName="country_id"
               countries={this.state.countries}

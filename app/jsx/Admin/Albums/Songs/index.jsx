@@ -1,190 +1,138 @@
 import SongForm from "./SongForm";
 import SongDetail from "./SongDetail";
+import MasterIndex from "../../MasterIndex";
 import ListHeader from "../../ListHeader";
-import ActionSearch from "material-ui/svg-icons/action/search";
-import ContentAddCircleIcon from "material-ui/svg-icons/content/add-circle";
-const TAKE = 20;
 
-export default class index extends PageComponent {
+export default class index extends MasterIndex {
   constructor(props) {
     super(props);
 
     this.state = {
       show: false,
-      list: [],
-      error: "",
-      sorting: false,
-      hasMore: false,
+    }
+
+    this.headerType = "secondary";
+    this.noHeaderTitle = true;
+
+    this.apiName = "Song";
+    this.tableName = "songs";
+    this.transPath = "albums.songs";
+    this.fields = [
+      {name: "name", width: 6},
+    ];
+    this.objectDetail = SongDetail;
+    this.objectForm = SongForm;
+  }
+
+  isAuthorized() {
+    return true;
+  }
+
+  componentDidMount() {
+  }
+
+  getOptions() {
+    return {
+      filter: {
+        album: this.parent ? this.parent.id : null,
+      },
+      include: JSON.stringify({singers: {}})
     }
   }
 
   open = (data, additionData) => {
-    this.setState({
-      show: true,
-    })
-  }
+    this.parent = data || {};
+    this.additionData = additionData;
+    this.typingQuery = "";
 
-  renderDialogs() {
-    return (
-      <div>
-        <SongDetail ref="songDetail"/>
-        <SongForm ref="songForm"/>
-      </div>
-    );
-  }
-
-  handleKeyDownSearch = (event) => {
-    if (event.keyCode === 13) {
-      this.handleSearch();
+    if (data.id) {
+      this.setState({
+        show: true,
+      });
+      this.getListMaster(this.take);
     }
   }
 
-  handleSearch = () => {
-    this.take = TAKE;
-    // this.getListMaster(takeRecord);
+  handleGetList = (status, data) => {
+    if (!status) return;
+    this.setState({
+      data: data.songs,
+    })
   }
 
-  handleChangeTextSearch = (event) => {
-    this.typingQuery = event.target.value;
+  close = () => {
+    this.setState({
+      show: false,
+      list: null,
+    });
   }
 
-  handleClickCreate = () => {
-    // this.refs.objectForm.open();
+  handleClose = () => {
+    this.close();
   }
 
-  handleClickDetail = (data) => {
-    // this.refs.objectDetail.open(data);
-  }
-
-  renderTable(listElement) {
+  renderHeader() {
+    let icon = <i className="material-icons icon-header">audiotrack</i>;
     return (
-      <div>
-        {/*<div className="row table-header table-row">
-          <div className="col-xs-1 header-title td">
-            <span>{t("common.attributes.id")}</span>
-          </div>
-          {
-            this.fields.map((field) => {
-              return (
-                <div
-                  className={`col-xs-${field.width} header-title td custom-${field.name}`}
-                  key={field.name}>
-                    <span>{t(`common.attributes.${field.name}`,
-                      {fallback: t(`${this.transPath}.attributes.${field.name}`)})}</span>
-                </div>
-              );
-            })
-          }
-          <div className="col-xs-2 header-title td">
-            <span>{t("common.attributes.updated_at")}</span>
-          </div>
-          <div className="col-xs-2 header-title td pull-right sort-button">
-            {this.sortable ? (
-              <cm.RaisedButton className={`pull-right ${this.state.sorting ? "sorting-button" : ""}`}
-                label={this.state.sorting ? t("common.done") : t("master.sort")}
-                onClick={this.handleClickSort}
-                primary={true} />
-            ) : ""}
-          </div>
+      <ListHeader
+        icon={icon}
+        title="Songs"
+      >
+        {this.renderActionHeader()}
+      </ListHeader>
+    )
+  }
+
+  renderDataRow(item, index) {
+    let dataRow = this.fields.map((field) => {
+      let text = field.transform ? field.transform(item) : item[field.name];
+      return (
+        <div className={`col-xs-${field.width} td ellipsis-text custom-${field.name}`} key={field.name}
+          title={text}>
+          <span>{text}</span>
         </div>
-        <div className="table-index">
-          {listElement}
-          {this.state.hasMore ?
-            <div className="btn-show-more">
-              <cm.RaisedButton
-                label={t("common.show_more")}
-                onTouchTap={this.handleClickLoadMore}
-                backgroundColor="lightgray"
-                style={{
-                  width: "90%",
-                }}
-                labelStyle={{
-                  fontWeight: "bold",
-                }}
-              />
-            </div> : null}
-        </div>*/}
-      </div>
-    )
-  }
+      );
+    });
 
-  renderDataRow(item) {
-    return (
-      <div></div>
-    )
-    // let dataRow = this.fields.map((field) => {
-    //   let text = field.transform ? field.transform(item) : item[field.name];
-    //   return (
-    //     <div className={`col-xs-${field.width} td ellipsis-text custom-${field.name}`} key={field.name}
-    //       title={text}>
-    //       <span>{text}</span>
-    //     </div>
-    //   );
-    // });
-
-    // return (
-    //   <div>
-    //     <div className="col-xs-1 td ellipsis-text"
-    //       title={item.id}>
-    //       <span>{item.id}</span>
-    //     </div>
-    //     {dataRow}
-    //     <div className="col-xs-2 td"
-    //       title={item.updated_at}>
-    //       <span>{item.updated_at}</span>
-    //     </div>
-    //   </div>
-    // )
-  }
-
-  renderListElement() {
-    return (
-      this.state.list.map((item) => {
-        return (
-          <div
-            className={(this.isShowHoverPointer ? "pointer" : "") + " row table-row table-row-striped-2"}
-            key={item.id}
-            onClick={() => this.handleClickDetail(item)}>
-            {this.renderDataRow(item)}
-            {/*this.renderItemButtonGroup(item)*/}
-          </div>
-        );
-      })
-    )
-  }
-
-  renderActionHeader() {
-    if (this.noActionHeader) return;
+    const defaultImg = "/images/default-playlist.jpg";
+    let avatar = "";
+    if (this.parent && this.parent.attachments[0]) {
+      avatar = this.parent.attachments[0].url
+    } else {
+      avatar = defaultImg;
+    }
 
     return (
       <div>
-        <mui.TextField className="input-search"
-          hintText={t("common.search")}
-          onKeyDown={this.handleKeyDownSearch}
-          onChange={(event) => this.handleChangeTextSearch(event)}/>
-          <mui.IconButton className="icon-search" onClick={this.handleSearch}>
-            <ActionSearch />
-          </mui.IconButton>
-          <cm.RaisedButton
-            className="btn-create"
-            label={t("common.create")}
-            secondary={true}
-            onTouchTap={this.handleClickCreate}
-            icon={<ContentAddCircleIcon />}
-          />
+        <div className="col-xs-1 td ellipsis-text"
+          title={item.id}>
+          <span>{index + 1}</span>
+        </div>
+        <div className="col-xs-1 td">
+          <mui.Avatar src={avatar} size={40} className="avatar"/>
+        </div>
+        {dataRow}
+        <div className="col-xs-2 td"
+          title={item.created_at}>
+          <span>{item.created_at}</span>
+        </div>
       </div>
-    );
+    )
   }
 
   render() {
-    const icon = <i className="material-icons icon-header">audiotrack</i>
-
     return (
-      <div className="base-master-index">
+      <div>
         <cm.Dialog
+          title={this.parent ? this.parent.name : ""}
+          className="base-master-dialog-index"
+          contentClassName="dialog-content"
+          onRequestClose={this.handleClose}
           open={this.state.show}
-        />
+        >
+            {super.render()}
+        </cm.Dialog>
       </div>
-    )
+    );
   }
 }

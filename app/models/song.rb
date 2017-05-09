@@ -1,5 +1,6 @@
 class Song < ApplicationRecord
   include SmartAsJson
+  include Search
 
   SONG_ATTRIBUTES_PARAMS = %i[name]
   ALLOWED_METHODS = ["get_rank_previous"]
@@ -54,7 +55,7 @@ class Song < ApplicationRecord
     joins(:singers).where("singers.id = ?", singer_id)
   end
 
-  scope :filter_by_album_id, -> album_id do
+  scope :filter_by_album, -> album_id do
     joins(:albums).where("albums.id = ?", album_id)
   end
 
@@ -90,5 +91,13 @@ class Song < ApplicationRecord
       },
     })
     as_json options
+  end
+
+  class << self
+    def search_by_query query
+      # fields = {id: "eq", name: "like"}
+      # search_follow_field query, fields
+      Song.all
+    end
   end
 end

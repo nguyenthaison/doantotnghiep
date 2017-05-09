@@ -243,9 +243,11 @@ export default class index extends PageComponent {
       <div>
         <this.objectDetail
           ref="objectDetail"
+          parent={this.parent}
         />
         <this.objectForm
           ref="objectForm"
+          parent={this.parent}
           onSubmit={this.handleSearch}
         />
         {this.renderAdditionDialogs()}
