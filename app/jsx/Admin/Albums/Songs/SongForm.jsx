@@ -14,6 +14,7 @@ export default class SongForm extends BaseComponent {
       data: {id: null},
       errors: "",
       listSinger: [],
+      lyrics: null,
     };
 
     this.showDeleteButton = true;
@@ -38,16 +39,23 @@ export default class SongForm extends BaseComponent {
     this.close();
   }
 
-  getDataForSubmit() {
-    return this.state.data;
-  }
-
   getObjectFromId(items, id) {
     return items.find(item => item.id === id);
   }
 
   handleClickSubmit = () => {
     let data = this.state.data;
+    let avatarIds = this.refs.avatar.getAttachmentIds();
+    avatarIds = avatarIds.length > 0 ? avatarIds : [""];
+    data["attachment_ids"] = avatarIds;
+    data["album_id"] = this.props.parent.id;
+
+    // let index = data.album_songs.map((albumSong) => albumSong.album_id === this.props.parent.id)
+    // if (index === -1) {
+    //   rssSources = update(data.album_songs, {[index]: {album_id: {$set: value}}});
+    //   let data = update(this.state.data, {rss_sources: {$set: rssSources}});
+    // }
+
     if(this.state.data.id) {
       API.Song.update(this.handleSaveCallback, data);
     } else {
@@ -99,6 +107,17 @@ export default class SongForm extends BaseComponent {
     let newState = update(this.state.data, {dob: {$set: value}});
     this.setState({data: newState});
   }
+
+  // handleChangeInputText = (fieldName, value) => {
+  //   let lyrics = this.state.data.lyrics || [],
+  //   newLyrics = update(lyrics, {$push: [{song_id: this.state.data.id},
+  //     {user_id: App.auth.id}, {content: value}]});
+  //   let data = update(this.state.data, {lyrics: {$set: newLyrics}});
+
+  //   this.setState({
+  //     data: data,
+  //   });
+  // }
 
   renderLabel(fieldName, required = false) {
     let requiredText = required ? <div className="required">{t("common.required")}</div> : "";
@@ -152,12 +171,13 @@ export default class SongForm extends BaseComponent {
 
   renderDialogContent() {
     const data = this.state.data;
+    // let lyric = data.lyrics && data.lyrics.length > 0 ? data.lyrics[0].content : "";
 
     return(
       <div>
         <div className="row">
           <div className="col-xs-4">
-
+            {this.renderUpLoadLogoField("avatar", data.attachments, "Avatar")}
           </div>
           <div className="col-xs-8">
             {this.renderTextInput("name",
@@ -166,10 +186,34 @@ export default class SongForm extends BaseComponent {
             <Singer singers={this.state.listSinger} ref="singers"
               defaultSelectSingers={data.singers} />
 
+            {/*<cm.TextField
+              name="lyric"
+              fullWidth={true}
+              fieldName="lyric"
+              value={lyric}
+              multiLine={true}
+              onChange={(event, value) => this.handleChangeInputText("content", value)}
+            />*/}
           </div>
         </div>
       </div>
     )
+  }
+
+  renderUpLoadLogoField(ref, attachment, label) {
+    return (
+      <div>
+        <h4>
+          <i className="material-icons">panorama</i>
+          <span>{label}</span>
+        </h4>
+        <div className="avatar col-md-6 col-lg-6 col-sm-12 col-xs-12">
+          <div className="upload">
+            <cm.FileUploader ref={ref} defaultFiles={attachment} numberUploadFile={1} />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {

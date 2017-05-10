@@ -36,7 +36,12 @@ export default class index extends MasterIndex {
       filter: {
         album: this.parent ? this.parent.id : null,
       },
-      include: JSON.stringify({singers: {}})
+      include: JSON.stringify({
+        singers: {},
+        lyrics: {} ,
+        attachments: {},
+        album_songs: {},
+      })
     }
   }
 

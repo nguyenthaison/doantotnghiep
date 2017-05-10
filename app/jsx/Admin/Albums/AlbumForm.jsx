@@ -52,10 +52,6 @@ export default class AlbumForm extends PageComponent {
     this.close();
   }
 
-  getDataForSubmit() {
-    return this.state.data;
-  }
-
   getObjectFromId(items, id) {
     return items.find(item => item.id === id);
   }

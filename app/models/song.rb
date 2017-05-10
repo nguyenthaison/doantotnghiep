@@ -2,11 +2,15 @@ class Song < ApplicationRecord
   include SmartAsJson
   include Search
 
-  SONG_ATTRIBUTES_PARAMS = %i[name]
+  ATTRIBUTES_PARAMS = [:name, :country_id, attachment_ids: [], album_songs_attributes: [:id, :album_id]]
+    # lyrics_attributes: [:id, :user_id, :content],
+    # singer_songs_attributes: [:id, :singer_id],
+    # album_songs_attributes: [:id, :album_id]]
+
   ALLOWED_METHODS = ["get_rank_previous"]
   JOIN_TABLES = [:singers, :author_songs, :music_types, :lyrics, :albums]
 
-  has_attached_file :attachment
+  # has_attached_file :attachment
 
   belongs_to :user
   belongs_to :country
@@ -24,11 +28,12 @@ class Song < ApplicationRecord
   has_many :lyrics, dependent: :destroy
   has_many :ranks, as: :target, dependent: :destroy
   has_many :favorite_musics, dependent: :destroy
+  has_many :attachments, as: :attachmentable, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 100, minimum: 1}
 
-  validates_attachment_content_type :attachment,
-    content_type: [
+  # validates_attachment_content_type :attachment,
+  #   content_type: [
       # "application/octet-stream",
       # "application/vnd.ms-excel",
       # "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -40,7 +45,10 @@ class Song < ApplicationRecord
       # "image/png",
       # "image/gif",
       # "video/mp4"
-    ]
+    # ]
+  accepts_nested_attributes_for :lyrics
+  accepts_nested_attributes_for :singer_songs
+  accepts_nested_attributes_for :album_songs
 
   scope :filter_by_country, -> country do
   end
@@ -71,6 +79,10 @@ class Song < ApplicationRecord
     JSON.parse(params[:music_type_song_ids]).each do |item|
       MusicTypeSong.create(music_type_id: item, song_id: self.id)
     end
+  end
+
+  def create_album_song album_id
+    # AlbumSong.in
   end
 
   def get_rank_previous
