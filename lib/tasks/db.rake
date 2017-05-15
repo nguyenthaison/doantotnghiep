@@ -5,7 +5,9 @@ namespace :db do
 
     puts "create user"
     user = Fabricate :user, name: "son", email: "abc@gmail.com", login_id: "admin",
-      password: "123456", password_confirmation: "123456"
+      password: "123456", password_confirmation: "123456", role: "admin"
+    user = Fabricate :user, name: "son", email: "abcd@gmail.com", login_id: "123456",
+      password: "123456", password_confirmation: "123456", role: "guest"
 
     puts "create favorite music"
     Fabricate :play_list, name: "Favorite Song", user_id: user.id, play_list_type: "Favorite"

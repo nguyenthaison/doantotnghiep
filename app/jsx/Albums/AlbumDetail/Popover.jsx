@@ -69,7 +69,6 @@ export default class Popover extends PageComponent {
   render() {
     const playLists = this.props.playLists;
     const song = this.state.song;
-    console.log(this._isMounted);
 
     return (
       <mui.Popover
@@ -97,8 +96,8 @@ export default class Popover extends PageComponent {
             />
           )
         })}
-        <CreatePlayList 
-          onCreate={this.handleCreatePlayList} 
+        <CreatePlayList
+          onCreate={this.handleCreatePlayList}
         />
       </mui.Popover>
     )

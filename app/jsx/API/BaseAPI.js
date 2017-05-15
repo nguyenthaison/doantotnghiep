@@ -62,20 +62,20 @@ export default class BaseAPI {
       }
     }
 
-    options.error = (xhr) => {
-      if (xhr.status == 422 || xhr.status == 401) {
-        Helper.showAlert("Not login",
-          "Session is expired, press OK to  reload!",
-          BaseAPI.handleRequestLogin);
-          return false;
-      }
+    // options.error = (xhr) => {
+    //   if (xhr.status == 422 || xhr.status == 401) {
+    //     Helper.showAlert("Not login",
+    //       "Session is expired, press OK to  reload!",
+    //       BaseAPI.handleRequestLogin);
+    //       return false;
+    //   }
 
-      Helper.showMessage("Connection error", "error");
+    //   Helper.showMessage("Connection error", "error");
 
-      if (callback) {
-        callback(false);
-      }
-    }
+    //   if (callback) {
+    //     callback(false);
+    //   }
+    // }
 
     options.beforeSend = () => {
       $(".ajax-loading").css({

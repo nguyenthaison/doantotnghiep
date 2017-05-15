@@ -8,7 +8,7 @@ export default class App extends BaseComponent {
   constructor(props) {
     super(props);
     global.App = this;
-    this.auth = true;
+    this.auth = null;
 
     this.state = {
       drawerCollapsed: false,
@@ -45,15 +45,16 @@ export default class App extends BaseComponent {
     // when you back to the first loaded route, you will get blank page.
     // This below line will do a trick, replace a POST (full page load) of the first time,
     // by a REPLACE. And it works like a charm.
-    // Helper.history.replace({
-    //   pathname: Helper.getCurrentPath()});
+    Helper.history.replace({
+      pathname: Helper.getCurrentPath()});
   }
 
   handleGetAuthenticationCallback = (status, data) => {
     if (!status) return;
-    this.auth = data
+
+    this.auth = data;
     this.checkAuthorized();
-    // this.forceUpdate();
+    this.forceUpdate();
   }
 
   // updateSettings(data) {

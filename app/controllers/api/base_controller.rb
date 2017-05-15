@@ -1,6 +1,6 @@
 class Api::BaseController < ActionController::Base
   include Devise::Controllers::SignInOut
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   protect_from_forgery with: :exception
 
   load_and_authorize_resource

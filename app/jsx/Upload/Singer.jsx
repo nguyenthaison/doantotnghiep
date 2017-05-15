@@ -20,7 +20,6 @@ export default class Singer extends PageComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log(nextProps.defaultSelectSingers);
     if (nextProps !== this.props) {
       this.setState({
         singers: nextProps.singers,
