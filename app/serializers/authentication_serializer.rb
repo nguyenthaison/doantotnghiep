@@ -11,18 +11,26 @@ class AuthenticationSerializer < ActiveModel::Serializer
   end
 
   def authorized_pages
-    member_auth = {
+    guest_auth = {
+      home: true,
+      subjects: true,
+      ranks: true,
       song: true,
       album: true,
       singers: true,
-      personal: true,
       albums: true,
       artists: true,
       ranks: true,
       songs: true,
       authors: true,
-      albums: true,
-      users: true,
+      personal: true,
+      upload: true,
+    }
+
+    member_auth = guest_auth.deep_merge({
+    })
+
+    admin_auth = member_auth.deep_merge({
       admin: {
         singers: true,
         albums: true,
@@ -30,9 +38,9 @@ class AuthenticationSerializer < ActiveModel::Serializer
         songs: true,
         users: true,
       },
-    }
+    })
 
-    # role = object.admin? && @options[:field_id] ? "manager" : object.role
-    # eval "#{role}_auth"
+    role = object&.role || "guest"
+    eval "#{role}_auth"
   end
 end

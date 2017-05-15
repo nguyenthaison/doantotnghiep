@@ -27,7 +27,7 @@ const router = (
     <Route path="users/sign_in" component={Login} />
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
-
+      <Route path="home" component={Home} />
       <Route path="play" component={PlayMusic} />
 
       <Route path="albums" component={Albums} />

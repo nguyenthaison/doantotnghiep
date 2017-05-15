@@ -14,22 +14,15 @@ export default class Drawer extends BaseComponent {
   renderMenuItem(item, transitionTo, icon, isCustomIcon, rightIcon) {
     let isActive;
     if (this.props.currentPath === "/") {
-      isActive = item === true
+      isActive = item === Object.keys(App.auth.authorized_pages)[0]
     } else {
       isActive = this.props.currentPath.split("/")[1] === item
     }
-
     let menuItemIcon = <i className="material-icons">{icon}</i>;
-    // isCustomIcon ?
-    //   <i className={icon + (isActive ? "-active" : "")}>
-    //     <img src={isActive ? theme.urlIconMenuFaq : theme.defaultIconMenuFaq} />
-    //   </i> :
-    //   <i className="material-icons">{icon}</i>;
-
-    // if (!App.auth.authorized_pages[item]) return null;
+    if (!App.auth.authorized_pages[item]) return null;
 
     let innerDivStyle = {
-      background: isActive ? theme.secondaryColor : null,
+      background: isActive ? "#56bfb5" : null,
       paddingLeft: this.props.collapsed ? "100px" : "50px",
     };
 
@@ -61,14 +54,14 @@ export default class Drawer extends BaseComponent {
             </div>
           </div>
           <mui.Menu onItemTouchTap={this.handleTouchMenu} className="default-cursor">
-            {this.renderMenuItem("Home", "/", "home")}
-            {this.renderMenuItem("Subject", "/subjects", "subject")}
-            {this.renderMenuItem("Ranking", "/ranks", "filter_list")}
-            {this.renderMenuItem("Album", "/albums", "album")}
-            {this.renderMenuItem("Artist", "/artists", "people")}
-            {this.renderMenuItem("Personal", "/personal", "account_circle")}
-            {this.renderMenuItem("Upload", "/upload", "cloud_upload")}
-            {this.renderMenuItem("Admin", "/admin", "supervisor_account")}
+            {this.renderMenuItem("home", "/", "home")}
+            {this.renderMenuItem("subjects", "/subjects", "subject")}
+            {this.renderMenuItem("ranks", "/ranks", "filter_list")}
+            {this.renderMenuItem("albums", "/albums", "album")}
+            {this.renderMenuItem("artists", "/artists", "people")}
+            {this.renderMenuItem("personal", "/personal", "account_circle")}
+            {this.renderMenuItem("upload", "/upload", "cloud_upload")}
+            {this.renderMenuItem("admin", "/admin", "supervisor_account")}
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>
         </div>
