@@ -25,6 +25,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
       t.string :phone_number
       t.date :dob
       t.references :country, index: true, foreign: true
+      t.datetime :created_at
+      t.datetime :updated_at
 
       ## Confirmable
       # t.string   :confirmation_token

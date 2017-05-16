@@ -43,17 +43,17 @@ export default class UserDrawer extends BaseComponent {
   }
 
   handleOpenChangePasswordDialog = () => {
-    // this.refs.changePasswordDialog.open();
+    this.refs.changePasswordDialog.open();
   }
 
   handleLogout = () => {
-    // $.ajax({
-    //   url: "/users/sign_out",
-    //   method: "DELETE",
-    //   success(response) {
-    //     window.location.href = "/";
-    //   }
-    // });
+    $.ajax({
+      url: "/users/sign_out",
+      method: "DELETE",
+      success(response) {
+        window.location.href = "/";
+      }
+    });
   }
 
   renderMenuItem(item, icon, onClick) {

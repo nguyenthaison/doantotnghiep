@@ -23,6 +23,13 @@ export default class HeaderMenu extends BaseComponent {
     });
   }
 
+  handleLogin = (user) => {
+    this.props.onLogin();
+    App.auth["id"] = user.id;
+    App.auth["name"] = user.name;
+    this.forceUpdate();
+  }
+
   renderButton = () => {
     return (
       <cm.RaisedButton
@@ -43,11 +50,11 @@ export default class HeaderMenu extends BaseComponent {
         <h4>{this.state.title}</h4>
         <ul>
           <li><HeaderItem icon="perm_identity" className="pointer"
-            onClick={() => this.handleOpenDrawer("userDrawer")} />
+            onClick={() => this.handleOpenDrawer(ref)} />
           </li>
         </ul>
         <UserDrawer ref="userDrawer" />
-        {/*<Login ref="login" />*/}
+        <Login ref="login" onLogin={this.handleLogin} />
       </div>
     )
   }

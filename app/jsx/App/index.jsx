@@ -73,6 +73,10 @@ export default class App extends BaseComponent {
     });
   }
 
+  handleLogin = () => {
+    API.Authentication.getList(this.handleGetAuthenticationCallback);
+  }
+
   renderMainContent() {
     let mainClass = this.state.drawerCollapsed ? "main-area-w56" : "main-area-w195";
     return (
@@ -83,7 +87,7 @@ export default class App extends BaseComponent {
           currentPath={Helper.getCurrentPath()}
         />
         <div className={mainClass}>
-          <HeaderMenu ref="headerMenu" />
+          <HeaderMenu ref="headerMenu" onLogin={this.handleLogin} />
           <div className="main-content">
             {this.props.children}
           </div>

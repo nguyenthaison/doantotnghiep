@@ -1,6 +1,6 @@
 class Api::V1::SessionsController < Api::BaseController
   include Devise::Controllers::SignInOut
-  skip_before_action :authenticate_user!
+  # skip_before_action :authenticate_user!
   skip_load_and_authorize_resource
 
   def create
@@ -9,7 +9,7 @@ class Api::V1::SessionsController < Api::BaseController
       response_when_invalid_login
     else
       sign_in "user", user
-      response_success
+      response_success user: user
     end
   end
 

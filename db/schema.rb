@@ -317,6 +317,8 @@ ActiveRecord::Schema.define(version: 20170503081145) do
     t.string   "phone_number"
     t.date     "dob"
     t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["country_id"], name: "index_users_on_country_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

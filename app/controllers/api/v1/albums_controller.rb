@@ -31,7 +31,6 @@ class Api::V1::AlbumsController < Api::BaseController
 
   private
   def album_params
-    byebug
     params.require(:album).permit(Album::ATTRIBUTES_PARAMS)
   end
 end
