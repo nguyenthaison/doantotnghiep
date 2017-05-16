@@ -8,7 +8,7 @@ export default class Dialog extends BaseComponent {
 
   renderIcon() {
     if (this.props.icon) {
-      return <span className="dialog-icon" style={{color: theme.secondaryColor}}>{this.props.icon}</span>
+      return <span className="dialog-icon">{this.props.icon}</span>
     }
   }
 

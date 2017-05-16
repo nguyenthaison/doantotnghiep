@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include SmartAsJson
+  include Search
 
   enum role: [:guest, :member, :admin]
 
