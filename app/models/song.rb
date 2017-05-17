@@ -107,9 +107,9 @@ class Song < ApplicationRecord
 
   class << self
     def search_by_query query
-      # fields = {id: "eq", name: "like"}
-      # search_follow_field query, fields
-      Song.all
+      fields = {name: "like"}
+      search_follow_field query, fields
+      # Song.all
     end
   end
 end

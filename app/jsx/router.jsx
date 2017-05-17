@@ -21,6 +21,7 @@ import AdminAlbums from "./Admin/Albums";
 import AdminSongs from "./Admin/Songs";
 import AdminAuthors from "./Admin/Authors";
 import AdminSingers from "./Admin/Singers";
+import Songs from "./Songs";
 
 const router = (
   <Router history={browserHistory}>
@@ -33,6 +34,7 @@ const router = (
       <Route path="albums" component={Albums} />
       <Route path="album" component={AlbumDetail} />
 
+      <Route path="search/songs" component={Songs} />
       <Route path="song" component={Song} />
 
       <Route path="subjects" component={Subjects} />
