@@ -14,7 +14,6 @@ class AuthenticationSerializer < ActiveModel::Serializer
     guest_auth = {
       home: true,
       subjects: true,
-      ranks: true,
       song: true,
       album: true,
       singers: true,

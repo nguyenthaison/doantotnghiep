@@ -57,12 +57,6 @@ export default class App extends BaseComponent {
     this.forceUpdate();
   }
 
-  // updateSettings(data) {
-  //   this.auth.settings = this.auth.settings.filter(setting => setting.key !== data.key);
-  //   this.auth.settings.push(data);
-  //   this.forceUpdate();
-  // }
-
   setToolBarOnHeaderMenu = (title = "", linkTo = null) => {
     this.refs.headerMenu.setToolBar(title, linkTo);
   }

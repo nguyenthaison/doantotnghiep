@@ -2,6 +2,7 @@ import HeaderItem from './item.jsx';
 import Login from "./Login";
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
 import UserDrawer from "./../UserDrawer";
+import Search from "./Search";
 
 export default class HeaderMenu extends BaseComponent {
   constructor(props) {
@@ -30,6 +31,10 @@ export default class HeaderMenu extends BaseComponent {
     this.forceUpdate();
   }
 
+  handleSearch = (textSearch) => {
+    this.props.onSearch(textSearch);
+  }
+
   renderButton = () => {
     return (
       <cm.RaisedButton
@@ -52,6 +57,7 @@ export default class HeaderMenu extends BaseComponent {
           <li><HeaderItem icon="perm_identity" className="pointer"
             onClick={() => this.handleOpenDrawer(ref)} />
           </li>
+          <li><Search /></li>
         </ul>
         <UserDrawer ref="userDrawer" />
         <Login ref="login" onLogin={this.handleLogin} />
