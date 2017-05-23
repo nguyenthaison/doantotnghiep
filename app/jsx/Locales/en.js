@@ -64,6 +64,12 @@ export default {
   login: {
     login_id: "Login ID",
     password: "Password",
+    name: "Name",
+    password_confirmation: "Confirmation Password",
+    email: "Email",
+    phone_number: "Phone Number",
+    dob: "Date of birth",
+    country_id: "Country",
     remember: "Remember",
     btn_login: "Login",
     invalid: "Login Id or password is invalid",

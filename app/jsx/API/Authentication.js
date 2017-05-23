@@ -14,19 +14,4 @@ export default class Authentication extends BaseAPI {
       data: user
     });
   }
-
-  static changeField(callback, fieldId) {
-    this.sendAjax(callback, {
-      url: "change_field",
-      method: "POST",
-      data: {field_id: fieldId},
-    });
-  }
-
-  static getContribution(callback) {
-    this.sendAjax(callback, {
-      url: "get_contribution",
-      method: "GET",
-    });
-  }
 }

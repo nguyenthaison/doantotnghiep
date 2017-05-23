@@ -15,6 +15,7 @@ class Ability
     else
       can :read, :all
       can :index, :all
+      can :create, User
       cannot [:create, :update, :destroy], [Singer, Author, Song, Album]
     end
   end
