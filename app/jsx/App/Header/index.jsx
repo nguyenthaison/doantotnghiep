@@ -1,5 +1,6 @@
 import HeaderItem from './item.jsx';
 import Login from "./Login";
+import Register from "./Register";
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
 import UserDrawer from "./../UserDrawer";
 import Search from "./Search";
@@ -35,6 +36,14 @@ export default class HeaderMenu extends BaseComponent {
     this.props.onSearch(textSearch);
   }
 
+  handleRegister = () => {
+    this.refs.register.open();
+  }
+
+  handleRegisterSuccess = () => {
+    this.refs.login.open();
+  }
+
   renderButton = () => {
     return (
       <cm.RaisedButton
@@ -60,7 +69,8 @@ export default class HeaderMenu extends BaseComponent {
           <li><Search /></li>
         </ul>
         <UserDrawer ref="userDrawer" />
-        <Login ref="login" onLogin={this.handleLogin} />
+        <Login ref="login" onLogin={this.handleLogin} onRegister={this.handleRegister} />
+        <Register ref="register" onRegister={this.handleRegisterSuccess} />
       </div>
     )
   }

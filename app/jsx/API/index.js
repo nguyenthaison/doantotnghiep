@@ -12,6 +12,7 @@ import PlayList from "./PlayList";
 import Attachment from "./Attachment";
 import PlayListSong from "./PlayListSong";
 import Author from "./Author";
+import User from "./User";
 
 module.exports = {
   Song,
@@ -27,4 +28,5 @@ module.exports = {
   Attachment,
   PlayListSong,
   Author,
+  User,
 };

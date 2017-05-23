@@ -57,16 +57,28 @@ export default class Login extends PageComponent {
     this.setState({user: newState});
   }
 
-  render() {
-    const loginFields = ["login_id", "password"];
+  handleRegister = () => {
+    this.handleClose();
+    this.props.onRegister();
+  }
 
+  render() {
     let actionButton = (
-      <cm.RaisedButton
-        style={{minWidth: "110px"}}
-        label={t("common.save")}
-        primary={true}
-        onClick={this.handleLogin}
-      />
+      <div>
+        <cm.RaisedButton
+          style={{minWidth: "110px"}}
+          label={t("common.save")}
+          primary={true}
+          onClick={this.handleLogin}
+        />
+        {/*<p onClick={this.handleRegister}>Register</p>*/}
+        <cm.RaisedButton
+          style={{minWidth: "110px"}}
+          label="Register"
+          secondary={true}
+          onClick={this.handleRegister}
+        />
+      </div>
     );
 
     let content = (
@@ -92,14 +104,16 @@ export default class Login extends PageComponent {
     );
 
     return (
-      <cm.Dialog
-        title="Login"
-        icon={<i className="material-icons">lock</i>}
-        actions={actionButton}
-        onRequestClose={this.close}
-        open={this.state.open}
-        children={content}
-      />
+      <div>
+        <cm.Dialog
+          title="Login"
+          icon={<i className="material-icons">lock</i>}
+          actions={actionButton}
+          onRequestClose={this.close}
+          open={this.state.open}
+          children={content}
+        />
+      </div>
     )
   }
 }
