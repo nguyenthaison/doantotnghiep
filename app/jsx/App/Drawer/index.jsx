@@ -1,14 +1,27 @@
+import Login from "../Header/Login";
+import Register from "../Header/Register";
 
 export default class Drawer extends BaseComponent {
   constructor(props) {
     super(props);
+  }
 
-    this.state = {
-    }
+  handleLogin = (user) => {
+    App.auth["id"] = user.id;
+    App.auth["name"] = user.name;
+    this.forceUpdate();
+  }
+
+  handleRegisterSuccess = () => {
+    this.refs.login.open();
   }
 
   handleTouchMenu = (e, menuItem) => {
-    Helper.transitionTo(menuItem.props.value);
+    if ((menuItem.props.value === "/upload" || menuItem.props.value === "/personal") && App.auth.id === 2) {
+      this.refs.login.open();
+    } else {
+      Helper.transitionTo(menuItem.props.value);
+    }
   }
 
   renderMenuItem(item, transitionTo, icon, isCustomIcon, rightIcon) {
@@ -65,6 +78,8 @@ export default class Drawer extends BaseComponent {
           </mui.Menu>
           <div className="drawer-toggle" onClick={this.props.onToggle}></div>
         </div>
+        <Login ref="login" onLogin={this.handleLogin} onRegister={this.handleRegister} />
+        <Register ref="register" onRegister={this.handleRegisterSuccess} />
       </mui.Drawer>
     );
   }

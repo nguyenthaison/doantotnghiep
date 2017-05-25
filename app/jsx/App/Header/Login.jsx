@@ -71,7 +71,6 @@ export default class Login extends PageComponent {
           primary={true}
           onClick={this.handleLogin}
         />
-        {/*<p onClick={this.handleRegister}>Register</p>*/}
         <cm.RaisedButton
           style={{minWidth: "110px"}}
           label="Register"

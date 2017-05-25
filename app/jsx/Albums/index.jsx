@@ -1,4 +1,3 @@
-import Sound from "react-sound";
 import List from "./List";
 
 const TAKE_RECORD = 12;
