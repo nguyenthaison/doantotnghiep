@@ -1,5 +1,6 @@
 class PlayList < ApplicationRecord
   # include SmartAsJson
+  include Search
 
   ALLOWED_METHODS = [:count_song]
   ATTRIBUTE_PARAMS = [:name, :describe, attachment_ids: []]
@@ -16,5 +17,12 @@ class PlayList < ApplicationRecord
 
   def count_song
     self.songs.size
+  end
+
+  class << self
+    def search_by_query query
+      fields = {name: "like"}
+      search_follow_field query, fields
+    end
   end
 end

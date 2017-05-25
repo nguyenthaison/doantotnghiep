@@ -1,35 +1,40 @@
 import {browserHistory} from 'react-router';
+import ListSearchSong from "./ListSearchSong";
+import PlaylistSearch from "./PlaylistSearch";
 
 export default class index extends PageComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      songs: [],
+      active: "songs",
     }
   }
 
   componentDidMount() {
-    API.Song.getList(this.handleGetListSong, this.getOption());
+    this.setToolBar("Music Search");
   }
 
-  getOption() {
-    let query = Helper.getCurrentLocationState();
-    return {
-      search_query: query.textSearch,
-    }
-  }
-
-  handleGetListSong = (status, data) => {
-    if (!status) return;
+  handleActive = (value) => {
     this.setState({
-      songs: data.songs,
-    })
+      active: value,
+    });
   }
 
   render() {
+    const query = Helper.getCurrentLocationState();
+
     return (
-      <div> </div>
+      <div className="list-search">
+        <mui.Tabs>
+          <mui.Tab label="Songs" onActive={() => this.handleActive("songs")}>
+            <ListSearchSong query={query} active={this.state.active}/>
+          </mui.Tab>
+          <mui.Tab label="Playlist" onActive={() => this.handleActive("playlist")}>
+            <PlaylistSearch query={query} active={this.state.active}/>
+          </mui.Tab>
+        </mui.Tabs>
+      </div>
     )
   }
 }
