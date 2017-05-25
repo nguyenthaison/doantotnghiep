@@ -32,10 +32,12 @@ const router = (
       <Route path="play" component={PlayMusic} />
 
       <Route path="albums" component={Albums} />
-      <Route path="album" component={AlbumDetail} />
+      {/*<Route path="album" component={AlbumDetail} />*/}
+      <Route path="albums/:id" component={AlbumDetail} />
 
       <Route path="search/songs" component={Songs} />
-      <Route path="song" component={Song} />
+      <Route path="songs/:id" component={Song} />
+{/*      <Route path="song" component={Song} />*/}
 
       <Route path="subjects" component={Subjects} />
 

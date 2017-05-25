@@ -39,7 +39,7 @@ export default class Song extends PageComponent {
     this.setState({
       // song: checkAlbum ? nextProps.item[0] : nextProps.item,
       song: checkAlbum ? nextProps.songActive : nextProps.item,
-      repeat: nextProps.item.length > 1 ? "repeat" : "one",
+      repeat: nextProps.item && nextProps.item.length > 1 ? "repeat" : "one",
       list: checkAlbum ? nextProps.item : [],
       oneSong: nextProps.oneSong,
       position: nextProps.position,

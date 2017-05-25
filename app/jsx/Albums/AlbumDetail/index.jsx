@@ -12,8 +12,9 @@ export default class AlbumDetail extends PageComponent {
 
   componentDidMount() {
     this.setToolBar("Play Album");
-    let state = Helper.getCurrentLocationState();
-    API.Album.get(this.handerGetAlbum, state, {include: JSON.stringify({})});
+    // let state = Helper.getCurrentLocationState() || this.props.params.id;
+    // API.Album.get(this.handerGetAlbum, state, {include: JSON.stringify({})});
+    API.Album.get(this.handerGetAlbum, this.props.params.id, {include: JSON.stringify({})});
   }
 
   handerGetAlbum = (status, data) => {
