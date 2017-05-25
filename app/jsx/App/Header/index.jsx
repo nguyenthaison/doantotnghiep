@@ -4,6 +4,7 @@ import Register from "./Register";
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
 import UserDrawer from "./../UserDrawer";
 import Search from "./Search";
+import Avatar from 'material-ui/Avatar';
 
 export default class HeaderMenu extends BaseComponent {
   constructor(props) {
@@ -63,8 +64,11 @@ export default class HeaderMenu extends BaseComponent {
       <div className="header-bar">
         <h4>{this.state.title}</h4>
         <ul>
-          <li><HeaderItem icon="perm_identity" className="pointer"
-            onClick={() => this.handleOpenDrawer(ref)} />
+          <li>
+            {App.auth.id === 2 ?
+            <HeaderItem icon="perm_identity" className="pointer"
+              onClick={() => this.handleOpenDrawer(ref)} /> :
+            <Avatar src="/images/avatar2.png" style={{marginTop: "-8px"}} onClick={() => this.handleOpenDrawer(ref)}/>}
           </li>
           <li><Search /></li>
         </ul>

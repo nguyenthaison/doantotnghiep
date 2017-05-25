@@ -68,6 +68,7 @@ export default class App extends BaseComponent {
   }
 
   handleLogin = () => {
+    this.update = true;
     API.Authentication.getList(this.handleGetAuthenticationCallback);
   }
 
@@ -79,6 +80,7 @@ export default class App extends BaseComponent {
           collapsed={this.state.drawerCollapsed}
           onToggle={this.handleToggleDrawer}
           currentPath={Helper.getCurrentPath()}
+          update={this.update}
         />
         <div className={mainClass}>
           <HeaderMenu ref="headerMenu" onLogin={this.handleLogin} />

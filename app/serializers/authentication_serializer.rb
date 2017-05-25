@@ -22,16 +22,17 @@ class AuthenticationSerializer < ActiveModel::Serializer
       ranks: true,
       songs: true,
       authors: true,
+      personal: {
+        PlayListDetail: true,
+      },
+      upload: true,
       search: {
         songs: true,
       }
     }
 
     member_auth = guest_auth.deep_merge({
-      personal: {
-        PlayListDetail: true,
-      },
-      upload: true,
+
     })
 
     admin_auth = member_auth.deep_merge({
