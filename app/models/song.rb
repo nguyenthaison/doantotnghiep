@@ -2,7 +2,7 @@ class Song < ApplicationRecord
   include SmartAsJson
   include Search
 
-  ATTRIBUTES_PARAMS = [:name, :country_id, attachment_ids: [], album_songs_attributes: [:id, :album_id]]
+  ATTRIBUTES_PARAMS = [:name, :country_id, attachment_ids: []]
     # lyrics_attributes: [:id, :user_id, :content],
     # singer_songs_attributes: [:id, :singer_id],
     # album_songs_attributes: [:id, :album_id]]
@@ -82,7 +82,7 @@ class Song < ApplicationRecord
   end
 
   def create_album_song album_id
-    # AlbumSong.in
+    AlbumSong.create(song_id: self.id, album_id: album_id)
   end
 
   def get_rank_previous

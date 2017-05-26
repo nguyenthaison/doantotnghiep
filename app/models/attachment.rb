@@ -11,7 +11,22 @@ class Attachment < ApplicationRecord
   belongs_to :attachmentable, polymorphic: true
 
   validates_attachment_content_type :attachment,
-    content_type: IMAGE_TYPES
+    # content_type: IMAGE_TYPES
+    content_type: [
+      "image/jpg", "image/jpeg", "image/png", "image/gif",
+      "application/octet-stream",
+      "application/vnd.ms-excel",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.ms-powerpoint",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "application/pdf",
+      "application/msword",
+      "image/jpeg",
+      "image/png",
+      "image/gif",
+      "video/mp4",
+      "video/mp3",
+    ]
 
   def get_style
     {thumb: "256x256"}
