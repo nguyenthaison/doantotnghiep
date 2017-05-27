@@ -11,7 +11,7 @@ export default class index extends PageComponent {
       listSinger: [],
       song: {
         name: "",
-        // singer_name: "",
+        singer_name: "",
         content: "",
         dataSource: [],
       },
@@ -68,13 +68,14 @@ export default class index extends PageComponent {
     let song = this.state.song;
     let data = new FormData();
     let attachment = this.refs.uploadFile.getAttachment();
-    let musicTypeIds = this.refs.countries.getCheckedMusicTypes();
+    let musicType = this.refs.countries.getCheckedMusicTypes();
     let singers = this.refs.singers.getSingers();
     data.append("attachment", attachment);
     data.append("name", song.name);
     data.append("singer_name", JSON.stringify(singers));
     data.append("lyric_content", song.content);
-    data.append("music_type_song_ids", JSON.stringify(musicTypeIds));
+    data.append("music_type_song_ids", JSON.stringify(musicType ? musicType.checkedMusicTypes : ""));
+    data.append("country_id", JSON.stringify(musicType ? musicType.country.id : ""));
     API.Song.create(this.handleSubmitCallback, data);
   }
 
@@ -100,9 +101,8 @@ export default class index extends PageComponent {
                   fieldName="name"
                   value={this.state.song.name}
                   onChange={(event, value) => this.handleChangeInputText("name", value)}
+                  required={true}
                 />
-                <label className="singers">Singer</label>
-                <Singer singers={this.state.listSinger} ref="singers" />
                 <cm.TextField
                   name="lyric"
                   fullWidth={true}
@@ -111,6 +111,8 @@ export default class index extends PageComponent {
                   multiLine={true}
                   onChange={(event, value) => this.handleChangeInputText("content", value)}
                 />
+                <label className="singers">Singer</label>
+                <Singer singers={this.state.listSinger} ref="singers" />
                 <Uploader
                   song={this.state.song}
                   ref="uploadFile"

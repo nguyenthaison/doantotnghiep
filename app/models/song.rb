@@ -2,15 +2,16 @@ class Song < ApplicationRecord
   include SmartAsJson
   include Search
 
-  ATTRIBUTES_PARAMS = [:name, :country_id, attachment_ids: [], album_songs_attributes: [:id, :album_id]]
+  ATTRIBUTES_PARAMS = [:name, :country_id, :attachment_file_name, album_songs_attributes: [:id, :album_id]]
     # lyrics_attributes: [:id, :user_id, :content],
     # singer_songs_attributes: [:id, :singer_id],
     # album_songs_attributes: [:id, :album_id]]
+    # attachment_ids: []
 
   ALLOWED_METHODS = ["get_rank_previous"]
   JOIN_TABLES = [:singers, :author_songs, :music_types, :lyrics, :albums]
 
-  # has_attached_file :attachment
+  has_attached_file :attachment
 
   belongs_to :user
   belongs_to :country
@@ -32,8 +33,8 @@ class Song < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 100, minimum: 1}
 
-  # validates_attachment_content_type :attachment,
-  #   content_type: [
+  validates_attachment_content_type :attachment,
+    content_type: [
       # "application/octet-stream",
       # "application/vnd.ms-excel",
       # "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -45,7 +46,8 @@ class Song < ApplicationRecord
       # "image/png",
       # "image/gif",
       # "video/mp4"
-    # ]
+      "audio/mp3",
+    ]
   accepts_nested_attributes_for :lyrics
   accepts_nested_attributes_for :singer_songs
   accepts_nested_attributes_for :album_songs

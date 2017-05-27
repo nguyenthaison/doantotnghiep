@@ -1,5 +1,4 @@
 import MusicType from "./MusicType";
-// import Country from "./Country";
 
 export default class Countries extends PageComponent {
   constructor(props) {
@@ -14,7 +13,6 @@ export default class Countries extends PageComponent {
   }
 
   getCheckedMusicTypes() {
-    let test = this.refs.musicTypes.getCheckedMusicTypes();
     if (!this.refs.musicTypes) return;
     return this.refs.musicTypes.getCheckedMusicTypes();
   }
@@ -30,9 +28,6 @@ export default class Countries extends PageComponent {
       return (
         <li key={index}>
           <ul>
-            <li className="image-flag-country">
-              <img src="images/vietnam-flag.png" />
-            </li>
             <li>
               <span onClick={() => this.hanldeSelectCountry(item)}>
                 {item.full_name}
@@ -53,6 +48,7 @@ export default class Countries extends PageComponent {
         {this.renderCountry()}
         {country ? <MusicType
           musicTypes={country.music_types}
+          country={this.state.country}
           ref="musicTypes"
           /> : ""}
       </div>
