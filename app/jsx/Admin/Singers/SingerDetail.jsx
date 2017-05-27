@@ -1,3 +1,10 @@
+const style = {
+  image: {
+    height: "300px",
+    width: "300px",
+  }
+}
+
 export default class Detail extends BaseComponent {
   constructor(props) {
     super(props);
@@ -49,16 +56,24 @@ export default class Detail extends BaseComponent {
 
   renderContent() {
     const data = this.state.data;
+    const defaultImg = "/images/default-playlist.jpg";
+    const bgkImage = data.background_attachments[0] ? data.background_attachments[0].url : defaultImg
+    const avatar = data.attachments[0] ? data.attachments[0].url : defaultImg
 
     return (
       <div className="row">
         <div className="col-xs-4">
+          <div className="col-label item">Background image</div>
+          <div><img src={bgkImage} style={style.image} /></div>
+          <div className="col-label item">Avatar</div>
+          <div><img src={avatar} style={style.image} /></div>
         </div>
         <div className="col-xs-8">
           {this.renderDataRow(t("common.attributes.id"), data.id)}
           {this.renderDataRow(t("singers.attributes.name"), data.name)}
           {this.renderDataRow(t("common.attributes.age"), data.age)}
           {this.renderDataRow(t("singers.attributes.dob"), data.dob)}
+          {this.renderDataRow(t("common.attributes.country"), data.country.full_name)}
           {this.renderDataRow(t("common.attributes.created_at"), data.created_at)}
           {this.renderDataRow(t("common.attributes.updated_at"), data.updated_at)}
           {this.renderDataRow(t("singers.attributes.content"), data.content)}

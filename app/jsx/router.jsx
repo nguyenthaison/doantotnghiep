@@ -21,18 +21,20 @@ import AdminAlbums from "./Admin/Albums";
 import AdminSongs from "./Admin/Songs";
 import AdminAuthors from "./Admin/Authors";
 import AdminSingers from "./Admin/Singers";
+import Songs from "./Songs";
 
 const router = (
   <Router history={browserHistory}>
     <Route path="users/sign_in" component={Login} />
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
-
+      <Route path="home" component={Home} />
       <Route path="play" component={PlayMusic} />
 
       <Route path="albums" component={Albums} />
       <Route path="album" component={AlbumDetail} />
 
+      <Route path="search/songs" component={Songs} />
       <Route path="song" component={Song} />
 
       <Route path="subjects" component={Subjects} />

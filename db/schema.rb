@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20170503081145) do
     t.integer  "share"
     t.string   "name"
     t.integer  "creator"
+    t.string   "album_type"
     t.integer  "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "notes",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "artist_music_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -315,6 +317,8 @@ ActiveRecord::Schema.define(version: 20170503081145) do
     t.string   "phone_number"
     t.date     "dob"
     t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["country_id"], name: "index_users_on_country_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

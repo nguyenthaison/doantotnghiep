@@ -4,6 +4,10 @@
   height: 60px;
   z-index: 100;
 
+  .input-search {
+    margin-top: -12px;
+  }
+
   h4 {
     color: #000000;
     padding-top: 25px;
@@ -56,8 +60,8 @@
   }
 }
 
-// .change-password-form {
-//   width: 50%;
-//   margin-left: 25%;
-//   padding-top: 40px;
-// }
+.change-password-form {
+  width: 50%;
+  margin-left: 25%;
+  padding-top: 40px;
+}

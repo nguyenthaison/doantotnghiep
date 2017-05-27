@@ -8,7 +8,7 @@ export default class App extends BaseComponent {
   constructor(props) {
     super(props);
     global.App = this;
-    this.auth = true;
+    this.auth = null;
 
     this.state = {
       drawerCollapsed: false,
@@ -45,22 +45,17 @@ export default class App extends BaseComponent {
     // when you back to the first loaded route, you will get blank page.
     // This below line will do a trick, replace a POST (full page load) of the first time,
     // by a REPLACE. And it works like a charm.
-    // Helper.history.replace({
-    //   pathname: Helper.getCurrentPath()});
+    Helper.history.replace({
+      pathname: Helper.getCurrentPath()});
   }
 
   handleGetAuthenticationCallback = (status, data) => {
     if (!status) return;
-    this.auth = data
-    this.checkAuthorized();
-    // this.forceUpdate();
-  }
 
-  // updateSettings(data) {
-  //   this.auth.settings = this.auth.settings.filter(setting => setting.key !== data.key);
-  //   this.auth.settings.push(data);
-  //   this.forceUpdate();
-  // }
+    this.auth = data;
+    this.checkAuthorized();
+    this.forceUpdate();
+  }
 
   setToolBarOnHeaderMenu = (title = "", linkTo = null) => {
     this.refs.headerMenu.setToolBar(title, linkTo);
@@ -72,6 +67,11 @@ export default class App extends BaseComponent {
     });
   }
 
+  handleLogin = () => {
+    this.update = true;
+    API.Authentication.getList(this.handleGetAuthenticationCallback);
+  }
+
   renderMainContent() {
     let mainClass = this.state.drawerCollapsed ? "main-area-w56" : "main-area-w195";
     return (
@@ -80,9 +80,10 @@ export default class App extends BaseComponent {
           collapsed={this.state.drawerCollapsed}
           onToggle={this.handleToggleDrawer}
           currentPath={Helper.getCurrentPath()}
+          update={this.update}
         />
         <div className={mainClass}>
-          <HeaderMenu ref="headerMenu" />
+          <HeaderMenu ref="headerMenu" onLogin={this.handleLogin} />
           <div className="main-content">
             {this.props.children}
           </div>

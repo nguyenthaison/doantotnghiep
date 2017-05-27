@@ -14,10 +14,16 @@ export default class Singer extends PageComponent {
     return this.state.searchText;
   }
 
+  getChosenIds() {
+    let singer_ids = this.state.singers.map(singer => singer.id)
+    return singer_ids;
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
       this.setState({
         singers: nextProps.singers,
+        searchText: nextProps.defaultSelectSingers || null,
       })
     }
   }

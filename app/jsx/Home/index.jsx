@@ -40,11 +40,6 @@ export default class Home extends PageComponent {
               <div className="new-song">
                 <AlbumCenter />
               </div>
-              {/*this.renderLabel("New Song")*/}
-              {/*<div className="new-song">
-                <NewSong />
-              </div>*/}
-
               {this.renderLabel("New Song")}
               <div className="new-song">
                 <Singer />

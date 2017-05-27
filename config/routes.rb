@@ -17,6 +17,11 @@ Rails.application.routes.draw do
       resources :songs
       resources :subjects
       resources :ranks
+      resources :users do
+        collection do
+          patch "update_password"
+        end
+      end
 
       get "download/:id" => "songs#download"
       get "authentication" => "authentication#index"

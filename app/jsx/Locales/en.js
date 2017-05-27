@@ -57,11 +57,19 @@ export default {
       name: "Name",
       age: "Age",
       country: "Country",
+      image: "Image",
+      no: "No.",
     },
   },
   login: {
     login_id: "Login ID",
     password: "Password",
+    name: "Name",
+    password_confirmation: "Confirmation Password",
+    email: "Email",
+    phone_number: "Phone Number",
+    dob: "Date of birth",
+    country_id: "Country",
     remember: "Remember",
     btn_login: "Login",
     invalid: "Login Id or password is invalid",
@@ -91,5 +99,22 @@ export default {
       dob: "Date of birth",
       content: "Story",
     }
+  },
+  albums: {
+    attributes: {
+      name: "Name",
+      notes: "Notes",
+      view: "View",
+      share: "share",
+      singer: "Singer",
+      album: "Album",
+    },
+    child: "Song",
+    songs: {
+
+    }
+  },
+  songs: {
+
   }
 }

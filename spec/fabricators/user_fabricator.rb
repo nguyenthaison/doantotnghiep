@@ -4,4 +4,5 @@ Fabricator :user do
   login_id
   password
   password_confirmation
+  role
 end

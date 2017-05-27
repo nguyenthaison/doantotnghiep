@@ -69,7 +69,6 @@ export default class Popover extends PageComponent {
   render() {
     const playLists = this.props.playLists;
     const song = this.state.song;
-    console.log(this._isMounted);
 
     return (
       <mui.Popover
@@ -78,7 +77,9 @@ export default class Popover extends PageComponent {
         anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
         targetOrigin={{horizontal: 'left', vertical: 'top'}}
         onRequestClose={this.handleRequestClose}
+        className="popup-add-wishlist"
       >
+        <div className="popup-title">Add to Playlist</div>
         {playLists.map((item) => {
           let index = item.play_list_songs.findIndex((play_list_song) => song.id === play_list_song.song_id)
 
@@ -91,10 +92,13 @@ export default class Popover extends PageComponent {
               checked={index === -1 ? false : true}
               style={styles.checkbox}
               onCheck={() => this.handleCheckFavorite(song, item, index)}
+              className="item-popup"
             />
           )
         })}
-        <CreatePlayList onCreate={this.handleCreatePlayList} />
+        <CreatePlayList
+          onCreate={this.handleCreatePlayList}
+        />
       </mui.Popover>
     )
   }
