@@ -71,6 +71,7 @@ class Song < ApplicationRecord
 
   def create_singer_lyric params, current_user
     Lyric.create(content: params[:lyric_content], user_id: current_user.id, song_id: self.id)
+    AlbumSong.create(album_id: params[:album_id], song_id: self.id) if params[:album_id]
     JSON.parse(params[:singer_name]).each do |item|
       if (!item["id"])
         singer = Singer.create(name: item["name"])
@@ -84,7 +85,7 @@ class Song < ApplicationRecord
   end
 
   def create_album_song album_id
-    # AlbumSong.in
+
   end
 
   def get_rank_previous
@@ -109,9 +110,9 @@ class Song < ApplicationRecord
 
   class << self
     def search_by_query query
-      fields = {name: "like"}
-      search_follow_field query, fields
-      # Song.all
+      # fields = {name: "like"}
+      # search_follow_field query, fields
+      Song.all
     end
   end
 end
