@@ -110,9 +110,20 @@ class Song < ApplicationRecord
 
   class << self
     def search_by_query query
-      # fields = {name: "like"}
-      # search_follow_field query, fields
-      Song.all
+      fields = {name: "like"}
+      search_follow_field query, fields
+      # Song.all
+
+      like_query = query || ""
+      like_query = "%#{sanitize_sql_like like_query.strip}%"
+      objects = self.name.constantize.all
+
+      query_build = ""
+      query_build += " songs.name LIKE :like_q OR"
+      query_build = query_build.chomp(" OR")
+
+      sql_query = sanitize_sql_array [query_build, q: query, like_q: like_query]
+      objects = objects.where sql_query
     end
   end
 end

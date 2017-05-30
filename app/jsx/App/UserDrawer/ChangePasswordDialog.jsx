@@ -85,15 +85,14 @@ export default class ChangePasswordDialog extends BaseComponent {
     );
 
     return (
-      /*<cm.Dialog
+      <cm.Dialog
         title={t("app.user_drawer.change_password")}
         icon={<i className="material-icons">lock</i>}
         actions={actionButton}
         onRequestClose={this.close}
         open={this.state.open}
         children={content}
-      />*/
-      <div></div>
+      />
     );
   }
 }

@@ -6,6 +6,7 @@ class Api::V1::SongsController < Api::BaseController
   def create
     song = Song.new(attachment: params[:attachment], name: params[:name],
       user_id: current_user.id, country_id: params[:country_id])
+    byebug
     if song.save
       ActiveRecord::Base.transaction do
         begin
