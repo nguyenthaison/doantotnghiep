@@ -110,13 +110,14 @@ export default class ListSearchSong extends PageComponent {
             <div className="item-song" key={song.id}>
               <div className="title-song">
                 <h3>
-                  {song.name}
+                  <span className="song-name">{song.name + " - "}</span>
                   {this.renderSinger(song)}
                 </h3>
               </div>
-              <div className="info-meta">
-                <span>Music type:</span>
-                <div className="inline">{this.renderMusicType(song)}</div>
+              <div className="music-type">
+                <span className="music-type-span">Music type: </span>
+                <span>pop</span>
+                {/*this.renderMusicType(song)*/}
               </div>
               <div className="info-meta"></div>
               <div className="tool-song">

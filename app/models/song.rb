@@ -46,7 +46,7 @@ class Song < ApplicationRecord
       # "image/png",
       # "image/gif",
       # "video/mp4"
-      "audio/mp3",
+      # "audio/mp3",
     ]
   accepts_nested_attributes_for :lyrics
   accepts_nested_attributes_for :singer_songs
@@ -110,9 +110,13 @@ class Song < ApplicationRecord
 
   class << self
     def search_by_query query
-      # fields = {name: "like"}
-      # search_follow_field query, fields
-      Song.all
+      like_query = query || ""
+      like_query = "%#{sanitize_sql_like like_query.strip}%"
+      objects = self.name.constantize.all
+      query_build = ""
+      query_build += "songs.name LIKE :like_q"
+      sql_query = sanitize_sql_array [query_build, q: query, like_q: like_query]
+      objects = objects.where sql_query
     end
   end
 end
