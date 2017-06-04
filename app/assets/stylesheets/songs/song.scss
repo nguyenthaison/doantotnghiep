@@ -1,0 +1,46 @@
+.list-song {
+  padding-left: 20px;
+
+  .result-count{
+    padding-top: 10px;
+  }
+
+  .result-content {
+    .item-song {
+      clear: both;
+      width: 100%;
+      border-bottom: 1px solid #EAEAEA;
+      padding-bottom: 7px;
+    }
+
+    .title-song, .music-type, .info-meta, .tool-song {
+      float: left;
+    }
+
+    .title-song {
+      width: 50%;
+    }
+
+    .title-song h3 span {
+      font-size: 15px !important;
+      float: left
+    }
+
+    .music-type {
+      width: 30%;
+      padding-top: 20px;
+    }
+
+    .music-type span.music-type-span {
+      float: left;
+    }
+
+    .tool-song {
+      padding-top: 20px
+    }
+
+    .tool-song svg {
+      margin-right: 10px;
+    }
+  }
+}

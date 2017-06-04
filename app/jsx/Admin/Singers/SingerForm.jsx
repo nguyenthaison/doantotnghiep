@@ -208,7 +208,7 @@ export default class Form extends BaseComponent {
     return (
       <div>
         <h4>
-          <i className="material-icons">panorama</i>
+          <span><i className="material-icons">panorama</i></span>
           <span>{label}</span>
         </h4>
         <div className="avatar col-md-6 col-lg-6 col-sm-12 col-xs-12">
