@@ -15,24 +15,20 @@ export default class CommonRank extends PageComponent {
     if (item.link) {
       Helper.transitionTo("/song", item.id);
     } else {
-      Helper.transitionTo(`/albums/${item.id}`, item.id);
-      // Helper.transitionTo("/album", item.id);
+      Helper.transitionTo("/album", item.id);
     }
   }
 
   handleClickPlayAll = (country) => {
     switch(country) {
     case "kp":
-      Helper.transitionTo(`/albums/${this.props.albumKp.id}`)
-      // Helper.transitionTo("/album", this.props.albumKp.id)
+      Helper.transitionTo("/album", this.props.albumKp.id)
       break;
     case "us":
-      Helper.transitionTo(`/albums/${this.props.albumUs.id}`)
-      // Helper.transitionTo("/album", this.props.albumUs.id)
+      Helper.transitionTo("/album", this.props.albumUs.id)
       break;
     default:
-      Helper.transitionTo(`/albums/${this.props.albumVn.id}`)
-      // Helper.transitionTo("/album", this.props.albumVn.id)
+      Helper.transitionTo("/album", this.props.albumVn.id)
     }
   }
 
