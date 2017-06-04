@@ -29,7 +29,8 @@ export default class AlbumCenter extends PageComponent {
   }
 
   handleClickPlayAlbum = (item) => {
-    Helper.transitionTo("/album", item.id);
+    // Helper.transitionTo("/album", item.id);
+    Helper.transitionTo(`/albums/${item.id}`);
   }
 
   render() {

@@ -23,13 +23,15 @@ export default class index extends PageComponent {
   }
 
   componentDidMount() {
-    let state = Helper.getCurrentLocationState();
-    this.getList(state);
+    // let state = Helper.getCurrentLocationState();
+    // this.getList(state);
+    this.getList(this.props.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
-   let state = Helper.getCurrentLocationState();
-    this.getList(state);
+   // let state = Helper.getCurrentLocationState();
+   //  this.getList(state);
+    this.getList(this.props.params.id);
   }
 
   getList(id) {

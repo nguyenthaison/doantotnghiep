@@ -4,7 +4,8 @@ export default class Album extends PageComponent {
   }
 
   handlePlayAlbum = (album) => {
-    Helper.transitionTo("/album", album.id);
+    Helper.transitionTo(`/albums/${album.id}`);
+    // Helper.transitionTo("/album", album.id);
   }
 
   handleViewSinger = (singers) => {

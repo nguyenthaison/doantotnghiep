@@ -14,9 +14,11 @@ export default class CommonRankRight extends PageComponent {
   handleClickPlayOne = (item) => {
     let ckeckAlbum = this.props.album;
     if (ckeckAlbum) {
-      Helper.transitionTo("/album", item.id);
+      Helper.transitionTo(`/albums/${item.id}`, item.id);
+      // Helper.transitionTo("/album", item.id);
     } else {
-      Helper.transitionTo("/song", item.id);
+      Helper.transitionTo(`/songs/${item.id}`);
+      // Helper.transitionTo("/song", item.id);
     }
   }
 
