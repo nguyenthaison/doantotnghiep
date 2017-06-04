@@ -31,6 +31,7 @@ export default class Drawer extends BaseComponent {
     } else {
       isActive = this.props.currentPath.split("/")[1] === item
     }
+
     let menuItemIcon = <i className="material-icons">{icon}</i>;
     if (!App.auth.authorized_pages[item]) return null;
 

@@ -92,7 +92,8 @@ class Song < ApplicationRecord
     # Song.includes(:ranks).where("ranks.start_date = ?, ranks.target_type = ?, ranks.target_id = ?",
     #   DateTime.now.beginning_of_week - 7.day, "song", self.id)
     # rank = Rank.find_by(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "song", target_id: self.id)
-    self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "song").first.number
+    # self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "song").first.number
+    Rank.get_ranks self.id, "song"
   end
 
   def json_data options = {}

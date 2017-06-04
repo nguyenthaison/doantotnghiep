@@ -12,6 +12,13 @@ export default class ListSearchSong extends PageComponent {
     }
   }
 
+  componentDidMount() {
+    if (this.props.active === "songs") {
+      API.Song.getList(this.handleGetListSearch, this.getOption(this.props.query));
+      API.PlayList.getList(this.handleGetList, this.getOptionPlaylist());
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.active === "songs") {
       API.Song.getList(this.handleGetListSearch, this.getOption(nextProps.query));

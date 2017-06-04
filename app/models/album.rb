@@ -40,7 +40,8 @@ class Album < ApplicationRecord
   accepts_nested_attributes_for :album_singers
 
   def get_rank_previous
-    self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "album").first.number
+    # self.ranks.where(start_date: DateTime.now.beginning_of_week - 7.day, target_type: "album").first.number
+    Rank.get_ranks self.id, "album"
   end
 
   def json_data options = {}
