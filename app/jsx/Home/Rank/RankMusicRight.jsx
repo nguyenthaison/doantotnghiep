@@ -91,16 +91,10 @@ export default class RankMusicRight extends PageComponent {
   }
 
   handlePlayAll = () => {
-    // if (this.state.albumActive) {
-    //   Helper.transitionTo("/album", this.state.albumActive[0].id);
-    // } else {
-    //   Helper.transitionTo("/album", this.state.albumVn[0].id);
-    // }
-
     if (this.state.albumActive) {
-      Helper.transitionTo(`/albums/${this.state.albumActive[0].id}`);
+      Helper.transitionTo("/album", this.state.albumActive[0].id);
     } else {
-      Helper.transitionTo(`/albums/${this.state.albumVn[0].id}`);
+      Helper.transitionTo("/album", this.state.albumVn[0].id);
     }
   }
 
