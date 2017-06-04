@@ -83,8 +83,11 @@
 }
 .wrapp-popup {
 	top: -40px !important;
+	width: 110% !important;
+
 	.dialog-content {
 		width: 60% !important;
+
 		.upload {
 			.file-uploader {
 				.upload-component {
@@ -92,15 +95,17 @@
 						div {
 							div {
 								position: relative;
+
 								input {
 									position: absolute;
-									color: #7c4dff; 
+									color: #7c4dff;
 									opacity: 0;
 								}
 							}
 						}
 					}
 				}
+
 				.list-uploaded-file {
 					margin: 10px 0;
 				}
